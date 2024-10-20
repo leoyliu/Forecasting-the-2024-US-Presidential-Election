@@ -1,10 +1,11 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Predicting the 2024 US Presidential Election with a Model-Based Forecast"
+subtitle: "Using Generalized Linear Models to Predict Election Outcomes"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
+  - Yuanyi (Leo) Liu
+  - Dezhen Chen
+  - Ziyuan Shen
+thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
