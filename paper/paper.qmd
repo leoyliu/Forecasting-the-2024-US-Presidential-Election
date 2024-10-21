@@ -45,17 +45,24 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 ## Overview
 
-We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
+We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 US Presidential election. The data, obtained from a repository of publicly available polls, includes variables from numerous pollsters across the country [@citedata]. The aim is to create a reproducible forecast model by focusing on high-quality polls and narrowing our scope to Kamala Harris as a candidate of interest. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we examine how polling data reflects electoral behavior and voter preferences.
 
-Overview text
+The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. We filter the dataset to include only high-quality polls, i.e., those with a numeric grade of 3.0 or higher, ensuring that only reputable and well-documented pollster results are used in our model. Additionally, we focus solely on polls that include Kamala Harris as a candidate, which helps narrow our analysis to a specific electoral scenario.
 
 ## Measurement
 	
-Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
+Polling data captures voter preferences and electoral forecasts by collecting responses from a representative sample of the population. In this case, pollsters attempt to gauge public opinion by surveying individuals on their preferred candidate, adjusting for demographic factors and political trends. The raw data entries reflect the outcomes of these surveys.
+
+Pollsters often rely on random sampling methods to recruit participants, as discussed in [@ todo], ensuring a diverse and representative group. Some pollsters use online platforms, while others use phone interviews or in-person surveys. The dataset captures these variations through variables such as `methodology` and `sample_size`. Sampling errors, response biases, and adjustments (e.g., weighting respondents based on age, race, or geographic region) are part of how this world phenomenon is translated into data entries.
+
+The process begins with identifying the population of interest—likely voters or registered voters—and applying statistical adjustments to the raw responses. Pollsters handle non-response through weighting or imputation methods, ensuring that missing data or low response rates do not skew the results significantly. The column `numeric_grade` reflects how well these pollsters adhere to rigorous methodology, allowing us to filter for only the most reliable sources in our analysis.
 
 ## Outcome variables
 
-Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
+### Percent Support (pct)
+The primary outcome variable in this dataset is the percentage of respondents who support a given candidate. This is represented by the pct variable, which is reported by pollsters for each candidate they survey. For Kamala Harris, this percentage reflects her standing in polls, and variations in this metric can indicate shifts in voter preference over time.
+
+Below is a summary table showing the average, minimum, and maximum percent support for Kamala Harris across high-quality polls:
 
 
 
@@ -86,29 +93,30 @@ And also planes (@fig-planes). (You can change the height and width, but don't w
 #| warning: false
 #| message: false
 
-analysis_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
 ```
 
 Talk way more about it. 
 
 ## Predictor variables
 
-Add graphs, tables and text.
+### Pollster Name (display_name)
+This variable represents the pollster responsible for each entry in the dataset. Different pollsters may use varying methods and possess differing levels of reliability, which the numeric_grade helps quantify. High-quality pollsters (numeric_grade ≥ 3.0) are emphasized in this analysis to ensure the robustness of the forecast.
 
-Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+### Internal Polling (internal)
+The variable internal is a binary indicator that identifies whether a poll was commissioned by a political campaign or interest group. Internal polls can sometimes be biased, either in how respondents are selected or how results are reported. However, the filtering for high-quality pollsters ensures that even internal polls meet certain standards of rigor.
 
+### Partisan Polling (partisan)
+Like internal polling, partisan polling can introduce bias, as it may be sponsored by organizations with a vested interest in the election outcome. The partisan variable, similar to the internal variable, flags such polls. In the dataset, these are rare but still important to identify, especially when making impartial predictions.
 
+### Party Affiliation (party)
+The party variable indicates the political party that the poll respondent supports. This is key to understanding the partisan leanings of the sample. For Kamala Harris, her affiliation with the Democratic Party is represented in this column.
 
+Below is a table summarizing the distribution of party affiliations in polls that include Kamala Harris:
 
+### Race ID (race_id)
+This variable identifies the electoral race or contest being polled. In this analysis, the focus is on the 2024 presidential election. Tracking results across different races (i.e., primary versus general election) helps in understanding shifts in voter opinion throughout the campaign.
 
-
+In summary, the dataset offers a rich variety of variables that capture voter sentiment, pollster reliability, and electoral dynamics. By carefully filtering and analyzing this data, we can build a robust model to forecast the outcome of the 2024 US Presidential election.
 
 
 # Model
@@ -218,15 +226,6 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 #| fig-cap: "Examining how the model fits, and is affected by, the data"
 #| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
 
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
 ```
 
 ## Diagnostics
@@ -245,9 +244,6 @@ posterior_vs_prior(first_model) +
 #| fig-subcap: ["Trace plot", "Rhat plot"]
 #| layout-ncol: 2
 
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
 ```
 
 
