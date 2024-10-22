@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "In this paper, we use a logistic regression model based on \"poll-of-polls\" data to predict the winner of the 2024 U.S. presidential election. By combining multiple polls, the model smooths out short-term fluctuations in surveys to make more reliable estimates of voter preferences. The findings show early trends in the leading candidates and reflect public opinion and its evolution through the election period. This prediction improves understanding of electoral trends and helps to explain the changing political scene more clearly."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -24,21 +24,17 @@ library(palmerpenguins)
 ```
 
 
-# Introduction
+# Introduction {#sec-intro}
 
-Overview paragraph
+The presidential election has a significant impact on national and global policies, which makes election forecasting a valuable tool for understanding political outcomes. However, individual polls often contain biases and short-term fluctuations that can obscure long-term trends. To deal with these challenges, we use a ‘poll-of-polls’ approach that combines multiple polls to provide more stable predictions of voter preferences over time. In this paper, we use national polling data from the period leading up to the 2024 U.S. presidential election to generate a logistic model that predicts the winner while capturing changes in public opinion throughout the election period.
 
-Estimand paragraph
+The model estimates the probability of a candidate winning an election based on aggregated polling data. Logistic regression is used for binary outcomes such as election results, which allows us to model the likelihood of each candidate winning as new data becomes available. By taking into account changes in opinion polls and tracking trends in public opinion over time, this model improves the accuracy of predictions.
 
-Results paragraph
+Our analysis identifies key trends among the major candidates and tracks changes in public sentiment throughout the campaign. The results suggest that aggregated polls can reduce some uncertainty by smoothing short-term fluctuations between surveys, but uncertainty cannot be eliminated. A sudden change in public opinion can still change the path of an election campaign, which highlights the importance of continuous polling monitoring.
 
-Why it matters paragraph
+A reliable election forecast can influence public expectations, and campaign strategies, and increase the visibility of reporting on election trends. An accurate forecast can also increase voter participation by providing individuals with a clearer perspective of the electoral landscape, and help them participate more effectively in the process of democracy. Prediction models like ours not only help with resource allocation for campaigns but also support the wider public by providing them with a clearer understanding of political dynamics.
 
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
-
-
-
-
+The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then @sec-result presents the main findings, including detailed crime trends for each neighborhood and year. Finally, @sec-discussion provides the results, highlighting key trends and predictions. Eventuallt, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
 
 # Data {#sec-data}
@@ -119,7 +115,7 @@ This variable identifies the electoral race or contest being polled. In this ana
 In summary, the dataset offers a rich variety of variables that capture voter sentiment, pollster reliability, and electoral dynamics. By carefully filtering and analyzing this data, we can build a robust model to forecast the outcome of the 2024 US Presidential election.
 
 
-# Model
+# Model {#sec-model}
 
 The goal of our modelling strategy is twofold. Firstly,...
 
@@ -148,7 +144,7 @@ We expect a positive relationship between the size of the wings and time spent a
 We can use maths by including latex between dollar signs, for instance $\theta$.
 
 
-# Results
+# Results {#sec-result}
 
 Our results are summarized in @tbl-modelresults.
 
@@ -183,7 +179,7 @@ modelsummary::modelsummary(
 
 
 
-# Discussion
+# Discussion {#sec-discussion}
 
 ## First discussion point {#sec-first-point}
 
