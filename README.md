@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
+This repository contains the code, data, and analysis used to predict the winner of the 2024 US Presidential Election using polling data. The analysis is performed using R, and the data comes from a publicly available collection of high-quality polls. The goal of the project is to build a linear or generalized linear model to forecast the election outcome, with a specific focus on polls that feature Kamala Harris as a candidate.
 
 ## File Structure
 
