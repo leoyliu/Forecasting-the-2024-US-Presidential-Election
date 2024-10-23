@@ -17,7 +17,7 @@ cleaned_data <-
   raw_data |>
   janitor::clean_names() |>
   filter(numeric_grade >= 3.0, candidate_name == "Kamala Harris") |>
-  select(poll_id, display_name, state, internal, partisan, race_id, pct)
+  select(poll_id, pollster, pollscore, transparency_score, display_name, state, race_id, pct)
 
 #### Save data ####
 write_csv(cleaned_data, "data/02-analysis_data/analysis_data.csv")
