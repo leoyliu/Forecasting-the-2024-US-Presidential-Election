@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we use a logistic regression model based on \"poll-of-polls\" data to predict the winner of the 2024 U.S. presidential election. By combining multiple polls, the model smooths out short-term fluctuations in surveys to make more reliable estimates of voter preferences. The findings show early trends in the leading candidates and reflect public opinion and its evolution through the election period. This prediction improves understanding of electoral trends and helps to explain the changing political scene more clearly"
+abstract: "In this paper, we use a logistic regression model based on \"poll-of-polls\" data to predict the winner of the 2024 U.S. presidential election. By combining multiple polls, the model smooths out short-term fluctuations in surveys to make more reliable estimates of voter preferences. The findings show early trends in the leading candidates and reflect public opinion and its evolution through the election period. This prediction improves understanding of electoral trends and helps to explain the changing political scene more clearly."
 format: pdf
 number-sections: true
 bibliography: references.bib
