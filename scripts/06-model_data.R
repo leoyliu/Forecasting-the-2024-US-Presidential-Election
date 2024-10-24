@@ -18,7 +18,7 @@ analysis_data <- read_csv("data/02-analysis_data/analysis_data.csv")
 ### Model data ####
 first_model <-
   stan_glm(
-    formula = pct ~ pollster + pollscore + transparency_score,
+    formula = pct ~ poll_type + pollster + pollscore + transparency_score,
     data = analysis_data,
     family = gaussian(),
     prior = normal(location = 0, scale = 2.5, autoscale = TRUE),

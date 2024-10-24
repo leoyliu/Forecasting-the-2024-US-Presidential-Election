@@ -21,6 +21,7 @@ bibliography: references.bib
 
 library(tidyverse)
 library(palmerpenguins)
+library(modelsummary)
 ```
 
 
@@ -116,33 +117,49 @@ In summary, the dataset offers a rich variety of variables that capture voter se
 
 
 # Model {#sec-model}
+Our modeling approach aims to quantify the relationship between polling characteristics and the probability of Harris winning the election. We use a generalized linear model (GLM) to evaluate how different factors—such as poll type, polling organization, poll score, and transparency score—impact Harris' support rate. The model is implemented using the stan_glm function, with a Gaussian distribution applied to describe the variability in support percentages.
 
-The goal of our modelling strategy is twofold. Firstly,...
+In our analysis, we filtered the data to include only polls from organizations with a poll score above 3, ensuring the reliability of our data sources. We selected predictors including  poll_type, pollster, pollscore, and transparency_score. Since the response variable (support percentage) is continuous, we utilized a Gaussian linear regression model.
 
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+The model assumes that the distribution of support percentage, given the polling characteristics, follows a normal distribution. This assumption makes the parameter estimation more straightforward and is commonly used in practice. We assigned normal priors with a mean of 0 and a variance of 2.5 for the model coefficients, which helps to maintain reasonable uncertainty while avoiding overfitting. Additionally, an exponential prior was included to handle extra variation in the model, contributing to the stability of the estimated results.
 
 ## Model set-up
 
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
+Define \( y_i \) as the predicted support percentage for Harris in the \( i \)-th poll. The predictor variables include \( x_1, x_2, x_3, x_4, x_5, x_6 \), corresponding to poll type (State or National), pollster identity (e.g., Marquette Law School, Siena/NYT), poll score, transparency score, state, and pollster organization respectively. The model can be described by the following equations:
 
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
+\begin{align}
+y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
+\mu_i &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 \\
+\beta_0 &\sim \text{Normal}(0, 2.5) \\
+\beta_j &\sim \text{Normal}(0, 2.5), \quad j = 1, 2, 3, 4, 5, 6 \\
+\sigma &\sim \text{Exponential}(1)
 \end{align}
-
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+The model is executed in R using the \texttt{rstanarm} package. Default priors from \texttt{rstanarm} are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
 
 
 ### Model justification
 
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
+Considering the historical polling data and what we know about the political landscape, we believe that different aspects of polls will have a notable impact on Harris' predicted support in the upcoming election. Specifically, polls from McCourtney Institute/YouGov, YouGov/Center for Working Class Politics, higher poll scores, and greater transparency tend to have a positive influence on Harris' support. In contrast, polls from Siena/NYT, The Washington Post, YouGov, and YouGov Blue generally show a negative impact on her predicted support. Our purpose is to determine how much each polling characteristic affects voter support, thus helping us confirm or reconsider our assumptions about voter preferences.
 
-We can use maths by including latex between dollar signs, for instance $\theta$.
+We used a Gaussian linear regression model to examine the connection between polling characteristics and Harris' predicted support percentage. The support percentage \( y_i \) is a continuous measure, and its distribution aligns well with the assumptions of Gaussian regression. This method allows us to investigate how several factors—like poll type, pollster score, and transparency level—affect the level of support for Harris. By numerically encoding these predictors, we can better understand the influences on polling outcomes, ultimately offering a clearer picture of Harris' potential performance in the upcoming election.
+```{r}
+#| label: tbl-summary-model
+#| tbl-cap: Summary of the Linear Regression Model
+#| echo: false
+#| warning: false
 
+first_model  <- readRDS(file = here::here("models/first_model.rds"))
+
+modelsummary(
+  list(
+    "first_model " = first_model 
+  )
+)
+```
+
+Further justification for this model is based on its ability to demonstrate how different polling organizations and their characteristics affect Harris' predicted support percentage. The intercept value represents the baseline level of support when all other predictors are set to zero, providing a reference point. Each coefficient then reflects the expected change in support, depending on factors like poll type, pollster identity, poll scores, and transparency measures. Positive coefficients, such as those for McCourtney Institute/YouGov and YouGov/Center for Working Class Politics, suggest increased support for Harris, while negative coefficients, such as those for Siena/NYT, The Washington Post, YouGov, and YouGov Blue, indicate a decrease in support.
+
+The relatively modest R^2 value reflects that the model only captures part of the variation in Harris' support, which is not unexpected given the unpredictable nature of polling data and the complex dynamics of voter behavior. Despite this, including key polling attributes allows us to examine how different factors contribute to voter support, helping us understand the sources of variation in predicted support levels. The choice of Gaussian linear regression is appropriate in this case, as it effectively models the continuous outcome variable and provides a clear framework for interpreting the relationship between polling features and voter preferences.
 
 # Results {#sec-result}
 
