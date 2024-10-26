@@ -16,6 +16,7 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88734,2.8,Live Phone,9,2024-10-14,1328,Quinnipiac University,Georgia,52,91,691,0
 88735,2.8,Live Phone,9,2024-10-14,1031,Quinnipiac University,North Carolina,47,91,485,0
 88722,2.8,Online Panel,8,2024-10-14,703,SurveyUSA,Washington,35,91,246,1
+88776,2.6,Mixed Voting,7,2024-10-14,701,East Carolina University Center for Survey Research,Georgia,48.9,91,343,0
 88664,3,Live Phone,9,2024-10-10,857,The New York Times/Siena College,Pennsylvania,47,87,403,0
 88664,3,Live Phone,9,2024-10-10,857,The New York Times/Siena College,Pennsylvania,45,87,386,0
 88665,3,Live Phone,9,2024-10-10,808,The New York Times/Siena College,Arizona,51,87,412,1
@@ -50,14 +51,19 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88555,3,Live Phone,9,2024-10-06,622,The New York Times/Siena College,Florida,53,83,330,0
 88555,3,Live Phone,9,2024-10-06,622,The New York Times/Siena College,Florida,54,83,336,0
 88551,2.9,Live Phone,8,2024-10-05,500,Suffolk University,Massachusetts,32.2,82,161,1
+88669,2.6,Live Phone,6,2024-10-04,625,Mason-Dixon Polling & Strategy,Florida,49,81,306,0
 88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,50,81,308,0
 88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,49,81,302,0
 88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,48,81,296,0
 88541,2.8,Live Phone,9,2024-10-04,800,Christopher Newport University Wason Center for Civic Leadership,Virginia,41,81,328,1
 88618,3,Online Panel,4.5,2024-10-02,1000,YouGov/Center for Working Class Politics,Pennsylvania,44.7,79,447,0
+88514,2.5,Email,9,2024-10-01,3045,University of California Berkeley Institute of Governmental Studies,California,35,78,1066,1
 88431,3,Mixed Voting,9,2024-09-29,1001,The Washington Post,North Carolina,50,76,500,0
 88457,2.8,Live Phone,9,2024-09-29,953,Quinnipiac University,North Carolina,49,76,467,0
 88458,2.8,Live Phone,9,2024-09-29,942,Quinnipiac University,Georgia,50,76,471,0
+88477,2.5,Mixed Voting,8.5,2024-09-29,1068,Winthrop University Center for Public Opinion & Policy Research,South Carolina,51.6,76,551,0
+88503,2.5,Online Panel,8,2024-09-29,814,High Point University Survey Research Center,North Carolina,46,76,374,0
+88503,2.5,Online Panel,8,2024-09-29,589,High Point University Survey Research Center,North Carolina,48,76,283,0
 88461,2.9,Mixed Voting,7,2024-09-28,920,Emerson College,Arizona,51.7,75,476,1
 88462,2.9,Mixed Voting,7,2024-09-28,850,Emerson College,North Carolina,49.9,75,424,0
 88465,2.9,Mixed Voting,7,2024-09-28,1000,Emerson College,Pennsylvania,48.8,75,488,0
@@ -65,6 +71,7 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88407,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Nebraska CD-2,41,73,279,0
 88407,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Nebraska CD-2,43,73,292,0
 88393,2.8,Online Panel,8,2024-09-26,646,SurveyUSA,Minnesota,44,73,284,1
+88423,2.6,Mixed Voting,7,2024-09-26,1005,East Carolina University Center for Survey Research,North Carolina,49.4,73,496,0
 88404,3,Live Phone,9,2024-09-26,688,The New York Times/Siena College,Michigan,47,73,323,1
 88404,3,Live Phone,9,2024-09-26,688,The New York Times/Siena College,Michigan,46,73,316,1
 88405,3,Live Phone,9,2024-09-26,687,The New York Times/Siena College,Ohio,49,73,337,1
@@ -119,6 +126,8 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88368,2.9,Mixed Voting,9,2024-09-24,1220,Marist College,Georgia,50,71,610,0
 88390,2.9,Live Phone,8,2024-09-24,500,Suffolk University,Arizona,48.4,71,242,1
 88338,2.8,Mixed Voting,8,2024-09-23,558,SurveyUSA,Nebraska,56,70,312,0
+88362,2.5,Mixed Voting,8,2024-09-23,1012,The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Maryland,31,70,314,1
+88362,2.5,Mixed Voting,8,2024-09-23,1012,The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Maryland,32,70,324,1
 88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,49,68,349,1
 88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,50,68,356,1
 88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,47,68,335,1
@@ -134,6 +143,7 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88339,2.8,Live Phone,8,2024-09-19,450,Muhlenberg College Institute of Public Opinion,Pennsylvania,48,66,216,0
 88371,2.9,Online Panel,9,2024-09-19,650,University of Massachusetts Lowell Center for Public Opinion/YouGov,Michigan,43,66,280,1
 88372,2.9,Online Panel,9,2024-09-19,800,University of Massachusetts Lowell Center for Public Opinion/YouGov,Pennsylvania,46,66,368,0
+88279,2.6,Live Phone,6,2024-09-18,800,Mason-Dixon Polling & Strategy,Minnesota,43,65,344,1
 88301,2.9,Live Phone,8,2024-09-18,500,Suffolk University,Michigan,45.4,65,227,1
 88235,2.9,Mixed Voting,7,2024-09-18,868,Emerson College,Arizona,49.8,65,432,1
 88236,2.9,Mixed Voting,7,2024-09-18,975,Emerson College,Georgia,50.3,65,490,0
@@ -164,6 +174,9 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88212,2.8,Live Phone,9,2024-09-16,905,Quinnipiac University,Michigan,46,63,416,1
 88213,2.8,Live Phone,9,2024-09-16,1075,Quinnipiac University,Wisconsin,47,63,505,0
 88213,2.8,Live Phone,9,2024-09-16,1075,Quinnipiac University,Wisconsin,48,63,516,0
+88217,2.6,Probability Panel,10,2024-09-16,683,University of New Hampshire Survey Center,Rhode Island,38,63,260,1
+88218,2.6,Probability Panel,10,2024-09-16,564,University of New Hampshire Survey Center,Massachusetts,31,63,175,1
+88219,2.6,Probability Panel,10,2024-09-16,1695,University of New Hampshire Survey Center,New Hampshire,43,63,729,0
 88231,3,Mixed Voting,9,2024-09-16,1003,The Washington Post,Pennsylvania,47,63,471,0
 88231,3,Mixed Voting,9,2024-09-16,1003,The Washington Post,Pennsylvania,48,63,481,0
 88229,2.7,Mixed Voting,7,2024-09-16,1003,Siena College,New York,40,63,401,1
@@ -174,8 +187,10 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88187,2.9,Mixed Voting,7,2024-09-13,890,Emerson College,Maryland,33.3,60,296,1
 88188,2.9,Mixed Voting,7,2024-09-13,850,Emerson College,Missouri,55.2,60,469,1
 88189,2.9,Mixed Voting,7,2024-09-13,1000,Emerson College,Indiana,57.9,60,579,0
+88302,2.5,Online Panel,8,2024-09-13,800,Elon University,North Carolina,45,60,360,0
 88179,2.8,Live Phone,7.5,2024-09-11,656,Selzer & Co.,Iowa,47,58,308,0
 88203,2.9,Mixed Voting,10,2024-09-09,550,Data Orbital,Arizona,46.2,56,254,1
+88225,2.5,Probability Panel,10,2024-09-09,1071,Public Policy Institute of California,California,29,56,311,1
 88095,2.8,Live Phone,9,2024-09-08,940,Quinnipiac University,North Carolina,46,55,432,0
 88095,2.8,Live Phone,9,2024-09-08,940,Quinnipiac University,North Carolina,47,55,442,0
 88101,2.8,Live Phone,9,2024-09-08,969,Quinnipiac University,Georgia,49,55,475,0
@@ -201,6 +216,7 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 88018,2.8,Probability Panel,10,2024-08-29,626,CNN/SSRS,Nevada,47,45,294,1
 88019,2.8,Probability Panel,10,2024-08-29,789,CNN/SSRS,Pennsylvania,47,45,371,0
 88020,2.8,Probability Panel,10,2024-08-29,976,CNN/SSRS,Wisconsin,44,45,429,0
+88011,2.6,Mixed Voting,7,2024-08-28,920,East Carolina University Center for Survey Research,North Carolina,47.6,44,438,0
 87935,2.9,Mixed Voting,7,2024-08-28,720,Emerson College,Arizona,51.2,44,369,1
 87936,2.9,Mixed Voting,7,2024-08-28,800,Emerson College,Michigan,47.6,44,381,1
 87937,2.9,Mixed Voting,7,2024-08-28,1168,Emerson College,Nevada,48.8,44,570,1
@@ -228,6 +244,19 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 87882,2.9,Mixed Voting,7,2024-08-22,965,Emerson College,New Mexico,40.2,38,388,1
 87870,2.8,Online Panel,10,2024-08-21,1053,SurveyUSA/High Point University Survey Research Center,North Carolina,45,37,474,0
 87870,2.8,Online Panel,10,2024-08-21,941,SurveyUSA/High Point University Survey Research Center,North Carolina,47,37,442,0
+87856,2.6,Probability Panel,10,2024-08-19,2048,University of New Hampshire Survey Center,New Hampshire,43,35,881,0
+87856,2.6,Probability Panel,10,2024-08-19,2048,University of New Hampshire Survey Center,New Hampshire,47,35,963,0
+87857,2.6,Probability Panel,10,2024-08-19,924,University of New Hampshire Survey Center,Vermont,27,35,249,1
+87857,2.6,Probability Panel,10,2024-08-19,924,University of New Hampshire Survey Center,Vermont,29,35,268,1
+87858,2.6,Probability Panel,10,2024-08-19,951,University of New Hampshire Survey Center,Maine,38,35,361,1
+87858,2.6,Probability Panel,10,2024-08-19,951,University of New Hampshire Survey Center,Maine,41,35,390,1
+87859,2.6,Probability Panel,10,2024-08-19,490,University of New Hampshire Survey Center,Maine CD-1,33,35,162,0
+87859,2.6,Probability Panel,10,2024-08-19,476,University of New Hampshire Survey Center,Maine CD-1,36,35,171,0
+87860,2.6,Probability Panel,10,2024-08-19,443,University of New Hampshire Survey Center,Maine CD-2,44,35,195,0
+87860,2.6,Probability Panel,10,2024-08-19,432,University of New Hampshire Survey Center,Maine CD-2,47,35,203,0
+87844,2.6,IVR,7,2024-08-17,656,Remington Research Group,Nebraska CD-2,42,33,276,0
+87845,2.6,Mixed Voting,7,2024-08-16,691,Roanoke College Institute for Policy and Opinion Research,Virginia,44,32,304,1
+87845,2.6,Mixed Voting,7,2024-08-16,691,Roanoke College Institute for Policy and Opinion Research,Virginia,42,32,290,1
 87934,3,Online Panel,9,2024-08-16,900,YouGov,Missouri,54,32,486,1
 87807,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Nevada,48,31,325,1
 87807,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Nevada,45,31,305,1
@@ -268,7 +297,15 @@ poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollst
 87635,2.9,Mixed Voting,7,2024-07-28,1000,Emerson College,New Hampshire,47.6,13,476,0
 87635,2.9,Mixed Voting,7,2024-07-28,1000,Emerson College,New Hampshire,41.4,13,414,0
 87612,2.8,Mixed Voting,10,2024-07-27,774,University of North Florida Public Opinion Research Lab,Florida,49,12,379,0
+87558,2.6,Mixed Voting,10,2024-07-25,1445,University of New Hampshire Survey Center,Maine,40,10,578,1
+87558,2.6,Mixed Voting,10,2024-07-25,1445,University of New Hampshire Survey Center,Maine,45,10,650,1
+87559,2.6,Mixed Voting,10,2024-07-25,2875,University of New Hampshire Survey Center,New Hampshire,43,10,1236,0
+87559,2.6,Mixed Voting,10,2024-07-25,2875,University of New Hampshire Survey Center,New Hampshire,46,10,1322,0
 87581,2.8,Online Panel,8,2024-07-25,656,SurveyUSA,Minnesota,40,10,262,1
+87724,2.6,Mixed Voting,10,2024-07-25,732,University of New Hampshire Survey Center,Maine CD-1,36,10,264,0
+87724,2.6,Mixed Voting,10,2024-07-25,732,University of New Hampshire Survey Center,Maine CD-1,39,10,285,0
+87725,2.6,Mixed Voting,10,2024-07-25,701,University of New Hampshire Survey Center,Maine CD-2,44,10,308,0
+87725,2.6,Mixed Voting,10,2024-07-25,701,University of New Hampshire Survey Center,Maine CD-2,51,10,358,0
 87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,46,9,481,0
 87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,50,9,523,0
 87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,49,9,513,0

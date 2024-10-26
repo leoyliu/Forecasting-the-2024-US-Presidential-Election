@@ -9,6 +9,7 @@
 
 #### Workspace setup ####
 library(arrow)
+library(rsample)
 library(tidyverse)
 
 #### Clean data ####
@@ -24,7 +25,7 @@ legal_marijuana_states <- c(
 cleaned_data <- 
   raw_data |> 
   janitor::clean_names() |> 
-  filter(numeric_grade >= 2.7, candidate_name == "Donald Trump") |> 
+  filter(numeric_grade >= 2.5, candidate_name == "Donald Trump") |> 
   mutate(end_date = mdy(end_date)) |>
   filter(end_date >= as.Date("2024-07-15")) |>  # Trump announced joining campaign
   mutate(
@@ -41,6 +42,15 @@ cleaned_data <-
   distinct() |> 
   drop_na() # Omit rows with any NA values
 
+# Perform a stratified split based on the 'state' variable to ensure all levels are present in both sets
+split <- initial_split(data = cleaned_data, prop = 0.7, strata = state)
+
+# Create training and testing sets
+analysis_data_train <- training(split)
+analysis_data_test <- testing(split)
+
 #### Save data ####
 write_csv(cleaned_data, "data/02-analysis_data/analysis_data.csv")
 write_parquet(cleaned_data, "data/02-analysis_data/analysis_data.parquet")
+write_parquet(analysis_data_test, "data/02-analysis_data/test_data.parquet")
+write_parquet(analysis_data_train, "data/02-analysis_data/train_data.parquet")
