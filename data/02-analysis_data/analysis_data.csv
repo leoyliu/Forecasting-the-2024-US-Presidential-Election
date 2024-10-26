@@ -1,218 +1,312 @@
-poll_id,pollster,pollscore,transparency_score,display_name,state,pct,poll_type
-88762,YouGov,-1.1,9,YouGov,Arizona,48,State
-88710,YouGov,-1.1,9,YouGov,NA,48,National
-88710,YouGov,-1.1,9,YouGov,NA,49,National
-88670,YouGov,-1.1,9,YouGov,NA,51,National
-88664,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,50,State
-88664,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,49,State
-88664,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,50,State
-88664,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,49,State
-88665,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,46,State
-88665,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,45,State
-88665,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,45,State
-88665,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,44,State
-88768,YouGov,-1.1,9,YouGov,Texas,46,State
-88712,Marquette Law School,-1.1,10,Marquette University Law School,NA,50,National
-88712,Marquette Law School,-1.1,10,Marquette University Law School,NA,43,National
-88712,Marquette Law School,-1.1,10,Marquette University Law School,NA,50,National
-88712,Marquette Law School,-1.1,10,Marquette University Law School,NA,44,National
-88617,Siena/NYT,-1.5,9,The New York Times/Siena College,Montana,39,State
-88617,Siena/NYT,-1.5,9,The New York Times/Siena College,Montana,38,State
-88617,Siena/NYT,-1.5,9,The New York Times/Siena College,Montana,40,State
-88617,Siena/NYT,-1.5,9,The New York Times/Siena College,Montana,39,State
-88590,YouGov,-1.1,9,YouGov,NA,47,National
-88590,YouGov,-1.1,9,YouGov,NA,49,National
-88616,The Washington Post,-1.2,9,The Washington Post,Ohio,45,State
-88616,The Washington Post,-1.2,9,The Washington Post,Ohio,44,State
-88550,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,49,National
-88550,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,47,National
-88555,Siena/NYT,-1.5,9,The New York Times/Siena College,Florida,41,State
-88555,Siena/NYT,-1.5,9,The New York Times/Siena College,Florida,40,State
-88555,Siena/NYT,-1.5,9,The New York Times/Siena College,Florida,41,State
-88555,Siena/NYT,-1.5,9,The New York Times/Siena College,Florida,40,State
-88527,YouGov,-1.1,9,YouGov,NA,46,National
-88527,YouGov,-1.1,9,YouGov,NA,47,National
-88527,YouGov,-1.1,9,YouGov,NA,48,National
-88527,YouGov,-1.1,9,YouGov,NA,48,National
-88556,Siena/NYT,-1.5,9,The New York Times/Siena College,Texas,44,State
-88556,Siena/NYT,-1.5,9,The New York Times/Siena College,Texas,42,State
-88556,Siena/NYT,-1.5,9,The New York Times/Siena College,Texas,44,State
-88556,Siena/NYT,-1.5,9,The New York Times/Siena College,Texas,41,State
-88618,YouGov/Center for Working Class Politics,-1.1,4.5,YouGov/Center for Working Class Politics,Pennsylvania,46.8,State
-88482,YouGov,-1.1,9,YouGov,NA,48,National
-88482,YouGov,-1.1,9,YouGov,NA,49,National
-88431,The Washington Post,-1.2,9,The Washington Post,North Carolina,48,State
-88431,The Washington Post,-1.2,9,The Washington Post,North Carolina,47,State
-88554,McCourtney Institute/YouGov,-1.1,6.5,YouGov/Pennsylvania State University McCourtney Institute for Democracy,NA,48,National
-88407,Siena/NYT,-1.5,9,The New York Times/Siena College,Nebraska CD-2,51,State
-88407,Siena/NYT,-1.5,9,The New York Times/Siena College,Nebraska CD-2,49,State
-88407,Siena/NYT,-1.5,9,The New York Times/Siena College,Nebraska CD-2,52,State
-88407,Siena/NYT,-1.5,9,The New York Times/Siena College,Nebraska CD-2,51,State
-88404,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,45,State
-88404,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,43,State
-88404,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,48,State
-88404,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,46,State
-88405,Siena/NYT,-1.5,9,The New York Times/Siena College,Ohio,45,State
-88405,Siena/NYT,-1.5,9,The New York Times/Siena College,Ohio,44,State
-88405,Siena/NYT,-1.5,9,The New York Times/Siena College,Ohio,44,State
-88405,Siena/NYT,-1.5,9,The New York Times/Siena College,Ohio,43,State
-88406,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,49,State
-88406,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,48,State
-88406,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,49,State
-88406,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,48,State
-88488,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,52,State
-88488,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,52,State
-88488,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,48,State
-88488,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,49,State
-88351,YouGov,-1.1,9,YouGov,NA,47,National
-88351,YouGov,-1.1,9,YouGov,NA,49,National
-88361,YouGov,-1.1,9,YouGov,Georgia,49,State
-88276,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,45,State
-88276,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,45,State
-88276,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,42,State
-88276,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,43,State
-88277,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-88277,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,45,State
-88277,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,43,State
-88277,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-88278,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,47,State
-88278,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,47,State
-88278,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,46,State
-88278,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,45,State
-88274,YouGov,-1.1,9,YouGov,NA,52,National
-88208,YouGov,-1.1,9,YouGov,NA,49,National
-88231,The Washington Post,-1.2,9,The Washington Post,Pennsylvania,48,State
-88231,The Washington Post,-1.2,9,The Washington Post,Pennsylvania,48,State
-88228,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,47,National
-88228,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,46,National
-88228,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,45,National
-88228,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,46,National
-88242,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,50,State
-88242,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,50,State
-88242,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,48,State
-88242,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,49,State
-88170,YouGov,-1.1,9,YouGov,NA,50,National
-88170,YouGov,-1.1,9,YouGov,NA,50,National
-88170,YouGov,-1.1,9,YouGov,NA,48,National
-88170,YouGov,-1.1,9,YouGov,NA,49,National
-88130,YouGov,-1.1,9,YouGov,NA,45,National
-88070,YouGov,-1.1,9,YouGov,Michigan,50,State
-88071,YouGov,-1.1,9,YouGov,Pennsylvania,50,State
-88072,YouGov,-1.1,9,YouGov,Wisconsin,51,State
-88073,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,47,National
-88073,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,45,National
-88073,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,46,National
-88073,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,44,National
-88135,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,52,State
-88135,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,52,State
-88135,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,47,State
-88135,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,48,State
-88021,YouGov,-1.1,9,YouGov,NA,47,National
-88067,YouGov,-1.1,9,YouGov,Texas,44,State
-88067,YouGov,-1.1,9,YouGov,Texas,44,State
-87920,YouGov,-1.1,9,YouGov,NA,47,National
-87918,YouGov,-1.1,9,YouGov,NA,46,National
-87918,YouGov,-1.1,9,YouGov,NA,47,National
-87918,YouGov,-1.1,9,YouGov,NA,39,National
-87918,YouGov,-1.1,9,YouGov,NA,44,National
-88080,YouGov,-1.1,9,YouGov,Pennsylvania,43,State
-88080,YouGov,-1.1,9,YouGov,Pennsylvania,47,State
-88080,YouGov,-1.1,9,YouGov,Pennsylvania,43,State
-88080,YouGov,-1.1,9,YouGov,Pennsylvania,48,State
-88081,YouGov,-1.1,9,YouGov,Wisconsin,48,State
-88081,YouGov,-1.1,9,YouGov,Wisconsin,51,State
-88081,YouGov,-1.1,9,YouGov,Wisconsin,45,State
-88081,YouGov,-1.1,9,YouGov,Wisconsin,49,State
-88082,YouGov,-1.1,9,YouGov,Michigan,44,State
-88082,YouGov,-1.1,9,YouGov,Michigan,47,State
-88082,YouGov,-1.1,9,YouGov,Michigan,44,State
-88082,YouGov,-1.1,9,YouGov,Michigan,47,State
-88324,YouGov,-1.1,9,YouGov,NA,44,National
-87853,YouGov,-1.1,9,YouGov,NA,46,National
-87810,YouGov,-1.1,9,YouGov,NA,51,National
-87810,YouGov,-1.1,9,YouGov,NA,49,National
-87934,YouGov,-1.1,9,YouGov,Missouri,41,State
-87807,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,46,State
-87807,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,47,State
-87807,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,42,State
-87807,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,44,State
-87806,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,49,State
-87806,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,50,State
-87806,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,45,State
-87806,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,47,State
-87808,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,49,State
-87808,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,49,State
-87808,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,45,State
-87808,Siena/NYT,-1.5,9,The New York Times/Siena College,North Carolina,46,State
-87809,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-87809,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,46,State
-87809,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,41,State
-87809,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-87760,YouGov,-1.1,9,YouGov,NA,46,National
-87721,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,49,State
-87721,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,50,State
-87721,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,45,State
-87721,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,46,State
-87723,YouGov Blue,-1.1,9,YouGov Blue,North Carolina,46,State
-87719,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,45,State
-87719,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,50,State
-87719,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,44,State
-87719,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,48,State
-87720,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,50,State
-87720,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,50,State
-87720,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,49,State
-87720,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,49,State
-87696,YouGov,-1.1,9,YouGov,NA,45,National
-87663,YouGov,-1.1,9,YouGov,NA,50,National
-87663,YouGov,-1.1,9,YouGov,NA,49,National
-87698,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,49,State
-87698,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,50,State
-87698,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,45,State
-87698,Marquette Law School,-1.1,10,Marquette University Law School,Wisconsin,46,State
-87699,Marquette Law School,-1.1,10,Marquette University Law School,NA,52,National
-87699,Marquette Law School,-1.1,10,Marquette University Law School,NA,53,National
-87699,Marquette Law School,-1.1,10,Marquette University Law School,NA,47,National
-87699,Marquette Law School,-1.1,10,Marquette University Law School,NA,50,National
-87628,YouGov,-1.1,9,YouGov,NA,46,National
-87557,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,46,National
-87557,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,47,National
-87557,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,42,National
-87557,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,44,National
-87555,YouGov,-1.1,9,YouGov,NA,44,National
-87536,YouGov,-1.1,9,YouGov,NA,41,National
-87529,YouGov,-1.1,9,YouGov,NA,41,National
-87529,YouGov,-1.1,9,YouGov,NA,46,National
-87483,YouGov,-1.1,9,YouGov,NA,48,National
-87437,YouGov,-1.1,9,YouGov,NA,39,National
-87404,Siena/NYT,-1.5,9,The New York Times/Siena College,Virginia,48,State
-87404,Siena/NYT,-1.5,9,The New York Times/Siena College,Virginia,49,State
-87404,Siena/NYT,-1.5,9,The New York Times/Siena College,Virginia,41,State
-87404,Siena/NYT,-1.5,9,The New York Times/Siena College,Virginia,43,State
-87403,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,46,State
-87403,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,47,State
-87403,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,40,State
-87403,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,42,State
-87363,YouGov,-1.1,9,YouGov,NA,38,National
-87298,YouGov,-1.1,9,YouGov,NA,45,National
-86253,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,41,National
-86253,Siena/NYT,-1.5,9,The New York Times/Siena College,NA,42,National
-84542,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,43,State
-84542,Siena/NYT,-1.5,9,The New York Times/Siena College,Arizona,43,State
-84543,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-84543,Siena/NYT,-1.5,9,The New York Times/Siena College,Georgia,44,State
-84544,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,45,State
-84544,Siena/NYT,-1.5,9,The New York Times/Siena College,Michigan,48,State
-84545,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,42,State
-84545,Siena/NYT,-1.5,9,The New York Times/Siena College,Nevada,42,State
-84546,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,44,State
-84546,Siena/NYT,-1.5,9,The New York Times/Siena College,Pennsylvania,44,State
-84547,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,46,State
-84547,Siena/NYT,-1.5,9,The New York Times/Siena College,Wisconsin,46,State
-82279,YouGov,-1.1,NA,YouGov,NA,42,National
-82279,YouGov,-1.1,NA,YouGov,NA,40,National
-79596,YouGov,-1.1,NA,YouGov,NA,42,National
-79596,YouGov,-1.1,NA,YouGov,NA,45,National
-79249,YouGov,-1.1,NA,YouGov,NA,41,National
-79249,YouGov,-1.1,NA,YouGov,NA,41,National
-79249,YouGov,-1.1,NA,YouGov,NA,44,National
-79249,YouGov,-1.1,NA,YouGov,NA,45,National
+poll_id,numeric_grade,methodology,transparency_score,end_date,sample_size,pollster_name,state,pct,duration,num_trump,marijuana_legal
+88795,2.7,Online Ad,6,2024-10-17,1440,AtlasIntel,Arizona,49.2,94,708,1
+88796,2.7,Online Ad,6,2024-10-17,1411,AtlasIntel,Georgia,49.5,94,698,0
+88796,2.7,Online Ad,6,2024-10-17,1411,AtlasIntel,Georgia,50.1,94,707,0
+88797,2.7,Online Ad,6,2024-10-17,1529,AtlasIntel,Michigan,49.6,94,758,1
+88797,2.7,Online Ad,6,2024-10-17,1529,AtlasIntel,Michigan,50.2,94,768,1
+88798,2.7,Online Ad,6,2024-10-17,1171,AtlasIntel,Nevada,48.4,94,567,1
+88798,2.7,Online Ad,6,2024-10-17,1171,AtlasIntel,Nevada,48.3,94,566,1
+88799,2.7,Online Ad,6,2024-10-17,1674,AtlasIntel,North Carolina,48.8,94,817,0
+88800,2.7,Online Ad,6,2024-10-17,2048,AtlasIntel,Pennsylvania,49.8,94,1020,0
+88800,2.7,Online Ad,6,2024-10-17,2048,AtlasIntel,Pennsylvania,49.9,94,1022,0
+88801,2.7,Online Ad,6,2024-10-17,932,AtlasIntel,Wisconsin,48.2,94,449,0
+88801,2.7,Online Ad,6,2024-10-17,932,AtlasIntel,Wisconsin,48.4,94,451,0
+88762,3,Online Panel,9,2024-10-16,1435,YouGov,Arizona,51,93,732,1
+88721,2.9,Mixed Voting,7,2024-10-14,1000,Emerson College,California,36.6,91,366,1
+88734,2.8,Live Phone,9,2024-10-14,1328,Quinnipiac University,Georgia,52,91,691,0
+88735,2.8,Live Phone,9,2024-10-14,1031,Quinnipiac University,North Carolina,47,91,485,0
+88722,2.8,Online Panel,8,2024-10-14,703,SurveyUSA,Washington,35,91,246,1
+88664,3,Live Phone,9,2024-10-10,857,The New York Times/Siena College,Pennsylvania,47,87,403,0
+88664,3,Live Phone,9,2024-10-10,857,The New York Times/Siena College,Pennsylvania,45,87,386,0
+88665,3,Live Phone,9,2024-10-10,808,The New York Times/Siena College,Arizona,51,87,412,1
+88665,3,Live Phone,9,2024-10-10,808,The New York Times/Siena College,Arizona,50,87,404,1
+88665,3,Live Phone,9,2024-10-10,808,The New York Times/Siena College,Arizona,49,87,396,1
+88738,2.9,Online Panel,9,2024-10-10,600,University of Massachusetts Lowell Center for Public Opinion/YouGov,New Hampshire,41,87,246,0
+88768,3,Online Panel,9,2024-10-10,1091,YouGov,Texas,51,87,556,0
+88737,2.9,Online Panel,9,2024-10-09,800,University of Massachusetts Lowell Center for Public Opinion/YouGov,Pennsylvania,45,86,360,0
+88606,2.9,Mixed Voting,7,2024-10-08,1000,Emerson College,Arizona,50.5,85,505,1
+88607,2.9,Mixed Voting,7,2024-10-08,1000,Emerson College,Georgia,49.7,85,497,0
+88608,2.9,Mixed Voting,7,2024-10-08,950,Emerson College,Michigan,49.6,85,471,1
+88609,2.9,Mixed Voting,7,2024-10-08,900,Emerson College,Nevada,48.1,85,433,1
+88610,2.9,Mixed Voting,7,2024-10-08,1000,Emerson College,North Carolina,49.9,85,499,0
+88611,2.9,Mixed Voting,7,2024-10-08,1000,Emerson College,Pennsylvania,49.7,85,497,0
+88612,2.9,Mixed Voting,7,2024-10-08,1000,Emerson College,Wisconsin,49.9,85,499,0
+88617,3,Live Phone,9,2024-10-08,656,The New York Times/Siena College,Montana,57,85,374,1
+88617,3,Live Phone,9,2024-10-08,656,The New York Times/Siena College,Montana,56,85,367,1
+88591,2.8,Live Phone,9,2024-10-07,1007,Quinnipiac University,Michigan,50,84,504,1
+88591,2.8,Live Phone,9,2024-10-07,1007,Quinnipiac University,Michigan,51,84,514,1
+88592,2.8,Live Phone,9,2024-10-07,1412,Quinnipiac University,Pennsylvania,46,84,650,0
+88592,2.8,Live Phone,9,2024-10-07,1412,Quinnipiac University,Pennsylvania,47,84,664,0
+88593,2.8,Live Phone,9,2024-10-07,1073,Quinnipiac University,Wisconsin,48,84,515,0
+88593,2.8,Live Phone,9,2024-10-07,1073,Quinnipiac University,Wisconsin,49,84,526,0
+88613,2.9,Mixed Voting,9,2024-10-07,1257,Marist College,Florida,51,84,641,0
+88613,2.9,Mixed Voting,9,2024-10-07,1410,Marist College,Florida,51,84,719,0
+88614,2.9,Mixed Voting,9,2024-10-07,1365,Marist College,Texas,52,84,710,0
+88614,2.9,Mixed Voting,9,2024-10-07,1186,Marist College,Texas,53,84,629,0
+88615,2.9,Mixed Voting,9,2024-10-07,1511,Marist College,Ohio,52,84,786,1
+88615,2.9,Mixed Voting,9,2024-10-07,1327,Marist College,Ohio,52,84,690,1
+88616,3,Mixed Voting,9,2024-10-07,1002,The Washington Post,Ohio,51,84,511,1
+88555,3,Live Phone,9,2024-10-06,622,The New York Times/Siena College,Florida,55,83,342,0
+88555,3,Live Phone,9,2024-10-06,622,The New York Times/Siena College,Florida,53,83,330,0
+88555,3,Live Phone,9,2024-10-06,622,The New York Times/Siena College,Florida,54,83,336,0
+88551,2.9,Live Phone,8,2024-10-05,500,Suffolk University,Massachusetts,32.2,82,161,1
+88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,50,81,308,0
+88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,49,81,302,0
+88556,3,Live Phone,9,2024-10-04,617,The New York Times/Siena College,Texas,48,81,296,0
+88541,2.8,Live Phone,9,2024-10-04,800,Christopher Newport University Wason Center for Civic Leadership,Virginia,41,81,328,1
+88618,3,Online Panel,4.5,2024-10-02,1000,YouGov/Center for Working Class Politics,Pennsylvania,44.7,79,447,0
+88431,3,Mixed Voting,9,2024-09-29,1001,The Washington Post,North Carolina,50,76,500,0
+88457,2.8,Live Phone,9,2024-09-29,953,Quinnipiac University,North Carolina,49,76,467,0
+88458,2.8,Live Phone,9,2024-09-29,942,Quinnipiac University,Georgia,50,76,471,0
+88461,2.9,Mixed Voting,7,2024-09-28,920,Emerson College,Arizona,51.7,75,476,1
+88462,2.9,Mixed Voting,7,2024-09-28,850,Emerson College,North Carolina,49.9,75,424,0
+88465,2.9,Mixed Voting,7,2024-09-28,1000,Emerson College,Pennsylvania,48.8,75,488,0
+88407,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Nebraska CD-2,42,73,286,0
+88407,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Nebraska CD-2,41,73,279,0
+88407,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Nebraska CD-2,43,73,292,0
+88393,2.8,Online Panel,8,2024-09-26,646,SurveyUSA,Minnesota,44,73,284,1
+88404,3,Live Phone,9,2024-09-26,688,The New York Times/Siena College,Michigan,47,73,323,1
+88404,3,Live Phone,9,2024-09-26,688,The New York Times/Siena College,Michigan,46,73,316,1
+88405,3,Live Phone,9,2024-09-26,687,The New York Times/Siena College,Ohio,49,73,337,1
+88405,3,Live Phone,9,2024-09-26,687,The New York Times/Siena College,Ohio,47,73,323,1
+88405,3,Live Phone,9,2024-09-26,687,The New York Times/Siena College,Ohio,50,73,344,1
+88406,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Wisconsin,47,73,320,0
+88406,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Wisconsin,45,73,306,0
+88406,3,Live Phone,9,2024-09-26,680,The New York Times/Siena College,Wisconsin,46,73,313,0
+88488,3,Probability Panel,10,2024-09-26,882,Marquette University Law School,Wisconsin,48,73,423,0
+88488,3,Probability Panel,10,2024-09-26,798,Marquette University Law School,Wisconsin,48,73,383,0
+88488,3,Probability Panel,10,2024-09-26,882,Marquette University Law School,Wisconsin,44,73,388,0
+88488,3,Probability Panel,10,2024-09-26,798,Marquette University Law School,Wisconsin,44,73,351,0
+88391,2.9,Mixed Voting,7,2024-09-25,1000,Emerson College,New York,41.6,72,416,1
+88395,2.8,Mixed Voting,10,2024-09-25,931,CNN/SSRS,North Carolina,48,72,447,0
+88397,2.8,Mixed Voting,10,2024-09-25,749,CNN/SSRS,Nebraska CD-2,42,72,315,0
+88410,2.7,Online Ad,6,2024-09-25,946,AtlasIntel,Arizona,49.7,72,470,1
+88410,2.7,Online Ad,6,2024-09-25,946,AtlasIntel,Arizona,49.8,72,471,1
+88411,2.7,Online Ad,6,2024-09-25,918,AtlasIntel,Michigan,50.4,72,463,1
+88411,2.7,Online Ad,6,2024-09-25,918,AtlasIntel,Michigan,50.6,72,465,1
+88412,2.7,Online Ad,6,2024-09-25,858,AtlasIntel,Nevada,47.7,72,409,1
+88413,2.7,Online Ad,6,2024-09-25,1775,AtlasIntel,Pennsylvania,50.6,72,898,0
+88413,2.7,Online Ad,6,2024-09-25,1775,AtlasIntel,Pennsylvania,51,72,905,0
+88414,2.7,Online Ad,6,2024-09-25,1077,AtlasIntel,Wisconsin,49.6,72,534,0
+88414,2.7,Online Ad,6,2024-09-25,1077,AtlasIntel,Wisconsin,49.7,72,535,0
+88415,2.7,Online Ad,6,2024-09-25,1173,AtlasIntel,North Carolina,47.3,72,555,0
+88415,2.7,Online Ad,6,2024-09-25,1173,AtlasIntel,North Carolina,48.1,72,564,0
+88416,2.7,Online Ad,6,2024-09-25,1200,AtlasIntel,Georgia,49.3,72,592,0
+88416,2.7,Online Ad,6,2024-09-25,1200,AtlasIntel,Georgia,49.6,72,595,0
+88364,2.9,Mixed Voting,7,2024-09-24,950,Emerson College,Texas,52.3,71,497,0
+88365,2.9,Mixed Voting,7,2024-09-24,860,Emerson College,Virginia,46.2,71,397,1
+88361,3,Online Panel,9,2024-09-24,1441,YouGov,Georgia,51,71,735,0
+88380,2.8,Mixed Voting,9,2024-09-24,1021,Beacon Research/Shaw & Company Research,Arizona,49,71,500,1
+88380,2.8,Mixed Voting,9,2024-09-24,764,Beacon Research/Shaw & Company Research,Arizona,50,71,382,1
+88380,2.8,Mixed Voting,9,2024-09-24,1021,Beacon Research/Shaw & Company Research,Arizona,50,71,510,1
+88380,2.8,Mixed Voting,9,2024-09-24,764,Beacon Research/Shaw & Company Research,Arizona,51,71,390,1
+88381,2.8,Mixed Voting,9,2024-09-24,1006,Beacon Research/Shaw & Company Research,Georgia,47,71,473,0
+88381,2.8,Mixed Voting,9,2024-09-24,707,Beacon Research/Shaw & Company Research,Georgia,48,71,339,0
+88381,2.8,Mixed Voting,9,2024-09-24,1006,Beacon Research/Shaw & Company Research,Georgia,48,71,483,0
+88402,2.8,Mixed Voting,9,2024-09-24,787,Beacon Research/Shaw & Company Research,North Carolina,49,71,386,0
+88402,2.8,Mixed Voting,9,2024-09-24,991,Beacon Research/Shaw & Company Research,North Carolina,47,71,466,0
+88402,2.8,Mixed Voting,9,2024-09-24,787,Beacon Research/Shaw & Company Research,North Carolina,50,71,394,0
+88402,2.8,Mixed Voting,9,2024-09-24,991,Beacon Research/Shaw & Company Research,North Carolina,48,71,476,0
+88403,2.8,Mixed Voting,9,2024-09-24,775,Beacon Research/Shaw & Company Research,Pennsylvania,48,71,372,0
+88403,2.8,Mixed Voting,9,2024-09-24,1021,Beacon Research/Shaw & Company Research,Pennsylvania,46,71,470,0
+88403,2.8,Mixed Voting,9,2024-09-24,775,Beacon Research/Shaw & Company Research,Pennsylvania,49,71,380,0
+88403,2.8,Mixed Voting,9,2024-09-24,1021,Beacon Research/Shaw & Company Research,Pennsylvania,48,71,490,0
+88363,2.9,Mixed Voting,9,2024-09-24,1416,Marist College,Arizona,50,71,708,1
+88363,2.9,Mixed Voting,9,2024-09-24,1264,Marist College,Arizona,50,71,632,1
+88366,2.9,Mixed Voting,9,2024-09-24,1507,Marist College,North Carolina,48,71,723,0
+88366,2.9,Mixed Voting,9,2024-09-24,1348,Marist College,North Carolina,49,71,661,0
+88368,2.9,Mixed Voting,9,2024-09-24,1420,Marist College,Georgia,48,71,682,0
+88368,2.9,Mixed Voting,9,2024-09-24,1220,Marist College,Georgia,50,71,610,0
+88390,2.9,Live Phone,8,2024-09-24,500,Suffolk University,Arizona,48.4,71,242,1
+88338,2.8,Mixed Voting,8,2024-09-23,558,SurveyUSA,Nebraska,56,70,312,0
+88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,49,68,349,1
+88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,50,68,356,1
+88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,47,68,335,1
+88276,3,Live Phone,9,2024-09-21,713,The New York Times/Siena College,Arizona,48,68,342,1
+88277,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,Georgia,48,68,327,0
+88277,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,Georgia,49,68,334,0
+88277,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,Georgia,46,68,314,0
+88277,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,Georgia,47,68,321,0
+88278,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,North Carolina,48,68,327,0
+88278,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,North Carolina,49,68,334,0
+88278,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,North Carolina,46,68,314,0
+88278,3,Live Phone,9,2024-09-21,682,The New York Times/Siena College,North Carolina,47,68,321,0
+88339,2.8,Live Phone,8,2024-09-19,450,Muhlenberg College Institute of Public Opinion,Pennsylvania,48,66,216,0
+88371,2.9,Online Panel,9,2024-09-19,650,University of Massachusetts Lowell Center for Public Opinion/YouGov,Michigan,43,66,280,1
+88372,2.9,Online Panel,9,2024-09-19,800,University of Massachusetts Lowell Center for Public Opinion/YouGov,Pennsylvania,46,66,368,0
+88301,2.9,Live Phone,8,2024-09-18,500,Suffolk University,Michigan,45.4,65,227,1
+88235,2.9,Mixed Voting,7,2024-09-18,868,Emerson College,Arizona,49.8,65,432,1
+88236,2.9,Mixed Voting,7,2024-09-18,975,Emerson College,Georgia,50.3,65,490,0
+88237,2.9,Mixed Voting,7,2024-09-18,875,Emerson College,Michigan,49.1,65,430,1
+88238,2.9,Mixed Voting,7,2024-09-18,895,Emerson College,Nevada,49,65,439,1
+88239,2.9,Mixed Voting,7,2024-09-18,880,Emerson College,Pennsylvania,49.3,65,434,0
+88240,2.9,Mixed Voting,7,2024-09-18,1000,Emerson College,North Carolina,49.3,65,493,0
+88241,2.9,Mixed Voting,7,2024-09-18,1000,Emerson College,Wisconsin,50.3,65,503,0
+88267,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Pennsylvania,46,65,368,0
+88267,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Pennsylvania,47,65,376,0
+88275,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Massachusetts,32,65,256,1
+88275,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Massachusetts,35,65,280,1
+88280,2.8,Online Panel,8,2024-09-18,619,SurveyUSA,New Mexico,42,65,260,1
+88286,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Wisconsin,45,65,360,0
+88286,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Wisconsin,46,65,368,0
+88298,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Connecticut,37,65,296,1
+88311,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Rhode Island,40,65,320,1
+88311,2.8,Mixed Voting,7,2024-09-18,800,MassINC Polling Group,Rhode Island,43,65,344,1
+88232,2.9,Mixed Voting,7,2024-09-17,1663,Marist College,Pennsylvania,48,64,798,0
+88232,2.9,Mixed Voting,7,2024-09-17,1476,Marist College,Pennsylvania,49,64,723,0
+88233,2.9,Mixed Voting,7,2024-09-17,1312,Marist College,Wisconsin,47,64,617,0
+88233,2.9,Mixed Voting,7,2024-09-17,1194,Marist College,Wisconsin,49,64,585,0
+88234,2.9,Mixed Voting,7,2024-09-17,1282,Marist College,Michigan,47,64,603,1
+88234,2.9,Mixed Voting,7,2024-09-17,1138,Marist College,Michigan,47,64,535,1
+88211,2.8,Live Phone,9,2024-09-16,1331,Quinnipiac University,Pennsylvania,45,63,599,0
+88211,2.8,Live Phone,9,2024-09-16,1331,Quinnipiac University,Pennsylvania,46,63,612,0
+88212,2.8,Live Phone,9,2024-09-16,905,Quinnipiac University,Michigan,45,63,407,1
+88212,2.8,Live Phone,9,2024-09-16,905,Quinnipiac University,Michigan,46,63,416,1
+88213,2.8,Live Phone,9,2024-09-16,1075,Quinnipiac University,Wisconsin,47,63,505,0
+88213,2.8,Live Phone,9,2024-09-16,1075,Quinnipiac University,Wisconsin,48,63,516,0
+88231,3,Mixed Voting,9,2024-09-16,1003,The Washington Post,Pennsylvania,47,63,471,0
+88231,3,Mixed Voting,9,2024-09-16,1003,The Washington Post,Pennsylvania,48,63,481,0
+88229,2.7,Mixed Voting,7,2024-09-16,1003,Siena College,New York,40,63,401,1
+88229,2.7,Mixed Voting,7,2024-09-16,1003,Siena College,New York,42,63,421,1
+88242,3,Live Phone,9,2024-09-16,1082,The New York Times/Siena College,Pennsylvania,46,63,498,0
+88242,3,Live Phone,9,2024-09-16,1082,The New York Times/Siena College,Pennsylvania,45,63,487,0
+88184,2.9,Live Phone,8,2024-09-14,500,Suffolk University,Pennsylvania,45.6,61,228,0
+88187,2.9,Mixed Voting,7,2024-09-13,890,Emerson College,Maryland,33.3,60,296,1
+88188,2.9,Mixed Voting,7,2024-09-13,850,Emerson College,Missouri,55.2,60,469,1
+88189,2.9,Mixed Voting,7,2024-09-13,1000,Emerson College,Indiana,57.9,60,579,0
+88179,2.8,Live Phone,7.5,2024-09-11,656,Selzer & Co.,Iowa,47,58,308,0
+88203,2.9,Mixed Voting,10,2024-09-09,550,Data Orbital,Arizona,46.2,56,254,1
+88095,2.8,Live Phone,9,2024-09-08,940,Quinnipiac University,North Carolina,46,55,432,0
+88095,2.8,Live Phone,9,2024-09-08,940,Quinnipiac University,North Carolina,47,55,442,0
+88101,2.8,Live Phone,9,2024-09-08,969,Quinnipiac University,Georgia,49,55,475,0
+88105,2.7,Mixed Voting,9,2024-09-08,1005,The Washington Post/George Mason University Schar School of Policy and Government,Virginia,42,55,422,1
+88105,2.7,Mixed Voting,9,2024-09-08,1005,The Washington Post/George Mason University Schar School of Policy and Government,Virginia,43,55,432,1
+88083,2.8,Online Panel,8,2024-09-07,676,SurveyUSA,North Carolina,46,54,311,0
+88070,3,Online Panel,9,2024-09-06,1077,YouGov,Michigan,49,53,528,1
+88071,3,Online Panel,9,2024-09-06,1078,YouGov,Pennsylvania,50,53,539,0
+88072,3,Online Panel,9,2024-09-06,946,YouGov,Wisconsin,49,53,464,0
+88063,2.9,Mixed Voting,7,2024-09-05,815,Emerson College,California,38,52,310,1
+88064,2.9,Mixed Voting,7,2024-09-05,815,Emerson College,Florida,51.1,52,416,0
+88065,2.9,Mixed Voting,7,2024-09-05,845,Emerson College,Texas,50.9,52,430,0
+88066,2.9,Mixed Voting,7,2024-09-05,945,Emerson College,Ohio,54.3,52,513,1
+88135,3,Mixed Voting,10,2024-09-05,822,Marquette University Law School,Wisconsin,48,52,395,0
+88135,3,Mixed Voting,10,2024-09-05,738,Marquette University Law School,Wisconsin,48,52,354,0
+88135,3,Mixed Voting,10,2024-09-05,822,Marquette University Law School,Wisconsin,43,52,353,0
+88135,3,Mixed Voting,10,2024-09-05,738,Marquette University Law School,Wisconsin,43,52,317,0
+88067,3,Online Panel,9,2024-08-31,1200,YouGov,Texas,49,47,588,0
+87988,2.8,Online Panel,8,2024-08-29,635,SurveyUSA,Minnesota,43,45,273,1
+88015,2.8,Probability Panel,10,2024-08-29,682,CNN/SSRS,Arizona,49,45,334,1
+88016,2.8,Probability Panel,10,2024-08-29,617,CNN/SSRS,Georgia,47,45,290,0
+88017,2.8,Probability Panel,10,2024-08-29,708,CNN/SSRS,Michigan,43,45,304,1
+88018,2.8,Probability Panel,10,2024-08-29,626,CNN/SSRS,Nevada,47,45,294,1
+88019,2.8,Probability Panel,10,2024-08-29,789,CNN/SSRS,Pennsylvania,47,45,371,0
+88020,2.8,Probability Panel,10,2024-08-29,976,CNN/SSRS,Wisconsin,44,45,429,0
+87935,2.9,Mixed Voting,7,2024-08-28,720,Emerson College,Arizona,51.2,44,369,1
+87936,2.9,Mixed Voting,7,2024-08-28,800,Emerson College,Michigan,47.6,44,381,1
+87937,2.9,Mixed Voting,7,2024-08-28,1168,Emerson College,Nevada,48.8,44,570,1
+87938,2.9,Mixed Voting,7,2024-08-28,950,Emerson College,Pennsylvania,49.4,44,469,0
+87939,2.9,Mixed Voting,7,2024-08-28,850,Emerson College,Wisconsin,49.8,44,423,0
+87943,2.9,Mixed Voting,7,2024-08-28,775,Emerson College,North Carolina,49.9,44,387,0
+87944,2.9,Mixed Voting,7,2024-08-28,800,Emerson College,Georgia,49,44,392,0
+88000,2.8,Mixed Voting,8,2024-08-27,1293,SurveyUSA,Nebraska,54,43,698,0
+88001,2.8,Mixed Voting,8,2024-08-27,507,SurveyUSA,Nebraska CD-2,42,43,213,0
+87930,2.8,Mixed Voting,9,2024-08-26,1014,Beacon Research/Shaw & Company Research,Arizona,47,42,477,1
+87930,2.8,Mixed Voting,9,2024-08-26,1014,Beacon Research/Shaw & Company Research,Arizona,49,42,497,1
+87931,2.8,Mixed Voting,9,2024-08-26,1014,Beacon Research/Shaw & Company Research,Georgia,46,42,466,0
+87931,2.8,Mixed Voting,9,2024-08-26,1014,Beacon Research/Shaw & Company Research,Georgia,48,42,487,0
+87932,2.8,Mixed Voting,9,2024-08-26,1026,Beacon Research/Shaw & Company Research,Nevada,46,42,472,1
+87932,2.8,Mixed Voting,9,2024-08-26,1026,Beacon Research/Shaw & Company Research,Nevada,48,42,492,1
+87933,2.8,Mixed Voting,9,2024-08-26,999,Beacon Research/Shaw & Company Research,North Carolina,48,42,480,0
+87933,2.8,Mixed Voting,9,2024-08-26,999,Beacon Research/Shaw & Company Research,North Carolina,50,42,500,0
+88080,3,Online Panel,9,2024-08-23,500,YouGov,Pennsylvania,42.5,39,212,0
+88080,3,Online Panel,9,2024-08-23,500,YouGov,Pennsylvania,41,39,205,0
+88081,3,Online Panel,9,2024-08-23,500,YouGov,Wisconsin,42,39,210,0
+88081,3,Online Panel,9,2024-08-23,500,YouGov,Wisconsin,40,39,200,0
+88082,3,Online Panel,9,2024-08-23,500,YouGov,Michigan,43.5,39,218,1
+88082,3,Online Panel,9,2024-08-23,500,YouGov,Michigan,41.5,39,208,1
+87882,2.9,Mixed Voting,7,2024-08-22,965,Emerson College,New Mexico,46.4,38,448,1
+87882,2.9,Mixed Voting,7,2024-08-22,965,Emerson College,New Mexico,40.2,38,388,1
+87870,2.8,Online Panel,10,2024-08-21,1053,SurveyUSA/High Point University Survey Research Center,North Carolina,45,37,474,0
+87870,2.8,Online Panel,10,2024-08-21,941,SurveyUSA/High Point University Survey Research Center,North Carolina,47,37,442,0
+87934,3,Online Panel,9,2024-08-16,900,YouGov,Missouri,54,32,486,1
+87807,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Nevada,48,31,325,1
+87807,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Nevada,45,31,305,1
+87807,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Nevada,46,31,311,1
+87806,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Arizona,45,31,305,1
+87806,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Arizona,42,31,284,1
+87806,3,Live Phone,9,2024-08-15,677,The New York Times/Siena College,Arizona,43,31,291,1
+87797,2.9,Mixed Voting,7,2024-08-14,1000,Emerson College,Pennsylvania,50.7,30,507,0
+87797,2.9,Mixed Voting,7,2024-08-14,1000,Emerson College,Pennsylvania,47.4,30,474,0
+87808,3,Live Phone,9,2024-08-14,655,The New York Times/Siena College,North Carolina,46,30,301,0
+87808,3,Live Phone,9,2024-08-14,655,The New York Times/Siena College,North Carolina,47,30,308,0
+87808,3,Live Phone,9,2024-08-14,655,The New York Times/Siena College,North Carolina,42,30,275,0
+87808,3,Live Phone,9,2024-08-14,655,The New York Times/Siena College,North Carolina,44,30,288,0
+87809,3,Live Phone,9,2024-08-14,661,The New York Times/Siena College,Georgia,51,30,337,0
+87809,3,Live Phone,9,2024-08-14,661,The New York Times/Siena College,Georgia,50,30,330,0
+87809,3,Live Phone,9,2024-08-14,661,The New York Times/Siena College,Georgia,47,30,311,0
+87777,2.8,Live Phone,9,2024-08-12,1738,Quinnipiac University,Pennsylvania,45,28,782,0
+87777,2.8,Live Phone,9,2024-08-12,1738,Quinnipiac University,Pennsylvania,47,28,817,0
+87744,2.9,Live Phone,8,2024-08-11,500,Suffolk University,Florida,46.8,27,234,0
+87721,3,Live Phone,9,2024-08-09,693,The New York Times/Siena College,Pennsylvania,46,25,319,0
+87721,3,Live Phone,9,2024-08-09,693,The New York Times/Siena College,Pennsylvania,43,25,298,0
+87721,3,Live Phone,9,2024-08-09,693,The New York Times/Siena College,Pennsylvania,44,25,305,0
+87723,3,Online Panel,9,2024-08-09,802,YouGov Blue,North Carolina,46,25,369,0
+87719,3,Live Phone,9,2024-08-08,619,The New York Times/Siena College,Michigan,48,24,297,1
+87719,3,Live Phone,9,2024-08-08,619,The New York Times/Siena College,Michigan,46,24,285,1
+87719,3,Live Phone,9,2024-08-08,619,The New York Times/Siena College,Michigan,43,24,266,1
+87720,3,Live Phone,9,2024-08-08,661,The New York Times/Siena College,Wisconsin,46,24,304,0
+87720,3,Live Phone,9,2024-08-08,661,The New York Times/Siena College,Wisconsin,42,24,278,0
+87720,3,Live Phone,9,2024-08-08,661,The New York Times/Siena College,Wisconsin,43,24,284,0
+87700,2.9,Mixed Voting,7,2024-08-06,1000,Emerson College,Montana,57.5,22,575,1
+87700,2.9,Mixed Voting,7,2024-08-06,1000,Emerson College,Montana,53.5,22,535,1
+87678,2.7,Live Phone,7,2024-08-01,1199,Siena College,New York,39,17,468,1
+87678,2.7,Live Phone,7,2024-08-01,1199,Siena College,New York,37,17,444,1
+87698,3,Mixed Voting,10,2024-08-01,877,Marquette University Law School,Wisconsin,50,17,438,0
+87698,3,Mixed Voting,10,2024-08-01,801,Marquette University Law School,Wisconsin,49,17,392,0
+87698,3,Mixed Voting,10,2024-08-01,877,Marquette University Law School,Wisconsin,43,17,377,0
+87698,3,Mixed Voting,10,2024-08-01,801,Marquette University Law School,Wisconsin,45,17,360,0
+87635,2.9,Mixed Voting,7,2024-07-28,1000,Emerson College,New Hampshire,47.6,13,476,0
+87635,2.9,Mixed Voting,7,2024-07-28,1000,Emerson College,New Hampshire,41.4,13,414,0
+87612,2.8,Mixed Voting,10,2024-07-27,774,University of North Florida Public Opinion Research Lab,Florida,49,12,379,0
+87581,2.8,Online Panel,8,2024-07-25,656,SurveyUSA,Minnesota,40,10,262,1
+87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,46,9,481,0
+87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,50,9,523,0
+87582,2.8,Mixed Voting,9,2024-07-24,1046,Beacon Research/Shaw & Company Research,Wisconsin,49,9,513,0
+87583,2.8,Mixed Voting,9,2024-07-24,1034,Beacon Research/Shaw & Company Research,Pennsylvania,43,9,445,0
+87583,2.8,Mixed Voting,9,2024-07-24,1034,Beacon Research/Shaw & Company Research,Pennsylvania,49,9,507,0
+87583,2.8,Mixed Voting,9,2024-07-24,1034,Beacon Research/Shaw & Company Research,Pennsylvania,44,9,455,0
+87584,2.8,Mixed Voting,9,2024-07-24,1071,Beacon Research/Shaw & Company Research,Minnesota,41,9,439,1
+87584,2.8,Mixed Voting,9,2024-07-24,1071,Beacon Research/Shaw & Company Research,Minnesota,46,9,493,1
+87584,2.8,Mixed Voting,9,2024-07-24,1071,Beacon Research/Shaw & Company Research,Minnesota,45,9,482,1
+87585,2.8,Mixed Voting,9,2024-07-24,1012,Beacon Research/Shaw & Company Research,Michigan,45,9,455,1
+87585,2.8,Mixed Voting,9,2024-07-24,1012,Beacon Research/Shaw & Company Research,Michigan,49,9,496,1
+87585,2.8,Mixed Voting,9,2024-07-24,1012,Beacon Research/Shaw & Company Research,Michigan,46,9,466,1
+87585,2.8,Mixed Voting,9,2024-07-24,1012,Beacon Research/Shaw & Company Research,Michigan,48,9,486,1
+87542,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Arizona,52.6,8,421,1
+87542,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Arizona,47.5,8,380,1
+87543,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Georgia,51.1,8,409,0
+87543,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Georgia,45.9,8,367,0
+87544,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Michigan,50.9,8,407,1
+87544,2.9,Mixed Voting,7,2024-07-23,800,Emerson College,Michigan,44.1,8,353,1
+87545,2.9,Mixed Voting,7,2024-07-23,845,Emerson College,Wisconsin,49.4,8,417,0
+87545,2.9,Mixed Voting,7,2024-07-23,845,Emerson College,Wisconsin,44.9,8,379,0
+87546,2.9,Mixed Voting,7,2024-07-23,850,Emerson College,Pennsylvania,51.1,8,434,0
+87546,2.9,Mixed Voting,7,2024-07-23,850,Emerson College,Pennsylvania,46.1,8,392,0
+87491,2.9,Live Phone,8,2024-07-18,500,Suffolk University,Massachusetts,29,3,145,1
+87453,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Arizona,46.9,1,469,1
+87453,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Arizona,45.6,1,456,1
+87454,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Georgia,47.3,1,473,0
+87454,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Georgia,43.7,1,437,0
+87455,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Michigan,45.1,1,451,1
+87455,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Michigan,42.6,1,426,1
+87456,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Nevada,45.6,1,456,1
+87456,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Nevada,42.9,1,429,1
+87457,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,North Carolina,47.7,1,477,0
+87457,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,North Carolina,47,1,470,0
+87458,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Pennsylvania,47.6,1,476,0
+87458,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Pennsylvania,45.9,1,459,0
+87459,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Wisconsin,47.6,1,476,0
+87459,2.9,Mixed Voting,7,2024-07-16,1000,Emerson College,Wisconsin,45.5,1,455,0
+87468,2.9,Mixed Voting,7,2024-07-15,1000,Emerson College,Virginia,50.4,0,504,1
+87468,2.9,Mixed Voting,7,2024-07-15,1000,Emerson College,Virginia,42.9,0,429,1
+87468,2.9,Mixed Voting,7,2024-07-15,1000,Emerson College,Virginia,46.7,0,467,1
