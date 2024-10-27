@@ -20,8 +20,12 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
+library(dplyr)
+library(here)
+library(ggplot2)
+library(kableExtra)
 library(modelsummary)
+library(rstanarm)
 ```
 
 
@@ -42,76 +46,75 @@ The structure of the paper is organized as follows: following @sec-intro, @sec-d
 
 ## Overview
 
-We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 US Presidential election. The data, obtained from a repository of publicly available polls, includes variables from numerous pollsters across the country [@citedata]. The aim is to create a reproducible forecast model by focusing on high-quality polls and narrowing our scope to Kamala Harris as a candidate of interest. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we examine how polling data reflects electoral behavior and voter preferences.
+We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 U.S. Presidential election. The dataset used for this analysis was obtained from the FiveThirtyEight 2024 U.S. Presidential Election Polls [@citedata]. It consists of polling data for the 2024 general election, covering various polling organizations and methodologies. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we forecast election outcomes using the "poll of polls" method, which aggregates results from multiple polls to reduce bias and provide a more accurate representation of voter sentiment.
 
-The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. We filter the dataset to include only high-quality polls, i.e., those with a numeric grade of 3.0 or higher, ensuring that only reputable and well-documented pollster results are used in our model. Additionally, we focus solely on polls that include Kamala Harris as a candidate, which helps narrow our analysis to a specific electoral scenario.
+The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. To ensure the reliability of our analysis, we filter the data to include only polls with a numeric grade of 2.5 or higher, which represents high-quality, reputable pollsters. This filtering allows us to focus on polls that follow rigorous standards and have demonstrated transparency and accuracy.
+
+Additionally, we limit the dataset to polls conducted after July 15, 2024, when Donald Trump officially announced his campaign, ensuring that the data reflects the most current public sentiment. Other similar datasets from prior elections, such as data from previous general election cycles, could have been used for comparison. However, given that this analysis focuses on the upcoming 2024 election and the shift in public opinion, the most relevant data is specific to the current cycle.
 
 ## Measurement
-	
-Polling data captures voter preferences and electoral forecasts by collecting responses from a representative sample of the population. In this case, pollsters attempt to gauge public opinion by surveying individuals on their preferred candidate, adjusting for demographic factors and political trends. The raw data entries reflect the outcomes of these surveys.
 
-Pollsters often rely on random sampling methods to recruit participants, as discussed in [@ todo], ensuring a diverse and representative group. Some pollsters use online platforms, while others use phone interviews or in-person surveys. The dataset captures these variations through variables such as `methodology` and `sample_size`. Sampling errors, response biases, and adjustments (e.g., weighting respondents based on age, race, or geographic region) are part of how this world phenomenon is translated into data entries.
+Polling data is a measurement of public sentiment captured through various survey methods. Polling organizations collect responses from individuals representing different segments of the population and ask them about their voting preferences. These responses are then weighted to reflect a more accurate representation of the electorate, based on factors like age, gender, race, and geographic region.
 
-The process begins with identifying the population of interest—likely voters or registered voters—and applying statistical adjustments to the raw responses. Pollsters handle non-response through weighting or imputation methods, ensuring that missing data or low response rates do not skew the results significantly. The column `numeric_grade` reflects how well these pollsters adhere to rigorous methodology, allowing us to filter for only the most reliable sources in our analysis.
+For this dataset, the poll results reflect the percentage of respondents who support a particular candidate. Different polling methods—such as live phone interviews, online panels, and mixed methodologies—capture this information. Each polling organization applies its own methodology, which can influence the results. For example, polls that use live interviews may experience different respondent behavior than those that use online surveys. More details on polling methodologies can be found in the [ABC News methodology explanation](https://abcnews.go.com/538/trump-leads-swing-state-polls-tied-biden-nationally/story?id=109506070).
+
+The key measurement process involves converting real-world voter preferences into a dataset of percentages that reflect support for a candidate at a specific point in time. Polling organizations typically provide this data at a state or national level, which allows for both localized and broad interpretations of voter sentiment.
 
 ## Outcome variables
 
-### Percent Support (pct)
-The primary outcome variable in this dataset is the percentage of respondents who support a given candidate. This is represented by the pct variable, which is reported by pollsters for each candidate they survey. For Kamala Harris, this percentage reflects her standing in polls, and variations in this metric can indicate shifts in voter preference over time.
-
-Below is a summary table showing the average, minimum, and maximum percent support for Kamala Harris across high-quality polls:
-
-
-
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
+### Percent Support for Donald Trump (pct)
+The primary outcome variable is the percentage (`pct`) of respondents who indicated support for Donald Trump in the 2024 general election. This percentage is calculated based on the total number of respondents in each poll divide by `sample_size`. The data includes observations from various states, providing both national and state-specific measures of Trump’s support.
 
 ```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
+#| label: fig-trump-pct
+#| fig-cap: "Donald Trump's polling percentages from July to October 2024. Each dot indicates the polling percentage for Trump on a specific date, while the blue line shows the trend in Trump's support."
 #| echo: false
 #| warning: false
-#| message: false
 
+cleaned_data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
+
+cleaned_data <- cleaned_data %>%
+  mutate(end_date = as.Date(end_date))  # Convert to Date format if not already
+
+ggplot(cleaned_data, aes(x = end_date, y = pct)) +
+  geom_point() +  # Add points for individual poll data
+  scale_x_date(date_breaks = "1 month", date_labels = "%b %Y") +  # Show month and year, with one label per month
+  labs(
+    x = "Date of Poll",
+    y = "Polling Percentage (%)",
+  ) +
+  theme_minimal() +  # Use a clean minimal theme
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14),  # Center and adjust title size
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for readability
+  ) +
+  geom_smooth()
 ```
 
-Talk way more about it. 
+@fig-trump-pct shows Donald Trump's polling percentages over time from July to October 2024. Each black dot represents an individual poll conducted on a specific date, indicating the percentage of voters who supported Trump in that poll. The blue line represents a trendline, smoothing out the individual poll results to show the general trajectory of Trump's support over time.
+
+Initially, Trump's polling percentage appears stable with small fluctuations around 45%. However, as the campaign progresses into October, there is a slight upward trend in Trump's polling percentage, suggesting that his support increased as the election neared.
+
+The shaded region around the blue line represents the confidence interval, indicating the range within which the true polling percentage is likely to fall, accounting for sampling variation.
 
 ## Predictor variables
 
-### Pollster Name (display_name)
-This variable represents the pollster responsible for each entry in the dataset. Different pollsters may use varying methods and possess differing levels of reliability, which the numeric_grade helps quantify. High-quality pollsters (numeric_grade ≥ 3.0) are emphasized in this analysis to ensure the robustness of the forecast.
+### Polling Methodology (methodology)
+The `methodology` variable describes the method each pollster used to collect data. It includes approaches such as live phone interviews, online surveys, and mixed methods. For polls that used multiple collection methods (e.g., phone and online), we labeled them as "Mixed Voting" for simplicity. The methodology is important because different approaches can introduce varying degrees of bias, influencing the final reported percentages.
 
-### Internal Polling (internal)
-The variable internal is a binary indicator that identifies whether a poll was commissioned by a political campaign or interest group. Internal polls can sometimes be biased, either in how respondents are selected or how results are reported. However, the filtering for high-quality pollsters ensures that even internal polls meet certain standards of rigor.
+Placeholder for a table showing the distribution of polling methodologies across different states.
 
-### Partisan Polling (partisan)
-Like internal polling, partisan polling can introduce bias, as it may be sponsored by organizations with a vested interest in the election outcome. The partisan variable, similar to the internal variable, flags such polls. In the dataset, these are rare but still important to identify, especially when making impartial predictions.
+### State (state)
+The `state` variable identifies whether the poll is state-specific or national. In state-specific polls, the data reflects localized voter preferences, while national polls aggregate opinions across the entire country. For this analysis, we ignore national polls and focus entirely on state polls because electoral outcomes are determined on a state-by-state basis in the U.S. election system.
 
-### Party Affiliation (party)
-The party variable indicates the political party that the poll respondent supports. This is key to understanding the partisan leanings of the sample. For Kamala Harris, her affiliation with the Democratic Party is represented in this column.
+### Polling Score and Transparency (numeric_grade and transparency_score)
+The `numeric_grade` variable is a rating assigned to each polling organization, indicating the reliability of the poll. Pollsters with higher numeric grades are considered more reliable and consistent in their methodology (e.g. higher than 2.5). Additionally, the `transparency_score` measures how openly a pollster shares their methodology and data, which further affects the trustworthiness of their results.
 
-Below is a table summarizing the distribution of party affiliations in polls that include Kamala Harris:
+### Sample Size (sample_size)
+The `sample_size` variable represents the total number of respondents surveyed in each poll. A larger sample size generally leads to more reliable and precise estimates of voter sentiment, as it reduces the margin of error. In contrast, smaller sample sizes can result in greater variability and less confidence in the results.
 
-### Race ID (race_id)
-This variable identifies the electoral race or contest being polled. In this analysis, the focus is on the 2024 presidential election. Tracking results across different races (i.e., primary versus general election) helps in understanding shifts in voter opinion throughout the campaign.
+### Poll Duration (duration)
+The `duration` variable is a constructed variable that represents how long Donald Trump has been in the 2024 presidential campaign, measured as the number of days from his official campaign announcement on July 15, 2024 until the `end_date` of each poll. This variable helps quantify how much time has passed since Trump officially entered the race and allows us to examine how his support has evolved over the course of his campaign.
 
 In summary, the dataset offers a rich variety of variables that capture voter sentiment, pollster reliability, and electoral dynamics. By carefully filtering and analyzing this data, we can build a robust model to forecast the outcome of the 2024 US Presidential election.
 
