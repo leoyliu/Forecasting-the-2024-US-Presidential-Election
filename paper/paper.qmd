@@ -217,6 +217,49 @@ Weaknesses and next steps should also be included.
 # Appendix {-}
 
 # Pollster Methodology Overview and Evaluation
+## Overview of Siena/NYT
+Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018.In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment.
+
+## Target Population, Frame, and Sample
+* Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.\
+* Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.\
+* Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points.
+
+## Sample Recruitment
+The sample was conducted by live telephone interviews in both English and Spanish. Over 98% of respondents were contacted by telephone.
+
+## Sampling Approach and Trade-offs
+Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.\
+
+**Advantages of stratified sampling:**\
+* Generates a representative sample that captures the diverse opinions of different voter populations.\
+* Helps to ensure that under-represented groups are given appropriate weighting, and reduces potential bias.\
+* Provides a more accurate reflection of the wider population by stratifying on key characteristics.\
+
+**Disadvantages of stratified sampling:**\
+* Increased cost and time to complete polls, especially for live telephone interviews.\
+* There are challenges in reaching specific demographic groups, such as younger voters who may be less likely to participate in the poll.\
+* Reliance on weighting adjustments to correct for response discrepancies, which does not fully eliminate residual bias.
+
+## Non-response Handling
+Non-response was a key problem for Siena/NYT. The poll used weighted adjustments for demographic characteristics such as age, race, gender, education, and different political parties to address non-response bias. The weighting adjustment was used to ensure that the sample closely matches the larger population and compensates for differences in response rates across demographic groups. However, non-response can still present residual bias even with weighting, especially when certain demographic groups have been less likely to respond to survey calls.
+
+## Questionnaire Evaluation
+**Strengths:**\
+* Minimize bias through the use of straightforward and non-leading questions.\
+* Transparency was maintained by publishing the questions verbatim to allow for public scrutiny.\
+* Bilingual interviewers ensured that respondents could participate in their preferred language (English or Spanish), which increased the participation of Spanish-speaking voters and improved the quality of respondents' answers.\
+
+**Weaknesses:**\
+* The length of the poll can lead to respondent fatigue, which affects the quality of the data and increases dropout rates.\
+* It can be challenging to limit calls to less than 15 minutes, which can lead to incomplete or rushed responses, thus affecting the overall reliability of the data.\
+
+## Conclusion
+The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.
+
+
+
+
 
 # Additional data details
 
