@@ -342,7 +342,7 @@ The survey will be available via Google Forms to ensure broad accessibility and 
 ## Survey Structure
 **Survey Introduction:**\
 Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.\
-If you have any questions or concerns, please feel free to contact our research team at winniekeai23@gmail.com (Ziyuan Shen, Leo Liu, Dezhen Chen).\
+If you have any questions or concerns, please feel free to contact our research team at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com) (Ziyuan Shen, Leo Liu, Dezhen Chen).\
 As a thank you for your participation, you will be entered into a raffle to win a grand prize of a gift card. We are deeply grateful for your participation and appreciate the time and effort that you put in.\
 
 **Survey Question:**\
@@ -393,7 +393,7 @@ As a thank you for your participation, you will be entered into a raffle to win 
 
 **End Part:**\
 Thank you for your participation!\
-Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at winniekeai23@gmail.com (Ziyuan Shen, Leo Liu, Dezhen Chen).
+Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com)(Ziyuan Shen, Leo Liu, Dezhen Chen).
 
 
 
