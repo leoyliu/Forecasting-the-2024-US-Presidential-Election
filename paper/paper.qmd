@@ -340,6 +340,64 @@ The survey will be available via Google Forms to ensure broad accessibility and 
 
 
 ## Survey Structure
+**Survey Introduction:**\
+Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.\
+If you have any questions or concerns, please feel free to contact our research team at winniekeai23@gmail.com (Ziyuan Shen, Leo Liu, Dezhen Chen).\
+As a thank you for your participation, you will be entered into a raffle to win a grand prize of a gift card. We are deeply grateful for your participation and appreciate the time and effort that you put in.\
+
+**Survey Question:**\
+
+**Part 1: Screening for eligibility**\
+1.Are you an eligible U.S. citizen?\
+* Yes / No\
+2.Are you currently 18 years of age or older?\
+* Yes / No
+3.Have you completed your registration to become a voter?\
+* Yes / No / Plan to register\
+
+**Part 2: Demographics**\
+
+4.What is your age?\
+* 18-24 / 25-34 / 35-44 / 45-54 / 55+\
+5.What is your gender?\
+* Male / Female / Non-binary / Prefer not to say\
+6.Which of the following best describes your education level?\
+* High School / Some College / Bachelor's Degree / Graduate Degree / Other\
+7.Which region of the U.S. do you currently reside in?\
+* Northeast / Midwest / South / West\    
+8.Do you generally identify with a political party?\
+* Democratic / Republican / Independent / None\
+
+**Part 3: Voting Intentions**\
+
+9.How likely are you to participate in the upcoming presidential election?\
+* Very Likely / Somewhat Likely / Not Sure / Unlikely / Very Unlikely\
+10.If the presidential election were held today, for which candidate would you vote?\
+* Kamala Harris (Democrat) / Donald Trump (Republican) / Undecided / Prefer not to say\
+11.What are the top three issues that will influence your vote?\
+* Economy / Healthcare / Education / Gun Policy / Taxes / Foreign Policy / Social Security / Civil Rights / Technology / Privacy / Other[text]\
+
+**Part 4: Information Sources and Engagement**\
+
+12.Which of the following sources do you rely on most for political news and information?\
+* Television News / Newspapers / Online News Websites / Social Media / Radio / Friends and Family / Other\
+13.How often do you engage in discussions about political topics with friends or family?\
+* Daily / Weekly / Monthly / Rarely / Never\
+
+**Part 5: Verify**\
+
+14.Please select 'Agree' to verify that you are paying attention.\
+* Agree / Disagree\
+15.Do you agree to participate in this survey? Your responses will be kept confidential and used only for research purposes.\
+* Yes / No\
+
+**End Part:**\
+Thank you for your participation!\
+Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at winniekeai23@gmail.com (Ziyuan Shen, Leo Liu, Dezhen Chen).
+
+
+
+
 
 
 
