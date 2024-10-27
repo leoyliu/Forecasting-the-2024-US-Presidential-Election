@@ -309,6 +309,36 @@ To maintain the integrity of the data, we will take the following measures:\
 
 ## Poll aggregation and forecasting
 ### Poll aggregation
+* ‘Poll of polls’ approach: Survey data will be combined with data from some reliable polling sources such as Lucid, YouGov and others. This approach aggregates the results of multiple reputable polls to improve the forecast reliability by reducing bias and individual polling errors.\
+* Weighting adjustments: Polls are weighted according to sample quality, size, repeatability, and demographic match. Demographic mismatches are adjusted using raking to ensure that the aggregated data accurately represents the U.S. population.
+
+### Forecasting Method
+* Bayesian modelling: Aggregate polling data is combined with historical electoral trends and demographic information using Bayesian statistical models. This approach allows for dynamic updating as new data becomes available, which improves accuracy. \
+* Uncertainty Quantification: Includes confidence intervals to express uncertainty in forecasts for a more detailed interpretation. 
+
+## Budget Allocation
+* Survey Panel Recruitment: $50,000\
+* Social Media Advertising: $50,000\
+* Incentives(lottery prizes): $15,000\ 
+* Data Cleaning and Validation: $5,000\
+* Poll Aggregation and Modeling: $10,000
+
+
+## Survey Implementation
+The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms.\
+
+**Distribution Plan:**\
+
+* **Panel invitations:** Members of established survey panels (e.g. Lucid, YouGov) will receive email invitations to participate in the survey.\
+* **Social media activities:** Targeted adverts will be placed on social media platforms to reach under-represented groups, especially young voters and national minority groups.\
+* **Follow-up reminders:** An automated reminder email will be sent to participants who have not completed the survey to maximize response rates.\
+* **Survey Monitoring:** Response rates will be closely monitored throughout the data collection period and sampling methods will be adjusted if certain population quotas are not reached.\
+* **Accessibility:** The survey will be mobile-friendly, which will allow respondents to complete the survey on any device.
+
+
+## Survey Structure
+
+
 
 
 
