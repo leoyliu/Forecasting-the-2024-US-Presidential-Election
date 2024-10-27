@@ -232,11 +232,13 @@ The sample was conducted by live telephone interviews in both English and Spanis
 Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.\
 
 **Advantages of stratified sampling:**\
+
 * Generates a representative sample that captures the diverse opinions of different voter populations.\
 * Helps to ensure that under-represented groups are given appropriate weighting, and reduces potential bias.\
 * Provides a more accurate reflection of the wider population by stratifying on key characteristics.\
 
 **Disadvantages of stratified sampling:**\
+
 * Increased cost and time to complete polls, especially for live telephone interviews.\
 * There are challenges in reaching specific demographic groups, such as younger voters who may be less likely to participate in the poll.\
 * Reliance on weighting adjustments to correct for response discrepancies, which does not fully eliminate residual bias.
@@ -246,16 +248,69 @@ Non-response was a key problem for Siena/NYT. The poll used weighted adjustments
 
 ## Questionnaire Evaluation
 **Strengths:**\
+
 * Minimize bias through the use of straightforward and non-leading questions.\
 * Transparency was maintained by publishing the questions verbatim to allow for public scrutiny.\
 * Bilingual interviewers ensured that respondents could participate in their preferred language (English or Spanish), which increased the participation of Spanish-speaking voters and improved the quality of respondents' answers.\
 
 **Weaknesses:**\
+
 * The length of the poll can lead to respondent fatigue, which affects the quality of the data and increases dropout rates.\
 * It can be challenging to limit calls to less than 15 minutes, which can lead to incomplete or rushed responses, thus affecting the overall reliability of the data.\
 
 ## Conclusion
-The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.
+The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.\
+
+
+# Idealized Methodology and Survey
+## Overview
+The objective of this survey is to predict voter sentiment in the upcoming U.S. presidential election, by using a budget of $100,000 to collect accurate and varied data on voting intentions, candidate favourability, and key issues from a representative sample of registered or likely voters across the United States. The methodology is designed to maximize accuracy, minimize bias and take into account a variety of demographic, geographic and political factors that influence voting behaviour.
+
+## Sampling Approach
+The sampling approach is designed to increase coverage and ensure that a representative voting population is covered. This will be achieved by using a combination of stratified random sampling and quota sampling of key demographics.
+
+### Stratification Variables 
+* Age: 18-29, 30-44, 45-64, 65+\
+* Gender: Male and Female\
+* Race: White, Black /African American, Hispanic/Latino, Asian, Native and Other\
+* Education level: High School, Some College, Bachelor's Degree, Graduate Degree, Other\
+* Geographic region: Northeast, Midwest, South, West\
+* Political Party: Democratic, Republican, Independent, Other\
+
+### Sample Size
+The target sample size was 10,000 respondents, which are stratified by the Stratification Variables described above. This stratification ensures that all major voter groups are proportionately represented. 10,000 samples have a margin of error of about ±1% and a confidence level of 95%, which is appropriate for predicting elections.
+
+## Recruitment Strategy
+The recruitment strategy was separated into two main approaches to ensure a diverse and representative sample:
+
+**Online Survey panels:**\
+
+* Work with established survey panels such as Lucid or YouGov.\
+* These panels have access to large representative databases of voters.\
+* Recruiting through panels ensures quality and reliability, as they have built-in validation and quality control processes.\
+
+**Social Media Advertising:**\
+
+* Use social media platforms such as Facebook, Instagram and LinkedIn to reach potential respondents.\
+* Target groups that are underrepresented in traditional panels, including young voters and minority groups.\
+* Social media ads will be customized with demographic information to increase reach and participation.\
+
+**Incentives:** Offer gift card lottery prizes to all participants to encourage participation and ensure a high response rate.
+
+## Data validation and quality control
+To maintain the integrity of the data, we will take the following measures:\
+
+* **Attention Checks:** At least two ‘attention check’ questions will be included in the survey to identify inattention or robots.\
+* **Duplicate Detection:** Use email or IP-based verification to prevent duplicate responses. Ensure that each respondent provides only one response set to keep the dataset unique.\
+* **Response Time Monitoring:** Track the time it takes respondents to complete surveys. Responses with apparently faster-than-average completion times are labelled as potentially low-quality.\
+* **Data Consistency Check:** Analyses the consistency of responses, especially between related questions. Inconsistent answers will be labelled for review.\
+* **Panel partner validation:** For respondents recruited through an online survey panel, rely on the panel provider's in-built validation systems. These systems use various quality checks, such as identity verification and response consistency, which ensure high-quality data from panel participants.
+
+
+## Poll aggregation and forecasting
+### Poll aggregation
+
+
 
 
 
