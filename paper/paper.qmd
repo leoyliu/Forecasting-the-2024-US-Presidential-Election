@@ -187,9 +187,7 @@ first_model <-
 modelsummary::modelsummary(
   list(
     "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
+  )
 )
 ```
 
@@ -218,6 +216,7 @@ Weaknesses and next steps should also be included.
 
 # Appendix {-}
 
+# Pollster Methodology Overview and Evaluation
 
 # Additional data details
 
