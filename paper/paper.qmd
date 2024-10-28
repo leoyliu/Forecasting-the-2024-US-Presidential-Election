@@ -144,19 +144,21 @@ State (state): A categorical variable representing the U.S. state where the poll
 
 The model takes the form:
 
-\begin{align}
-y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \
-\mu_i &= \beta_0 + \beta_1 \cdot numeric_grade_i + \beta_2 \cdot methodology_i + \beta_3 \cdot duration_i + \beta_4 \cdot sample_size_i + \beta_5 \cdot transparency_score_i + \beta_6 \cdot state_i + \epsilon_i \
-\epsilon_i &\sim \text{Normal}(0, \sigma^2)
-\end{align}
+\begin{align*}
+    y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
+    \mu_i &= \beta_0 + \beta_1 \cdot \text{numeric\_grade}_i + \beta_2 \cdot \text{methodology}_i \\
+          &\quad + \beta_3 \cdot \text{duration}_i + \beta_4 \cdot \text{sample\_size}_i \\
+          &\quad + \beta_5 \cdot \text{transparency\_score}_i + \beta_6 \cdot \text{state}_i + \epsilon_i \\
+    \epsilon_i &\sim \text{Normal}(0, \sigma^2)
+\end{align*}
 
-Where:
-Where: 
-\begin{align}
-\beta_0 & \text{ is the intercept term} \\
-\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6 & \text{ are the coefficients for each predictor} \\
-\sigma^2 & \text{ is the variance of the error term}
-\end{align}
+\textbf{Where:}
+\begin{itemize}
+    \item $\beta_0$ is the intercept term.
+    \item $\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6$ are the coefficients for each predictor.
+    \item $\sigma^2$ is the variance of the error term.
+\end{itemize}
+
 
 The model is executed in R using the \texttt{rstanarm} package. Default priors from \texttt{rstanarm} are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
 
@@ -197,23 +199,6 @@ Our results are summarized in @tbl-modelresults.
 
 
 
-
-
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  )
-)
-```
 
 
 
