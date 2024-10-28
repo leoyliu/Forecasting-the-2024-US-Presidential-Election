@@ -328,7 +328,7 @@ To maintain the integrity of the data, we will take the following measures:\
 
 
 ## Survey Implementation
-The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms.\
+The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms. The link to the survey is [here](https://forms.gle/y4Xh2oQ544DYcCXWA).\
 
 **Distribution Plan:**\
 
