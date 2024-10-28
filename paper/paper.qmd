@@ -26,6 +26,7 @@ library(ggplot2)
 library(kableExtra)
 library(modelsummary)
 library(rstanarm)
+library(modelsummary)
 ```
 
 
@@ -120,64 +121,85 @@ In summary, the dataset offers a rich variety of variables that capture voter se
 
 
 # Model {#sec-model}
-Our modeling approach aims to quantify the relationship between polling characteristics and the probability of Harris winning the election. We use a generalized linear model (GLM) to evaluate how different factors—such as poll type, polling organization, poll score, and transparency score—impact Harris' support rate. The model is implemented using the stan_glm function, with a Gaussian distribution applied to describe the variability in support percentages.
+Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for a candidate. For this analysis, we use a linear model (LM) to examine how factors such as poll grade, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the lm function, with a Gaussian distribution to capture the variability in support rates.
 
-In our analysis, we filtered the data to include only polls from organizations with a poll score above 3, ensuring the reliability of our data sources. We selected predictors including  poll_type, pollster, pollscore, and transparency_score. Since the response variable (support percentage) is continuous, we utilized a Gaussian linear regression model.
+In this analysis, we use predictors that reflect both the methodological quality and structural characteristics of each poll. Specifically, we include variables such as numeric_grade, which quantifies the poll’s quality, methodology, duration (the length of the election period), sample_size, transparency_score, and state (the regional factor). This selection of predictors ensures a comprehensive view of the factors impacting support percentage.
 
-The model assumes that the distribution of support percentage, given the polling characteristics, follows a normal distribution. This assumption makes the parameter estimation more straightforward and is commonly used in practice. We assigned normal priors with a mean of 0 and a variance of 2.5 for the model coefficients, which helps to maintain reasonable uncertainty while avoiding overfitting. Additionally, an exponential prior was included to handle extra variation in the model, contributing to the stability of the estimated results.
+The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability and robustness in our findings.
+
 
 ## Model set-up
+The model now predicts Trump's support percentage using the following predictor variables:
 
-Define \( y_i \) as the predicted support percentage for Harris in the \( i \)-th poll. The predictor variables include \( x_1, x_2, x_3, x_4, x_5, x_6 \), corresponding to poll type (State or National), pollster identity (e.g., Marquette Law School, Siena/NYT), poll score, transparency score, state, and pollster organization respectively. The model can be described by the following equations:
+Numeric Grade (numeric_grade): Represents the quality rating of the poll.
+
+Methodology (methodology): Different methods used to conduct the poll, such as live phone, mixed voting, or online ads.
+
+Poll Duration (duration): The the length of the election period was conducted.
+
+Sample Size (sample_size): The number of respondents in the poll.
+
+Transparency Score (transparency_score): A measure of how transparent the polling data and methodology are.
+
+State (state): A categorical variable representing the U.S. state where the poll was conducted.
+
+The model takes the form:
 
 \begin{align}
-y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
-\mu_i &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 \\
-\beta_0 &\sim \text{Normal}(0, 2.5) \\
-\beta_j &\sim \text{Normal}(0, 2.5), \quad j = 1, 2, 3, 4, 5, 6 \\
-\sigma &\sim \text{Exponential}(1)
+y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \
+\mu_i &= \beta_0 + \beta_1 \cdot numeric_grade_i + \beta_2 \cdot methodology_i + \beta_3 \cdot duration_i + \beta_4 \cdot sample_size_i + \beta_5 \cdot transparency_score_i + \beta_6 \cdot state_i + \epsilon_i \
+\epsilon_i &\sim \text{Normal}(0, \sigma^2)
 \end{align}
+
+Where:
+Where: 
+\begin{align}
+\beta_0 & \text{ is the intercept term} \\
+\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6 & \text{ are the coefficients for each predictor} \\
+\sigma^2 & \text{ is the variance of the error term}
+\end{align}
+
 The model is executed in R using the \texttt{rstanarm} package. Default priors from \texttt{rstanarm} are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
 
-
 ### Model justification
+Existing research and political science theories suggest that factors such as poll quality, sample size, transparency, methodology, poll duration, and the state where the poll takes place can significantly influence Trump's support percentage. Higher quality polls and larger sample sizes are believed to yield more reliable estimates, while transparency scores can affect levels of public trust, potentially altering support. Moreover, different polling methodologies (e.g., online surveys, telephone interviews) may affect how representative the sample is, while longer polling durations can reflect shifts in public sentiment over time. State-specific factors, such as local political events or population characteristics, can also contribute to the variation in support. The timing of the poll, particularly in relation to key political events, might further influence public opinion.
 
-Considering the historical polling data and what we know about the political landscape, we believe that different aspects of polls will have a notable impact on Harris' predicted support in the upcoming election. Specifically, polls from McCourtney Institute/YouGov, YouGov/Center for Working Class Politics, higher poll scores, and greater transparency tend to have a positive influence on Harris' support. In contrast, polls from Siena/NYT, The Washington Post, YouGov, and YouGov Blue generally show a negative impact on her predicted support. Our purpose is to determine how much each polling characteristic affects voter support, thus helping us confirm or reconsider our assumptions about voter preferences.
-
-We used a Gaussian linear regression model to examine the connection between polling characteristics and Harris' predicted support percentage. The support percentage \( y_i \) is a continuous measure, and its distribution aligns well with the assumptions of Gaussian regression. This method allows us to investigate how several factors—like poll type, pollster score, and transparency level—affect the level of support for Harris. By numerically encoding these predictors, we can better understand the influences on polling outcomes, ultimately offering a clearer picture of Harris' potential performance in the upcoming election.
+A linear regression model was chosen to predict Trump's support percentage because the dependent variable is continuous and tends to follow a normal distribution. Linear regression is a straightforward method to analyze how multiple factors contribute to an outcome, and it offers easy-to-interpret coefficients for each predictor. The model helps us determine the extent to which different aspects of polling influence the level of public support for Trump.
 ```{r}
 #| label: tbl-summary-model
 #| tbl-cap: Summary of the Linear Regression Model
 #| echo: false
 #| warning: false
 
-first_model  <- readRDS(file = here::here("models/first_model.rds"))
+linear_model <- readRDS(file = here::here("models/first_model.rds"))
 
 modelsummary(
   list(
-    "first_model " = first_model 
-  )
+    "Linear Model" = linear_model
+  ),
+  statistic = NULL  # 这将不显示标准误
 )
 ```
 
-Further justification for this model is based on its ability to demonstrate how different polling organizations and their characteristics affect Harris' predicted support percentage. The intercept value represents the baseline level of support when all other predictors are set to zero, providing a reference point. Each coefficient then reflects the expected change in support, depending on factors like poll type, pollster identity, poll scores, and transparency measures. Positive coefficients, such as those for McCourtney Institute/YouGov and YouGov/Center for Working Class Politics, suggest increased support for Harris, while negative coefficients, such as those for Siena/NYT, The Washington Post, YouGov, and YouGov Blue, indicate a decrease in support.
+Further justification for using this model comes from its alignment with the central limit theorem, which suggests that with sufficient sample size, the distribution of poll percentages should approximate normality. Additionally, the relationships between the predictors (e.g., poll quality, methodology type) and support align well with established theories in political behavior, giving a solid theoretical underpinning to our model. The simplicity of a linear regression approach also helps mitigate overfitting, ensuring our results are generalizable to a broader set of polling data. The model assumptions, including linearity, independence, and normality of residuals, are adequately satisfied by our dataset, making this approach not only convenient but also statistically robust for our analysis.
 
-The relatively modest R^2 value reflects that the model only captures part of the variation in Harris' support, which is not unexpected given the unpredictable nature of polling data and the complex dynamics of voter behavior. Despite this, including key polling attributes allows us to examine how different factors contribute to voter support, helping us understand the sources of variation in predicted support levels. The choice of Gaussian linear regression is appropriate in this case, as it effectively models the continuous outcome variable and provides a clear framework for interpreting the relationship between polling features and voter preferences.
 
 # Results {#sec-result}
+## Model Results and Interpretation
+The linear regression model, using 384 data points, estimated the factors influencing Trump's support levels. The intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline.The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting.The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.The results highlight that numeric_grade and sample_size are particularly important in predicting support levels, with larger and higher-quality polls offering more reliable estimates. The transparency score and state-level coefficients further provide insight into regional differences and the role of trust in polling, helping us better understand the dynamics behind Trump's public support.The coefficients for numeric_grade and sample_size underline the importance of poll quality and sample size in predicting support levels. Larger, higher-quality polls offer more robust estimates. Additionally, transparency and state effects provide insight into regional differences and trust factors affecting polling results, giving a clearer understanding of the dynamics influencing Trump's public support.
+
+
+
+
+
 
 Our results are summarized in @tbl-modelresults.
 
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
 
-library(rstanarm)
 
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
+
+
+
 ```
 
 ```{r}
