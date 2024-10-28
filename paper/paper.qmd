@@ -99,22 +99,21 @@ Initially, Trump's polling percentage appears stable with small fluctuations aro
 The shaded region around the blue line represents the confidence interval, indicating the range within which the true polling percentage is likely to fall, accounting for sampling variation.
 
 ## Predictor variables
-
-### Polling Methodology (methodology)
+Polling Methodology (methodology)
 The `methodology` variable describes the method each pollster used to collect data. It includes approaches such as live phone interviews, online surveys, and mixed methods. For polls that used multiple collection methods (e.g., phone and online), we labeled them as "Mixed Voting" for simplicity. The methodology is important because different approaches can introduce varying degrees of bias, influencing the final reported percentages.
 
 Placeholder for a table showing the distribution of polling methodologies across different states.
 
-### State (state)
+ State (state)
 The `state` variable identifies whether the poll is state-specific or national. In state-specific polls, the data reflects localized voter preferences, while national polls aggregate opinions across the entire country. For this analysis, we ignore national polls and focus entirely on state polls because electoral outcomes are determined on a state-by-state basis in the U.S. election system.
 
-### Polling Score and Transparency (numeric_grade and transparency_score)
+Polling Score and Transparency (numeric_grade and transparency_score)
 The `numeric_grade` variable is a rating assigned to each polling organization, indicating the reliability of the poll. Pollsters with higher numeric grades are considered more reliable and consistent in their methodology (e.g. higher than 2.5). Additionally, the `transparency_score` measures how openly a pollster shares their methodology and data, which further affects the trustworthiness of their results.
 
-### Sample Size (sample_size)
+ Sample Size (sample_size)
 The `sample_size` variable represents the total number of respondents surveyed in each poll. A larger sample size generally leads to more reliable and precise estimates of voter sentiment, as it reduces the margin of error. In contrast, smaller sample sizes can result in greater variability and less confidence in the results.
 
-### Poll Duration (duration)
+ Poll Duration (duration)
 The `duration` variable is a constructed variable that represents how long Donald Trump has been in the 2024 presidential campaign, measured as the number of days from his official campaign announcement on July 15, 2024 until the `end_date` of each poll. This variable helps quantify how much time has passed since Trump officially entered the race and allows us to examine how his support has evolved over the course of his campaign.
 
 In summary, the dataset offers a rich variety of variables that capture voter sentiment, pollster reliability, and electoral dynamics. By carefully filtering and analyzing this data, we can build a robust model to forecast the outcome of the 2024 US Presidential election.
@@ -177,7 +176,7 @@ modelsummary(
   list(
     "Linear Model" = linear_model
   ),
-  statistic = NULL  # 这将不显示标准误
+  statistic = NULL 
 )
 ```
 
