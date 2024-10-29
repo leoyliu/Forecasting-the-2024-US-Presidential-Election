@@ -11,6 +11,7 @@ date-format: long
 abstract: "In this paper, we have built a linear model to predict the outcome of the 2024 U.S. presidential election, using a \"poll-of-polls\" approach that combines data from many well-known pollsters. Our analysis shows that Donald Trump has a probability of winning between 45% and 55%, which depends on how polling data changes from state to state. However, Kamala Harris is projected to win key states and receive the majority of electoral votes, with a projected 239 votes to Trump's 98. These show the value of aggregate polls in providing reliable predictions of election outcomes."
 format: pdf
 number-sections: true
+toc: true
 bibliography: references.bib
 ---
 
@@ -31,7 +32,7 @@ library(arrow)
 library(knitr)
 library(kableExtra)
 library(usmap)
-
+library(patchwork)
 ```
 
 
@@ -68,7 +69,7 @@ The key measurement process involves converting real-world voter preferences int
 
 ## Outcome variables
 
-### Percent Support for Donald Trump (pct)
+### Percent Support for Donald Trump
 The primary outcome variable is the percentage (`pct`) of respondents who indicated support for Donald Trump in the 2024 general election. This percentage is calculated based on the total number of respondents in each poll divide by `sample_size`. The data includes observations from various states, providing both national and state-specific measures of Trump’s support.
 
 ```{r}
@@ -104,25 +105,99 @@ Initially, Trump's polling percentage appears stable with small fluctuations aro
 The shaded region around the blue line represents the confidence interval, indicating the range within which the true polling percentage is likely to fall, accounting for sampling variation.
 
 ## Predictor variables
-Polling Methodology (methodology)
+
+### Polling Methodology
 The `methodology` variable describes the method each pollster used to collect data. It includes approaches such as live phone interviews, online surveys, and mixed methods. For polls that used multiple collection methods (e.g., phone and online), we labeled them as "Mixed Voting" for simplicity. The methodology is important because different approaches can introduce varying degrees of bias, influencing the final reported percentages.
 
 Placeholder for a table showing the distribution of polling methodologies across different states.
 
- State (state)
+### State
 The `state` variable identifies whether the poll is state-specific or national. In state-specific polls, the data reflects localized voter preferences, while national polls aggregate opinions across the entire country. For this analysis, we ignore national polls and focus entirely on state polls because electoral outcomes are determined on a state-by-state basis in the U.S. election system.
 
-Polling Score and Transparency (numeric_grade and transparency_score)
+```{r}
+#| label: tbl-state
+#| tbl-cap: "The electoral votes allocated to each U.S. state, listed in two sets for better readability. Each state’s electoral vote count reflects its representation in the Electoral College."
+#| echo: false
+#| warning: false
+
+# Define the number of electoral votes for each state
+electoral_seats <- data.frame(
+  state = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida",
+            "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", 
+            "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+            "Missouri", "Montana", "Nebraska", "Nevada", 
+            "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", 
+            "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
+            "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", 
+            "District of Columbia"),
+  electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
+                      3, 10, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3)
+)
+
+# Split the data into two equal groups (first half and second half)
+half_n <- ceiling(nrow(electoral_seats) / 2)
+states_set1 <- electoral_seats[1:half_n, ]
+states_set2 <- electoral_seats[(half_n + 1):nrow(electoral_seats), ]
+
+# Ensure both sets have the same number of rows by padding the shorter set with NA
+states_set2 <- rbind(states_set2, data.frame(state = "", electoral_votes = ""))
+
+# Combine the two sets into one data frame for side-by-side visualization
+combined_states <- data.frame(
+  state_set1 = states_set1$state,
+  seats_set1 = states_set1$electoral_votes,
+  state_set2 = states_set2$state,
+  seats_set2 = states_set2$electoral_votes
+)
+
+combined_states |>
+  kable(col.names = c("States", "Electoral Votes", "States", "Electoral Votes"))
+```
+
+@tbl-state illustrates the number of electoral votes allocated to each U.S. state, based on data from the official government website [@citepollstate]. This information will be used to map the predicted results for each state later, allowing us to calculate the total number of electoral votes that Donald Trump is projected to receive.
+
+### Polling Score and Transparency
 The `numeric_grade` variable is a rating assigned to each polling organization, indicating the reliability of the poll. Pollsters with higher numeric grades are considered more reliable and consistent in their methodology (e.g. higher than 2.5). Additionally, the `transparency_score` measures how openly a pollster shares their methodology and data, which further affects the trustworthiness of their results.
 
- Sample Size (sample_size)
+```{r}
+#| label: fig-poll-score
+#| fig-cap: "Distribution of Polling Scores and Transparency Scores of Polling Organizations in the 2024 U.S. Presidential Election"
+#| echo: false
+#| warning: false
+
+cleaned_data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
+
+# Create a bar chart for the distribution of numeric_grade
+p1 <- ggplot(cleaned_data, aes(x = numeric_grade)) +
+  geom_bar(fill = "steelblue", color = "black") +
+  labs(title = "Distribution of Polling Scores",
+       x = "Numeric Grade",
+       y = "Count") +
+  theme_minimal()
+
+# Create a bar chart for the distribution of transparency_score
+p2 <- ggplot(cleaned_data, aes(x = transparency_score)) +
+  geom_bar(fill = "darkorange", color = "black") +
+  labs(title = "Distribution of Transparency Scores",
+       x = "Transparency Score",
+       y = "Count") +
+  theme_minimal()
+
+# Display the two charts side by side using patchwork
+p1 + p2
+
+```
+@fig-poll-score presents two bar charts illustrating the distribution of Polling Scores (Numeric Grades) and Transparency Scores across the polling organizations in the analysis:
+
+- **Polling Scores**: Most organizations have numeric grades between 2.8 and 3.0, indicating that the majority of pollsters are considered highly reliable. Very few have grades below 2.7, which would suggest lower reliability.
+
+- **Transparency Scores**: Transparency scores show more variability, with many pollsters achieving scores above 9, reflecting a high level of openness in their methodology. Fewer organizations have transparency scores below 6, indicating that while some pollsters are less open, the majority strive for transparency in their practices.
+
+### Sample Size
 The `sample_size` variable represents the total number of respondents surveyed in each poll. A larger sample size generally leads to more reliable and precise estimates of voter sentiment, as it reduces the margin of error. In contrast, smaller sample sizes can result in greater variability and less confidence in the results.
 
- Poll Duration (duration)
+### Poll Duration
 The `duration` variable is a constructed variable that represents how long Donald Trump has been in the 2024 presidential campaign, measured as the number of days from his official campaign announcement on July 15, 2024 until the `end_date` of each poll. This variable helps quantify how much time has passed since Trump officially entered the race and allows us to examine how his support has evolved over the course of his campaign.
-
-In summary, the dataset offers a rich variety of variables that capture voter sentiment, pollster reliability, and electoral dynamics. By carefully filtering and analyzing this data, we can build a robust model to forecast the outcome of the 2024 US Presidential election.
-
 
 # Model {#sec-model}
 Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for a candidate. For this analysis, we use a linear model (LM) to examine how factors such as poll grade, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the lm function, with a Gaussian distribution to capture the variability in support rates.
