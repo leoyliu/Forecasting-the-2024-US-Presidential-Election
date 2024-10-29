@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we built a linear regression model based on \"poll-of-polls\" data to predict the winner of the 2024 U.S. By combining data from multiple polls, our model can predict voter preferences more consistently and predict that Donald Trump is likely to win. This approach helps reduce the short-term variation present in individual polls and provides a clearer view of long-term electoral trends. Our findings contribute to understanding the dynamics of public opinion during election campaigns, which helps the public and political strategists make more informative decisions."
+abstract: "In this paper, we have built a linear model to predict the outcome of the 2024 U.S. presidential election, using a \"poll-of-polls\" approach that combines data from many well-known pollsters. Our analysis shows that Donald Trump has a probability of winning between 45% and 55%, which depends on how polling data changes from state to state. However, Kamala Harris is projected to win key states and receive the majority of electoral votes, with a projected 239 votes to Trump's 98. These show the value of aggregate polls in providing reliable predictions of election outcomes."
 format: pdf
 number-sections: true
 bibliography: references.bib
