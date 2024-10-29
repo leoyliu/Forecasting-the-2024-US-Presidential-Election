@@ -27,6 +27,11 @@ library(kableExtra)
 library(modelsummary)
 library(rstanarm)
 library(modelsummary)
+library(arrow)
+library(knitr)
+library(kableExtra)
+library(usmap)
+
 ```
 
 
@@ -172,11 +177,11 @@ A linear regression model was chosen to predict Trump's support percentage becau
 #| echo: false
 #| warning: false
 
-linear_model <- readRDS(file = here::here("models/first_model.rds"))
+model2 <- readRDS(file = here::here("models/first_model.rds"))
 
 modelsummary(
   list(
-    "Linear Model" = linear_model
+    "Linear Model" = model2
   ),
   statistic = NULL 
 )
@@ -188,6 +193,128 @@ Further justification for using this model comes from its alignment with the cen
 # Results {#sec-result}
 ## Model Results and Interpretation
 The linear regression model, using 384 data points, estimated the factors influencing Trump's support levels. The intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline.The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting.The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.The results highlight that numeric_grade and sample_size are particularly important in predicting support levels, with larger and higher-quality polls offering more reliable estimates. The transparency score and state-level coefficients further provide insight into regional differences and the role of trust in polling, helping us better understand the dynamics behind Trump's public support.The coefficients for numeric_grade and sample_size underline the importance of poll quality and sample size in predicting support levels. Larger, higher-quality polls offer more robust estimates. Additionally, transparency and state effects provide insight into regional differences and trust factors affecting polling results, giving a clearer understanding of the dynamics influencing Trump's public support.
+
+## Predicted Electoral Outcomes
+We employed a regression model to estimate the percentage of votes Trump is likely to receive in each state. Using these predicted results and the electoral vote allocations, we identified the winner for each state and calculated the total electoral votes for both Trump and Harris.
+
+The following table（@predictiontable） presents a summary of the predictions, including Trump’s estimated percentage, the number of electoral votes in each state, and the projected winner. For instance:
+
+ • In Arizona, Trump is expected to receive 48.94% of the vote, resulting in a win for Harris with 11 electoral votes.
+ • In Missouri, Trump is projected to receive 51.64%, thereby winning all 10 electoral votes for that state.
+ • In Ohio, with an estimated 51.98% of the vote, Trump secures Ohio’s 18 electoral votes.
+
+Electoral Vote Count: Trump Electoral Votes: 98 - Harris Electoral Votes: 239. This indicates that Harris is projected to win the 2024 U.S. Presidential Election with 239 electoral votes, while Trump is projected to gather 98. These results hinge on the outcomes in various battleground states, with several being extremely close.
+```{r predictiontable}
+#| echno: false
+#| label: predictiontable
+#| tbl-cap: Prediction for Trump and Harris by Electoral College
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load test data
+analysis_data_test <- read_parquet(here::here("data/02-analysis_data/test_data.parquet"))
+analysis_data_train <- read_parquet(here::here("data/02-analysis_data/train_data.parquet"))
+
+# Get the unique state names from training and test data
+unique_states_train <- unique(analysis_data_train$state)
+unique_states_test <- unique(analysis_data_test$state)
+
+
+# Find common states between training and test data and filter test data to only keep these states
+common_states <- intersect(unique_states_train, unique_states_test)
+analysis_data_test <- analysis_data_test %>%
+  filter(state %in% common_states)
+
+# Define the number of electoral votes for each state
+electoral_votes <- data.frame(
+  state = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida",
+            "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", 
+            "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+            "Missouri", "Montana", "Nebraska", "Nevada", 
+            "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", 
+            "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
+            "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", 
+            "District of Columbia"),
+  electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
+                      3, 10, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3))
+# Convert methodology column to character type for recoding
+analysis_data_test$methodology <- as.character(analysis_data_test$methodology)
+
+# Recode the 'Email' level in the methodology column to 'Online Panel'
+analysis_data_test$methodology[analysis_data_test$methodology == "Email"] <- "Online Panel"
+
+
+
+
+
+# Use the trained regression model to predict Trump's support percentage in each state
+analysis_data_test$predicted_percent_trump <- predict(model2, newdata = analysis_data_test)
+analysis_data_test$predicted_percent_trump
+total_trump <- aggregate(predicted_percent_trump ~ state, data = analysis_data_test, FUN = mean)
+
+
+
+
+# Determine the winner in each state based on Trump's predicted percentage
+state_predictions <- merge(total_trump, electoral_votes, by = "state")
+
+# Determine the winner in each state based on Trump's predicted percentage
+state_predictions$winner <- ifelse(state_predictions$predicted_percent_trump > 50, "Trump", "Harris")
+
+# Calculate the electoral votes for each candidate
+state_predictions$trump_electoral_votes <- ifelse(state_predictions$winner == "Trump", state_predictions$electoral_votes, 0)
+state_predictions$harris_electoral_votes <- ifelse(state_predictions$winner == "Harris", state_predictions$electoral_votes, 0)
+
+# Summarize the total electoral votes for each candidate
+trump_electoral_votes <- sum(state_predictions$trump_electoral_votes)
+harris_electoral_votes <- sum(state_predictions$harris_electoral_votes)
+
+# Create and display the results table
+
+kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes", "winner")], 
+      col.names = c("State", "Trump Predicted %", "Electoral Votes", "Winner"), 
+      digits = 2) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "400px")
+
+
+print(paste("Trump Electoral Votes:", trump_electoral_votes))
+print(paste("Harris Electoral Votes:", harris_electoral_votes))
+```
+
+
+## Prediction map
+The following map (Figure 6) displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
+```{r}
+#| echno: false
+#| label: fig-statemap
+#| tbl-cap: Predicted Winner of 2024 US Presidential Election by State
+#| echo: false
+#| warning: false
+#| message: false
+
+# Replace NA values in the 'winner' column with 'Trump'
+#state_predictions$winner[is.na(state_predictions$winner)] <- "Trump"
+
+# "red" for Trump and "blue" for Harris
+state_predictions$winner_color <- ifelse(state_predictions$winner == "Trump", "green", "blue")
+
+# Create a map visualization showing the predicted winner by state
+plot_usmap(data = state_predictions, values = "winner_color", regions = "states") +
+  scale_fill_manual(values = c("green" = "green", "blue" = "blue"), name = "Predicted Winner", labels = c("Harris", "Trump")) +
+  labs(title = "Predicted Winner of the 2024 U.S. Presidential Election by State") +
+  theme(legend.position = "right")
+
+```
+The map illustrates Trump gaining traction across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Meanwhile, Harris holds a solid lead in states along the West Coast and in the Northeast, such as California and New York, regions that have a history of Democratic support.
+
+Several battleground states, including Florida and Ohio, are projected to favor Trump, with a slight advantage that marks a contrast to Harris's stronger leads in places like California. The map also shows a number of central states in gray, reflecting either a lack of definitive prediction or insufficient data. Overall, the map reveals distinct regional patterns, with Trump expected to perform well in the heartland and Harris finding support along the coasts. The outcome may hinge on the final results in the competitive states like Pennsylvania, Arizona, and North Carolina.
+
+
+
+
+
 
 
 
@@ -415,7 +542,29 @@ Your responses are valuable to us in anticipating the upcoming election and unde
 
 # Additional data details
 
-# Model details {#sec-model-details}
+# Model details 
+```{r}
+# Generate diagnostic plots for model2
+par(mfrow = c(2, 2))
+plot(model2)
+
+# Generate pairwise scatter plots for all predictor variables
+pairs(analysis_data_train[, c("numeric_grade", "duration", "sample_size", "transparency_score")])
+
+```
+```{r}
+
+#  AIC 和 BIC
+AIC_value <- AIC(model2)
+BIC_value <- BIC(model2)
+
+
+print(paste("AIC: ", AIC_value))
+print(paste("BIC: ", BIC_value))
+
+
+```
+
 
 ## Posterior predictive check
 
