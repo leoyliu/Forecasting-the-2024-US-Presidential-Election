@@ -24,10 +24,8 @@ library(tidyverse)
 library(dplyr)
 library(here)
 library(ggplot2)
-library(kableExtra)
 library(modelsummary)
 library(rstanarm)
-library(modelsummary)
 library(arrow)
 library(knitr)
 library(kableExtra)
@@ -52,7 +50,7 @@ In this study, our estimand is Donald Trump's percentage of polling in each stat
 
 ## Overview
 
-We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 U.S. Presidential election. The dataset used for this analysis was obtained from the FiveThirtyEight 2024 U.S. Presidential Election Polls [@citedata]. It consists of polling data for the 2024 general election, covering various polling organizations and methodologies. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we forecast election outcomes using the "poll of polls" method, which aggregates results from multiple polls to reduce bias and provide a more accurate representation of voter sentiment.
+We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 U.S. Presidential election. The dataset used for this analysis was obtained from the FiveThirtyEight 2024 U.S. Presidential Election Polls [@citedata]. It consists of polling data for the 2024 general election, covering various polling organizations and methodologies. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we forecast election outcomes using the "poll of polls" method, which aggregates results from multiple polls to reduce bias and provide a more accurate representation of voter sentiment. For key operations, please refer to [Appendix -@sec-data-cleaning]. 
 
 The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. To ensure the reliability of our analysis, we filter the data to include only polls with a numeric grade of 2.5 or higher, which represents high-quality, reputable pollsters. This filtering allows us to focus on polls that follow rigorous standards and have demonstrated transparency and accuracy.
 
@@ -594,6 +592,30 @@ As a thank you for your participation, you will be entered into a raffle to win 
 Thank you for your participation!
 
 Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com)(Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
+
+# Data Manipulation and Cleaning {#sec-data-cleaning}
+
+In the data cleaning process, we prepared the raw election data for analysis by applying transformations, filtering, and restructuring using several R packages, including `dplyr` [@citedplyr], `janitor` [@citejanitor], `tidyverse` [@citetidyverse], `arrow` [@citearrow], and `rsample` [@citersample].
+
+1. **Standardizing Column Names**: Using the `clean_names()` function, we converted column names to a consistent lowercase format, making them easier to reference and manipulate.
+
+2. **Filtering Polls by Quality and Candidate**: With the `dplyr` package from `tidyverse`, we filtered the dataset to include only higher-quality polls with a `numeric_grade` of 2.5 or above, ensuring that only credible polls were considered. We further filtered to focus on polls related specifically to Donald Trump (`candidate_name == "Donald Trump"`), aligning the dataset with our analysis objective.
+
+3. **Date Conversion and Filtering**: We converted the `end_date` column to a Date format using `mdy()` from `lubridate` (part of `tidyverse`), ensuring date consistency. We then filtered the data to include only polls conducted after July 15, 2024—the date of Trump’s campaign announcement—allowing us to focus on his active campaign period.
+
+4. **Creating Duration and Support Columns**:
+   - **Duration**: We created a `duration` variable using the `difftime()` function from base `R`, which calculates the number of days between each poll’s end date and Trump’s campaign start date. This allows us to observe how polling data shifts over time.
+   - **Number of Trump Supporters**: We calculated `num_trump`, the estimated number of respondents supporting Trump in each poll, by applying the support percentage (`pct`) to the sample size and rounding the result with `dplyr` functions.
+
+5. **Methodology Update**: We used `str_detect()` from `stringr` (in `tidyverse`) to identify polls that listed multiple polling methods (e.g., those containing “/”) and standardized them to "Mixed Voting" to clarify the `methodology` column.
+
+6. **Selecting and Renaming Columns**: We used `dplyr` functions to select the relevant columns (`poll_id`, `numeric_grade`, `methodology`, `transparency_score`, `end_date`, `sample_size`, `pollster_name` (renamed from `display_name`), `state`, `pct`, `duration`, and `num_trump`), streamlining the dataset for analysis.
+
+7. **Removing Duplicates and Missing Values**: With `dplyr`, we removed duplicate rows using `distinct()` and dropped rows with missing values using `drop_na()`, ensuring that only complete and unique data entries were retained.
+
+8. **Splitting the Data**: We utilized `rsample` to perform a stratified split on the cleaned dataset, using the `state` variable to ensure balanced representation across states. The data was divided into training (70%) and testing (30%) sets, preparing it for modeling.
+
+Finally, we saved the cleaned dataset and the training/testing splits in CSV and Parquet formats using `arrow`, facilitating efficient storage and future accessibility.
 
 # Model details 
 ```{r}

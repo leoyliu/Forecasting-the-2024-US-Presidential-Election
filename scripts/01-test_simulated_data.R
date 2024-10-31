@@ -13,10 +13,10 @@
 #### Workspace setup ####
 library(tidyverse)
 
-analysis_data <- read_csv("data/00-simulated_data/simulated_data.csv")
+simulated_data <- read_csv("data/00-simulated_data/simulated_data.csv")
 
 # Test if the data was successfully loaded
-if (exists("analysis_data")) {
+if (exists("simulated_data")) {
   message("Test Passed: The dataset was successfully loaded.")
 } else {
   stop("Test Failed: The dataset could not be loaded.")
@@ -25,64 +25,56 @@ if (exists("analysis_data")) {
 
 #### Test data ####
 
-# Check if the dataset has 151 rows
-if (nrow(analysis_data) == 151) {
-  message("Test Passed: The dataset has 151 rows.")
+# Check if the dataset has 10000 rows
+if (nrow(simulated_data) == 1000) {
+  message("Test Passed: The dataset has 1000 rows.")
 } else {
-  stop("Test Failed: The dataset does not have 151 rows.")
+  stop("Test Failed: The dataset does not have 1000 rows.")
 }
 
-# Check if the dataset has 3 columns
-if (ncol(analysis_data) == 3) {
-  message("Test Passed: The dataset has 3 columns.")
+# Check if the dataset has 10 columns
+if (ncol(simulated_data) == 10) {
+  message("Test Passed: The dataset has 10 columns.")
 } else {
-  stop("Test Failed: The dataset does not have 3 columns.")
-}
-
-# Check if all values in the 'division' column are unique
-if (n_distinct(analysis_data$division) == nrow(analysis_data)) {
-  message("Test Passed: All values in 'division' are unique.")
-} else {
-  stop("Test Failed: The 'division' column contains duplicate values.")
+  stop("Test Failed: The dataset does not have 10 columns.")
 }
 
 # Check if the 'state' column contains only valid Australian state names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", 
-                  "Western Australia", "Tasmania", "Northern Territory", 
-                  "Australian Capital Territory")
+valid_states <- c(
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
+  "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
+  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
+  "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+  "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", 
+  "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", 
+  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
+  "Washington", "West Virginia", "Wisconsin", "Wyoming", "National"
+)
 
-if (all(analysis_data$state %in% valid_states)) {
-  message("Test Passed: The 'state' column contains only valid Australian state names.")
+if (all(simulated_data$state %in% valid_states)) {
+  message("Test Passed: The 'state' column contains only valid US state names.")
 } else {
   stop("Test Failed: The 'state' column contains invalid state names.")
 }
 
-# Check if the 'party' column contains only valid party names
-valid_parties <- c("Labor", "Liberal", "Greens", "National", "Other")
-
-if (all(analysis_data$party %in% valid_parties)) {
-  message("Test Passed: The 'party' column contains only valid party names.")
-} else {
-  stop("Test Failed: The 'party' column contains invalid party names.")
-}
-
 # Check if there are any missing values in the dataset
-if (all(!is.na(analysis_data))) {
+if (all(!is.na(simulated_data))) {
   message("Test Passed: The dataset contains no missing values.")
 } else {
   stop("Test Failed: The dataset contains missing values.")
 }
 
-# Check if there are no empty strings in 'division', 'state', and 'party' columns
-if (all(analysis_data$division != "" & analysis_data$state != "" & analysis_data$party != "")) {
-  message("Test Passed: There are no empty strings in 'division', 'state', or 'party'.")
+# Check if there are no empty strings in 'methodology', 'state', and 'pollster' columns
+if (all(simulated_data$methodology != "" & simulated_data$state != "" & simulated_data$pollster != "")) {
+  message("Test Passed: There are no empty strings in 'methodology', 'state', and 'pollster'.")
 } else {
   stop("Test Failed: There are empty strings in one or more columns.")
 }
 
-# Check if the 'party' column has at least two unique values
-if (n_distinct(analysis_data$party) >= 2) {
-  message("Test Passed: The 'party' column contains at least two unique values.")
+# Check if the 'party' column has at least four unique values
+if (n_distinct(simulated_data$methodology) >= 4) {
+  message("Test Passed: The 'party' column contains at least four unique values.")
 } else {
-  stop("Test Failed: The 'party' column contains less than two unique values.")
+  stop("Test Failed: The 'party' column contains less than four unique values.")
 }

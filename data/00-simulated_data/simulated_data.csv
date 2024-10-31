@@ -1,152 +1,1001 @@
-division,state,party
-Division 1,Victoria,Liberal
-Division 2,New South Wales,Liberal
-Division 3,Tasmania,Liberal
-Division 4,New South Wales,Liberal
-Division 5,Queensland,Liberal
-Division 6,New South Wales,Labor
-Division 7,Victoria,Liberal
-Division 8,Western Australia,Labor
-Division 9,Western Australia,Greens
-Division 10,Queensland,Labor
-Division 11,Queensland,Labor
-Division 12,Northern Territory,Liberal
-Division 13,New South Wales,Labor
-Division 14,Western Australia,Labor
-Division 15,Western Australia,National
-Division 16,Victoria,Liberal
-Division 17,South Australia,Liberal
-Division 18,Victoria,Liberal
-Division 19,Western Australia,Labor
-Division 20,South Australia,Labor
-Division 21,New South Wales,Liberal
-Division 22,Queensland,Greens
-Division 23,New South Wales,Liberal
-Division 24,New South Wales,Liberal
-Division 25,Queensland,Labor
-Division 26,Victoria,National
-Division 27,New South Wales,Liberal
-Division 28,Queensland,Liberal
-Division 29,Tasmania,Liberal
-Division 30,South Australia,Liberal
-Division 31,New South Wales,Liberal
-Division 32,Victoria,Labor
-Division 33,Tasmania,Liberal
-Division 34,New South Wales,Liberal
-Division 35,Western Australia,Labor
-Division 36,New South Wales,Liberal
-Division 37,Tasmania,Greens
-Division 38,Tasmania,Labor
-Division 39,Victoria,Greens
-Division 40,South Australia,Labor
-Division 41,New South Wales,Other
-Division 42,New South Wales,Other
-Division 43,Tasmania,Labor
-Division 44,Tasmania,National
-Division 45,Queensland,Liberal
-Division 46,Australian Capital Territory,Other
-Division 47,Queensland,Labor
-Division 48,Queensland,Other
-Division 49,South Australia,Liberal
-Division 50,Victoria,National
-Division 51,South Australia,Liberal
-Division 52,Victoria,Labor
-Division 53,South Australia,National
-Division 54,Queensland,Liberal
-Division 55,Queensland,Labor
-Division 56,South Australia,Liberal
-Division 57,New South Wales,Other
-Division 58,Northern Territory,Liberal
-Division 59,New South Wales,Labor
-Division 60,Western Australia,Labor
-Division 61,New South Wales,Liberal
-Division 62,South Australia,Liberal
-Division 63,Queensland,Labor
-Division 64,Tasmania,Labor
-Division 65,South Australia,Labor
-Division 66,Victoria,Labor
-Division 67,Queensland,Liberal
-Division 68,Queensland,Liberal
-Division 69,Tasmania,Labor
-Division 70,South Australia,National
-Division 71,Australian Capital Territory,Labor
-Division 72,Western Australia,Labor
-Division 73,Queensland,National
-Division 74,Victoria,Labor
-Division 75,Western Australia,Labor
-Division 76,Tasmania,Labor
-Division 77,Queensland,Liberal
-Division 78,Western Australia,Liberal
-Division 79,Queensland,Labor
-Division 80,Queensland,Liberal
-Division 81,Victoria,Labor
-Division 82,New South Wales,Liberal
-Division 83,Victoria,Liberal
-Division 84,Queensland,National
-Division 85,Western Australia,Liberal
-Division 86,New South Wales,Labor
-Division 87,Queensland,Liberal
-Division 88,New South Wales,Liberal
-Division 89,Tasmania,Liberal
-Division 90,South Australia,Labor
-Division 91,Victoria,Liberal
-Division 92,New South Wales,Labor
-Division 93,Tasmania,Labor
-Division 94,South Australia,Labor
-Division 95,Victoria,Liberal
-Division 96,Victoria,Labor
-Division 97,Western Australia,Liberal
-Division 98,Queensland,Liberal
-Division 99,South Australia,Liberal
-Division 100,New South Wales,Labor
-Division 101,South Australia,Labor
-Division 102,New South Wales,Labor
-Division 103,Victoria,Labor
-Division 104,Victoria,Labor
-Division 105,South Australia,Other
-Division 106,Western Australia,Labor
-Division 107,Tasmania,Liberal
-Division 108,Victoria,Labor
-Division 109,Queensland,Liberal
-Division 110,Victoria,Labor
-Division 111,Australian Capital Territory,Labor
-Division 112,Victoria,Liberal
-Division 113,Victoria,Liberal
-Division 114,Victoria,Liberal
-Division 115,Tasmania,Labor
-Division 116,Victoria,Labor
-Division 117,New South Wales,Labor
-Division 118,Victoria,Labor
-Division 119,Victoria,Greens
-Division 120,Northern Territory,Labor
-Division 121,South Australia,Liberal
-Division 122,New South Wales,Liberal
-Division 123,New South Wales,Labor
-Division 124,New South Wales,Liberal
-Division 125,New South Wales,National
-Division 126,New South Wales,Labor
-Division 127,Queensland,Labor
-Division 128,New South Wales,Other
-Division 129,Queensland,Labor
-Division 130,Australian Capital Territory,Liberal
-Division 131,Tasmania,Greens
-Division 132,New South Wales,National
-Division 133,New South Wales,Labor
-Division 134,Northern Territory,Labor
-Division 135,South Australia,National
-Division 136,Victoria,Labor
-Division 137,Tasmania,National
-Division 138,South Australia,Liberal
-Division 139,New South Wales,Labor
-Division 140,Victoria,Other
-Division 141,Queensland,Greens
-Division 142,Victoria,National
-Division 143,Western Australia,Labor
-Division 144,Victoria,Labor
-Division 145,Queensland,Liberal
-Division 146,Tasmania,Liberal
-Division 147,South Australia,Liberal
-Division 148,Victoria,Labor
-Division 149,New South Wales,National
-Division 150,New South Wales,Labor
-Division 151,Victoria,Liberal
+pollster,methodology,numerical_grade,start_date,end_date,sample_size,state,candidate_name,percent,population_group
+University of Massachusetts Lowell Center for Public Opinion,Online Panel,2.9,2021-12-18,2022-04-24,5077,Tennessee,Donald Trump,45,adults
+Data for Progress,Email,2.6,2021-11-25,2022-05-20,14647,Pennsylvania,Donald Trump,45,registered voters
+Stockton University William J. Hughes Center for Public Policy,Text,2.6,2022-04-17,2022-05-28,6299,Ohio,Donald Trump,46,likely voters
+Quinnipiac University,Email,2.8,2023-01-21,2023-02-24,7077,Pennsylvania,Donald Trump,49,registered voters
+Michigan State University Institute for Public Policy and Social Research,Email,2.5,2022-09-27,2022-11-27,5026,Massachusetts,Donald Trump,53,likely voters
+Stockton University William J. Hughes Center for Public Policy,Email,2.6,2022-09-07,2022-10-31,13136,Colorado,Donald Trump,49,registered voters
+University of California Berkeley Institute of Governmental Studies,IVR,2.5,2024-08-26,2024-12-27,15728,Massachusetts,Donald Trump,55,likely voters
+Christopher Newport University Wason Center for Civic Leadership,IVR,2.8,2022-11-13,2023-04-16,17487,North Carolina,Donald Trump,47,registered voters
+Ipsos,Probability Panel,2.8,2023-05-31,2023-06-09,18652,Texas,Donald Trump,48,likely voters
+Marquette University Law School,App Panel,3,2022-07-02,2022-12-29,17595,National,Donald Trump,51,registered voters
+Fairleigh Dickinson University,IVR,2.6,2024-01-26,2024-05-01,11714,Texas,Donald Trump,49,likely voters
+Ipsos,Email,2.8,2023-09-07,2024-03-03,5620,Hawaii,Donald Trump,49,registered voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2022-03-14,2022-07-27,9557,Missouri,Donald Trump,50,registered voters
+Echelon Insights,Email,2.7,2024-05-04,2024-08-30,15908,Indiana,Donald Trump,54,likely voters
+Marquette University Law School,Text-to-Web,3,2022-08-18,2022-09-07,8724,Washington,Donald Trump,54,registered voters
+University of California Berkeley Institute of Governmental Studies,Online Ad,2.5,2022-11-01,2023-04-27,18175,Indiana,Donald Trump,46,likely voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2022-07-17,2023-01-09,7203,Indiana,Donald Trump,47,likely voters
+MassINC Polling Group,Online Ad,2.8,2021-04-17,2021-08-30,1162,National,Donald Trump,47,registered voters
+YouGov,Online Panel,3,2022-03-08,2022-08-18,7701,California,Donald Trump,47,likely voters
+Michigan State University Institute for Public Policy and Social Research,Mixed,2.5,2022-06-22,2022-10-31,6166,Idaho,Donald Trump,51,likely voters
+Selzer & Co.,Online Ad,2.8,2022-01-28,2022-03-07,16369,Nebraska,Donald Trump,49,likely voters
+Pew Research Center,IVR,2.5,2021-07-27,2021-11-09,19212,Alaska,Donald Trump,51,likely voters
+Beacon Research/Shaw & Co. Research,Email,2.8,2022-02-27,2022-06-02,19997,Indiana,Donald Trump,52,likely voters
+ABC News/The Washington Post,Mixed,3,2021-12-13,2022-05-20,118,South Dakota,Donald Trump,53,registered voters
+Monmouth University Polling Institute,Text-to-Web,2.9,2021-01-23,2021-05-06,10831,North Dakota,Donald Trump,48,adults
+ABC News/The Washington Post,Online Ad,3,2023-01-13,2023-06-26,9335,Arizona,Donald Trump,45,likely voters
+The New York Times/Siena College,Mixed,3,2024-04-23,2024-08-24,2093,Washington,Donald Trump,54,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Text,2.8,2021-08-11,2021-10-21,12914,Georgia,Donald Trump,55,likely voters
+Echelon Insights,App Panel,2.7,2023-03-03,2023-07-04,1190,New York,Donald Trump,55,likely voters
+The Winston Group,Email,2.5,2021-02-04,2021-05-02,2737,Minnesota,Donald Trump,53,registered voters
+Abt Associates,IVR,2.5,2023-01-12,2023-05-28,215,New York,Donald Trump,55,registered voters
+Muhlenberg College Institute of Public Opinion,Online Panel,2.8,2023-09-19,2023-12-27,2891,Maine,Donald Trump,49,likely voters
+Hart Research Associates/Public Opinion Strategies,Online Ad,2.6,2023-05-10,2023-09-20,5856,Washington,Donald Trump,50,likely voters
+University of California Berkeley Institute of Governmental Studies,IVR,2.5,2023-10-25,2024-04-13,7489,Utah,Donald Trump,52,likely voters
+SurveyUSA,App Panel,2.8,2021-05-11,2021-05-28,9466,Tennessee,Donald Trump,48,likely voters
+East Carolina University Center for Survey Research,App Panel,2.6,2023-01-13,2023-05-18,5606,Iowa,Donald Trump,46,registered voters
+High Point University Survey Research Center,IVR,2.5,2023-08-28,2023-09-18,11173,Arkansas,Donald Trump,54,registered voters
+ABC News/The Washington Post,Text,3,2023-12-28,2024-05-30,5320,Kansas,Donald Trump,53,likely voters
+Roanoke College Institute for Policy and Opinion Research,Text,2.6,2023-07-10,2023-11-11,12965,Maine,Donald Trump,51,registered voters
+The Winston Group,Probability Panel,2.5,2023-07-07,2023-10-15,3932,Nevada,Donald Trump,55,registered voters
+The New York Times/Siena College,Online Ad,3,2024-06-24,2024-07-31,10231,Arkansas,Donald Trump,50,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Online Panel,2.5,2024-05-03,2024-08-24,15115,Rhode Island,Donald Trump,50,likely voters
+The Winston Group,Text-to-Web,2.5,2021-09-12,2021-09-18,6093,Maryland,Donald Trump,55,registered voters
+University of Massachusetts Lowell Center for Public Opinion,App Panel,2.9,2023-05-02,2023-06-03,13215,New York,Donald Trump,47,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Online Ad,2.5,2022-01-12,2022-04-09,18526,Kansas,Donald Trump,52,likely voters
+Remington Research Group,Live Phone,2.6,2024-05-24,2024-09-26,1476,South Dakota,Donald Trump,48,adults
+The Washington Post/George Mason University Schar School of Policy and Government,Online Ad,2.7,2023-03-21,2023-04-17,3066,Iowa,Donald Trump,52,adults
+Monmouth University Polling Institute,Probability Panel,2.9,2024-08-18,2024-08-31,11221,Montana,Donald Trump,48,adults
+AtlasIntel,Mixed,2.7,2024-01-10,2024-07-04,16953,Arizona,Donald Trump,52,likely voters
+Siena College,Online Ad,2.7,2022-11-02,2023-01-27,12129,Nebraska,Donald Trump,55,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Text-to-Web,2.9,2021-04-17,2021-10-12,17224,Kentucky,Donald Trump,51,likely voters
+University of Illinois Springfield Survey Research Office,Text-to-Web,2.5,2021-01-26,2021-03-25,11054,Florida,Donald Trump,49,registered voters
+Monmouth University Polling Institute,Text-to-Web,2.9,2021-01-31,2021-04-30,1851,Colorado,Donald Trump,45,adults
+University of New Hampshire Survey Center,Text-to-Web,2.6,2023-12-05,2023-12-14,6705,Wisconsin,Donald Trump,47,registered voters
+Marist College,App Panel,2.9,2023-12-13,2024-03-05,13180,North Carolina,Donald Trump,46,adults
+The New York Times/Siena College,Probability Panel,3,2022-05-13,2022-10-02,19336,Minnesota,Donald Trump,47,registered voters
+Marist College,Mixed,2.9,2021-09-14,2021-10-30,15851,Illinois,Donald Trump,50,likely voters
+University of New Hampshire Survey Center,Mixed,2.6,2022-06-17,2022-07-21,2913,Rhode Island,Donald Trump,55,registered voters
+Michigan State University Institute for Public Policy and Social Research,Email,2.5,2023-04-24,2023-10-01,495,National,Donald Trump,47,likely voters
+Fairleigh Dickinson University,IVR,2.6,2022-03-17,2022-06-26,17143,Wisconsin,Donald Trump,48,likely voters
+Data Orbital,Email,2.9,2022-10-05,2022-10-30,3113,Washington,Donald Trump,51,adults
+Western New England University Polling Institute,Mixed,2.5,2024-03-17,2024-06-27,7850,New York,Donald Trump,51,adults
+Muhlenberg College Institute of Public Opinion,Live Phone,2.8,2024-02-09,2024-03-07,8808,Alaska,Donald Trump,46,likely voters
+Beacon Research/Shaw & Co. Research,Email,2.8,2023-08-14,2023-12-31,14716,New Jersey,Donald Trump,45,likely voters
+University of North Florida Public Opinion Research Lab,Mixed,2.8,2024-02-26,2024-08-23,18774,Missouri,Donald Trump,48,registered voters
+AtlasIntel,App Panel,2.7,2022-06-30,2022-07-24,2283,Minnesota,Donald Trump,52,registered voters
+University of Illinois Springfield Survey Research Office,App Panel,2.5,2022-01-19,2022-04-10,1989,Arkansas,Donald Trump,54,likely voters
+Gallup,Mixed,2.5,2021-06-24,2021-09-25,18900,Kansas,Donald Trump,48,likely voters
+University of New Hampshire Survey Center,Online Panel,2.6,2023-05-08,2023-09-14,17173,New Jersey,Donald Trump,46,registered voters
+Muhlenberg College Institute of Public Opinion,Email,2.8,2021-08-06,2021-10-08,924,Arkansas,Donald Trump,49,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Text-to-Web,2.5,2023-06-16,2023-09-19,15644,California,Donald Trump,45,likely voters
+Lake Research Partners/The Tarrance Group,Probability Panel,2.5,2022-03-21,2022-04-28,12822,Iowa,Donald Trump,47,likely voters
+Gallup,Live Phone,2.5,2024-04-09,2024-04-14,8582,Arkansas,Donald Trump,45,likely voters
+University of New Hampshire Survey Center,IVR,2.6,2021-06-01,2021-08-12,15827,Colorado,Donald Trump,45,registered voters
+MassINC Polling Group,Online Panel,2.8,2023-10-23,2024-01-18,17814,California,Donald Trump,52,likely voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2022-01-23,2022-03-14,10991,Vermont,Donald Trump,49,adults
+Emerson College,IVR,2.9,2023-01-12,2023-03-17,5557,Oklahoma,Donald Trump,49,likely voters
+Michigan State University Institute for Public Policy and Social Research,Online Panel,2.5,2024-02-01,2024-02-03,1839,West Virginia,Donald Trump,47,registered voters
+University of North Florida Public Opinion Research Lab,Text,2.8,2024-05-17,2024-10-10,18492,North Dakota,Donald Trump,54,registered voters
+Muhlenberg College Institute of Public Opinion,Text,2.8,2023-08-03,2023-11-12,352,Texas,Donald Trump,51,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Panel,2.5,2022-09-27,2022-11-15,9138,Georgia,Donald Trump,48,likely voters
+Fairleigh Dickinson University,Probability Panel,2.6,2021-04-09,2021-05-25,16061,Oklahoma,Donald Trump,45,likely voters
+Muhlenberg College Institute of Public Opinion,Online Ad,2.8,2021-03-17,2021-05-28,14706,Illinois,Donald Trump,46,adults
+University of New Hampshire Survey Center,App Panel,2.6,2021-04-29,2021-06-26,5273,Vermont,Donald Trump,55,likely voters
+University of California Berkeley Institute of Governmental Studies,Probability Panel,2.5,2024-05-19,2024-11-02,6189,Nebraska,Donald Trump,46,likely voters
+Data Orbital,Probability Panel,2.9,2023-02-09,2023-08-07,920,Florida,Donald Trump,50,adults
+Pew Research Center,Probability Panel,2.5,2022-02-17,2022-04-13,9640,Delaware,Donald Trump,48,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2022-06-08,2022-12-03,9145,Minnesota,Donald Trump,50,likely voters
+East Carolina University Center for Survey Research,Mixed,2.6,2023-05-10,2023-07-11,13223,Maine,Donald Trump,50,registered voters
+Data Orbital,Email,2.9,2023-09-15,2023-11-04,10128,Arkansas,Donald Trump,52,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Text-to-Web,2.8,2024-08-03,2025-01-28,4561,Nevada,Donald Trump,47,likely voters
+University of North Florida Public Opinion Research Lab,Probability Panel,2.8,2022-07-04,2022-08-07,8081,California,Donald Trump,53,registered voters
+Marquette University Law School,Probability Panel,3,2022-04-01,2022-09-22,4372,Connecticut,Donald Trump,49,registered voters
+Data Orbital,App Panel,2.9,2023-03-24,2023-08-01,12365,Connecticut,Donald Trump,52,adults
+Fairleigh Dickinson University,IVR,2.6,2024-05-21,2024-09-19,14733,Arizona,Donald Trump,49,likely voters
+YouGov,Text,3,2023-11-01,2023-12-28,2625,North Dakota,Donald Trump,53,likely voters
+Hart Research Associates/Public Opinion Strategies,Text-to-Web,2.6,2021-03-31,2021-08-29,10218,Connecticut,Donald Trump,50,registered voters
+Fairleigh Dickinson University,Online Panel,2.6,2024-05-07,2024-05-09,12201,Arkansas,Donald Trump,46,likely voters
+Quinnipiac University,Probability Panel,2.8,2021-11-07,2022-04-01,8428,Florida,Donald Trump,45,likely voters
+Monmouth University Polling Institute,IVR,2.9,2022-07-22,2022-11-28,4071,Montana,Donald Trump,54,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Mixed,2.5,2024-01-29,2024-04-07,14662,Ohio,Donald Trump,45,registered voters
+Ipsos,Live Phone,2.8,2024-04-14,2024-04-25,11961,Ohio,Donald Trump,49,registered voters
+Marist College,IVR,2.9,2024-03-24,2024-05-08,13606,Kansas,Donald Trump,53,likely voters
+Stockton University William J. Hughes Center for Public Policy,Email,2.6,2023-09-10,2024-02-08,4918,South Dakota,Donald Trump,45,registered voters
+Marist College,App Panel,2.9,2022-11-14,2022-12-08,7261,North Dakota,Donald Trump,49,adults
+AtlasIntel,IVR,2.7,2022-09-12,2023-01-24,16914,Texas,Donald Trump,48,registered voters
+YouGov,Text,3,2021-03-02,2021-05-06,2105,Massachusetts,Donald Trump,45,registered voters
+University of New Hampshire Survey Center,Live Phone,2.6,2022-05-14,2022-07-15,796,Idaho,Donald Trump,48,adults
+East Carolina University Center for Survey Research,Text-to-Web,2.6,2021-08-05,2021-11-26,15442,Arkansas,Donald Trump,51,registered voters
+KFF,Email,2.5,2024-08-04,2024-12-26,454,Mississippi,Donald Trump,51,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Probability Panel,2.5,2022-06-27,2022-07-12,17010,Texas,Donald Trump,48,likely voters
+University of Illinois Springfield Survey Research Office,Text-to-Web,2.5,2023-06-27,2023-12-06,10142,National,Donald Trump,47,likely voters
+Muhlenberg College Institute of Public Opinion,IVR,2.8,2024-04-09,2024-04-28,5138,Vermont,Donald Trump,54,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,IVR,2.7,2022-10-10,2022-12-15,3966,California,Donald Trump,52,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Online Ad,2.7,2022-12-31,2023-05-05,9129,Montana,Donald Trump,47,registered voters
+Suffolk University,Live Phone,2.9,2021-02-09,2021-06-03,2114,Massachusetts,Donald Trump,52,adults
+Mason-Dixon Polling & Strategy,Live Phone,2.6,2022-12-31,2023-04-04,8918,Utah,Donald Trump,45,likely voters
+Stockton University William J. Hughes Center for Public Policy,Mixed,2.6,2022-01-03,2022-02-12,2895,Washington,Donald Trump,54,registered voters
+Remington Research Group,Email,2.6,2023-09-02,2023-12-16,18261,Georgia,Donald Trump,55,likely voters
+Gallup,Live Phone,2.5,2023-03-24,2023-06-24,1291,Texas,Donald Trump,51,likely voters
+Western New England University Polling Institute,Probability Panel,2.5,2021-06-03,2021-08-05,15249,Texas,Donald Trump,55,likely voters
+Data Orbital,Text-to-Web,2.9,2021-12-11,2022-05-14,2738,Florida,Donald Trump,49,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,App Panel,2.5,2022-02-03,2022-03-08,2852,Nebraska,Donald Trump,47,likely voters
+Monmouth University Polling Institute,IVR,2.9,2024-06-10,2024-08-09,4302,New Hampshire,Donald Trump,51,likely voters
+KFF,Email,2.5,2022-06-20,2022-09-07,17556,South Dakota,Donald Trump,50,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Probability Panel,2.5,2022-04-12,2022-09-29,14497,Pennsylvania,Donald Trump,47,likely voters
+SurveyUSA,Mixed,2.8,2021-01-29,2021-06-10,4622,Hawaii,Donald Trump,49,registered voters
+Emerson College,Live Phone,2.9,2024-04-18,2024-07-17,13955,Vermont,Donald Trump,55,registered voters
+AtlasIntel,Online Panel,2.7,2021-10-21,2022-01-19,6888,Alaska,Donald Trump,46,likely voters
+Suffolk University,IVR,2.9,2021-11-20,2022-03-12,7724,Louisiana,Donald Trump,49,registered voters
+Selzer & Co.,IVR,2.8,2021-06-04,2021-11-20,766,Maryland,Donald Trump,47,registered voters
+The Winston Group,Probability Panel,2.5,2024-08-22,2025-01-13,5724,Ohio,Donald Trump,47,likely voters
+Michigan State University Institute for Public Policy and Social Research,IVR,2.5,2023-10-14,2024-03-16,12743,National,Donald Trump,49,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,App Panel,2.5,2021-02-28,2021-06-28,8791,Ohio,Donald Trump,52,adults
+Quinnipiac University,Probability Panel,2.8,2022-06-06,2022-06-25,14479,California,Donald Trump,45,likely voters
+High Point University Survey Research Center,Email,2.5,2022-05-04,2022-10-05,8828,Arkansas,Donald Trump,48,registered voters
+Quinnipiac University,Text,2.8,2022-04-19,2022-07-28,9848,Nevada,Donald Trump,51,likely voters
+Fairleigh Dickinson University,Online Ad,2.6,2023-04-24,2023-05-01,17136,Minnesota,Donald Trump,54,registered voters
+Siena College,Email,2.7,2023-06-11,2023-08-22,6317,Hawaii,Donald Trump,49,registered voters
+University of Illinois Springfield Survey Research Office,Mixed,2.5,2024-01-19,2024-01-26,5400,Iowa,Donald Trump,55,registered voters
+The New York Times/Siena College,Text,3,2022-02-15,2022-04-05,2062,Arkansas,Donald Trump,51,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Email,2.5,2021-02-08,2021-05-27,5536,California,Donald Trump,45,likely voters
+AtlasIntel,Text-to-Web,2.7,2022-08-13,2022-10-09,15866,New Hampshire,Donald Trump,47,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,Live Phone,2.7,2021-07-18,2021-09-24,13340,Vermont,Donald Trump,45,likely voters
+High Point University Survey Research Center,Text-to-Web,2.5,2021-09-20,2021-10-26,16756,New Mexico,Donald Trump,54,likely voters
+Beacon Research/Shaw & Co. Research,App Panel,2.8,2022-06-02,2022-09-15,18191,Wisconsin,Donald Trump,54,likely voters
+University of New Hampshire Survey Center,Text-to-Web,2.6,2022-04-19,2022-06-14,17424,Indiana,Donald Trump,54,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Probability Panel,2.5,2023-09-19,2023-12-15,9640,Iowa,Donald Trump,49,likely voters
+Echelon Insights,App Panel,2.7,2022-09-11,2022-09-25,10633,Massachusetts,Donald Trump,54,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Email,2.5,2021-05-25,2021-10-06,3936,Kentucky,Donald Trump,50,likely voters
+Stockton University William J. Hughes Center for Public Policy,Online Ad,2.6,2023-11-09,2024-01-26,6108,South Dakota,Donald Trump,52,registered voters
+Quinnipiac University,Mixed,2.8,2021-05-12,2021-10-19,18713,Rhode Island,Donald Trump,45,registered voters
+Data for Progress,Live Phone,2.6,2022-06-26,2022-07-18,12879,Arkansas,Donald Trump,45,likely voters
+Suffolk University,Email,2.9,2023-09-23,2024-02-27,14951,Connecticut,Donald Trump,50,likely voters
+Selzer & Co.,Text,2.8,2021-04-06,2021-09-12,2276,New Hampshire,Donald Trump,53,likely voters
+High Point University Survey Research Center,Text-to-Web,2.5,2022-09-11,2022-10-28,18107,Kentucky,Donald Trump,53,likely voters
+The Winston Group,Online Ad,2.5,2021-12-28,2022-04-09,14814,Nevada,Donald Trump,50,registered voters
+Hart Research Associates/Public Opinion Strategies,App Panel,2.6,2023-05-07,2023-10-12,15157,Nebraska,Donald Trump,46,likely voters
+Suffolk University,Online Ad,2.9,2021-08-28,2021-10-10,7984,Wisconsin,Donald Trump,49,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Ad,2.5,2021-09-12,2022-01-27,441,Rhode Island,Donald Trump,48,registered voters
+The Winston Group,IVR,2.5,2024-02-10,2024-03-18,13071,Iowa,Donald Trump,52,likely voters
+East Carolina University Center for Survey Research,Mixed,2.6,2021-11-28,2022-04-08,18864,Oklahoma,Donald Trump,47,registered voters
+Western New England University Polling Institute,IVR,2.5,2021-04-03,2021-07-13,11841,Oregon,Donald Trump,53,registered voters
+University of New Hampshire Survey Center,Online Ad,2.6,2022-10-12,2022-11-17,1299,Hawaii,Donald Trump,51,registered voters
+Data Orbital,Email,2.9,2023-11-28,2024-03-10,11017,Delaware,Donald Trump,46,registered voters
+University of New Hampshire Survey Center,IVR,2.6,2023-05-26,2023-09-22,13663,New York,Donald Trump,51,likely voters
+AtlasIntel,Text,2.7,2022-10-07,2022-12-30,2048,Iowa,Donald Trump,51,registered voters
+MassINC Polling Group,Email,2.8,2022-01-03,2022-07-01,19239,Pennsylvania,Donald Trump,55,registered voters
+Marquette University Law School,IVR,3,2024-01-21,2024-03-23,13826,Vermont,Donald Trump,49,likely voters
+Fairleigh Dickinson University,Probability Panel,2.6,2024-02-24,2024-04-12,10688,Michigan,Donald Trump,50,registered voters
+ABC News/The Washington Post,IVR,3,2023-11-08,2024-03-22,13774,Maryland,Donald Trump,47,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Text,2.5,2022-06-21,2022-07-04,11926,Arizona,Donald Trump,47,likely voters
+Michigan State University Institute for Public Policy and Social Research,Online Ad,2.5,2023-04-05,2023-05-24,9311,Connecticut,Donald Trump,46,likely voters
+Stockton University William J. Hughes Center for Public Policy,Online Panel,2.6,2021-08-01,2021-09-06,8795,Nebraska,Donald Trump,55,registered voters
+University of Arkansas Department of Political Science,Online Panel,2.5,2022-05-03,2022-08-11,14092,Mississippi,Donald Trump,45,likely voters
+Elon University,Online Ad,2.5,2021-09-02,2021-12-05,17523,Rhode Island,Donald Trump,54,likely voters
+Marquette University Law School,Text,3,2023-04-08,2023-09-08,16951,Maine,Donald Trump,48,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Online Panel,2.5,2021-06-13,2021-11-27,4429,Colorado,Donald Trump,48,registered voters
+AtlasIntel,App Panel,2.7,2022-01-25,2022-07-02,8830,Kentucky,Donald Trump,51,likely voters
+AtlasIntel,Text-to-Web,2.7,2022-10-25,2023-03-26,13641,Virginia,Donald Trump,51,registered voters
+Beacon Research/Shaw & Co. Research,Email,2.8,2024-08-09,2025-01-15,5168,Alaska,Donald Trump,46,likely voters
+Ipsos,Live Phone,2.8,2021-04-28,2021-07-08,5834,Montana,Donald Trump,49,registered voters
+Data Orbital,Probability Panel,2.9,2021-11-27,2022-01-28,9047,Louisiana,Donald Trump,55,likely voters
+CNN,Online Ad,2.8,2023-08-23,2023-09-01,10491,Vermont,Donald Trump,47,likely voters
+Suffolk University,Online Ad,2.9,2024-07-02,2024-09-02,18338,Michigan,Donald Trump,54,registered voters
+Marist College,Mixed,2.9,2021-12-17,2022-03-03,17547,South Carolina,Donald Trump,46,likely voters
+The New York Times/Siena College,Online Ad,3,2023-06-27,2023-09-29,1788,California,Donald Trump,53,registered voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2021-04-29,2021-05-18,12664,West Virginia,Donald Trump,47,registered voters
+Ipsos,App Panel,2.8,2024-09-20,2024-10-08,3286,North Carolina,Donald Trump,55,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Text,2.8,2021-12-26,2022-06-08,13664,Alabama,Donald Trump,55,likely voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2022-04-29,2022-09-22,2363,Utah,Donald Trump,48,adults
+Muhlenberg College Institute of Public Opinion,Mixed,2.8,2023-10-28,2023-12-24,15898,Louisiana,Donald Trump,55,likely voters
+Roanoke College Institute for Policy and Opinion Research,Online Ad,2.6,2021-09-06,2022-01-18,10879,New York,Donald Trump,55,registered voters
+Lake Research Partners/The Tarrance Group,Text-to-Web,2.5,2022-06-02,2022-11-06,12946,West Virginia,Donald Trump,49,registered voters
+Marist College,Online Ad,2.9,2021-08-08,2021-08-20,19353,Oregon,Donald Trump,50,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,App Panel,2.5,2021-05-05,2021-10-17,14177,Kansas,Donald Trump,53,registered voters
+Data for Progress,Online Panel,2.6,2023-02-19,2023-04-24,16750,West Virginia,Donald Trump,51,registered voters
+University of North Florida Public Opinion Research Lab,App Panel,2.8,2024-01-03,2024-05-01,14706,Kentucky,Donald Trump,53,registered voters
+University of Illinois Springfield Survey Research Office,Live Phone,2.5,2021-06-13,2021-07-30,19091,Texas,Donald Trump,47,likely voters
+Gallup,Text,2.5,2021-11-12,2021-12-25,9501,Massachusetts,Donald Trump,51,likely voters
+Public Policy Institute of California,Live Phone,2.5,2022-06-04,2022-08-20,12768,Wisconsin,Donald Trump,45,likely voters
+Pew Research Center,Live Phone,2.5,2023-02-21,2023-06-28,1217,New Hampshire,Donald Trump,45,registered voters
+Hart Research Associates/Public Opinion Strategies,App Panel,2.6,2021-04-02,2021-07-31,14395,West Virginia,Donald Trump,46,likely voters
+Emerson College,Text-to-Web,2.9,2023-12-06,2024-03-03,19551,Alaska,Donald Trump,48,likely voters
+MassINC Polling Group,Email,2.8,2021-01-30,2021-06-17,16371,Iowa,Donald Trump,53,registered voters
+Roanoke College Institute for Policy and Opinion Research,Text,2.6,2024-01-02,2024-01-09,6413,Minnesota,Donald Trump,47,adults
+University of New Hampshire Survey Center,Mixed,2.6,2024-07-26,2024-08-28,6090,Maine,Donald Trump,51,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Mixed,2.7,2023-02-24,2023-07-12,19873,Ohio,Donald Trump,49,likely voters
+University of California Berkeley Institute of Governmental Studies,Live Phone,2.5,2023-09-16,2024-02-21,5162,South Dakota,Donald Trump,54,likely voters
+Marquette University Law School,Live Phone,3,2021-03-01,2021-06-30,18209,Nevada,Donald Trump,54,likely voters
+East Carolina University Center for Survey Research,Mixed,2.6,2024-07-09,2024-11-22,4118,Idaho,Donald Trump,46,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Online Ad,2.5,2021-09-18,2021-11-14,8045,Florida,Donald Trump,51,likely voters
+Mason-Dixon Polling & Strategy,Mixed,2.6,2022-05-27,2022-09-16,19302,Pennsylvania,Donald Trump,45,registered voters
+Marquette University Law School,App Panel,3,2022-01-22,2022-06-10,3690,Montana,Donald Trump,49,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Text-to-Web,2.8,2021-06-21,2021-09-06,15946,North Dakota,Donald Trump,52,likely voters
+Western New England University Polling Institute,IVR,2.5,2024-07-17,2024-11-02,16688,Louisiana,Donald Trump,47,likely voters
+University of North Florida Public Opinion Research Lab,Online Panel,2.8,2024-07-27,2024-09-21,3014,Florida,Donald Trump,54,likely voters
+AtlasIntel,Online Ad,2.7,2023-01-09,2023-03-21,13853,Louisiana,Donald Trump,49,registered voters
+Muhlenberg College Institute of Public Opinion,Probability Panel,2.8,2021-12-07,2022-04-04,4303,Alabama,Donald Trump,54,likely voters
+University of Massachusetts Lowell Center for Public Opinion,IVR,2.9,2022-09-25,2023-02-24,12842,Georgia,Donald Trump,53,registered voters
+Fairleigh Dickinson University,App Panel,2.6,2021-02-12,2021-06-26,1058,New York,Donald Trump,50,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Email,2.9,2021-06-02,2021-11-08,11342,Washington,Donald Trump,50,likely voters
+YouGov,Online Ad,3,2023-04-30,2023-06-14,12532,Indiana,Donald Trump,48,registered voters
+Roanoke College Institute for Policy and Opinion Research,Online Panel,2.6,2024-06-26,2024-12-01,16301,Pennsylvania,Donald Trump,45,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Text,2.9,2023-06-08,2023-11-14,11529,Kentucky,Donald Trump,49,adults
+Siena College,Live Phone,2.7,2022-12-31,2023-04-27,5968,Kentucky,Donald Trump,45,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Live Phone,2.9,2022-11-20,2022-12-05,10368,Arizona,Donald Trump,46,registered voters
+Pew Research Center,Online Panel,2.5,2021-08-25,2021-10-28,7020,Michigan,Donald Trump,52,registered voters
+ABC News/The Washington Post,Online Ad,3,2023-08-16,2023-09-18,5307,Missouri,Donald Trump,55,likely voters
+The New York Times/Siena College,Online Ad,3,2024-06-09,2024-08-06,8516,New Mexico,Donald Trump,49,registered voters
+Hart Research Associates/Public Opinion Strategies,Online Ad,2.6,2023-02-19,2023-07-22,2842,Wyoming,Donald Trump,46,likely voters
+Ipsos,Live Phone,2.8,2022-02-02,2022-06-27,4449,Iowa,Donald Trump,52,registered voters
+Remington Research Group,Live Phone,2.6,2021-07-29,2021-11-27,19619,Iowa,Donald Trump,46,registered voters
+Muhlenberg College Institute of Public Opinion,Mixed,2.8,2021-05-15,2021-05-16,16168,Hawaii,Donald Trump,49,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Mixed,2.5,2021-12-19,2022-06-09,11676,Hawaii,Donald Trump,52,registered voters
+Western New England University Polling Institute,Text-to-Web,2.5,2021-05-08,2021-10-18,2939,Illinois,Donald Trump,55,registered voters
+University of California Berkeley Institute of Governmental Studies,Probability Panel,2.5,2021-12-18,2022-04-01,10950,Hawaii,Donald Trump,47,registered voters
+Selzer & Co.,Probability Panel,2.8,2022-07-19,2022-08-02,1607,South Carolina,Donald Trump,53,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Text,2.5,2021-11-12,2022-01-16,9977,Alaska,Donald Trump,48,registered voters
+East Carolina University Center for Survey Research,App Panel,2.6,2024-05-09,2024-06-15,8299,Wisconsin,Donald Trump,55,adults
+MassINC Polling Group,Live Phone,2.8,2024-02-15,2024-06-18,1829,Rhode Island,Donald Trump,45,adults
+Roanoke College Institute for Policy and Opinion Research,Online Panel,2.6,2022-12-30,2023-02-20,17603,Maine,Donald Trump,48,likely voters
+East Carolina University Center for Survey Research,IVR,2.6,2021-02-21,2021-04-05,8609,North Dakota,Donald Trump,54,registered voters
+CNN,Probability Panel,2.8,2021-12-12,2021-12-29,4504,Kansas,Donald Trump,55,likely voters
+University of Arkansas Department of Political Science,Probability Panel,2.5,2023-12-21,2024-01-28,12625,Georgia,Donald Trump,53,likely voters
+High Point University Survey Research Center,Text-to-Web,2.5,2023-06-30,2023-09-22,11535,South Dakota,Donald Trump,48,registered voters
+University of North Florida Public Opinion Research Lab,Probability Panel,2.8,2022-05-27,2022-06-21,16286,Ohio,Donald Trump,54,likely voters
+University of California Berkeley Institute of Governmental Studies,IVR,2.5,2022-11-24,2023-05-21,14992,Wisconsin,Donald Trump,46,likely voters
+The New York Times/Siena College,Online Ad,3,2021-03-14,2021-06-28,19457,Michigan,Donald Trump,50,likely voters
+CNN,Email,2.8,2023-02-14,2023-03-13,17335,Vermont,Donald Trump,55,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Email,2.5,2023-05-15,2023-08-02,15529,Louisiana,Donald Trump,48,registered voters
+Fairleigh Dickinson University,App Panel,2.6,2023-04-25,2023-07-19,13106,National,Donald Trump,54,registered voters
+Beacon Research/Shaw & Co. Research,Live Phone,2.8,2023-04-02,2023-07-07,8547,Idaho,Donald Trump,45,registered voters
+Elon University,Email,2.5,2021-09-13,2021-11-29,15794,Missouri,Donald Trump,49,registered voters
+Echelon Insights,IVR,2.7,2022-02-01,2022-07-28,1943,Indiana,Donald Trump,55,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Probability Panel,2.5,2023-12-01,2023-12-20,4794,Louisiana,Donald Trump,53,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,App Panel,2.7,2024-08-26,2025-01-19,17837,Illinois,Donald Trump,52,registered voters
+Lake Research Partners/The Tarrance Group,Mixed,2.5,2023-12-16,2024-06-05,1364,South Dakota,Donald Trump,45,adults
+East Carolina University Center for Survey Research,Live Phone,2.6,2022-09-10,2022-11-26,12204,Washington,Donald Trump,51,adults
+Stockton University William J. Hughes Center for Public Policy,IVR,2.6,2021-06-12,2021-11-08,7188,Delaware,Donald Trump,52,registered voters
+Abt Associates,Online Ad,2.5,2023-09-30,2023-12-15,14942,North Dakota,Donald Trump,54,registered voters
+SurveyUSA,Text-to-Web,2.8,2023-04-06,2023-09-05,18816,Louisiana,Donald Trump,50,likely voters
+CNN,Email,2.8,2022-05-25,2022-07-06,15736,Utah,Donald Trump,50,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,IVR,2.5,2024-08-14,2024-08-28,978,Florida,Donald Trump,46,likely voters
+Monmouth University Polling Institute,Text,2.9,2024-05-01,2024-09-07,11610,Colorado,Donald Trump,51,adults
+Public Policy Institute of California,IVR,2.5,2022-01-07,2022-05-05,7322,Wyoming,Donald Trump,50,likely voters
+Elon University,App Panel,2.5,2023-09-14,2024-02-20,15256,National,Donald Trump,48,registered voters
+Suffolk University,Email,2.9,2021-08-03,2021-11-30,7237,Oregon,Donald Trump,46,registered voters
+University of New Hampshire Survey Center,IVR,2.6,2022-02-28,2022-07-09,14251,Pennsylvania,Donald Trump,55,registered voters
+Siena College,Online Panel,2.7,2024-03-16,2024-06-28,11570,New Hampshire,Donald Trump,46,likely voters
+University of Illinois Springfield Survey Research Office,Text,2.5,2024-05-24,2024-08-31,4326,Washington,Donald Trump,52,likely voters
+Emerson College,Online Panel,2.9,2022-09-09,2022-12-05,7254,West Virginia,Donald Trump,50,adults
+SurveyUSA,Online Panel,2.8,2024-02-15,2024-07-16,17882,Oregon,Donald Trump,54,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Email,2.5,2023-09-04,2024-01-19,19468,Virginia,Donald Trump,45,likely voters
+Data Orbital,Live Phone,2.9,2021-12-14,2022-02-22,19770,West Virginia,Donald Trump,47,likely voters
+Monmouth University Polling Institute,Text,2.9,2022-01-20,2022-06-28,12473,Montana,Donald Trump,47,likely voters
+Echelon Insights,Probability Panel,2.7,2021-07-26,2021-10-02,4027,Minnesota,Donald Trump,50,registered voters
+Suffolk University,Probability Panel,2.9,2022-02-14,2022-06-09,13919,Minnesota,Donald Trump,51,registered voters
+Selzer & Co.,Online Panel,2.8,2023-12-24,2024-01-15,9334,Virginia,Donald Trump,53,likely voters
+The Winston Group,Live Phone,2.5,2022-06-15,2022-09-28,16344,Vermont,Donald Trump,51,registered voters
+CNN,Text,2.8,2024-02-02,2024-06-10,7840,North Carolina,Donald Trump,52,registered voters
+University of New Hampshire Survey Center,Text-to-Web,2.6,2022-01-11,2022-05-23,18937,Connecticut,Donald Trump,45,likely voters
+MassINC Polling Group,Probability Panel,2.8,2021-10-26,2022-02-15,7052,Kentucky,Donald Trump,50,registered voters
+Beacon Research/Shaw & Co. Research,Text-to-Web,2.8,2021-08-02,2021-09-04,18749,Virginia,Donald Trump,45,likely voters
+Michigan State University Institute for Public Policy and Social Research,Live Phone,2.5,2024-07-02,2024-09-26,13308,Oregon,Donald Trump,49,registered voters
+Monmouth University Polling Institute,Probability Panel,2.9,2021-04-21,2021-06-04,15423,Utah,Donald Trump,53,likely voters
+Ipsos,Online Ad,2.8,2023-10-19,2024-01-11,19752,Wyoming,Donald Trump,52,likely voters
+Muhlenberg College Institute of Public Opinion,IVR,2.8,2022-02-01,2022-03-03,4558,California,Donald Trump,49,likely voters
+High Point University Survey Research Center,IVR,2.5,2023-11-19,2024-03-27,9196,Missouri,Donald Trump,46,likely voters
+Emerson College,App Panel,2.9,2022-12-09,2023-03-27,2050,Oklahoma,Donald Trump,48,likely voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2022-03-25,2022-06-07,6446,Washington,Donald Trump,46,registered voters
+YouGov,Online Panel,3,2023-06-11,2023-11-11,17905,South Carolina,Donald Trump,45,likely voters
+Elon University,Probability Panel,2.5,2023-03-23,2023-08-06,8405,South Dakota,Donald Trump,54,likely voters
+Beacon Research/Shaw & Co. Research,App Panel,2.8,2024-05-19,2024-11-03,19034,Kansas,Donald Trump,45,likely voters
+Remington Research Group,Mixed,2.6,2022-03-12,2022-04-27,14037,Tennessee,Donald Trump,45,registered voters
+ABC News/The Washington Post,App Panel,3,2024-09-14,2024-11-22,3916,Maryland,Donald Trump,46,likely voters
+University of California Berkeley Institute of Governmental Studies,Online Ad,2.5,2024-02-07,2024-05-03,11269,Florida,Donald Trump,45,registered voters
+Marist College,App Panel,2.9,2023-06-29,2023-07-29,6282,Louisiana,Donald Trump,47,registered voters
+Ipsos,IVR,2.8,2023-02-17,2023-04-10,3353,Iowa,Donald Trump,54,registered voters
+Hart Research Associates/Public Opinion Strategies,Online Panel,2.6,2024-08-05,2025-01-28,11324,Kansas,Donald Trump,47,registered voters
+Ipsos,Text,2.8,2023-11-10,2024-03-14,581,Hawaii,Donald Trump,50,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Live Phone,2.5,2023-11-06,2023-11-26,2810,South Dakota,Donald Trump,51,likely voters
+Quinnipiac University,Mixed,2.8,2021-05-05,2021-06-23,263,Rhode Island,Donald Trump,54,likely voters
+University of California Berkeley Institute of Governmental Studies,IVR,2.5,2023-03-20,2023-06-10,9094,Ohio,Donald Trump,52,likely voters
+AtlasIntel,Online Panel,2.7,2023-04-01,2023-06-30,11247,Arizona,Donald Trump,47,adults
+The New York Times/Siena College,Online Ad,3,2023-02-16,2023-06-16,13548,Colorado,Donald Trump,53,adults
+Hart Research Associates/Public Opinion Strategies,Mixed,2.6,2023-03-08,2023-05-26,19605,Ohio,Donald Trump,46,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Text-to-Web,2.9,2024-03-07,2024-04-19,4408,Nevada,Donald Trump,49,registered voters
+Roanoke College Institute for Policy and Opinion Research,Live Phone,2.6,2022-07-18,2022-09-07,2915,Wisconsin,Donald Trump,48,likely voters
+Beacon Research/Shaw & Co. Research,Online Panel,2.8,2023-04-30,2023-09-28,19308,Nebraska,Donald Trump,48,likely voters
+Suffolk University,Online Ad,2.9,2023-12-13,2024-05-22,9629,Tennessee,Donald Trump,55,registered voters
+Pew Research Center,Probability Panel,2.5,2022-05-17,2022-06-23,16763,Maryland,Donald Trump,49,adults
+Lake Research Partners/The Tarrance Group,Text-to-Web,2.5,2021-05-07,2021-07-25,18933,West Virginia,Donald Trump,49,likely voters
+Hart Research Associates/Public Opinion Strategies,Probability Panel,2.6,2023-06-07,2023-06-25,13420,Mississippi,Donald Trump,52,likely voters
+Public Policy Institute of California,Online Panel,2.5,2024-05-12,2024-05-31,15939,Kansas,Donald Trump,52,likely voters
+Marquette University Law School,App Panel,3,2024-09-13,2024-12-21,12865,North Carolina,Donald Trump,45,registered voters
+University of New Hampshire Survey Center,Online Panel,2.6,2022-01-05,2022-01-08,6153,Mississippi,Donald Trump,52,likely voters
+University of North Florida Public Opinion Research Lab,Probability Panel,2.8,2021-11-21,2021-12-30,11426,Michigan,Donald Trump,54,likely voters
+The New York Times/Siena College,IVR,3,2022-01-12,2022-02-24,8580,Pennsylvania,Donald Trump,49,adults
+Southern Illinois University Paul Simon Public Policy Institute,Text,2.5,2024-02-01,2024-02-23,8249,Illinois,Donald Trump,48,likely voters
+Christopher Newport University Wason Center for Civic Leadership,IVR,2.8,2023-12-18,2024-01-09,10019,Wisconsin,Donald Trump,50,registered voters
+Elon University,Email,2.5,2021-10-20,2022-01-30,4417,Vermont,Donald Trump,47,likely voters
+Ipsos,App Panel,2.8,2024-01-26,2024-02-09,8856,Iowa,Donald Trump,52,registered voters
+Quinnipiac University,Text-to-Web,2.8,2022-05-13,2022-09-10,7587,Ohio,Donald Trump,50,likely voters
+Fairleigh Dickinson University,Online Ad,2.6,2024-01-29,2024-02-13,13307,Virginia,Donald Trump,54,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Text-to-Web,2.7,2022-04-24,2022-05-12,5575,Georgia,Donald Trump,48,registered voters
+Elon University,Online Panel,2.5,2023-09-17,2023-12-20,18160,Virginia,Donald Trump,50,likely voters
+Abt Associates,Online Panel,2.5,2021-08-06,2022-01-11,13435,New Mexico,Donald Trump,55,likely voters
+Muhlenberg College Institute of Public Opinion,Text-to-Web,2.8,2023-03-10,2023-06-24,12765,Utah,Donald Trump,53,likely voters
+SurveyUSA,Live Phone,2.8,2021-11-02,2022-01-23,12235,South Dakota,Donald Trump,51,registered voters
+Selzer & Co.,Online Ad,2.8,2022-09-16,2022-11-20,15297,Oklahoma,Donald Trump,46,registered voters
+Michigan State University Institute for Public Policy and Social Research,Live Phone,2.5,2023-05-26,2023-10-17,2128,Connecticut,Donald Trump,45,likely voters
+Siena College,Online Panel,2.7,2021-10-02,2022-02-09,16751,West Virginia,Donald Trump,54,likely voters
+Stockton University William J. Hughes Center for Public Policy,Email,2.6,2022-01-19,2022-06-10,19766,Georgia,Donald Trump,49,registered voters
+University of Arkansas Department of Political Science,Live Phone,2.5,2024-09-07,2024-12-12,3515,Pennsylvania,Donald Trump,46,likely voters
+SurveyUSA,Text,2.8,2023-10-16,2024-02-23,19261,Alabama,Donald Trump,55,likely voters
+Remington Research Group,Live Phone,2.6,2023-12-02,2024-03-21,12290,North Carolina,Donald Trump,46,registered voters
+Siena College,Online Ad,2.7,2023-05-27,2023-09-09,9016,Louisiana,Donald Trump,49,likely voters
+Michigan State University Institute for Public Policy and Social Research,Online Ad,2.5,2021-06-13,2021-08-28,329,Ohio,Donald Trump,48,likely voters
+Elon University,Text,2.5,2024-07-18,2024-10-11,17435,Utah,Donald Trump,48,registered voters
+University of North Florida Public Opinion Research Lab,Online Panel,2.8,2022-05-05,2022-08-12,8500,Georgia,Donald Trump,52,likely voters
+YouGov,Mixed,3,2024-05-22,2024-06-04,7660,Iowa,Donald Trump,47,likely voters
+Stockton University William J. Hughes Center for Public Policy,Online Ad,2.6,2021-03-24,2021-05-01,11745,Wyoming,Donald Trump,55,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,App Panel,2.7,2022-05-16,2022-11-02,4113,Maryland,Donald Trump,45,likely voters
+Emerson College,App Panel,2.9,2021-11-02,2021-12-13,6175,North Dakota,Donald Trump,54,likely voters
+Echelon Insights,Live Phone,2.7,2023-02-12,2023-03-13,19955,Vermont,Donald Trump,50,registered voters
+Echelon Insights,Online Panel,2.7,2022-01-04,2022-01-11,8587,Oregon,Donald Trump,45,likely voters
+University of Arkansas Department of Political Science,Email,2.5,2024-03-20,2024-04-18,10746,Vermont,Donald Trump,46,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2023-09-18,2024-02-16,14249,Iowa,Donald Trump,53,likely voters
+Selzer & Co.,Email,2.8,2023-09-12,2024-01-12,16668,Connecticut,Donald Trump,55,registered voters
+MassINC Polling Group,Email,2.8,2024-09-06,2024-09-30,14914,Ohio,Donald Trump,46,likely voters
+Siena College,Email,2.7,2024-01-27,2024-07-05,637,Virginia,Donald Trump,45,likely voters
+East Carolina University Center for Survey Research,Online Panel,2.6,2023-05-07,2023-07-08,9664,Louisiana,Donald Trump,48,registered voters
+University of Illinois Springfield Survey Research Office,Text-to-Web,2.5,2024-07-17,2024-12-02,15242,Tennessee,Donald Trump,51,registered voters
+SurveyUSA,Mixed,2.8,2022-12-29,2023-04-14,18946,New Hampshire,Donald Trump,50,likely voters
+Gallup,App Panel,2.5,2024-04-04,2024-04-09,17113,Hawaii,Donald Trump,53,likely voters
+Suffolk University,Online Panel,2.9,2024-05-20,2024-08-18,5306,Texas,Donald Trump,53,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Probability Panel,2.7,2023-07-26,2023-11-23,791,Tennessee,Donald Trump,49,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,IVR,2.5,2024-07-27,2024-12-03,18028,Maine,Donald Trump,49,likely voters
+Hart Research Associates/Public Opinion Strategies,Email,2.6,2023-04-11,2023-08-07,922,Missouri,Donald Trump,47,registered voters
+MassINC Polling Group,Text,2.8,2023-02-01,2023-06-16,10151,Indiana,Donald Trump,53,registered voters
+YouGov,App Panel,3,2023-12-30,2024-04-23,11142,Kentucky,Donald Trump,47,likely voters
+Public Policy Institute of California,Email,2.5,2022-10-08,2023-01-24,3662,Oklahoma,Donald Trump,46,registered voters
+Siena College,Text,2.7,2023-05-12,2023-09-20,10946,Arizona,Donald Trump,47,adults
+Southern Illinois University Paul Simon Public Policy Institute,Live Phone,2.5,2022-05-10,2022-05-24,11232,New Mexico,Donald Trump,53,registered voters
+Gallup,Text,2.5,2022-11-16,2022-12-23,12608,New Mexico,Donald Trump,53,likely voters
+Mason-Dixon Polling & Strategy,IVR,2.6,2024-08-04,2024-11-10,7718,Nevada,Donald Trump,47,adults
+University of Arkansas Department of Political Science,Text-to-Web,2.5,2023-05-14,2023-07-20,15166,New Jersey,Donald Trump,49,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Ad,2.5,2023-08-20,2024-01-01,7303,Rhode Island,Donald Trump,50,likely voters
+University of North Florida Public Opinion Research Lab,Text-to-Web,2.8,2022-09-08,2022-09-10,10823,Georgia,Donald Trump,48,adults
+Remington Research Group,Text,2.6,2021-11-26,2022-01-17,16666,Massachusetts,Donald Trump,48,registered voters
+Monmouth University Polling Institute,App Panel,2.9,2021-07-09,2021-11-09,13727,Alaska,Donald Trump,55,likely voters
+MassINC Polling Group,Mixed,2.8,2023-08-04,2024-01-08,7660,Missouri,Donald Trump,46,likely voters
+University of Arkansas Department of Political Science,IVR,2.5,2021-09-24,2021-10-29,16041,Florida,Donald Trump,45,registered voters
+Gallup,Text-to-Web,2.5,2021-02-16,2021-05-16,2163,Maine,Donald Trump,52,registered voters
+KFF,Online Ad,2.5,2023-02-25,2023-03-22,11793,Michigan,Donald Trump,50,registered voters
+Monmouth University Polling Institute,Text,2.9,2023-01-19,2023-02-18,13585,New York,Donald Trump,45,likely voters
+Data for Progress,App Panel,2.6,2022-03-07,2022-05-22,11609,Texas,Donald Trump,54,adults
+Data Orbital,Email,2.9,2022-02-16,2022-05-21,18791,Oklahoma,Donald Trump,49,likely voters
+Abt Associates,App Panel,2.5,2022-10-22,2023-04-07,17279,New Mexico,Donald Trump,46,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Panel,2.5,2021-07-30,2021-10-14,6570,North Carolina,Donald Trump,48,likely voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2021-02-27,2021-05-26,3722,New Hampshire,Donald Trump,50,registered voters
+The Winston Group,Online Panel,2.5,2021-03-08,2021-04-12,14592,South Dakota,Donald Trump,50,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Probability Panel,2.9,2021-06-03,2021-10-24,5325,Idaho,Donald Trump,46,adults
+Stockton University William J. Hughes Center for Public Policy,Mixed,2.6,2022-08-14,2022-09-04,8585,Colorado,Donald Trump,46,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,Mixed,2.7,2021-09-05,2022-02-20,14483,Arizona,Donald Trump,46,registered voters
+AtlasIntel,Live Phone,2.7,2021-10-31,2021-12-28,12064,Missouri,Donald Trump,47,likely voters
+Monmouth University Polling Institute,Live Phone,2.9,2023-04-14,2023-07-29,18241,Arkansas,Donald Trump,48,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Live Phone,2.5,2023-08-18,2023-12-16,19563,Minnesota,Donald Trump,45,registered voters
+Lake Research Partners/The Tarrance Group,Online Panel,2.5,2022-10-01,2022-10-06,10990,Nebraska,Donald Trump,53,registered voters
+ABC News/The Washington Post,Text-to-Web,3,2022-06-16,2022-09-15,18001,North Carolina,Donald Trump,52,adults
+Muhlenberg College Institute of Public Opinion,Online Panel,2.8,2022-06-02,2022-06-20,6220,Oregon,Donald Trump,46,registered voters
+Marist College,App Panel,2.9,2021-09-13,2021-12-07,8351,Montana,Donald Trump,45,likely voters
+East Carolina University Center for Survey Research,Probability Panel,2.6,2021-06-19,2021-10-05,119,Rhode Island,Donald Trump,48,registered voters
+East Carolina University Center for Survey Research,Online Panel,2.6,2021-11-27,2022-02-20,8329,Colorado,Donald Trump,47,likely voters
+University of Arkansas Department of Political Science,Online Ad,2.5,2024-05-28,2024-05-29,14810,Idaho,Donald Trump,45,registered voters
+University of Illinois Springfield Survey Research Office,Online Ad,2.5,2022-02-18,2022-05-31,12941,Michigan,Donald Trump,52,registered voters
+Emerson College,Online Panel,2.9,2021-11-24,2022-03-26,5510,Colorado,Donald Trump,53,likely voters
+University of Arkansas Department of Political Science,Online Ad,2.5,2022-09-19,2022-12-07,17769,Kentucky,Donald Trump,47,registered voters
+Elon University,Live Phone,2.5,2021-08-20,2021-10-22,14506,New Jersey,Donald Trump,54,registered voters
+Christopher Newport University Wason Center for Civic Leadership,App Panel,2.8,2022-04-28,2022-07-02,11395,Louisiana,Donald Trump,48,registered voters
+Siena College,Text,2.7,2022-08-25,2023-01-27,8687,Missouri,Donald Trump,53,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Live Phone,2.5,2021-05-07,2021-05-16,6409,Utah,Donald Trump,46,likely voters
+Muhlenberg College Institute of Public Opinion,Text,2.8,2022-09-06,2022-11-16,19549,Kansas,Donald Trump,54,likely voters
+Data Orbital,Probability Panel,2.9,2021-10-28,2021-11-11,3380,South Dakota,Donald Trump,54,likely voters
+MassINC Polling Group,Mixed,2.8,2024-02-17,2024-07-09,6119,Wisconsin,Donald Trump,48,registered voters
+KFF,Live Phone,2.5,2024-05-06,2024-08-01,975,Idaho,Donald Trump,50,likely voters
+University of North Florida Public Opinion Research Lab,Online Ad,2.8,2023-07-02,2023-10-10,19528,Ohio,Donald Trump,49,adults
+Remington Research Group,Text,2.6,2022-05-01,2022-05-18,11113,Utah,Donald Trump,55,likely voters
+MassINC Polling Group,App Panel,2.8,2021-02-18,2021-05-21,11721,North Dakota,Donald Trump,51,likely voters
+MassINC Polling Group,App Panel,2.8,2024-04-28,2024-08-18,1830,Ohio,Donald Trump,51,registered voters
+University of Illinois Springfield Survey Research Office,Online Ad,2.5,2021-08-14,2021-10-07,13147,New Jersey,Donald Trump,54,adults
+Pew Research Center,App Panel,2.5,2022-08-19,2023-02-02,19430,New Mexico,Donald Trump,47,likely voters
+Marist College,Text-to-Web,2.9,2022-05-15,2022-10-18,12033,Illinois,Donald Trump,55,registered voters
+The New York Times/Siena College,Live Phone,3,2022-10-05,2023-03-03,13964,Kentucky,Donald Trump,49,likely voters
+Monmouth University Polling Institute,Probability Panel,2.9,2022-07-31,2022-08-28,717,Minnesota,Donald Trump,53,registered voters
+Hart Research Associates/Public Opinion Strategies,IVR,2.6,2024-04-09,2024-06-17,2674,South Dakota,Donald Trump,48,registered voters
+SurveyUSA,Mixed,2.8,2024-08-15,2025-02-03,5594,National,Donald Trump,47,likely voters
+Quinnipiac University,Email,2.8,2024-09-04,2024-12-16,266,Rhode Island,Donald Trump,54,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Ad,2.5,2024-08-29,2024-12-28,18867,Nebraska,Donald Trump,55,likely voters
+Remington Research Group,Probability Panel,2.6,2021-02-11,2021-07-29,1318,Oklahoma,Donald Trump,52,registered voters
+Data Orbital,Email,2.9,2024-02-11,2024-03-02,5565,Texas,Donald Trump,49,registered voters
+Elon University,Text,2.5,2024-04-29,2024-09-18,354,Kansas,Donald Trump,46,registered voters
+University of North Florida Public Opinion Research Lab,Text-to-Web,2.8,2023-01-22,2023-05-07,15186,Idaho,Donald Trump,50,likely voters
+KFF,Email,2.5,2022-04-25,2022-07-01,13023,West Virginia,Donald Trump,55,registered voters
+Fairleigh Dickinson University,App Panel,2.6,2023-12-10,2024-04-03,19451,Tennessee,Donald Trump,45,likely voters
+Michigan State University Institute for Public Policy and Social Research,IVR,2.5,2023-01-21,2023-06-17,8103,Colorado,Donald Trump,49,registered voters
+Elon University,Text-to-Web,2.5,2022-06-25,2022-12-11,15453,North Dakota,Donald Trump,53,registered voters
+Michigan State University Institute for Public Policy and Social Research,Online Ad,2.5,2022-09-18,2023-02-08,12387,Vermont,Donald Trump,55,registered voters
+MassINC Polling Group,App Panel,2.8,2023-04-04,2023-08-20,15868,Maryland,Donald Trump,47,registered voters
+The New York Times/Siena College,Probability Panel,3,2021-09-28,2021-11-25,16228,Iowa,Donald Trump,55,registered voters
+SurveyUSA,Live Phone,2.8,2021-11-25,2022-01-29,12614,Washington,Donald Trump,50,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2023-11-23,2024-01-14,15173,Michigan,Donald Trump,49,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Email,2.9,2021-12-26,2022-06-14,3158,West Virginia,Donald Trump,54,registered voters
+Echelon Insights,Live Phone,2.7,2023-09-20,2023-12-31,3928,Missouri,Donald Trump,54,likely voters
+Muhlenberg College Institute of Public Opinion,IVR,2.8,2023-10-08,2024-03-18,2482,Arkansas,Donald Trump,55,adults
+Echelon Insights,Probability Panel,2.7,2022-01-24,2022-03-30,13577,Nebraska,Donald Trump,47,likely voters
+Remington Research Group,Probability Panel,2.6,2022-09-13,2023-02-10,854,Washington,Donald Trump,52,likely voters
+Monmouth University Polling Institute,Text-to-Web,2.9,2021-10-02,2021-12-09,3094,Maine,Donald Trump,55,likely voters
+Hart Research Associates/Public Opinion Strategies,App Panel,2.6,2021-02-12,2021-08-03,1125,National,Donald Trump,53,registered voters
+Remington Research Group,Mixed,2.6,2021-12-31,2022-05-14,18485,Rhode Island,Donald Trump,50,registered voters
+AtlasIntel,Live Phone,2.7,2021-03-09,2021-07-23,9846,Montana,Donald Trump,48,registered voters
+CNN,Probability Panel,2.8,2023-11-17,2024-01-27,19802,Montana,Donald Trump,53,likely voters
+University of New Hampshire Survey Center,Text,2.6,2023-11-28,2024-01-16,16334,Wyoming,Donald Trump,54,registered voters
+Remington Research Group,App Panel,2.6,2022-01-25,2022-05-26,12517,North Dakota,Donald Trump,54,adults
+High Point University Survey Research Center,Probability Panel,2.5,2022-11-30,2023-01-28,7700,Arizona,Donald Trump,45,likely voters
+Fairleigh Dickinson University,IVR,2.6,2024-02-03,2024-06-10,16191,Virginia,Donald Trump,52,registered voters
+University of North Florida Public Opinion Research Lab,Live Phone,2.8,2023-03-07,2023-03-11,11872,Colorado,Donald Trump,55,likely voters
+SurveyUSA,Email,2.8,2022-07-16,2023-01-01,18805,Michigan,Donald Trump,50,registered voters
+University of Arkansas Department of Political Science,Online Panel,2.5,2022-06-12,2022-10-14,5065,Ohio,Donald Trump,54,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Live Phone,2.5,2021-03-05,2021-06-27,6945,New Mexico,Donald Trump,55,likely voters
+Selzer & Co.,Email,2.8,2024-06-08,2024-07-17,15378,Missouri,Donald Trump,54,registered voters
+University of California Berkeley Institute of Governmental Studies,IVR,2.5,2021-02-26,2021-05-23,10970,Colorado,Donald Trump,45,registered voters
+AtlasIntel,Text-to-Web,2.7,2022-06-19,2022-09-04,9048,Mississippi,Donald Trump,49,likely voters
+University of New Hampshire Survey Center,Text,2.6,2022-08-08,2023-01-02,6074,Missouri,Donald Trump,53,likely voters
+Marist College,Probability Panel,2.9,2024-05-30,2024-11-04,16187,Michigan,Donald Trump,53,likely voters
+Siena College,Mixed,2.7,2021-01-31,2021-03-09,7591,Georgia,Donald Trump,53,likely voters
+High Point University Survey Research Center,Text-to-Web,2.5,2022-10-01,2023-01-06,8612,Washington,Donald Trump,51,registered voters
+MassINC Polling Group,Text,2.8,2023-05-21,2023-06-16,7652,Arkansas,Donald Trump,54,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Mixed,2.9,2023-05-22,2023-11-11,16651,National,Donald Trump,53,registered voters
+YouGov,Live Phone,3,2024-08-12,2025-01-17,358,Iowa,Donald Trump,50,likely voters
+Echelon Insights,Email,2.7,2023-11-17,2024-01-08,449,Vermont,Donald Trump,49,likely voters
+Beacon Research/Shaw & Co. Research,Online Ad,2.8,2024-07-06,2024-07-14,16803,Arkansas,Donald Trump,53,likely voters
+Remington Research Group,Text,2.6,2022-06-10,2022-11-19,8404,Nevada,Donald Trump,52,registered voters
+Michigan State University Institute for Public Policy and Social Research,Online Ad,2.5,2023-11-16,2024-01-07,3509,Wyoming,Donald Trump,49,likely voters
+University of New Hampshire Survey Center,Email,2.6,2022-06-05,2022-08-14,7634,Nevada,Donald Trump,52,registered voters
+East Carolina University Center for Survey Research,Online Ad,2.6,2022-07-24,2022-08-09,19047,Oregon,Donald Trump,46,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Email,2.7,2024-02-02,2024-07-18,7949,Kansas,Donald Trump,46,likely voters
+Emerson College,Text,2.9,2021-11-11,2021-11-23,5521,Indiana,Donald Trump,45,registered voters
+Ipsos,Text,2.8,2023-03-08,2023-05-12,8164,New Jersey,Donald Trump,48,registered voters
+ABC News/The Washington Post,Email,3,2022-09-25,2022-10-03,15099,Kentucky,Donald Trump,54,registered voters
+Western New England University Polling Institute,Online Ad,2.5,2022-07-08,2022-08-04,1360,Rhode Island,Donald Trump,54,registered voters
+Selzer & Co.,Email,2.8,2021-03-08,2021-05-25,16314,North Carolina,Donald Trump,53,registered voters
+MassINC Polling Group,Mixed,2.8,2022-10-29,2023-04-06,15274,Louisiana,Donald Trump,54,registered voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2022-11-25,2023-05-06,10136,California,Donald Trump,54,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Text-to-Web,2.8,2023-09-06,2023-11-03,19240,Oregon,Donald Trump,49,likely voters
+The Winston Group,Text,2.5,2023-10-09,2024-02-28,8246,Alaska,Donald Trump,46,likely voters
+Marist College,Live Phone,2.9,2023-06-14,2023-11-19,3503,Missouri,Donald Trump,49,likely voters
+Suffolk University,Online Ad,2.9,2021-04-28,2021-08-27,1789,California,Donald Trump,50,registered voters
+University of North Florida Public Opinion Research Lab,Live Phone,2.8,2021-04-18,2021-05-28,17289,Wyoming,Donald Trump,49,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Email,2.5,2022-07-23,2022-12-06,11614,National,Donald Trump,45,adults
+Marist College,App Panel,2.9,2021-04-18,2021-06-08,13967,Vermont,Donald Trump,55,likely voters
+Ipsos,Online Ad,2.8,2022-09-25,2023-01-05,19585,New Hampshire,Donald Trump,49,likely voters
+Michigan State University Institute for Public Policy and Social Research,Online Ad,2.5,2023-02-05,2023-04-28,19281,Ohio,Donald Trump,55,likely voters
+Echelon Insights,Probability Panel,2.7,2023-06-28,2023-10-30,4083,Arizona,Donald Trump,49,registered voters
+Fairleigh Dickinson University,Online Panel,2.6,2023-10-02,2024-01-22,18002,Oklahoma,Donald Trump,51,likely voters
+University of New Hampshire Survey Center,Text,2.6,2021-01-30,2021-07-05,13213,Michigan,Donald Trump,52,registered voters
+The New York Times/Siena College,Mixed,3,2021-12-07,2022-02-03,2365,Oklahoma,Donald Trump,53,likely voters
+Stockton University William J. Hughes Center for Public Policy,Online Ad,2.6,2021-05-18,2021-07-15,18972,Delaware,Donald Trump,55,likely voters
+Fairleigh Dickinson University,Online Panel,2.6,2021-12-23,2022-02-14,14489,Iowa,Donald Trump,54,registered voters
+Quinnipiac University,IVR,2.8,2022-04-12,2022-06-06,10808,Mississippi,Donald Trump,55,adults
+Siena College,Live Phone,2.7,2022-02-11,2022-04-20,13824,Texas,Donald Trump,55,registered voters
+East Carolina University Center for Survey Research,IVR,2.6,2023-06-22,2023-11-11,10827,Rhode Island,Donald Trump,50,adults
+Siena College,Mixed,2.7,2023-06-13,2023-11-06,11149,Washington,Donald Trump,45,registered voters
+Michigan State University Institute for Public Policy and Social Research,Online Panel,2.5,2023-02-12,2023-03-14,15424,Nevada,Donald Trump,52,registered voters
+Quinnipiac University,IVR,2.8,2022-09-11,2023-03-09,16468,Connecticut,Donald Trump,45,likely voters
+Ipsos,Online Panel,2.8,2023-06-22,2023-10-14,11795,Indiana,Donald Trump,52,registered voters
+Beacon Research/Shaw & Co. Research,Online Panel,2.8,2024-02-03,2024-04-09,8796,Montana,Donald Trump,47,adults
+Roanoke College Institute for Policy and Opinion Research,Live Phone,2.6,2021-05-03,2021-08-30,3543,Wyoming,Donald Trump,53,registered voters
+Elon University,Online Ad,2.5,2022-04-09,2022-07-04,16465,Oklahoma,Donald Trump,45,likely voters
+Pew Research Center,Live Phone,2.5,2022-02-13,2022-04-01,15196,California,Donald Trump,55,likely voters
+Selzer & Co.,Email,2.8,2021-06-23,2021-07-22,10385,Iowa,Donald Trump,53,likely voters
+Gallup,Email,2.5,2022-12-21,2023-01-02,546,Ohio,Donald Trump,51,likely voters
+Stockton University William J. Hughes Center for Public Policy,IVR,2.6,2021-05-18,2021-07-20,15562,North Carolina,Donald Trump,49,likely voters
+Roanoke College Institute for Policy and Opinion Research,Mixed,2.6,2022-07-05,2022-09-19,9791,Colorado,Donald Trump,46,likely voters
+University of North Florida Public Opinion Research Lab,Text-to-Web,2.8,2021-04-29,2021-05-06,15224,Connecticut,Donald Trump,53,adults
+Mason-Dixon Polling & Strategy,Online Ad,2.6,2022-07-01,2022-08-25,9711,Oregon,Donald Trump,48,registered voters
+Hart Research Associates/Public Opinion Strategies,Online Panel,2.6,2021-09-17,2022-03-06,237,Connecticut,Donald Trump,54,registered voters
+Abt Associates,Email,2.5,2024-05-30,2024-10-03,1012,Wisconsin,Donald Trump,50,registered voters
+Siena College,App Panel,2.7,2021-09-17,2021-11-05,8350,Connecticut,Donald Trump,46,adults
+Data Orbital,Online Panel,2.9,2024-08-04,2025-01-07,6019,Nebraska,Donald Trump,45,likely voters
+Mason-Dixon Polling & Strategy,Email,2.6,2022-01-06,2022-03-09,16447,Michigan,Donald Trump,52,registered voters
+ABC News/The Washington Post,Mixed,3,2021-07-09,2021-11-10,15095,California,Donald Trump,45,likely voters
+Emerson College,Text,2.9,2021-06-30,2021-11-14,16202,Illinois,Donald Trump,48,likely voters
+Roanoke College Institute for Policy and Opinion Research,App Panel,2.6,2023-11-20,2024-01-29,16893,Arizona,Donald Trump,46,registered voters
+Beacon Research/Shaw & Co. Research,Mixed,2.8,2024-01-08,2024-05-29,19202,New York,Donald Trump,51,registered voters
+Gallup,Online Panel,2.5,2023-09-22,2023-09-27,8880,Vermont,Donald Trump,55,likely voters
+ABC News/The Washington Post,Probability Panel,3,2022-12-12,2023-01-12,814,Tennessee,Donald Trump,45,registered voters
+Mason-Dixon Polling & Strategy,Live Phone,2.6,2024-09-18,2024-10-26,7265,Utah,Donald Trump,50,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Text-to-Web,2.8,2023-12-31,2024-02-29,15528,New York,Donald Trump,55,likely voters
+Emerson College,Text,2.9,2021-07-22,2021-07-29,10114,Kansas,Donald Trump,47,likely voters
+Michigan State University Institute for Public Policy and Social Research,Live Phone,2.5,2021-10-12,2021-12-09,8717,Maine,Donald Trump,54,likely voters
+University of California Berkeley Institute of Governmental Studies,Text-to-Web,2.5,2024-05-20,2024-09-10,7642,Georgia,Donald Trump,48,likely voters
+University of North Florida Public Opinion Research Lab,Live Phone,2.8,2022-06-23,2022-11-30,15051,Massachusetts,Donald Trump,45,registered voters
+Siena College,Email,2.7,2022-02-17,2022-03-21,12692,South Dakota,Donald Trump,46,likely voters
+Fairleigh Dickinson University,IVR,2.6,2021-10-06,2021-12-29,4583,Massachusetts,Donald Trump,53,likely voters
+Quinnipiac University,Online Ad,2.8,2024-04-27,2024-06-24,3470,North Carolina,Donald Trump,53,likely voters
+Mason-Dixon Polling & Strategy,IVR,2.6,2023-06-09,2023-10-19,13162,West Virginia,Donald Trump,54,registered voters
+YouGov,App Panel,3,2021-12-17,2022-03-08,5311,National,Donald Trump,47,likely voters
+Hart Research Associates/Public Opinion Strategies,Mixed,2.6,2021-05-16,2021-06-02,4665,Ohio,Donald Trump,54,registered voters
+Hart Research Associates/Public Opinion Strategies,Live Phone,2.6,2022-05-08,2022-06-20,7380,Minnesota,Donald Trump,52,adults
+Roanoke College Institute for Policy and Opinion Research,Email,2.6,2023-04-29,2023-06-20,3251,California,Donald Trump,48,likely voters
+University of New Hampshire Survey Center,Text-to-Web,2.6,2023-12-24,2024-02-04,14544,North Carolina,Donald Trump,45,registered voters
+Monmouth University Polling Institute,Online Ad,2.9,2021-11-06,2022-05-03,5245,Vermont,Donald Trump,53,likely voters
+University of Illinois Springfield Survey Research Office,IVR,2.5,2022-02-19,2022-03-26,13892,Oklahoma,Donald Trump,47,registered voters
+Siena College,Mixed,2.7,2022-01-13,2022-01-22,4140,Alabama,Donald Trump,46,registered voters
+Pew Research Center,Text-to-Web,2.5,2022-02-03,2022-02-27,16254,Louisiana,Donald Trump,49,likely voters
+The Winston Group,Email,2.5,2021-07-18,2021-09-13,14781,Texas,Donald Trump,47,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Email,2.9,2024-03-03,2024-05-29,7375,Arizona,Donald Trump,46,likely voters
+Ipsos,IVR,2.8,2022-04-26,2022-10-04,12801,Oregon,Donald Trump,51,likely voters
+CNN,Online Panel,2.8,2021-04-23,2021-04-29,275,Alabama,Donald Trump,47,likely voters
+University of Arkansas Department of Political Science,IVR,2.5,2021-09-15,2022-01-19,3707,Nevada,Donald Trump,49,registered voters
+Mason-Dixon Polling & Strategy,App Panel,2.6,2024-05-31,2024-07-03,1582,Washington,Donald Trump,54,likely voters
+Mason-Dixon Polling & Strategy,IVR,2.6,2023-05-02,2023-10-08,6947,Washington,Donald Trump,53,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Email,2.5,2021-06-18,2021-09-06,14807,New York,Donald Trump,52,adults
+Christopher Newport University Wason Center for Civic Leadership,Email,2.8,2021-03-31,2021-04-04,7440,Oregon,Donald Trump,49,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Live Phone,2.5,2023-06-22,2023-07-28,2383,Nebraska,Donald Trump,47,registered voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2023-08-08,2023-12-21,10716,Vermont,Donald Trump,53,likely voters
+Marquette University Law School,Online Ad,3,2023-12-24,2024-04-23,5144,New Hampshire,Donald Trump,46,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,IVR,2.5,2021-11-21,2022-02-15,19201,Oregon,Donald Trump,48,likely voters
+Elon University,Online Ad,2.5,2022-12-02,2023-05-13,12624,National,Donald Trump,55,registered voters
+The Winston Group,Text-to-Web,2.5,2022-02-09,2022-04-18,14210,North Carolina,Donald Trump,54,likely voters
+Beacon Research/Shaw & Co. Research,App Panel,2.8,2023-07-16,2023-10-05,8064,Idaho,Donald Trump,48,likely voters
+Suffolk University,Mixed,2.9,2021-08-05,2021-11-18,5746,Colorado,Donald Trump,54,registered voters
+Elon University,Live Phone,2.5,2024-08-11,2024-08-16,2773,California,Donald Trump,48,likely voters
+Pew Research Center,Probability Panel,2.5,2023-10-04,2023-10-07,8375,Pennsylvania,Donald Trump,52,likely voters
+Public Policy Institute of California,Mixed,2.5,2021-12-15,2022-05-23,12205,Vermont,Donald Trump,47,registered voters
+Remington Research Group,Online Panel,2.6,2024-05-23,2024-10-23,6987,Arizona,Donald Trump,54,registered voters
+Mason-Dixon Polling & Strategy,Live Phone,2.6,2022-11-27,2023-03-01,16054,Maryland,Donald Trump,49,likely voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2024-07-22,2024-07-26,19810,Massachusetts,Donald Trump,49,adults
+Western New England University Polling Institute,Text-to-Web,2.5,2024-08-14,2025-01-18,9257,Michigan,Donald Trump,47,adults
+The New York Times/Siena College,IVR,3,2024-09-11,2024-09-23,3026,Michigan,Donald Trump,46,registered voters
+ABC News/The Washington Post,Text-to-Web,3,2022-08-19,2022-08-27,19594,Maryland,Donald Trump,49,registered voters
+AtlasIntel,Online Ad,2.7,2023-09-18,2023-12-26,558,Montana,Donald Trump,47,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Probability Panel,2.5,2023-12-06,2024-01-22,1045,Delaware,Donald Trump,53,registered voters
+Elon University,Text-to-Web,2.5,2023-12-11,2024-03-25,7741,Kansas,Donald Trump,46,registered voters
+Data for Progress,Text,2.6,2023-05-26,2023-09-01,16910,Maryland,Donald Trump,45,adults
+East Carolina University Center for Survey Research,App Panel,2.6,2021-07-08,2021-07-16,19754,Ohio,Donald Trump,45,registered voters
+KFF,Live Phone,2.5,2023-09-23,2023-12-06,12092,New York,Donald Trump,52,likely voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2021-04-12,2021-04-18,1132,Texas,Donald Trump,48,adults
+University of Illinois Springfield Survey Research Office,App Panel,2.5,2021-08-25,2021-09-06,9796,Washington,Donald Trump,51,registered voters
+Muhlenberg College Institute of Public Opinion,Email,2.8,2022-03-13,2022-07-16,18674,Illinois,Donald Trump,50,registered voters
+Remington Research Group,Text-to-Web,2.6,2023-07-22,2023-08-23,3561,Nebraska,Donald Trump,50,likely voters
+Marist College,Text,2.9,2022-12-26,2023-04-03,15158,South Carolina,Donald Trump,49,adults
+Michigan State University Institute for Public Policy and Social Research,Text,2.5,2023-05-09,2023-09-21,291,Louisiana,Donald Trump,54,registered voters
+Suffolk University,App Panel,2.9,2021-07-22,2021-11-07,4253,North Carolina,Donald Trump,48,likely voters
+Michigan State University Institute for Public Policy and Social Research,Email,2.5,2023-10-22,2024-02-02,19228,Colorado,Donald Trump,51,registered voters
+Lake Research Partners/The Tarrance Group,Online Ad,2.5,2023-10-07,2023-11-18,11984,Massachusetts,Donald Trump,50,likely voters
+Pew Research Center,Mixed,2.5,2021-02-03,2021-02-04,9735,New Jersey,Donald Trump,50,likely voters
+Stockton University William J. Hughes Center for Public Policy,Text,2.6,2023-12-23,2023-12-26,13569,Alabama,Donald Trump,48,adults
+University of New Hampshire Survey Center,Email,2.6,2021-03-11,2021-08-02,9521,Florida,Donald Trump,51,registered voters
+Data Orbital,Mixed,2.9,2023-01-20,2023-05-20,11047,Wyoming,Donald Trump,55,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Live Phone,2.5,2022-09-02,2023-02-03,10084,New Hampshire,Donald Trump,49,registered voters
+Gallup,Live Phone,2.5,2021-04-19,2021-08-10,10651,Arkansas,Donald Trump,48,registered voters
+Winthrop University Center for Public Opinion & Policy Research,IVR,2.5,2024-08-11,2024-10-29,10770,Indiana,Donald Trump,49,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Live Phone,2.8,2024-06-19,2024-07-24,17456,Delaware,Donald Trump,53,likely voters
+University of Arkansas Department of Political Science,Mixed,2.5,2022-12-06,2022-12-24,9965,Alaska,Donald Trump,52,registered voters
+University of Illinois Springfield Survey Research Office,Online Panel,2.5,2022-01-09,2022-05-30,4681,South Carolina,Donald Trump,47,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Live Phone,2.5,2022-10-02,2022-11-07,17522,Idaho,Donald Trump,51,registered voters
+Data for Progress,Live Phone,2.6,2023-02-01,2023-02-22,9377,Pennsylvania,Donald Trump,53,registered voters
+Roanoke College Institute for Policy and Opinion Research,Online Panel,2.6,2022-01-04,2022-04-30,19304,Ohio,Donald Trump,51,registered voters
+Monmouth University Polling Institute,Text-to-Web,2.9,2023-04-26,2023-08-11,13029,Nebraska,Donald Trump,47,adults
+Quinnipiac University,IVR,2.8,2021-01-25,2021-02-24,1004,Alabama,Donald Trump,45,registered voters
+KFF,Email,2.5,2024-08-08,2024-08-13,17475,North Dakota,Donald Trump,46,likely voters
+Abt Associates,Mixed,2.5,2023-02-18,2023-08-07,13790,New Hampshire,Donald Trump,52,registered voters
+Data for Progress,Probability Panel,2.6,2024-02-11,2024-08-01,14662,Texas,Donald Trump,50,likely voters
+Elon University,Online Panel,2.5,2024-01-19,2024-03-22,19686,Iowa,Donald Trump,51,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Probability Panel,2.9,2021-04-09,2021-05-27,9854,Michigan,Donald Trump,53,likely voters
+Ipsos,Online Panel,2.8,2023-07-28,2023-08-14,3345,Georgia,Donald Trump,49,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,IVR,2.5,2022-02-21,2022-07-20,19680,Arizona,Donald Trump,47,registered voters
+Western New England University Polling Institute,Online Ad,2.5,2023-11-18,2024-05-02,5429,Kentucky,Donald Trump,48,adults
+Mason-Dixon Polling & Strategy,IVR,2.6,2024-07-01,2024-12-17,10136,South Dakota,Donald Trump,52,registered voters
+East Carolina University Center for Survey Research,Text-to-Web,2.6,2024-04-29,2024-09-08,15210,New Jersey,Donald Trump,48,likely voters
+Pew Research Center,Text-to-Web,2.5,2021-10-03,2021-11-04,16494,Mississippi,Donald Trump,48,likely voters
+Stockton University William J. Hughes Center for Public Policy,App Panel,2.6,2022-07-03,2022-10-01,10521,Maine,Donald Trump,55,adults
+Siena College,Mixed,2.7,2021-05-28,2021-06-07,10636,Montana,Donald Trump,47,likely voters
+Echelon Insights,Text,2.7,2023-01-29,2023-05-06,3250,Louisiana,Donald Trump,49,registered voters
+Muhlenberg College Institute of Public Opinion,Probability Panel,2.8,2022-08-03,2023-01-22,3342,Oregon,Donald Trump,52,registered voters
+Hart Research Associates/Public Opinion Strategies,Text,2.6,2021-06-24,2021-10-12,14773,Utah,Donald Trump,55,adults
+Public Policy Institute of California,Online Panel,2.5,2024-06-27,2024-09-19,18004,Connecticut,Donald Trump,48,registered voters
+Beacon Research/Shaw & Co. Research,Probability Panel,2.8,2024-05-10,2024-09-08,876,Rhode Island,Donald Trump,46,registered voters
+Ipsos,Online Panel,2.8,2023-05-25,2023-07-11,5409,Florida,Donald Trump,45,registered voters
+Suffolk University,Probability Panel,2.9,2021-11-25,2021-12-11,19822,North Carolina,Donald Trump,53,registered voters
+High Point University Survey Research Center,Online Panel,2.5,2022-08-09,2022-11-05,9094,California,Donald Trump,45,registered voters
+Ipsos,Mixed,2.8,2021-04-29,2021-06-16,10013,Maryland,Donald Trump,53,registered voters
+High Point University Survey Research Center,Email,2.5,2024-09-08,2024-11-01,18778,Rhode Island,Donald Trump,55,registered voters
+SurveyUSA,App Panel,2.8,2024-03-12,2024-03-21,13899,North Dakota,Donald Trump,46,registered voters
+KFF,Probability Panel,2.5,2024-01-05,2024-05-31,10857,Alaska,Donald Trump,54,likely voters
+The New York Times/Siena College,Mixed,3,2021-10-18,2021-11-29,6067,Alaska,Donald Trump,50,likely voters
+Western New England University Polling Institute,Live Phone,2.5,2023-12-01,2024-03-17,15247,Idaho,Donald Trump,47,likely voters
+Gallup,App Panel,2.5,2023-08-22,2023-10-21,2207,Utah,Donald Trump,51,registered voters
+Data for Progress,Mixed,2.6,2021-04-04,2021-08-18,10819,New York,Donald Trump,53,likely voters
+University of New Hampshire Survey Center,Live Phone,2.6,2022-01-27,2022-02-17,11623,Colorado,Donald Trump,51,registered voters
+SurveyUSA,Probability Panel,2.8,2023-06-10,2023-06-26,271,Nevada,Donald Trump,45,registered voters
+Public Policy Institute of California,Online Ad,2.5,2024-02-28,2024-07-15,10940,Ohio,Donald Trump,49,likely voters
+Monmouth University Polling Institute,Probability Panel,2.9,2022-12-26,2023-05-23,12325,Nevada,Donald Trump,49,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Live Phone,2.5,2021-03-10,2021-05-29,11971,Idaho,Donald Trump,55,likely voters
+Public Policy Institute of California,Text-to-Web,2.5,2022-08-17,2022-08-31,9519,North Dakota,Donald Trump,54,registered voters
+The Winston Group,App Panel,2.5,2023-01-18,2023-06-20,3792,Florida,Donald Trump,50,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,IVR,2.5,2023-12-03,2024-01-29,1076,Pennsylvania,Donald Trump,53,likely voters
+ABC News/The Washington Post,Text-to-Web,3,2022-01-22,2022-04-30,11773,Michigan,Donald Trump,53,registered voters
+KFF,Text,2.5,2022-10-13,2022-10-13,552,Indiana,Donald Trump,55,registered voters
+Lake Research Partners/The Tarrance Group,App Panel,2.5,2022-06-26,2022-07-23,126,Michigan,Donald Trump,45,registered voters
+Michigan State University Institute for Public Policy and Social Research,Mixed,2.5,2022-03-06,2022-07-02,6992,Iowa,Donald Trump,50,registered voters
+Marquette University Law School,Online Ad,3,2022-05-14,2022-11-05,8325,Kentucky,Donald Trump,49,adults
+Selzer & Co.,Email,2.8,2021-04-02,2021-06-17,15280,National,Donald Trump,51,likely voters
+Elon University,IVR,2.5,2023-08-01,2024-01-25,4549,Colorado,Donald Trump,47,likely voters
+Michigan State University Institute for Public Policy and Social Research,IVR,2.5,2021-03-26,2021-08-28,11687,Nevada,Donald Trump,53,registered voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2024-03-22,2024-04-19,19550,New Mexico,Donald Trump,54,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Mixed,2.9,2022-11-09,2023-01-25,19038,Montana,Donald Trump,47,registered voters
+East Carolina University Center for Survey Research,Text,2.6,2024-02-20,2024-05-01,13635,Delaware,Donald Trump,54,likely voters
+KFF,Online Ad,2.5,2024-06-22,2024-08-30,9843,Washington,Donald Trump,45,registered voters
+Stockton University William J. Hughes Center for Public Policy,Online Ad,2.6,2023-02-11,2023-02-11,18322,Arkansas,Donald Trump,50,registered voters
+East Carolina University Center for Survey Research,Text,2.6,2022-08-14,2023-02-10,15589,Alabama,Donald Trump,53,likely voters
+The New York Times/Siena College,Mixed,3,2023-02-06,2023-05-04,5529,New York,Donald Trump,45,registered voters
+Hart Research Associates/Public Opinion Strategies,IVR,2.6,2022-07-22,2022-09-30,10573,Alabama,Donald Trump,47,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Live Phone,2.5,2022-08-02,2022-10-04,5081,Hawaii,Donald Trump,52,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Live Phone,2.7,2021-03-06,2021-06-14,5582,Florida,Donald Trump,50,likely voters
+The New York Times/Siena College,Live Phone,3,2021-06-06,2021-10-06,13532,Oregon,Donald Trump,45,adults
+CNN,Probability Panel,2.8,2023-05-06,2023-09-03,7929,Missouri,Donald Trump,50,likely voters
+ABC News/The Washington Post,Text-to-Web,3,2024-03-11,2024-09-01,6435,Pennsylvania,Donald Trump,55,registered voters
+University of North Florida Public Opinion Research Lab,Probability Panel,2.8,2023-08-16,2024-02-12,6257,Maine,Donald Trump,49,likely voters
+Monmouth University Polling Institute,Online Panel,2.9,2022-05-03,2022-07-13,3893,National,Donald Trump,48,likely voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2021-04-29,2021-10-06,9631,Kansas,Donald Trump,53,registered voters
+Ipsos,Live Phone,2.8,2023-07-04,2023-09-12,6569,New Jersey,Donald Trump,55,adults
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2022-10-21,2023-01-31,4738,Hawaii,Donald Trump,49,likely voters
+Abt Associates,IVR,2.5,2023-08-23,2023-10-21,16040,West Virginia,Donald Trump,52,likely voters
+Emerson College,Text,2.9,2024-08-30,2024-12-05,9251,New Hampshire,Donald Trump,45,adults
+Elon University,Mixed,2.5,2023-03-11,2023-05-18,17520,Ohio,Donald Trump,50,adults
+University of North Florida Public Opinion Research Lab,Text,2.8,2021-10-24,2022-03-11,14099,North Dakota,Donald Trump,55,likely voters
+Public Policy Institute of California,Online Panel,2.5,2022-09-30,2023-03-22,4081,Maine,Donald Trump,52,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Ad,2.5,2021-08-04,2022-01-01,13783,Michigan,Donald Trump,45,likely voters
+University of Arkansas Department of Political Science,Mixed,2.5,2023-03-28,2023-05-06,8914,Texas,Donald Trump,48,likely voters
+Data Orbital,Online Panel,2.9,2021-02-25,2021-05-16,15984,Nebraska,Donald Trump,51,likely voters
+Marist College,Online Panel,2.9,2022-03-12,2022-07-05,13309,Colorado,Donald Trump,46,adults
+Abt Associates,IVR,2.5,2023-05-31,2023-08-08,10980,Tennessee,Donald Trump,55,registered voters
+Marist College,Online Panel,2.9,2022-11-03,2023-03-04,16673,Maryland,Donald Trump,52,likely voters
+Remington Research Group,Email,2.6,2024-03-14,2024-08-16,13285,Arizona,Donald Trump,55,likely voters
+Quinnipiac University,Probability Panel,2.8,2022-05-17,2022-05-30,11641,Connecticut,Donald Trump,51,likely voters
+Mason-Dixon Polling & Strategy,Mixed,2.6,2021-08-15,2021-10-21,4294,Virginia,Donald Trump,46,likely voters
+Mason-Dixon Polling & Strategy,Online Panel,2.6,2022-12-23,2023-05-05,12523,Tennessee,Donald Trump,47,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Online Ad,2.9,2021-07-18,2021-11-23,776,Rhode Island,Donald Trump,51,likely voters
+Remington Research Group,Mixed,2.6,2022-11-14,2023-03-25,9532,Virginia,Donald Trump,48,registered voters
+Beacon Research/Shaw & Co. Research,Online Ad,2.8,2023-10-07,2024-03-05,8496,Connecticut,Donald Trump,53,likely voters
+CNN,Online Panel,2.8,2021-12-14,2022-04-10,4551,Pennsylvania,Donald Trump,49,registered voters
+Elon University,Text,2.5,2021-01-25,2021-03-19,3823,National,Donald Trump,51,likely voters
+Roanoke College Institute for Policy and Opinion Research,Online Panel,2.6,2024-08-20,2024-11-01,18415,Ohio,Donald Trump,50,registered voters
+Fairleigh Dickinson University,Probability Panel,2.6,2023-07-31,2024-01-13,5628,Virginia,Donald Trump,48,adults
+The New York Times/Siena College,Text-to-Web,3,2022-03-29,2022-06-01,17804,Alaska,Donald Trump,53,likely voters
+Marist College,Mixed,2.9,2024-07-26,2024-12-07,307,Mississippi,Donald Trump,48,likely voters
+Siena College,Mixed,2.7,2021-03-21,2021-07-20,10316,Montana,Donald Trump,55,likely voters
+ABC News/The Washington Post,Text-to-Web,3,2021-09-20,2021-10-06,8763,Vermont,Donald Trump,49,likely voters
+The New York Times/Siena College,App Panel,3,2022-01-24,2022-07-11,19560,Texas,Donald Trump,50,adults
+Elon University,Email,2.5,2023-08-07,2024-01-02,2196,Wyoming,Donald Trump,53,likely voters
+Marist College,IVR,2.9,2021-10-24,2021-12-16,14425,Virginia,Donald Trump,50,likely voters
+Hart Research Associates/Public Opinion Strategies,Online Panel,2.6,2023-04-23,2023-04-24,16341,Wyoming,Donald Trump,51,registered voters
+Western New England University Polling Institute,Text-to-Web,2.5,2021-04-15,2021-05-13,6515,Colorado,Donald Trump,52,adults
+Echelon Insights,App Panel,2.7,2021-02-08,2021-03-28,11525,Tennessee,Donald Trump,50,adults
+The Winston Group,Live Phone,2.5,2023-12-29,2024-01-04,277,Arkansas,Donald Trump,47,registered voters
+University of New Hampshire Survey Center,Online Ad,2.6,2024-06-21,2024-08-26,16830,Nevada,Donald Trump,50,registered voters
+ABC News/The Washington Post,IVR,3,2022-02-20,2022-03-07,6962,Mississippi,Donald Trump,50,registered voters
+The Winston Group,Text,2.5,2022-12-09,2023-01-12,8139,Vermont,Donald Trump,50,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Online Panel,2.9,2022-05-22,2022-06-09,5724,Louisiana,Donald Trump,46,adults
+Christopher Newport University Wason Center for Civic Leadership,App Panel,2.8,2023-02-04,2023-04-28,4790,Virginia,Donald Trump,50,likely voters
+University of North Florida Public Opinion Research Lab,Text,2.8,2023-03-23,2023-05-23,3655,California,Donald Trump,49,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Mixed,2.8,2021-11-18,2022-03-23,191,South Dakota,Donald Trump,49,likely voters
+Quinnipiac University,Mixed,2.8,2021-09-06,2021-12-26,942,Mississippi,Donald Trump,54,likely voters
+AtlasIntel,Online Ad,2.7,2023-06-13,2023-12-02,10488,Pennsylvania,Donald Trump,53,adults
+CNN,Text-to-Web,2.8,2021-08-24,2021-09-14,11641,North Carolina,Donald Trump,50,registered voters
+Remington Research Group,App Panel,2.6,2023-03-23,2023-04-24,13395,Pennsylvania,Donald Trump,47,registered voters
+Pew Research Center,Online Ad,2.5,2021-04-15,2021-09-10,14806,Arizona,Donald Trump,54,registered voters
+Mason-Dixon Polling & Strategy,App Panel,2.6,2021-12-08,2022-01-29,13329,Arkansas,Donald Trump,47,registered voters
+Fairleigh Dickinson University,Text-to-Web,2.6,2021-10-06,2021-11-24,19494,Georgia,Donald Trump,46,likely voters
+Hart Research Associates/Public Opinion Strategies,Text,2.6,2022-11-17,2023-03-05,5539,Idaho,Donald Trump,55,likely voters
+Western New England University Polling Institute,Online Panel,2.5,2022-09-22,2022-09-25,5763,Michigan,Donald Trump,46,registered voters
+High Point University Survey Research Center,Online Panel,2.5,2023-11-06,2024-01-28,16169,Arizona,Donald Trump,46,likely voters
+Western New England University Polling Institute,Online Ad,2.5,2021-02-22,2021-05-08,11498,Colorado,Donald Trump,45,likely voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2021-11-05,2021-11-24,2118,New Hampshire,Donald Trump,45,likely voters
+Muhlenberg College Institute of Public Opinion,Mixed,2.8,2023-01-03,2023-01-07,14261,North Carolina,Donald Trump,48,adults
+Beacon Research/Shaw & Co. Research,App Panel,2.8,2021-09-17,2022-01-14,4415,North Carolina,Donald Trump,53,likely voters
+Public Policy Institute of California,Text-to-Web,2.5,2021-04-11,2021-05-12,3599,Wisconsin,Donald Trump,46,registered voters
+SurveyUSA,Text-to-Web,2.8,2021-07-07,2021-12-21,16154,South Carolina,Donald Trump,47,registered voters
+SurveyUSA,IVR,2.8,2021-03-29,2021-09-16,18646,Virginia,Donald Trump,53,adults
+Hart Research Associates/Public Opinion Strategies,Mixed,2.6,2024-07-31,2025-01-06,18350,Nevada,Donald Trump,47,adults
+CNN,App Panel,2.8,2023-08-05,2023-12-06,10558,Wisconsin,Donald Trump,50,adults
+University of New Hampshire Survey Center,IVR,2.6,2021-11-25,2022-04-25,6497,Kansas,Donald Trump,50,likely voters
+AtlasIntel,Online Panel,2.7,2024-01-09,2024-03-04,19371,South Dakota,Donald Trump,51,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Text-to-Web,2.5,2024-08-21,2024-12-27,8290,Indiana,Donald Trump,46,registered voters
+YouGov,Email,3,2021-05-07,2021-05-14,9234,Louisiana,Donald Trump,45,likely voters
+Stockton University William J. Hughes Center for Public Policy,IVR,2.6,2021-07-28,2021-09-27,10082,Idaho,Donald Trump,50,registered voters
+Public Policy Institute of California,Online Panel,2.5,2023-04-04,2023-05-03,7357,Mississippi,Donald Trump,49,likely voters
+Public Policy Institute of California,Text,2.5,2022-04-17,2022-09-19,2049,Connecticut,Donald Trump,50,registered voters
+Beacon Research/Shaw & Co. Research,Mixed,2.8,2023-08-07,2024-01-19,10290,Ohio,Donald Trump,50,registered voters
+Data for Progress,Text-to-Web,2.6,2023-12-01,2024-03-01,16296,New Jersey,Donald Trump,49,registered voters
+Echelon Insights,Online Panel,2.7,2024-02-14,2024-07-17,7885,North Carolina,Donald Trump,49,likely voters
+Gallup,Online Ad,2.5,2022-11-15,2022-12-07,19910,Hawaii,Donald Trump,51,registered voters
+CNN,Text,2.8,2022-09-22,2022-11-13,8049,New Mexico,Donald Trump,55,likely voters
+Mason-Dixon Polling & Strategy,Probability Panel,2.6,2021-06-10,2021-11-07,3028,North Carolina,Donald Trump,49,registered voters
+Remington Research Group,Online Panel,2.6,2024-03-26,2024-06-05,5882,South Dakota,Donald Trump,46,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Mixed,2.8,2024-01-26,2024-07-21,2697,California,Donald Trump,49,registered voters
+Western New England University Polling Institute,Text,2.5,2021-08-21,2021-12-14,16305,Massachusetts,Donald Trump,46,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Mixed,2.5,2024-08-16,2024-09-27,16711,Wyoming,Donald Trump,53,likely voters
+Roanoke College Institute for Policy and Opinion Research,IVR,2.6,2023-03-24,2023-05-20,19306,West Virginia,Donald Trump,51,registered voters
+Christopher Newport University Wason Center for Civic Leadership,IVR,2.8,2021-12-28,2022-06-24,12269,Oregon,Donald Trump,48,registered voters
+Public Policy Institute of California,Probability Panel,2.5,2023-10-23,2024-01-01,16011,Iowa,Donald Trump,48,likely voters
+Muhlenberg College Institute of Public Opinion,App Panel,2.8,2021-08-02,2021-12-17,4658,New Jersey,Donald Trump,52,registered voters
+Suffolk University,App Panel,2.9,2022-12-13,2022-12-25,3300,Vermont,Donald Trump,47,likely voters
+YouGov,Text,3,2022-10-14,2023-02-22,17261,Michigan,Donald Trump,49,registered voters
+Abt Associates,Online Panel,2.5,2021-08-19,2021-12-30,19415,Nevada,Donald Trump,48,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Panel,2.5,2023-05-11,2023-09-13,9396,Kansas,Donald Trump,46,registered voters
+YouGov,Mixed,3,2022-03-25,2022-08-08,484,Florida,Donald Trump,49,adults
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2024-02-03,2024-05-05,17483,Indiana,Donald Trump,54,likely voters
+Western New England University Polling Institute,IVR,2.5,2024-09-16,2024-10-06,4673,Massachusetts,Donald Trump,55,registered voters
+Data Orbital,Mixed,2.9,2022-07-07,2022-12-29,18321,Wyoming,Donald Trump,46,registered voters
+Fairleigh Dickinson University,Mixed,2.6,2024-08-11,2024-10-06,10052,Connecticut,Donald Trump,49,registered voters
+Marist College,App Panel,2.9,2021-05-20,2021-08-18,4542,New Hampshire,Donald Trump,52,adults
+Roanoke College Institute for Policy and Opinion Research,IVR,2.6,2021-03-26,2021-06-29,9164,Nevada,Donald Trump,49,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Email,2.5,2023-04-02,2023-04-21,11155,New Jersey,Donald Trump,49,registered voters
+The New York Times/Siena College,Mixed,3,2024-06-25,2024-11-26,1140,Iowa,Donald Trump,45,registered voters
+Pew Research Center,Email,2.5,2021-05-11,2021-08-21,4098,Indiana,Donald Trump,49,likely voters
+Elon University,Mixed,2.5,2024-04-01,2024-09-24,18577,Iowa,Donald Trump,48,likely voters
+Christopher Newport University Wason Center for Civic Leadership,IVR,2.8,2022-03-03,2022-05-12,18746,Wisconsin,Donald Trump,55,registered voters
+Winthrop University Center for Public Opinion & Policy Research,IVR,2.5,2022-11-08,2023-01-28,8080,Arkansas,Donald Trump,54,registered voters
+Fairleigh Dickinson University,Online Panel,2.6,2021-02-02,2021-04-07,17573,Missouri,Donald Trump,51,likely voters
+SurveyUSA,Probability Panel,2.8,2022-07-07,2022-10-29,18915,Florida,Donald Trump,51,registered voters
+Marist College,Text,2.9,2021-10-29,2022-01-16,12126,Rhode Island,Donald Trump,54,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Text,2.5,2024-07-20,2024-11-17,15303,Rhode Island,Donald Trump,50,likely voters
+Data for Progress,IVR,2.6,2021-11-29,2022-02-02,19293,Oregon,Donald Trump,48,registered voters
+Muhlenberg College Institute of Public Opinion,Text,2.8,2024-08-15,2024-10-10,13353,Tennessee,Donald Trump,55,registered voters
+University of Arkansas Department of Political Science,App Panel,2.5,2022-06-19,2022-07-13,5259,West Virginia,Donald Trump,55,likely voters
+Public Policy Institute of California,Live Phone,2.5,2023-04-02,2023-08-08,1415,Tennessee,Donald Trump,50,likely voters
+East Carolina University Center for Survey Research,IVR,2.6,2023-08-10,2023-12-28,5334,Connecticut,Donald Trump,51,likely voters
+Elon University,Probability Panel,2.5,2021-04-12,2021-04-26,14172,Georgia,Donald Trump,51,likely voters
+AtlasIntel,Online Panel,2.7,2022-04-09,2022-04-20,7826,Missouri,Donald Trump,45,adults
+East Carolina University Center for Survey Research,Email,2.6,2023-04-01,2023-05-08,16685,Nebraska,Donald Trump,53,registered voters
+Christopher Newport University Wason Center for Civic Leadership,App Panel,2.8,2022-05-09,2022-07-25,4143,Arkansas,Donald Trump,52,registered voters
+Elon University,Email,2.5,2024-03-01,2024-06-02,2200,Connecticut,Donald Trump,51,likely voters
+Public Policy Institute of California,Text,2.5,2021-02-06,2021-04-11,10150,Colorado,Donald Trump,45,registered voters
+Marquette University Law School,Online Panel,3,2024-06-06,2024-08-01,6415,Delaware,Donald Trump,54,registered voters
+Michigan State University Institute for Public Policy and Social Research,Mixed,2.5,2022-11-19,2023-04-20,10005,Vermont,Donald Trump,52,registered voters
+Suffolk University,Email,2.9,2023-11-20,2023-11-30,4902,New Mexico,Donald Trump,49,registered voters
+Monmouth University Polling Institute,IVR,2.9,2021-02-10,2021-04-07,8251,Virginia,Donald Trump,48,registered voters
+ABC News/The Washington Post,Text-to-Web,3,2022-05-17,2022-07-17,7576,Michigan,Donald Trump,53,registered voters
+Remington Research Group,App Panel,2.6,2024-05-18,2024-08-23,16298,Arizona,Donald Trump,55,registered voters
+The New York Times/Siena College,Online Ad,3,2023-10-07,2023-12-31,8712,Ohio,Donald Trump,48,adults
+ABC News/The Washington Post,Text-to-Web,3,2022-06-27,2022-07-02,434,Utah,Donald Trump,50,likely voters
+University of North Florida Public Opinion Research Lab,Email,2.8,2024-04-10,2024-06-08,7944,Oklahoma,Donald Trump,53,likely voters
+Muhlenberg College Institute of Public Opinion,Online Panel,2.8,2023-01-18,2023-04-22,11600,Arizona,Donald Trump,54,registered voters
+University of Arkansas Department of Political Science,Probability Panel,2.5,2023-06-18,2023-10-08,14966,Delaware,Donald Trump,50,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Live Phone,2.5,2021-07-06,2021-10-13,8042,Oklahoma,Donald Trump,51,adults
+Abt Associates,IVR,2.5,2024-07-15,2025-01-11,17583,Ohio,Donald Trump,46,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Live Phone,2.7,2023-12-02,2024-03-06,16858,Connecticut,Donald Trump,55,registered voters
+Marquette University Law School,Probability Panel,3,2021-10-13,2022-02-04,969,Kentucky,Donald Trump,46,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,IVR,2.5,2024-08-25,2024-09-28,12582,Florida,Donald Trump,48,registered voters
+Mason-Dixon Polling & Strategy,Live Phone,2.6,2023-07-05,2023-11-29,14960,Connecticut,Donald Trump,51,likely voters
+Beacon Research/Shaw & Co. Research,Mixed,2.8,2023-02-12,2023-04-20,1923,Oklahoma,Donald Trump,55,likely voters
+The Winston Group,Online Ad,2.5,2022-12-28,2023-04-24,7332,Washington,Donald Trump,46,registered voters
+Data for Progress,Text,2.6,2022-03-13,2022-08-17,12298,South Dakota,Donald Trump,53,registered voters
+Muhlenberg College Institute of Public Opinion,Online Panel,2.8,2023-03-21,2023-08-01,12918,Massachusetts,Donald Trump,54,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2021-04-22,2021-08-11,7576,New Hampshire,Donald Trump,48,registered voters
+The New York Times/Siena College,App Panel,3,2024-06-09,2024-11-30,11876,Delaware,Donald Trump,49,likely voters
+Christopher Newport University Wason Center for Civic Leadership,Online Panel,2.8,2022-10-28,2022-10-30,2587,Delaware,Donald Trump,45,likely voters
+East Carolina University Center for Survey Research,IVR,2.6,2022-03-11,2022-04-19,8896,Indiana,Donald Trump,49,likely voters
+Mason-Dixon Polling & Strategy,Text-to-Web,2.6,2024-03-21,2024-07-18,2400,Tennessee,Donald Trump,53,registered voters
+Western New England University Polling Institute,Text-to-Web,2.5,2022-09-23,2023-03-05,18331,Idaho,Donald Trump,45,likely voters
+YouGov,Text-to-Web,3,2022-08-10,2022-12-10,18910,Michigan,Donald Trump,47,likely voters
+Suffolk University,Text-to-Web,2.9,2022-06-19,2022-11-04,2647,Florida,Donald Trump,53,likely voters
+The New York Times/Siena College,Text,3,2023-12-15,2023-12-31,9600,Oregon,Donald Trump,53,registered voters
+KFF,App Panel,2.5,2024-02-04,2024-04-09,7366,Wisconsin,Donald Trump,53,adults
+Data for Progress,Text-to-Web,2.6,2021-12-27,2022-01-15,14269,Arizona,Donald Trump,45,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Mixed,2.8,2021-03-19,2021-07-12,2405,North Carolina,Donald Trump,54,registered voters
+The Winston Group,Probability Panel,2.5,2023-06-16,2023-10-13,10146,Virginia,Donald Trump,49,likely voters
+University of New Hampshire Survey Center,Email,2.6,2023-03-20,2023-05-17,7927,Arizona,Donald Trump,49,registered voters
+Emerson College,Mixed,2.9,2021-04-10,2021-07-07,16089,Arkansas,Donald Trump,49,likely voters
+University of Arkansas Department of Political Science,Probability Panel,2.5,2021-08-18,2021-12-02,13479,South Dakota,Donald Trump,48,likely voters
+Emerson College,Online Ad,2.9,2024-03-31,2024-09-06,10696,National,Donald Trump,55,likely voters
+Michigan State University Institute for Public Policy and Social Research,IVR,2.5,2022-08-25,2023-02-14,11087,Montana,Donald Trump,45,adults
+Marist College,IVR,2.9,2023-02-19,2023-05-09,10570,Pennsylvania,Donald Trump,49,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Mixed,2.8,2024-08-26,2024-12-03,13948,Iowa,Donald Trump,50,likely voters
+Elon University,Email,2.5,2023-12-26,2024-06-13,7651,Connecticut,Donald Trump,55,registered voters
+Lake Research Partners/The Tarrance Group,App Panel,2.5,2023-04-18,2023-07-22,9782,Missouri,Donald Trump,53,likely voters
+Western New England University Polling Institute,App Panel,2.5,2023-09-28,2024-01-19,17471,Indiana,Donald Trump,55,likely voters
+Data Orbital,Text-to-Web,2.9,2022-05-05,2022-10-27,18154,Wyoming,Donald Trump,55,registered voters
+Marquette University Law School,Online Panel,3,2022-02-05,2022-04-05,4695,Louisiana,Donald Trump,52,likely voters
+Hart Research Associates/Public Opinion Strategies,Email,2.6,2023-08-13,2023-12-06,10403,Maryland,Donald Trump,48,adults
+Roanoke College Institute for Policy and Opinion Research,Probability Panel,2.6,2024-05-28,2024-10-19,13811,Texas,Donald Trump,51,likely voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Mixed,2.5,2021-10-29,2022-04-08,9632,Texas,Donald Trump,45,adults
+Mason-Dixon Polling & Strategy,Online Ad,2.6,2024-05-04,2024-06-01,9158,Arkansas,Donald Trump,52,registered voters
+Quinnipiac University,Online Ad,2.8,2021-10-08,2022-03-17,4379,Ohio,Donald Trump,47,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2023-02-19,2023-04-05,14712,Delaware,Donald Trump,54,adults
+Elon University,Probability Panel,2.5,2021-03-15,2021-05-22,2632,Georgia,Donald Trump,47,likely voters
+Elon University,Text-to-Web,2.5,2021-08-29,2022-02-03,7656,Vermont,Donald Trump,54,likely voters
+Lake Research Partners/The Tarrance Group,Online Ad,2.5,2023-11-09,2024-02-21,12750,Iowa,Donald Trump,51,registered voters
+Data Orbital,IVR,2.9,2022-12-10,2023-05-03,2441,California,Donald Trump,49,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Online Panel,2.9,2021-12-28,2022-06-18,18130,Tennessee,Donald Trump,49,registered voters
+University of North Florida Public Opinion Research Lab,Text-to-Web,2.8,2022-09-30,2022-12-28,17755,Delaware,Donald Trump,52,likely voters
+University of Arkansas Department of Political Science,Online Panel,2.5,2022-05-23,2022-10-19,4912,Pennsylvania,Donald Trump,49,likely voters
+Beacon Research/Shaw & Co. Research,Online Ad,2.8,2021-01-25,2021-06-02,19683,Oregon,Donald Trump,47,registered voters
+High Point University Survey Research Center,IVR,2.5,2023-10-05,2023-12-06,19743,Mississippi,Donald Trump,52,likely voters
+Muhlenberg College Institute of Public Opinion,Text-to-Web,2.8,2024-06-15,2024-11-25,7892,Texas,Donald Trump,45,registered voters
+University of New Hampshire Survey Center,Probability Panel,2.6,2023-02-03,2023-02-27,9700,Montana,Donald Trump,54,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Online Ad,2.5,2023-01-13,2023-05-20,12956,Colorado,Donald Trump,45,likely voters
+Remington Research Group,App Panel,2.6,2022-10-06,2022-11-04,15260,Hawaii,Donald Trump,50,registered voters
+Remington Research Group,Email,2.6,2022-05-01,2022-08-28,6323,New Jersey,Donald Trump,50,likely voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2021-07-07,2021-11-08,19831,Washington,Donald Trump,46,adults
+AtlasIntel,Email,2.7,2022-08-21,2022-08-23,8821,Georgia,Donald Trump,55,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Email,2.9,2024-08-08,2024-11-05,7328,Nebraska,Donald Trump,55,likely voters
+Muhlenberg College Institute of Public Opinion,Text-to-Web,2.8,2023-12-31,2024-04-30,7910,Alabama,Donald Trump,45,registered voters
+High Point University Survey Research Center,Online Panel,2.5,2023-10-09,2024-01-07,16799,Kansas,Donald Trump,54,registered voters
+University of Arkansas Department of Political Science,Text,2.5,2021-03-30,2021-07-23,10609,Texas,Donald Trump,47,adults
+Quinnipiac University,Email,2.8,2023-01-12,2023-02-27,13038,Virginia,Donald Trump,47,registered voters
+The New York Times/Siena College,Text-to-Web,3,2024-06-15,2024-11-20,8957,Rhode Island,Donald Trump,45,registered voters
+University of Massachusetts Lowell Center for Public Opinion,Online Panel,2.9,2023-04-12,2023-07-15,15093,Minnesota,Donald Trump,48,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,IVR,2.7,2021-04-13,2021-10-03,4135,Arizona,Donald Trump,53,likely voters
+Selzer & Co.,Probability Panel,2.8,2022-04-16,2022-07-02,8520,Wyoming,Donald Trump,53,registered voters
+Monmouth University Polling Institute,Probability Panel,2.9,2021-12-20,2022-03-15,9823,California,Donald Trump,48,registered voters
+Marist College,IVR,2.9,2021-03-25,2021-06-17,9619,Utah,Donald Trump,47,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Mixed,2.5,2021-08-25,2021-09-14,4339,Virginia,Donald Trump,50,registered voters
+MassINC Polling Group,Live Phone,2.8,2023-12-22,2024-02-09,2970,South Dakota,Donald Trump,50,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Email,2.5,2022-08-01,2022-12-13,8453,Oklahoma,Donald Trump,54,registered voters
+University of Arkansas Department of Political Science,Text-to-Web,2.5,2021-12-20,2022-06-10,12594,Kansas,Donald Trump,45,registered voters
+Western New England University Polling Institute,App Panel,2.5,2023-12-29,2024-02-27,6765,Montana,Donald Trump,51,likely voters
+Emerson College,Mixed,2.9,2022-11-07,2023-05-05,14814,Indiana,Donald Trump,54,likely voters
+ABC News/The Washington Post,App Panel,3,2023-06-17,2023-07-09,3948,Missouri,Donald Trump,51,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Text,2.5,2021-02-05,2021-05-08,19757,Oklahoma,Donald Trump,55,registered voters
+Fairleigh Dickinson University,App Panel,2.6,2024-04-04,2024-06-21,13283,Kentucky,Donald Trump,54,likely voters
+University of North Florida Public Opinion Research Lab,Online Panel,2.8,2023-01-31,2023-02-14,18701,Texas,Donald Trump,52,registered voters
+Quinnipiac University,Online Ad,2.8,2022-02-12,2022-05-03,800,Wyoming,Donald Trump,47,likely voters
+Public Policy Institute of California,Online Ad,2.5,2023-12-06,2024-02-02,9975,Alabama,Donald Trump,51,registered voters
+The Winston Group,Mixed,2.5,2023-03-05,2023-08-06,14348,Wyoming,Donald Trump,50,adults
+University of Massachusetts Lowell Center for Public Opinion,Text-to-Web,2.9,2021-05-08,2021-10-31,13645,West Virginia,Donald Trump,45,likely voters
+Data Orbital,Text-to-Web,2.9,2021-08-15,2021-12-05,5022,Ohio,Donald Trump,48,registered voters
+Echelon Insights,Email,2.7,2022-04-06,2022-09-25,19550,Georgia,Donald Trump,52,registered voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2024-03-10,2024-05-20,15580,Oregon,Donald Trump,47,registered voters
+Suffolk University,IVR,2.9,2021-10-22,2022-02-14,14188,Delaware,Donald Trump,52,adults
+MassINC Polling Group,Probability Panel,2.8,2024-06-14,2024-07-03,16377,Idaho,Donald Trump,50,registered voters
+Hart Research Associates/Public Opinion Strategies,Live Phone,2.6,2022-12-23,2023-03-05,322,Rhode Island,Donald Trump,45,likely voters
+MassINC Polling Group,Email,2.8,2024-08-15,2025-01-24,7407,National,Donald Trump,55,registered voters
+Monmouth University Polling Institute,App Panel,2.9,2021-06-11,2021-07-31,12216,Wyoming,Donald Trump,47,adults
+Quinnipiac University,Online Panel,2.8,2024-05-16,2024-07-22,16696,Wisconsin,Donald Trump,51,registered voters
+YouGov,Text-to-Web,3,2021-05-27,2021-08-06,19362,Michigan,Donald Trump,53,likely voters
+Marist College,Online Ad,2.9,2024-07-24,2024-12-04,9491,Louisiana,Donald Trump,47,likely voters
+Selzer & Co.,Online Panel,2.8,2023-11-14,2024-05-03,6248,Mississippi,Donald Trump,51,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,Text-to-Web,2.7,2021-05-06,2021-05-22,3942,Arizona,Donald Trump,46,registered voters
+Elon University,Text,2.5,2024-08-02,2024-09-30,19475,Rhode Island,Donald Trump,55,likely voters
+CNN,Live Phone,2.8,2024-02-26,2024-08-07,18812,Nebraska,Donald Trump,45,likely voters
+Echelon Insights,Online Ad,2.7,2021-03-26,2021-09-16,8860,Massachusetts,Donald Trump,46,registered voters
+Marquette University Law School,Text-to-Web,3,2023-12-13,2024-05-13,7249,New Jersey,Donald Trump,48,likely voters
+Suffolk University,Text,2.9,2022-07-20,2022-12-29,12014,Alaska,Donald Trump,46,registered voters
+Public Policy Institute of California,Probability Panel,2.5,2022-06-29,2022-08-15,1050,New Jersey,Donald Trump,49,adults
+The Winston Group,App Panel,2.5,2024-08-10,2024-12-20,10670,Connecticut,Donald Trump,55,registered voters
+Pew Research Center,Online Panel,2.5,2021-03-18,2021-09-14,10676,Alaska,Donald Trump,50,likely voters
+Remington Research Group,Email,2.6,2022-03-29,2022-09-02,14058,Illinois,Donald Trump,45,likely voters
+KFF,Probability Panel,2.5,2021-06-10,2021-10-11,5257,Maine,Donald Trump,53,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Online Ad,2.5,2022-09-04,2023-01-26,8232,Michigan,Donald Trump,54,registered voters
+Mason-Dixon Polling & Strategy,Text-to-Web,2.6,2022-04-21,2022-07-04,3546,California,Donald Trump,53,likely voters
+Roanoke College Institute for Policy and Opinion Research,IVR,2.6,2022-09-12,2023-02-21,3241,Colorado,Donald Trump,45,likely voters
+University of Arkansas Department of Political Science,Live Phone,2.5,2021-09-15,2021-10-06,19704,North Carolina,Donald Trump,50,registered voters
+Data Orbital,IVR,2.9,2023-11-30,2024-01-03,19016,Michigan,Donald Trump,50,registered voters
+Roanoke College Institute for Policy and Opinion Research,Live Phone,2.6,2024-05-16,2024-06-08,9321,Arkansas,Donald Trump,46,adults
+University of California Berkeley Institute of Governmental Studies,App Panel,2.5,2021-05-02,2021-10-06,1294,Iowa,Donald Trump,54,likely voters
+University of Illinois Springfield Survey Research Office,Online Ad,2.5,2022-12-27,2023-04-02,12439,West Virginia,Donald Trump,50,likely voters
+Pew Research Center,IVR,2.5,2021-02-25,2021-06-20,8835,Montana,Donald Trump,50,registered voters
+Roanoke College Institute for Policy and Opinion Research,App Panel,2.6,2024-04-28,2024-04-28,2220,Massachusetts,Donald Trump,46,likely voters
+East Carolina University Center for Survey Research,Email,2.6,2024-03-23,2024-07-24,2604,Vermont,Donald Trump,55,likely voters
+Data Orbital,IVR,2.9,2021-05-07,2021-10-03,13970,Michigan,Donald Trump,45,likely voters
+YouGov,App Panel,3,2021-04-09,2021-07-24,1264,Tennessee,Donald Trump,53,likely voters
+The Washington Post/George Mason University Schar School of Policy and Government,Mixed,2.7,2022-11-30,2023-04-20,15957,Rhode Island,Donald Trump,50,adults
+University of Illinois Springfield Survey Research Office,Online Ad,2.5,2024-08-26,2024-11-24,7202,Idaho,Donald Trump,50,registered voters
+Marist College,Text,2.9,2022-01-15,2022-01-19,18996,Massachusetts,Donald Trump,53,likely voters
+ABC News/The Washington Post,Online Ad,3,2024-07-23,2024-07-24,6932,Connecticut,Donald Trump,53,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,Online Panel,2.7,2022-02-03,2022-06-13,2058,Idaho,Donald Trump,53,likely voters
+MassINC Polling Group,Email,2.8,2021-10-12,2021-12-30,7572,Florida,Donald Trump,52,likely voters
+AtlasIntel,Text-to-Web,2.7,2024-04-18,2024-10-07,17992,Missouri,Donald Trump,45,likely voters
+Michigan State University Institute for Public Policy and Social Research,Email,2.5,2021-04-08,2021-09-10,4049,Maine,Donald Trump,52,likely voters
+Quinnipiac University,Email,2.8,2022-09-06,2022-10-09,887,Wyoming,Donald Trump,55,registered voters
+Christopher Newport University Wason Center for Civic Leadership,Text,2.8,2023-08-15,2023-10-08,17327,New Jersey,Donald Trump,50,likely voters
+Selzer & Co.,Probability Panel,2.8,2023-12-02,2024-01-24,19483,Minnesota,Donald Trump,51,likely voters
+University of New Hampshire Survey Center,Text-to-Web,2.6,2023-09-01,2023-12-24,1446,West Virginia,Donald Trump,53,likely voters
+Beacon Research/Shaw & Co. Research,Online Panel,2.8,2024-04-22,2024-10-04,14805,Indiana,Donald Trump,47,registered voters
+Michigan State University Institute for Public Policy and Social Research,App Panel,2.5,2023-07-17,2023-08-19,8833,Arizona,Donald Trump,55,registered voters
+University of California Berkeley Institute of Governmental Studies,App Panel,2.5,2024-04-14,2024-08-07,1105,South Dakota,Donald Trump,54,adults
+The Winston Group,IVR,2.5,2022-12-22,2023-05-20,15794,North Carolina,Donald Trump,46,likely voters
+Lake Research Partners/The Tarrance Group,Live Phone,2.5,2023-07-03,2023-12-02,1140,Missouri,Donald Trump,46,likely voters
+YouGov,Online Ad,3,2021-09-20,2021-10-31,16775,Kansas,Donald Trump,52,likely voters
+Selzer & Co.,IVR,2.8,2022-01-01,2022-04-16,9517,New Jersey,Donald Trump,49,likely voters
+High Point University Survey Research Center,Online Ad,2.5,2021-06-26,2021-07-09,18373,Maine,Donald Trump,46,registered voters
+Elon University,Text,2.5,2023-01-28,2023-02-14,8351,New Hampshire,Donald Trump,51,likely voters
+The Winston Group,Online Ad,2.5,2024-05-07,2024-08-22,4861,Missouri,Donald Trump,50,registered voters
+The New York Times/Siena College,Online Ad,3,2022-07-24,2022-09-16,17428,Ohio,Donald Trump,54,registered voters
+Abt Associates,Online Ad,2.5,2024-05-31,2024-09-20,3703,Kansas,Donald Trump,54,registered voters
+Data for Progress,Online Panel,2.6,2023-12-24,2024-03-21,13442,California,Donald Trump,53,registered voters
+East Carolina University Center for Survey Research,IVR,2.6,2023-03-03,2023-06-03,17886,South Carolina,Donald Trump,53,registered voters
+Public Policy Institute of California,IVR,2.5,2021-08-22,2021-10-26,1451,Georgia,Donald Trump,47,likely voters
+Western New England University Polling Institute,Online Ad,2.5,2024-07-31,2024-11-15,16304,Texas,Donald Trump,52,registered voters
+University of New Hampshire Survey Center,Probability Panel,2.6,2022-03-07,2022-08-25,16183,Arizona,Donald Trump,47,registered voters
+Michigan State University Institute for Public Policy and Social Research,Text-to-Web,2.5,2024-08-02,2024-10-30,2211,Wisconsin,Donald Trump,50,registered voters
+Elon University,IVR,2.5,2024-07-11,2024-12-14,1320,Hawaii,Donald Trump,45,registered voters
+KFF,App Panel,2.5,2022-03-19,2022-08-01,1433,Louisiana,Donald Trump,49,registered voters
+SurveyUSA,Mixed,2.8,2023-11-22,2024-03-15,7913,Washington,Donald Trump,47,likely voters
+AtlasIntel,Mixed,2.7,2023-03-17,2023-07-08,5499,Virginia,Donald Trump,46,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Text-to-Web,2.5,2023-01-05,2023-05-31,5957,Ohio,Donald Trump,45,registered voters
+Fairleigh Dickinson University,Mixed,2.6,2022-10-29,2022-12-02,7929,Georgia,Donald Trump,49,registered voters
+Muhlenberg College Institute of Public Opinion,App Panel,2.8,2022-06-18,2022-08-31,11720,Connecticut,Donald Trump,46,registered voters
+Hart Research Associates/Public Opinion Strategies,IVR,2.6,2022-01-27,2022-07-18,5984,North Carolina,Donald Trump,48,registered voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2023-04-01,2023-04-13,1409,South Carolina,Donald Trump,50,likely voters
+High Point University Survey Research Center,Text,2.5,2022-07-08,2022-10-04,9116,New Jersey,Donald Trump,45,likely voters
+AtlasIntel,Mixed,2.7,2022-04-24,2022-09-14,4998,Louisiana,Donald Trump,53,likely voters
+Emerson College,Online Panel,2.9,2024-06-19,2024-12-15,15903,Alaska,Donald Trump,51,registered voters
+University of New Hampshire Survey Center,Text-to-Web,2.6,2023-10-24,2023-12-16,1414,South Carolina,Donald Trump,45,adults
+Suffolk University,Online Panel,2.9,2021-10-31,2022-03-12,19100,West Virginia,Donald Trump,52,registered voters
+Muhlenberg College Institute of Public Opinion,Live Phone,2.8,2022-01-31,2022-05-12,852,Rhode Island,Donald Trump,49,registered voters
+Lake Research Partners/The Tarrance Group,Probability Panel,2.5,2023-01-07,2023-02-12,9809,South Carolina,Donald Trump,55,registered voters
+Siena College,Text-to-Web,2.7,2022-03-31,2022-09-08,10112,Washington,Donald Trump,49,likely voters
+The New York Times/Siena College,Live Phone,3,2024-03-11,2024-04-10,2350,Maine,Donald Trump,47,likely voters
+AtlasIntel,Online Panel,2.7,2021-08-30,2021-09-16,561,Minnesota,Donald Trump,53,likely voters
+Roanoke College Institute for Policy and Opinion Research,App Panel,2.6,2022-03-08,2022-03-28,9155,Kansas,Donald Trump,45,registered voters
+Suffolk University,Mixed,2.9,2023-01-10,2023-03-30,1937,Hawaii,Donald Trump,54,registered voters
+Suffolk University,Email,2.9,2021-07-03,2021-09-19,11542,Colorado,Donald Trump,48,registered voters
+Marquette University Law School,Mixed,3,2021-09-24,2021-12-01,11802,Kansas,Donald Trump,53,likely voters
+Stockton University William J. Hughes Center for Public Policy,App Panel,2.6,2023-01-07,2023-06-24,9151,North Carolina,Donald Trump,48,likely voters
+Marquette University Law School,Mixed,3,2021-02-19,2021-08-04,1925,Texas,Donald Trump,50,adults
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Live Phone,2.5,2023-03-08,2023-07-23,13590,Massachusetts,Donald Trump,46,registered voters
+Michigan State University Institute for Public Policy and Social Research,Email,2.5,2024-06-05,2024-06-18,3139,Delaware,Donald Trump,55,likely voters
+Ipsos,Email,2.8,2024-01-17,2024-05-28,15669,National,Donald Trump,49,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Email,2.5,2024-02-20,2024-06-27,19018,Iowa,Donald Trump,46,registered voters
+University of New Hampshire Survey Center,Online Ad,2.6,2021-11-04,2022-01-19,17033,Louisiana,Donald Trump,45,likely voters
+Public Policy Institute of California,Text,2.5,2022-06-05,2022-10-23,8262,Arkansas,Donald Trump,50,registered voters
+The Winston Group,Text-to-Web,2.5,2024-06-03,2024-10-10,9989,New Hampshire,Donald Trump,46,registered voters
+Marquette University Law School,Text-to-Web,3,2022-06-08,2022-09-03,16459,Mississippi,Donald Trump,48,likely voters
+East Carolina University Center for Survey Research,App Panel,2.6,2021-03-20,2021-08-01,3198,New Mexico,Donald Trump,46,registered voters
+Echelon Insights,Live Phone,2.7,2022-07-02,2022-08-09,1565,Massachusetts,Donald Trump,51,likely voters
+AtlasIntel,Probability Panel,2.7,2023-04-16,2023-05-29,16354,New Jersey,Donald Trump,55,registered voters
+Pew Research Center,App Panel,2.5,2022-03-14,2022-06-25,12983,Delaware,Donald Trump,45,likely voters
+Lake Research Partners/The Tarrance Group,Text-to-Web,2.5,2022-07-25,2022-09-11,5349,Virginia,Donald Trump,55,registered voters
+CNN,Probability Panel,2.8,2024-01-10,2024-01-12,3599,South Carolina,Donald Trump,45,likely voters
+Southern Illinois University Paul Simon Public Policy Institute,Online Panel,2.5,2022-07-29,2022-09-19,16216,Delaware,Donald Trump,46,registered voters
+Siena College,Mixed,2.7,2022-10-11,2023-03-24,5437,Texas,Donald Trump,52,likely voters
+University of Arkansas Department of Political Science,Probability Panel,2.5,2022-01-09,2022-04-01,13090,New Mexico,Donald Trump,47,registered voters
+Data Orbital,Text-to-Web,2.9,2024-03-15,2024-05-05,3267,Maine,Donald Trump,45,likely voters
+Stockton University William J. Hughes Center for Public Policy,Text,2.6,2024-09-04,2025-01-19,9718,New York,Donald Trump,53,likely voters
+Lake Research Partners/The Tarrance Group,Email,2.5,2023-01-12,2023-04-22,5880,Alaska,Donald Trump,49,likely voters
+Elon University,Live Phone,2.5,2021-01-26,2021-04-04,11791,Michigan,Donald Trump,49,registered voters
+University of North Florida Public Opinion Research Lab,Email,2.8,2022-06-12,2022-08-28,4649,Hawaii,Donald Trump,48,likely voters
+University of New Hampshire Survey Center,Online Panel,2.6,2023-05-15,2023-11-06,2985,Nevada,Donald Trump,53,registered voters
+Lake Research Partners/The Tarrance Group,IVR,2.5,2022-10-05,2023-03-01,18925,Montana,Donald Trump,54,registered voters
+CNN,Mixed,2.8,2023-06-19,2023-11-18,15324,Minnesota,Donald Trump,49,likely voters
+Beacon Research/Shaw & Co. Research,Online Panel,2.8,2023-12-16,2024-03-15,5691,Alaska,Donald Trump,47,likely voters
+Suffolk University,Mixed,2.9,2023-11-08,2023-11-10,8730,Nebraska,Donald Trump,53,adults
+Hart Research Associates/Public Opinion Strategies,Online Panel,2.6,2024-09-16,2024-11-26,13517,Colorado,Donald Trump,51,likely voters
+University of Illinois Springfield Survey Research Office,Online Panel,2.5,2021-08-19,2021-10-03,3380,California,Donald Trump,50,likely voters
+University of Massachusetts Lowell Center for Public Opinion,Online Panel,2.9,2021-03-01,2021-07-12,19135,South Dakota,Donald Trump,52,adults
+The Winston Group,Mixed,2.5,2022-02-07,2022-04-07,13958,Arkansas,Donald Trump,55,registered voters
+ABC News/The Washington Post,App Panel,3,2024-08-17,2024-10-11,18337,Florida,Donald Trump,52,registered voters
+Winthrop University Center for Public Opinion & Policy Research,Mixed,2.5,2022-09-16,2023-01-03,9269,Indiana,Donald Trump,51,adults
+University of North Florida Public Opinion Research Lab,Email,2.8,2022-07-30,2022-12-31,3508,Mississippi,Donald Trump,46,likely voters
+Hart Research Associates/Public Opinion Strategies,Text,2.6,2024-02-21,2024-06-06,4118,New Jersey,Donald Trump,53,likely voters
+AtlasIntel,Live Phone,2.7,2022-02-23,2022-08-11,9047,Ohio,Donald Trump,53,registered voters
+Siena College,Mixed,2.7,2024-01-28,2024-02-14,16371,Mississippi,Donald Trump,48,likely voters
+University of California Berkeley Institute of Governmental Studies,Online Panel,2.5,2024-05-27,2024-10-02,16970,Hawaii,Donald Trump,54,registered voters
+Quinnipiac University,Online Panel,2.8,2024-08-11,2024-10-17,18601,Vermont,Donald Trump,54,registered voters
+Southern Illinois University Paul Simon Public Policy Institute,Live Phone,2.5,2022-02-21,2022-07-10,12180,Alaska,Donald Trump,53,likely voters
+The New York Times/Siena College,Text-to-Web,3,2024-07-29,2024-12-18,18881,New Hampshire,Donald Trump,54,likely voters
+Marist College,Live Phone,2.9,2021-12-12,2022-04-10,16015,New Jersey,Donald Trump,48,registered voters
+The Washington Post/George Mason University Schar School of Policy and Government,IVR,2.7,2024-08-02,2024-08-07,15737,New Mexico,Donald Trump,49,registered voters
+Suffolk University,Text,2.9,2024-01-28,2024-04-21,549,Connecticut,Donald Trump,46,likely voters
+Echelon Insights,Email,2.7,2022-10-22,2022-11-30,12474,North Dakota,Donald Trump,53,registered voters
+The Washington Post/University of Maryland Center for Democracy and Civic Engagement,Text-to-Web,2.5,2022-01-08,2022-07-04,4960,Tennessee,Donald Trump,55,registered voters
+Elon University,Online Ad,2.5,2021-07-10,2021-10-07,15591,North Dakota,Donald Trump,45,likely voters
+MassINC Polling Group,Email,2.8,2023-08-23,2024-01-22,13227,Colorado,Donald Trump,49,registered voters
