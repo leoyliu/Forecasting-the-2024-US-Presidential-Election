@@ -427,15 +427,15 @@ Weaknesses and next steps should also be included.
 
 # Pollster Methodology Overview and Evaluation
 ## Overview of Siena/NYT
-Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018.In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment.
+Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018.In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment. [@]
 
 ## Target Population, Frame, and Sample
 * Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.\
 * Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.\
-* Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points.
+* Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points. [@]
 
 ## Sample Recruitment
-The sample was conducted by live telephone interviews in both English and Spanish. Over 98% of respondents were contacted by telephone.
+The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish.\ [@]
 
 ## Sampling Approach and Trade-offs
 Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.\
@@ -453,7 +453,13 @@ Siena/NYT used a stratified sampling method. Polls were stratified by demographi
 * Reliance on weighting adjustments to correct for response discrepancies, which does not fully eliminate residual bias.
 
 ## Non-response Handling
-Non-response was a key problem for Siena/NYT. The poll used weighted adjustments for demographic characteristics such as age, race, gender, education, and different political parties to address non-response bias. The weighting adjustment was used to ensure that the sample closely matches the larger population and compensates for differences in response rates across demographic groups. However, non-response can still present residual bias even with weighting, especially when certain demographic groups have been less likely to respond to survey calls.
+
+**Weighting adjustment:** The Times weighted the sample using the survey software package in R and adjusted for unequal probability of selection in each stratum. The sample was also split by political party and weighted according to parameters of registered voter characteristics from the voter file. This weighting step ensures that respondents from underrepresented demographic groups such as those without a college degree are given more weight so that the results reflect the voting population overall.\
+
+**Non-Response Model:** To adjust for non-response bias, the L2 voter file was stratified by ‘state precinct,’ ‘political party,’ ‘race,’ ‘gender,’ ‘marital status,’ and ‘voting history.’ The average expected response rate is based on a single-place non-response rate model from previous Siena/NYT surveys, which can be adjusted appropriately to account for different response rates in different groups.\
+
+**Multiple calls and language adaptation:** Interviewers made more than 260,000 calls to more than 80,000 voters, resulting in a sample of 2,516 respondents. Interviewers conducted the interviews in English and Spanish, and bilingual interviewers adapted the language of the interviews to respondent preferences, which helped to increase the participation of Spanish-speaking respondents. Re-contacts by interviewers reduced the non-response rate.
+
 
 ## Questionnaire Evaluation
 **Strengths:**\
