@@ -1,11 +1,12 @@
 #### Preamble ####
 # Purpose: Install necessary packages
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
-# Date: 26 September 2024
-# Contact: leoy.liu@mail.utoronto.ca
+# Date: 30 October 2024
+# Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: None
 # Any other information needed? None
+
 
 
 #### Install packages ####
