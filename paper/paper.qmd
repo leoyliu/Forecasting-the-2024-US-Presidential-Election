@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we have built a linear model to predict the outcome of the 2024 U.S. presidential election, using a \"poll-of-polls\" approach that combines data from many well-known pollsters. Our analysis shows that Donald Trump has a probability of winning between 45% and 55%, which depends on how polling data changes from state to state. However, Kamala Harris is projected to win key states and receive the majority of electoral votes, with a projected 239 votes to Trump's 98. These show the value of aggregate polls in providing reliable predictions of election outcomes."
+abstract: "In this paper, we have built a linear model to predict the outcome of the 2024 U.S. presidential election, using a \"poll-of-polls\" approach that combines data from many well-known pollsters. Our analysis shows that Donald Trump has a probability of winning in range 45% to 55% in each state, which depends on how polling data changes from state to state. However, Kamala Harris is projected to win key states and receive the majority of electoral votes, with a projected 239 votes to Trump's 98, based on testing dataset, we only have those state in the dataset. These show the value of aggregate polls in providing reliable predictions of election outcomes."
 format: pdf
 number-sections: true
 toc: true
@@ -46,6 +46,8 @@ Our findings suggest that while Trump has a competitive chance, Harris is projec
 
 The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then @sec-result presents the main findings, including detailed crime trends for each neighborhood and year. Finally, @sec-discussion provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
+## Estimand
+Todo: 
 
 # Data {#sec-data}
 
@@ -295,7 +297,6 @@ analysis_data_train <- read_parquet(here::here("data/02-analysis_data/train_data
 unique_states_train <- unique(analysis_data_train$state)
 unique_states_test <- unique(analysis_data_test$state)
 
-
 # Find common states between training and test data and filter test data to only keep these states
 common_states <- intersect(unique_states_train, unique_states_test)
 analysis_data_test <- analysis_data_test %>%
@@ -313,6 +314,7 @@ electoral_votes <- data.frame(
             "District of Columbia"),
   electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
                       3, 10, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3))
+
 # Convert methodology column to character type for recoding
 analysis_data_test$methodology <- as.character(analysis_data_test$methodology)
 
@@ -321,7 +323,6 @@ analysis_data_test$methodology[analysis_data_test$methodology == "Email"] <- "On
 
 # Use the trained regression model to predict Trump's support percentage in each state
 analysis_data_test$predicted_percent_trump <- predict(model2, newdata = analysis_data_test)
-analysis_data_test$predicted_percent_trump
 total_trump <- aggregate(predicted_percent_trump ~ state, data = analysis_data_test, FUN = mean)
 
 # Determine the winner in each state based on Trump's predicted percentage
@@ -339,28 +340,21 @@ trump_electoral_votes <- sum(state_predictions$trump_electoral_votes)
 harris_electoral_votes <- sum(state_predictions$harris_electoral_votes)
 
 # Create and display the results table
-
 kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes", "winner")], 
       col.names = c("State", "Trump Predicted %", "Electoral Votes", "Winner"), 
       digits = 2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   scroll_box(width = "100%", height = "400px")
-
-print(paste("Trump Electoral Votes:", trump_electoral_votes))
-print(paste("Harris Electoral Votes:", harris_electoral_votes))
 ```
 
 ## Prediction map
 @fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
 ```{r}
 #| label: fig-statemap
-#| tbl-cap: Predicted Winner of 2024 US Presidential Election by State
+#| fig-cap: Predicted Winner of 2024 US Presidential Election by State
 #| echo: false
 #| warning: false
 #| message: false
-
-# Replace NA values in the 'winner' column with 'Trump'
-#state_predictions$winner[is.na(state_predictions$winner)] <- "Trump"
 
 # "red" for Trump and "blue" for Harris
 state_predictions$winner_color <- ifelse(state_predictions$winner == "Trump", "green", "blue")
@@ -376,7 +370,6 @@ The map illustrates Trump gaining traction across central and southern states, i
 
 Several battleground states, including Florida and Ohio, are projected to favor Trump, with a slight advantage that marks a contrast to Harris's stronger leads in places like California. The map also shows a number of central states in gray, reflecting either a lack of definitive prediction or insufficient data. Overall, the map reveals distinct regional patterns, with Trump expected to perform well in the heartland and Harris finding support along the coasts. The outcome may hinge on the final results in the competitive states like Pennsylvania, Arizona, and North Carolina.
 
-Our results are summarized in @tbl-modelresults.
 
 # Discussion {#sec-discussion}
 
@@ -401,58 +394,59 @@ Weaknesses and next steps should also be included.
 # Appendix {-}
 
 # Pollster Methodology Overview and Evaluation
+
 ## Overview of Siena/NYT
 Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018.In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment. [@]
 
 ## Target Population, Frame, and Sample
-* Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.\
-* Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.\
+* Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.
+* Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.
 * Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points. [@]
 
 ## Sample Recruitment
-The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish.\ [@]
+The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish. [@]
 
 ## Sampling Approach and Trade-offs
-Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.\
+Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.
 
-**Advantages of stratified sampling:**\
+**Advantages of stratified sampling:**
 
-* Generates a representative sample that captures the diverse opinions of different voter populations.\
-* Helps to ensure that under-represented groups are given appropriate weighting, and reduces potential bias.\
-* Provides a more accurate reflection of the wider population by stratifying on key characteristics.\
+* Generates a representative sample that captures the diverse opinions of different voter populations.
+* Helps to ensure that under-represented groups are given appropriate weighting, and reduces potential bias.
+* Provides a more accurate reflection of the wider population by stratifying on key characteristics.
 
-**Disadvantages of stratified sampling:**\
+**Disadvantages of stratified sampling:**
 
-* Increased cost and time to complete polls, especially for live telephone interviews.\
-* There are challenges in reaching specific demographic groups, such as younger voters who may be less likely to participate in the poll.\
+* Increased cost and time to complete polls, especially for live telephone interviews.
+* There are challenges in reaching specific demographic groups, such as younger voters who may be less likely to participate in the poll.
 * Reliance on weighting adjustments to correct for response discrepancies, which does not fully eliminate residual bias.
 
 ## Non-response Handling
 
-**Weighting adjustment:** The Times weighted the sample using the survey software package in R and adjusted for unequal probability of selection in each stratum. The sample was also split by political party and weighted according to parameters of registered voter characteristics from the voter file. This weighting step ensures that respondents from underrepresented demographic groups such as those without a college degree are given more weight so that the results reflect the voting population overall.\
+**Weighting adjustment:** The Times weighted the sample using the survey software package in R and adjusted for unequal probability of selection in each stratum. The sample was also split by political party and weighted according to parameters of registered voter characteristics from the voter file. This weighting step ensures that respondents from underrepresented demographic groups such as those without a college degree are given more weight so that the results reflect the voting population overall.
 
-**Non-Response Model:** To adjust for non-response bias, the L2 voter file was stratified by ‘state precinct,’ ‘political party,’ ‘race,’ ‘gender,’ ‘marital status,’ and ‘voting history.’ The average expected response rate is based on a single-place non-response rate model from previous Siena/NYT surveys, which can be adjusted appropriately to account for different response rates in different groups.\
+**Non-Response Model:** To adjust for non-response bias, the L2 voter file was stratified by 'state precinct', 'political party', 'race', 'gender', 'marital status', and 'voting history'. The average expected response rate is based on a single-place non-response rate model from previous Siena/NYT surveys, which can be adjusted appropriately to account for different response rates in different groups.
 
 **Multiple calls and language adaptation:** Interviewers made more than 260,000 calls to more than 80,000 voters, resulting in a sample of 2,516 respondents. Interviewers conducted the interviews in English and Spanish, and bilingual interviewers adapted the language of the interviews to respondent preferences, which helped to increase the participation of Spanish-speaking respondents. Re-contacts by interviewers reduced the non-response rate.
 
-
 ## Questionnaire Evaluation
-**Strengths:**\
 
-* Minimize bias through the use of straightforward and non-leading questions.\
-* Transparency was maintained by publishing the questions verbatim to allow for public scrutiny.\
-* Bilingual interviewers ensured that respondents could participate in their preferred language (English or Spanish), which increased the participation of Spanish-speaking voters and improved the quality of respondents' answers.\
+**Strengths:**
 
-**Weaknesses:**\
+* Minimize bias through the use of straightforward and non-leading questions.
+* Transparency was maintained by publishing the questions verbatim to allow for public scrutiny.
+* Bilingual interviewers ensured that respondents could participate in their preferred language (English or Spanish), which increased the participation of Spanish-speaking voters and improved the quality of respondents' answers.
 
-* The length of the poll can lead to respondent fatigue, which affects the quality of the data and increases dropout rates.\
-* It can be challenging to limit calls to less than 15 minutes, which can lead to incomplete or rushed responses, thus affecting the overall reliability of the data.\
+**Weaknesses:**
+
+* The length of the poll can lead to respondent fatigue, which affects the quality of the data and increases dropout rates.
+* It can be challenging to limit calls to less than 15 minutes, which can lead to incomplete or rushed responses, thus affecting the overall reliability of the data.
 
 ## Conclusion
-The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.\
-
+The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.
 
 # Idealized Methodology and Survey
+
 ## Overview
 The objective of this survey is to predict voter sentiment in the upcoming U.S. presidential election, by using a budget of $100,000 to collect accurate and varied data on voting intentions, candidate favourability, and key issues from a representative sample of registered or likely voters across the United States. The methodology is designed to maximize accuracy, minimize bias and take into account a variety of demographic, geographic and political factors that influence voting behaviour.
 
@@ -460,12 +454,12 @@ The objective of this survey is to predict voter sentiment in the upcoming U.S. 
 The sampling approach is designed to increase coverage and ensure that a representative voting population is covered. This will be achieved by using a combination of stratified random sampling and quota sampling of key demographics.
 
 ### Stratification Variables 
-* Age: 18-29, 30-44, 45-64, 65+\
-* Gender: Male and Female\
-* Race: White, Black /African American, Hispanic/Latino, Asian, Native and Other\
-* Education level: High School, Some College, Bachelor's Degree, Graduate Degree, Other\
-* Geographic region: Northeast, Midwest, South, West\
-* Political Party: Democratic, Republican, Independent, Other\
+* Age: 18-29, 30-44, 45-64, 65+
+* Gender: Male, Female, Non-binary
+* Race: White, Black /African American, Hispanic/Latino, Asian, Native, Other
+* Education level: High School, Some College, Bachelor's Degree, Graduate Degree, Other
+* Geographic region: Northeast, Midwest, South, West
+* Political Party: Democratic, Republican, Independent, Other
 
 ### Sample Size
 The target sample size was 10,000 respondents, which are stratified by the Stratification Variables described above. This stratification ensures that all major voter groups are proportionately represented. 10,000 samples have a margin of error of about ±1% and a confidence level of 95%, which is appropriate for predicting elections.
@@ -473,76 +467,79 @@ The target sample size was 10,000 respondents, which are stratified by the Strat
 ## Recruitment Strategy
 The recruitment strategy was separated into two main approaches to ensure a diverse and representative sample:
 
-**Online Survey panels:**\
+**Online Survey panels:**
 
-* Work with established survey panels such as Lucid or YouGov.\
-* These panels have access to large representative databases of voters.\
-* Recruiting through panels ensures quality and reliability, as they have built-in validation and quality control processes.\
+* Work with established survey panels such as Lucid or YouGov.
+* These panels have access to large representative databases of voters.
+* Recruiting through panels ensures quality and reliability, as they have built-in validation and quality control processes.
 
-**Social Media Advertising:**\
+**Social Media Advertising:**
 
-* Use social media platforms such as Facebook, Instagram and LinkedIn to reach potential respondents.\
-* Target groups that are underrepresented in traditional panels, including young voters and minority groups.\
-* Social media ads will be customized with demographic information to increase reach and participation.\
+* Use social media platforms such as Facebook, Instagram and LinkedIn to reach potential respondents.
+* Target groups that are underrepresented in traditional panels, including young voters and minority groups.
+* Social media ads will be customized with demographic information to increase reach and participation.
 
 **Incentives:** Offer gift card lottery prizes to all participants to encourage participation and ensure a high response rate.
 
 ## Data validation and quality control
-To maintain the integrity of the data, we will take the following measures:\
+To maintain the integrity of the data, we will take the following measures:
 
-* **Attention Checks:** At least two ‘attention check’ questions will be included in the survey to identify inattention or robots.\
-* **Duplicate Detection:** Use email or IP-based verification to prevent duplicate responses. Ensure that each respondent provides only one response set to keep the dataset unique.\
-* **Response Time Monitoring:** Track the time it takes respondents to complete surveys. Responses with apparently faster-than-average completion times are labelled as potentially low-quality.\
-* **Data Consistency Check:** Analyses the consistency of responses, especially between related questions. Inconsistent answers will be labelled for review.\
+* **Attention Checks:** At least two 'attention check' questions will be included in the survey to identify inattention or robots.
+* **Duplicate Detection:** Use email or IP-based verification to prevent duplicate responses. Ensure that each respondent provides only one response set to keep the dataset unique.
+* **Response Time Monitoring:** Track the time it takes respondents to complete surveys. Responses with apparently faster-than-average completion times are labelled as potentially low-quality.
+* **Data Consistency Check:** Analyses the consistency of responses, especially between related questions. Inconsistent answers will be labelled for review.
 * **Panel partner validation:** For respondents recruited through an online survey panel, rely on the panel provider's in-built validation systems. These systems use various quality checks, such as identity verification and response consistency, which ensure high-quality data from panel participants.
 
 
 ## Poll aggregation and forecasting
 ### Poll aggregation
-* ‘Poll of polls’ approach: Survey data will be combined with data from some reliable polling sources such as Lucid, YouGov and others. This approach aggregates the results of multiple reputable polls to improve the forecast reliability by reducing bias and individual polling errors.\
+* 'Poll of polls' approach: Survey data will be combined with data from some reliable polling sources such as Lucid, YouGov and others. This approach aggregates the results of multiple reputable polls to improve the forecast reliability by reducing bias and individual polling errors.
 * Weighting adjustments: Polls are weighted according to sample quality, size, repeatability, and demographic match. Demographic mismatches are adjusted using raking to ensure that the aggregated data accurately represents the U.S. population.
 
 ### Forecasting Method
-* Bayesian modelling: Aggregate polling data is combined with historical electoral trends and demographic information using Bayesian statistical models. This approach allows for dynamic updating as new data becomes available, which improves accuracy. \
+* Bayesian modelling: Aggregate polling data is combined with historical electoral trends and demographic information using Bayesian statistical models. This approach allows for dynamic updating as new data becomes available, which improves accuracy.
 * Uncertainty Quantification: Includes confidence intervals to express uncertainty in forecasts for a more detailed interpretation. 
 
 ## Budget Allocation
-* Survey Panel Recruitment: $50,000\
-* Social Media Advertising: $50,000\
-* Incentives(lottery prizes): $15,000\ 
-* Data Cleaning and Validation: $5,000\
+* Survey Panel Recruitment: $50,000
+* Social Media Advertising: $50,000
+* Incentives(lottery prizes): $15,000 
+* Data Cleaning and Validation: $5,000
 * Poll Aggregation and Modeling: $10,000
 
-
 ## Survey Implementation
-The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms. The link to the survey is [here](https://forms.gle/y4Xh2oQ544DYcCXWA).\
+The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms. The link to the survey is [here](https://forms.gle/y4Xh2oQ544DYcCXWA).
 
-**Distribution Plan:**\
+**Distribution Plan:**
 
-* **Panel invitations:** Members of established survey panels (e.g. Lucid, YouGov) will receive email invitations to participate in the survey.\
-* **Social media activities:** Targeted adverts will be placed on social media platforms to reach under-represented groups, especially young voters and national minority groups.\
-* **Follow-up reminders:** An automated reminder email will be sent to participants who have not completed the survey to maximize response rates.\
-* **Survey Monitoring:** Response rates will be closely monitored throughout the data collection period and sampling methods will be adjusted if certain population quotas are not reached.\
+* **Panel invitations:** Members of established survey panels (e.g. Lucid, YouGov) will receive email invitations to participate in the survey.
+* **Social media activities:** Targeted adverts will be placed on social media platforms to reach under-represented groups, especially young voters and national minority groups.
+* **Follow-up reminders:** An automated reminder email will be sent to participants who have not completed the survey to maximize response rates.
+* **Survey Monitoring:** Response rates will be closely monitored throughout the data collection period and sampling methods will be adjusted if certain population quotas are not reached.
 * **Accessibility:** The survey will be mobile-friendly, which will allow respondents to complete the survey on any device.
 
 
 ## Survey Structure
-**Survey Introduction:**\
-Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.\
-If you have any questions or concerns, please feel free to contact our research team at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com) (Ziyuan Shen, Leo Liu, Dezhen Chen).\
-As a thank you for your participation, you will be entered into a raffle to win a grand prize of a gift card. We are deeply grateful for your participation and appreciate the time and effort that you put in.\
 
-**Survey Question:**\
+**Survey Introduction:**
+Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.
 
-**Part 1: Screening for eligibility**\
+If you have any questions or concerns, please feel free to contact our research team at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com) (Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
+
+As a thank you for your participation, you will be entered into a raffle to win a grand prize of a gift card. We are deeply grateful for your participation and appreciate the time and effort that you put in.
+
+**Survey Question:**
+
+**Part 1: Screening for eligibility**
+
 1.Are you an eligible U.S. citizen?\
 * Yes / No\
 2.Are you currently 18 years of age or older?\
-* Yes / No
+* Yes / No\
 3.Have you completed your registration to become a voter?\
-* Yes / No / Plan to register\
+* Yes / No / Plan to register
 
-**Part 2: Demographics**\
+**Part 2: Demographics**
 
 4.What is your age?\
 * 18-24 / 25-34 / 35-44 / 45-54 / 55+\
@@ -553,114 +550,53 @@ As a thank you for your participation, you will be entered into a raffle to win 
 7.Which region of the U.S. do you currently reside in?\
 * Northeast / Midwest / South / West\    
 8.Do you generally identify with a political party?\
-* Democratic / Republican / Independent / None\
+* Democratic / Republican / Independent / None
 
-**Part 3: Voting Intentions**\
+**Part 3: Voting Intentions**
 
 9.How likely are you to participate in the upcoming presidential election?\
 * Very Likely / Somewhat Likely / Not Sure / Unlikely / Very Unlikely\
 10.If the presidential election were held today, for which candidate would you vote?\
 * Kamala Harris (Democrat) / Donald Trump (Republican) / Undecided / Prefer not to say\
 11.What are the top three issues that will influence your vote?\
-* Economy / Healthcare / Education / Gun Policy / Taxes / Foreign Policy / Social Security / Civil Rights / Technology / Privacy / Other[text]\
+* Economy / Healthcare / Education / Gun Policy / Taxes / Foreign Policy / Social Security / Civil Rights / Technology / Privacy / Other[text]
 
-**Part 4: Information Sources and Engagement**\
+**Part 4: Information Sources and Engagement**
 
 12.Which of the following sources do you rely on most for political news and information?\
 * Television News / Newspapers / Online News Websites / Social Media / Radio / Friends and Family / Other\
 13.How often do you engage in discussions about political topics with friends or family?\
-* Daily / Weekly / Monthly / Rarely / Never\
+* Daily / Weekly / Monthly / Rarely / Never
 
-**Part 5: Verify**\
+**Part 5: Verify**
 
 14.Please select 'Agree' to verify that you are paying attention.\
 * Agree / Disagree\
 15.Do you agree to participate in this survey? Your responses will be kept confidential and used only for research purposes.\
-* Yes / No\
+* Yes / No
 
-**End Part:**\
-Thank you for your participation!\
-Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com)(Ziyuan Shen, Leo Liu, Dezhen Chen).
+**End Part:**
 
+Thank you for your participation!
 
-
-
-
-
-
-
-
-
-
-
-
-# Additional data details
+Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com)(Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
 
 # Model details 
 ```{r}
+#| label: fig-qq-check
+#| fig-cap: Model Diagnosis
+#| echo: false
+#| warning: false
+#| message: false
+
 # Generate diagnostic plots for model2
 par(mfrow = c(2, 2))
 plot(model2)
 
 # Generate pairwise scatter plots for all predictor variables
 pairs(analysis_data_train[, c("numeric_grade", "duration", "sample_size", "transparency_score")])
-
 ```
-```{r}
-
-#  AIC 和 BIC
-AIC_value <- AIC(model2)
-BIC_value <- BIC(model2)
-
-
-print(paste("AIC: ", AIC_value))
-print(paste("BIC: ", BIC_value))
-
-
-```
-
-
-## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
-
-```
-
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-```
-
-
 
 \newpage
 
-
 # References
-
-
