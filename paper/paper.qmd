@@ -198,35 +198,34 @@ The `sample_size` variable represents the total number of respondents surveyed i
 The `duration` variable is a constructed variable that represents how long Donald Trump has been in the 2024 presidential campaign, measured as the number of days from his official campaign announcement on July 15, 2024 until the `end_date` of each poll. This variable helps quantify how much time has passed since Trump officially entered the race and allows us to examine how his support has evolved over the course of his campaign.
 
 # Model {#sec-model}
-Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for a candidate. For this analysis, we use a linear model (LM) to examine how factors such as poll grade, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the lm function, with a Gaussian distribution to capture the variability in support rates.
+Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for a candidate. For this analysis, we use a linear model (LM) to examine how factors such as poll score, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the lm function, with a Gaussian distribution to capture the variability in support rates.
 
-In this analysis, we use predictors that reflect both the methodological quality and structural characteristics of each poll. Specifically, we include variables such as numeric_grade, which quantifies the poll’s quality, methodology, duration (the length of the election period), sample_size, transparency_score, and state (the regional factor). This selection of predictors ensures a comprehensive view of the factors impacting support percentage.
+In this analysis, we use predictors that reflect both the methodological quality and structural characteristics of each poll. Specifically, we include variables such as `numeric_grade`, which quantifies the poll’s quality, `methodology`, `duration` (the length of the election period), `sample_size`, `transparency_score`, and `state` (the regional factor).
 
-The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability and robustness in our findings.
-
+The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability in our findings.
 
 ## Model set-up
-The model now predicts Trump's support percentage using the following predictor variables:
+The model predicts Trump's support percentage using the following predictor variables:
 
-Numeric Grade (numeric_grade): Represents the quality rating of the poll.
+- Poll Score (`numeric_grade`): Represents the quality rating of the poll.
 
-Methodology (methodology): Different methods used to conduct the poll, such as live phone, mixed voting, or online ads.
+- Methodology (`methodology`): Different methods used to conduct the poll, such as live phone, mixed voting, or online ads.
 
-Poll Duration (duration): The the length of the election period was conducted.
+- Poll Duration (`duration`): The the length of the election period was conducted.
 
-Sample Size (sample_size): The number of respondents in the poll.
+- Sample Size (`sample_size`): The number of respondents in the poll.
 
-Transparency Score (transparency_score): A measure of how transparent the polling data and methodology are.
+- Transparency Score (`transparency_score`): A measure of how transparent the polling data and methodology are.
 
-State (state): A categorical variable representing the U.S. state where the poll was conducted.
+- State (`state`): A categorical variable representing the U.S. state where the poll was conducted.
 
 The model takes the form:
 
 \begin{align*}
     y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
-    \mu_i &= \beta_0 + \beta_1 \cdot \text{numeric\_grade}_i + \beta_2 \cdot \text{methodology}_i \\
-          &\quad + \beta_3 \cdot \text{duration}_i + \beta_4 \cdot \text{sample\_size}_i \\
-          &\quad + \beta_5 \cdot \text{transparency\_score}_i + \beta_6 \cdot \text{state}_i + \epsilon_i \\
+    \mu_i &= \beta_0 + \beta_1 \cdot \text{Poll Score}_i + \beta_2 \cdot \text{Methodology}_i \\
+          &\quad + \beta_3 \cdot \text{Poll Duration}_i + \beta_4 \cdot \text{Sample Size}_i \\
+          &\quad + \beta_5 \cdot \text{Rransparency Score}_i + \beta_6 \cdot \text{State}_i + \epsilon_i \\
     \epsilon_i &\sim \text{Normal}(0, \sigma^2)
 \end{align*}
 
@@ -237,16 +236,26 @@ The model takes the form:
     \item $\sigma^2$ is the variance of the error term.
 \end{itemize}
 
-
-The model is executed in R using the \texttt{rstanarm} package. Default priors from \texttt{rstanarm} are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
+The model is executed in \texttt{R} [@citeR] using the \texttt{rstanarm} package [@rstanarm]. Default priors from \texttt{rstanarm} [@rstanarm] are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
 
 ### Model justification
-Existing research and political science theories suggest that factors such as poll quality, sample size, transparency, methodology, poll duration, and the state where the poll takes place can significantly influence Trump's support percentage. Higher quality polls and larger sample sizes are believed to yield more reliable estimates, while transparency scores can affect levels of public trust, potentially altering support. Moreover, different polling methodologies (e.g., online surveys, telephone interviews) may affect how representative the sample is, while longer polling durations can reflect shifts in public sentiment over time. State-specific factors, such as local political events or population characteristics, can also contribute to the variation in support. The timing of the poll, particularly in relation to key political events, might further influence public opinion.
+Existing research and political science theories suggest that factors such as poll quality, sample size, transparency, methodology, poll duration, and the state where the poll takes place can influence Trump's support percentage. Higher quality polls and larger sample sizes are believed to yield more reliable estimates, while transparency scores can affect levels of public trust, potentially altering support. Moreover, different polling methodologies (e.g., online surveys, telephone interviews) may affect how representative the sample is, while longer polling durations can reflect shifts in public sentiment over time. State-specific factors, such as local political events or population characteristics, can also contribute to the variation in support. The timing of the poll, particularly in relation to key political events, might further influence public opinion.
 
 A linear regression model was chosen to predict Trump's support percentage because the dependent variable is continuous and tends to follow a normal distribution. Linear regression is a straightforward method to analyze how multiple factors contribute to an outcome, and it offers easy-to-interpret coefficients for each predictor. The model helps us determine the extent to which different aspects of polling influence the level of public support for Trump.
+
+Further justification for using this model comes from its alignment with the central limit theorem, which suggests that with sufficient sample size, the distribution of poll percentages should approximate normality. Additionally, the relationships between the predictors (e.g., poll quality, methodology type) and support align well with established theories in political behavior, giving a solid theoretical underpinning to our model. The simplicity of a linear regression approach also helps mitigate overfitting, ensuring our results are generalizable to a broader set of polling data.
+
+# Results {#sec-result}
+@sec-result examines the relationship between polling score, methodology, poll duration, transparency score, sample size, and state, with respect to Donald Trump's polling performance in the 2024 U.S. Presidential Election. Using a dataset that captures polling data across various states and polling organizations, we apply a linear regression model to identify key factors that influence Trump's support. Below, we present the results of our model and its implications.
+
+## Model Results and Interpretation
+The linear regression model built by our training dataset, using 384 data points, estimated the factors influencing Trump's support levels. As @tbl-summary-model shows, the intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline. The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting. The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.
+
+The results highlight that `numeric_grade` and `sample_size` are particularly important in predicting support levels, with larger and higher-quality polls offering more reliable estimates. The transparency score and state-level coefficients further provide understanding into regional differences and the role of trust in polling, helping us better understand the dynamics behind Trump's public support.The coefficients for `numeric_grade` and `sample_size` underline the importance of poll quality and sample size in predicting support levels. Larger, higher-quality polls offer more estimates. Additionally, transparency and state effects provide insight into regional differences and trust factors affecting polling results, giving a clearer understanding of the dynamics influencing Trump's public support.
+
 ```{r}
 #| label: tbl-summary-model
-#| tbl-cap: Summary of the Linear Regression Model
+#| tbl-cap: "Summary of the Linear Regression Model for Predicting Polling Outcomes"
 #| echo: false
 #| warning: false
 
@@ -260,26 +269,19 @@ modelsummary(
 )
 ```
 
-Further justification for using this model comes from its alignment with the central limit theorem, which suggests that with sufficient sample size, the distribution of poll percentages should approximate normality. Additionally, the relationships between the predictors (e.g., poll quality, methodology type) and support align well with established theories in political behavior, giving a solid theoretical underpinning to our model. The simplicity of a linear regression approach also helps mitigate overfitting, ensuring our results are generalizable to a broader set of polling data. The model assumptions, including linearity, independence, and normality of residuals, are adequately satisfied by our dataset, making this approach not only convenient but also statistically robust for our analysis.
-
-
-# Results {#sec-result}
-## Model Results and Interpretation
-The linear regression model, using 384 data points, estimated the factors influencing Trump's support levels. The intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline.The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting.The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.The results highlight that numeric_grade and sample_size are particularly important in predicting support levels, with larger and higher-quality polls offering more reliable estimates. The transparency score and state-level coefficients further provide insight into regional differences and the role of trust in polling, helping us better understand the dynamics behind Trump's public support.The coefficients for numeric_grade and sample_size underline the importance of poll quality and sample size in predicting support levels. Larger, higher-quality polls offer more robust estimates. Additionally, transparency and state effects provide insight into regional differences and trust factors affecting polling results, giving a clearer understanding of the dynamics influencing Trump's public support.
-
 ## Predicted Electoral Outcomes
 We employed a regression model to estimate the percentage of votes Trump is likely to receive in each state. Using these predicted results and the electoral vote allocations, we identified the winner for each state and calculated the total electoral votes for both Trump and Harris.
 
-The following table（@predictiontable） presents a summary of the predictions, including Trump’s estimated percentage, the number of electoral votes in each state, and the projected winner. For instance:
+@tbl-predictiontable presents a summary of the predictions, including Trump’s estimated percentage, the number of electoral votes in each state, and the projected winner. For instance:
 
- • In Arizona, Trump is expected to receive 48.94% of the vote, resulting in a win for Harris with 11 electoral votes.
- • In Missouri, Trump is projected to receive 51.64%, thereby winning all 10 electoral votes for that state.
- • In Ohio, with an estimated 51.98% of the vote, Trump secures Ohio’s 18 electoral votes.
+- In Arizona, Trump is expected to receive 48.94% of the vote, resulting in a win for Harris with 11 electoral votes.
+- In Missouri, Trump is projected to receive 51.64%, thereby winning all 10 electoral votes for that state.
+- In Ohio, with an estimated 51.98% of the vote, Trump secures Ohio’s 18 electoral votes.
 
 Electoral Vote Count: Trump Electoral Votes: 98 - Harris Electoral Votes: 239. This indicates that Harris is projected to win the 2024 U.S. Presidential Election with 239 electoral votes, while Trump is projected to gather 98. These results hinge on the outcomes in various battleground states, with several being extremely close.
-```{r predictiontable}
-#| echno: false
-#| label: predictiontable
+
+```{r}
+#| label: tbl-predictiontable
 #| tbl-cap: Prediction for Trump and Harris by Electoral College
 #| echo: false
 #| warning: false
@@ -317,17 +319,10 @@ analysis_data_test$methodology <- as.character(analysis_data_test$methodology)
 # Recode the 'Email' level in the methodology column to 'Online Panel'
 analysis_data_test$methodology[analysis_data_test$methodology == "Email"] <- "Online Panel"
 
-
-
-
-
 # Use the trained regression model to predict Trump's support percentage in each state
 analysis_data_test$predicted_percent_trump <- predict(model2, newdata = analysis_data_test)
 analysis_data_test$predicted_percent_trump
 total_trump <- aggregate(predicted_percent_trump ~ state, data = analysis_data_test, FUN = mean)
-
-
-
 
 # Determine the winner in each state based on Trump's predicted percentage
 state_predictions <- merge(total_trump, electoral_votes, by = "state")
@@ -351,16 +346,13 @@ kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   scroll_box(width = "100%", height = "400px")
 
-
 print(paste("Trump Electoral Votes:", trump_electoral_votes))
 print(paste("Harris Electoral Votes:", harris_electoral_votes))
 ```
 
-
 ## Prediction map
-The following map (Figure 6) displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
+@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
 ```{r}
-#| echno: false
 #| label: fig-statemap
 #| tbl-cap: Predicted Winner of 2024 US Presidential Election by State
 #| echo: false
@@ -384,24 +376,7 @@ The map illustrates Trump gaining traction across central and southern states, i
 
 Several battleground states, including Florida and Ohio, are projected to favor Trump, with a slight advantage that marks a contrast to Harris's stronger leads in places like California. The map also shows a number of central states in gray, reflecting either a lack of definitive prediction or insufficient data. Overall, the map reveals distinct regional patterns, with Trump expected to perform well in the heartland and Harris finding support along the coasts. The outcome may hinge on the final results in the competitive states like Pennsylvania, Arizona, and North Carolina.
 
-
-
-
-
-
-
-
-
-
-
 Our results are summarized in @tbl-modelresults.
-
-
-
-
-
-
-
 
 # Discussion {#sec-discussion}
 
