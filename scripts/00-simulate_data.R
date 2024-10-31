@@ -1,6 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of 2024 US election, to explore 
-  #what plausible values might appear in the dataset.
+# Purpose: Simulates a dataset of 2024 US election, to explore what plausible values might appear in the dataset.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca

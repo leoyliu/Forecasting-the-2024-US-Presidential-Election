@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we have built a linear model to predict the outcome of the 2024 U.S. presidential election, using a \"poll-of-polls\" approach that combines data from many well-known pollsters. Our analysis shows that Donald Trump has a probability of winning in range 45% to 55% in each state, which depends on how polling data changes from state to state. However, Kamala Harris is projected to win key states and receive the majority of electoral votes, with a projected 239 votes to Trump's 98, based on testing dataset, we only have those state in the dataset. These show the value of aggregate polls in providing reliable predictions of election outcomes."
+abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that combines data from various prominent pollsters. Our analysis indicates that Donald Trump’s probability of winning varies between 45% and 55% across states, depending on regional polling trends. However, Kamala Harris is projected to secure key states and achieve a majority of electoral votes, with a projected count of 239 to Trump’s 98 based on the testing dataset. These predictions are based on the testing dataset, which lacks data for some states, limiting our ability to produce results for all states. This paper underscore the effectiveness of aggregated polls in producing reliable election forecasts."
 format: pdf
 number-sections: true
 toc: true
@@ -38,16 +38,15 @@ library(patchwork)
 
 # Introduction {#sec-intro}
 
-The results of presidential elections influence national and international policies and determine governance and economic priorities. An accurate election forecast is a valuable tool for political strategists, the media, and the public. The 2024 U.S. presidential election is expected to be highly competitive, with Donald Trump and Kamala Harris as the leading candidates. In this paper, we use national polling data from the period leading up to the 2024 U.S. presidential election to generate a linear regression model that predicts the winner while capturing changes in public opinion throughout the election period.
-
-This study estimates the probability of each candidate winning based on aggregate polling data. By combining the results, we reduce the bias and short-term volatility of individual polls. By using a linear model, we estimate the probability of a Trump victory to be between 45% and 55%, which depends on state-by-state variations.
+The results of presidential elections influence national and international policies and determine governance and economic priorities. An accurate election forecast is a valuable tool for political strategists, the media, and the public. The 2024 U.S. presidential election is expected to be highly competitive, with Donald Trump and Kamala Harris as the leading candidates. Despite the abundance of polling data, individual polls are often subject to bias and short-term fluctuations, making it difficult to predict election outcomes with confidence. This paper addresses this issue by using aggregate polling data to provide more reliable predictions of election outcomes.
 
 Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris will receive 239 electoral votes to Trump's 98 votes. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes. Aggregate polling reduces uncertainty and provides a clearer picture of potential outcomes.
 
 The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then @sec-result presents the main findings, including detailed crime trends for each neighborhood and year. Finally, @sec-discussion provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
 ## Estimand
-Todo: 
+
+In this study, our estimand is Donald Trump's percentage of polling in each state ahead of the 2024 U.S. presidential election. The object of the estimation is Trump's percentage of polling data in each state based on aggregated information from various sources By using a linear regression model, we aim to capture changes in public opinion over time and provide a clearer understanding of voter preferences and the likely election outcome.
 
 # Data {#sec-data}
 
@@ -248,7 +247,10 @@ A linear regression model was chosen to predict Trump's support percentage becau
 Further justification for using this model comes from its alignment with the central limit theorem, which suggests that with sufficient sample size, the distribution of poll percentages should approximate normality. Additionally, the relationships between the predictors (e.g., poll quality, methodology type) and support align well with established theories in political behavior, giving a solid theoretical underpinning to our model. The simplicity of a linear regression approach also helps mitigate overfitting, ensuring our results are generalizable to a broader set of polling data.
 
 # Results {#sec-result}
+
 @sec-result examines the relationship between polling score, methodology, poll duration, transparency score, sample size, and state, with respect to Donald Trump's polling performance in the 2024 U.S. Presidential Election. Using a dataset that captures polling data across various states and polling organizations, we apply a linear regression model to identify key factors that influence Trump's support. Below, we present the results of our model and its implications.
+
+We predicted the outcome based on our test dataset. However, due to missing data for certain states in our original dataset, we were unable to make predictions for all states. This limitation arises because the states with NA values in the dataset are not represented in the model, preventing accurate forecasts for those regions.
 
 ## Model Results and Interpretation
 The linear regression model built by our training dataset, using 384 data points, estimated the factors influencing Trump's support levels. As @tbl-summary-model shows, the intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline. The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting. The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.
@@ -348,7 +350,7 @@ kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes
 ```
 
 ## Prediction map
-@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
+
 ```{r}
 #| label: fig-statemap
 #| fig-cap: Predicted Winner of 2024 US Presidential Election by State
@@ -357,15 +359,17 @@ kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes
 #| message: false
 
 # "red" for Trump and "blue" for Harris
-state_predictions$winner_color <- ifelse(state_predictions$winner == "Trump", "green", "blue")
+state_predictions$winner_color <- ifelse(state_predictions$winner == "Trump", "red", "blue")
 
 # Create a map visualization showing the predicted winner by state
 plot_usmap(data = state_predictions, values = "winner_color", regions = "states") +
-  scale_fill_manual(values = c("green" = "green", "blue" = "blue"), name = "Predicted Winner", labels = c("Harris", "Trump")) +
+  scale_fill_manual(values = c("red" = "red", "blue" = "blue"), name = "Predicted Winner", labels = c("Harris", "Trump")) +
   labs(title = "Predicted Winner of the 2024 U.S. Presidential Election by State") +
   theme(legend.position = "right")
 
 ```
+@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
+
 The map illustrates Trump gaining traction across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Meanwhile, Harris holds a solid lead in states along the West Coast and in the Northeast, such as California and New York, regions that have a history of Democratic support.
 
 Several battleground states, including Florida and Ohio, are projected to favor Trump, with a slight advantage that marks a contrast to Harris's stronger leads in places like California. The map also shows a number of central states in gray, reflecting either a lack of definitive prediction or insufficient data. Overall, the map reveals distinct regional patterns, with Trump expected to perform well in the heartland and Harris finding support along the coasts. The outcome may hinge on the final results in the competitive states like Pennsylvania, Arizona, and North Carolina.
@@ -373,19 +377,29 @@ Several battleground states, including Florida and Ohio, are projected to favor 
 
 # Discussion {#sec-discussion}
 
-## First discussion point {#sec-first-point}
+## Interpretation of Polling Data and Electoral Implications
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+This paper examines the factors affecting Donald Trump’s polling performance in the 2024 U.S. Presidential Election. Our linear regression model shows that poll duration and state-specific factors are the strongest predictors of Trump’s support. Longer poll durations tend to produce more stable data by capturing changes in public sentiment over time rather than short-term reactions. The state variable underscores the importance of local dynamics, as individual states bring unique policy priorities and demographic trends to their voter bases. These regional distinctions are essential in the Electoral College system, where state-level support directly impacts the final electoral count.
 
-## Second discussion point
+Transparency and sample size play secondary roles in data reliability. Polls with high transparency scores provide clear information about methodology, making them more reliable for analysis. Larger sample sizes reduce margins of error, adding stability to projections, especially in closely contested states. While both transparency and sample size support reliable predictions, they have less influence on voter preferences than duration and state-specific factors.
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+In comparison, polling methodology (e.g., live phone, online) and numeric grade (a general reliability rating) have minimal impact on Trump’s support in our model. Although these factors contribute to overall data quality, they do not significantly shape voter sentiment. This finding suggests that regional context and polling consistency over time are more important in understanding Trump’s polling performance in this election than the specific techniques or reputations of polling organizations.
 
-## Third discussion point
+## Influence of State Policies on Voter Preferences
 
-## Weaknesses and next steps
+Beyond the mechanics of polling, our analysis suggests that state-specific policies and regional cultural factors could influence voter preferences and ultimately shape electoral outcomes. For instance, certain policies, such as the legalization of recreational marijuana, reflect broader ideological values that may correlate with support for particular candidates. Although our model does not directly analyze the impact of marijuana policies, including these cultural aspects could offer a more comprehensive view of voter alignment.
 
-Weaknesses and next steps should also be included.
+States with legal recreational marijuana, for example, might lean more progressive or libertarian, potentially aligning with candidates like Harris who advocate for policies seen as liberal or socially progressive. This policy environment might signal broader state values that align with a particular party's stance, beyond just the specific candidate. Conversely, states that prohibit recreational marijuana use may lean more conservative, suggesting they may have stronger support for Trump. Although this relationship is not absolute, understanding such cultural factors helps contextualize the state-level support each candidate may receive and could be valuable in identifying battleground states. Additionally, factors like local economic policies, educational investment, or healthcare reform could influence voter preferences, making these areas ripe for future analysis.
+
+## Limitations of the Data and Model
+
+One limitation of this study is the incomplete dataset, with some states missing from the polling data. This limits our ability to produce a fully accurate prediction, as certain areas are excluded from the model. Additionally, the focus on state-level data may overlook finer voting patterns within states, particularly in districts with unique political identities.
+
+## Future Research Directions
+
+Future studies could improve by incorporating demographic variables such as age, income, and party affiliation, which might offer a clearer understanding of voter preferences. Examining additional state-level policies, like healthcare or education, may also provide insights into factors shaping voter choices.
+
+Another possible enhancement involves increasing the geographic specificity of the model to include congressional districts or smaller regions, which may lead to more precise forecasts, especially in competitive states. As polling data collection methods evolve, combining traditional regression with machine learning techniques could allow for models that adapt to ongoing changes in public opinion, resulting in more timely and adaptable forecasts.
 
 \newpage
 
@@ -396,18 +410,18 @@ Weaknesses and next steps should also be included.
 # Pollster Methodology Overview and Evaluation
 
 ## Overview of Siena/NYT
-Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018.In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment. [@]
+Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018 [@citeNYT]. In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment.
 
 ## Target Population, Frame, and Sample
 * Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.
 * Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.
-* Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points. [@]
+* Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points.
 
 ## Sample Recruitment
-The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish. [@]
+The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish.
 
 ## Sampling Approach and Trade-offs
-Siena/NYT used a stratified sampling method. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.
+Siena/NYT used a stratified sampling method [@citeNYT]. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.
 
 **Advantages of stratified sampling:**
 
@@ -462,7 +476,7 @@ The sampling approach is designed to increase coverage and ensure that a represe
 * Political Party: Democratic, Republican, Independent, Other
 
 ### Sample Size
-The target sample size was 10,000 respondents, which are stratified by the Stratification Variables described above. This stratification ensures that all major voter groups are proportionately represented. 10,000 samples have a margin of error of about ±1% and a confidence level of 95%, which is appropriate for predicting elections.
+The target sample size was 5,000 respondents, which are stratified by the Stratification Variables described above. This stratification ensures that all major voter groups are proportionately represented. 5,000 samples have a margin of error of about ±1% and a confidence level of 95%, which is appropriate for predicting elections.
 
 ## Recruitment Strategy
 The recruitment strategy was separated into two main approaches to ensure a diverse and representative sample:

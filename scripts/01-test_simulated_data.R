@@ -1,6 +1,5 @@
 #### Preamble ####
-# Purpose: Tests the structure and validity of the simulated 2024 US  
-  #election dataset.
+# Purpose: Tests the structure and validity of the simulated 2024 US election dataset.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
