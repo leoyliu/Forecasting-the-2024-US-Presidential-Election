@@ -628,6 +628,7 @@ The sampling approach is designed to increase coverage and ensure that a represe
 * Age: 18-29, 30-44, 45-64, 65+
 * Gender: Male, Female, Non-binary
 * Race: White, Black/African American, Hispanic/Latino, Asian, Native, Other
+* Income Level: <$30,000,  \$30,000-\$59,999, \$60,000-\$99,999, >\$100,000
 * Education level: High School, Some College, Bachelor's Degree, Graduate Degree, Other
 * Geographic region: Northeast, Midwest, South, West
 * Political Party: Democratic, Republican, Independent, Other
@@ -717,34 +718,38 @@ As a thank you for your participation, you will be entered into a raffle to win 
 * 18-24 / 25-34 / 35-44 / 45-54 / 55+\
 5.What is your gender?\
 * Male / Female / Non-binary / Prefer not to say\
-6.Which of the following best describes your education level?\
-* High School / Some College / Bachelor's Degree / Graduate Degree / Other\
-7.Which region of the U.S. do you currently reside in?\
+6.Which of the following best describes your race or ethnicity?
+* White / Black / African American / Hispanic or Latino / Asian / Native / Other\
+7.Which of the following best describes your education level?\
+* High School / Some College / Bachelor's Degree / Graduate Degree / Prefer not to say/ Other\
+8.What was your family/individual income last year?
+* <$30,000 / \$30,000-\$59,999 / \$60,000-\$99,999 / >\$100,000 / Prefer not to say\
+9.Which region of the U.S. do you currently reside in?\
 * Northeast / Midwest / South / West\    
-8.Do you generally identify with a political party?\
-* Democratic / Republican / Independent / None
+10.Do you generally identify with a political party?\
+* Democratic / Republican / Independent / None / Prefer not to say
 
 **Part 3: Voting intentions**
 
-9.How likely are you to participate in the upcoming presidential election?\
+11.How likely are you to participate in the upcoming presidential election?\
 * Very Likely / Somewhat Likely / Not Sure / Unlikely / Very Unlikely\
-10.If the presidential election were held today, for which candidate would you vote?\
+12.If the presidential election were held today, for which candidate would you vote?\
 * Kamala Harris (Democrat) / Donald Trump (Republican) / Undecided / Prefer not to say\
-11.What are the top three issues that will influence your vote?\
+13.What are the top three issues that will influence your vote?\
 * Economy / Healthcare / Education / Gun Policy / Taxes / Foreign Policy / Social Security / Civil Rights / Technology / Privacy / Other[text]
 
 **Part 4: Information sources and engagement**
 
-12.Which of the following sources do you rely on most for political news and information?\
+14.Which of the following sources do you rely on most for political news and information?\
 * Television News / Newspapers / Online News Websites / Social Media / Radio / Friends and Family / Other\
-13.How often do you engage in discussions about political topics with friends or family?\
+15.How often do you engage in discussions about political topics with friends or family?\
 * Daily / Weekly / Monthly / Rarely / Never
 
 **Part 5: Verify**
 
-14.Please select 'Agree' to verify that you are paying attention.\
+16.Please select 'Agree' to verify that you are paying attention.\
 * Agree / Disagree\
-15.Do you agree to participate in this survey? Your responses will be kept confidential and used only for research purposes.\
+17.Do you agree to participate in this survey? Your responses will be kept confidential and used only for research purposes.\
 * Yes / No
 
 **End Part:**
