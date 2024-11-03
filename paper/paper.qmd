@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that combines data from various prominent pollsters. Our analysis indicates that Donald Trump’s probability of winning varies between 45% and 55% across states, depending on regional polling trends. However, Kamala Harris is projected to secure key states and achieve a majority of electoral votes, with a projected count of 239 to Trump’s 98 based on the testing dataset. These predictions are based on the testing dataset, which lacks data for some states, limiting our ability to produce results for all states. This paper underscore the effectiveness of aggregated polls in producing reliable election forecasts."
+abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that aggregates data from multiple well-known pollsters. Our analysis projects that Donald Trump's probability of winning ranges from 30% to 52%, which depends on regional polling trends. However, Kamala Harris is projected to secure key states and obtain the majority of electoral votes, with a predicted count of 341 to Trump's 197 based on the testing dataset. These predictions are based on the testing dataset, which lacks data for some states, limiting our ability to produce results for all states. This paper underscores the effectiveness of aggregated polls in producing reliable election forecasts."
 format: pdf
 number-sections: true
 toc: true
@@ -38,13 +38,12 @@ library(patchwork)
 
 The results of presidential elections influence national and international policies and determine governance and economic priorities. An accurate election forecast is a valuable tool for political strategists, the media, and the public. The 2024 U.S. presidential election is expected to be highly competitive, with Donald Trump and Kamala Harris as the leading candidates. Despite the abundance of polling data, individual polls are often subject to bias and short-term fluctuations, making it difficult to predict election outcomes with confidence. This paper addresses this issue by using aggregate polling data to provide more reliable predictions of election outcomes.
 
-Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris will receive 239 electoral votes to Trump's 98 votes. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes. Aggregate polling reduces uncertainty and provides a clearer picture of potential outcomes.
+In this study, our estimand is Donald Trump's percentage of polling in each state ahead of the 2024 U.S. presidential election. The object of the estimation is Trump's percentage of polling data in each state based on aggregated information from various sources. By using a linear regression model, we aim to capture changes in public opinion over time and provide a clearer understanding of voter preferences and the likely election outcome.
+
+Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris is estimated to receive 341 electoral votes to Trump's 197, and the uncertainty around these estimates is represented by confidence intervals, which take into account polling changes and model assumptions. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes. Aggregate polling reduces uncertainty and provides a clearer picture of potential outcomes.
 
 The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then @sec-result presents the main findings, including detailed crime trends for each neighborhood and year. Finally, @sec-discussion provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
-## Estimand
-
-In this study, our estimand is Donald Trump's percentage of polling in each state ahead of the 2024 U.S. presidential election. The object of the estimation is Trump's percentage of polling data in each state based on aggregated information from various sources By using a linear regression model, we aim to capture changes in public opinion over time and provide a clearer understanding of voter preferences and the likely election outcome.
 
 # Data {#sec-data}
 
@@ -55,6 +54,7 @@ We use the statistical programming language R [@citeR] to process and analyze po
 The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. To ensure the reliability of our analysis, we filter the data to include only polls with a numeric grade of 2.5 or higher, which represents high-quality, reputable pollsters. This filtering allows us to focus on polls that follow rigorous standards and have demonstrated transparency and accuracy.
 
 Additionally, we limit the dataset to polls conducted after July 15, 2024, when Donald Trump officially announced his campaign, ensuring that the data reflects the most current public sentiment. Other similar datasets from prior elections, such as data from previous general election cycles, could have been used for comparison. However, given that this analysis focuses on the upcoming 2024 election and the shift in public opinion, the most relevant data is specific to the current cycle.
+
 
 ## Measurement
 
