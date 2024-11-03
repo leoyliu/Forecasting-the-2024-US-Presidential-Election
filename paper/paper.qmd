@@ -66,7 +66,7 @@ The key measurement process involves converting real-world voter preferences int
 
 ## Outcome variables
 
-### Percent Support for Donald Trump
+### Percent support for Donald Trump
 The primary outcome variable is the percentage (`pct`) of respondents who indicated support for Donald Trump in the 2024 general election. This percentage is calculated based on the total number of respondents in each poll divide by `sample_size`. The data includes observations from various states, providing both national and state-specific measures of Trump’s support.
 
 ```{r}
@@ -103,7 +103,7 @@ The shaded region around the blue line represents the confidence interval, indic
 
 ## Predictor variables
 
-### Polling Methodology
+### Polling methodology
 The `methodology` variable describes the method each pollster used to collect data. It includes approaches such as live phone interviews, online surveys, and mixed methods. For polls that used multiple collection methods (e.g., phone and online), we labeled them as "Mixed Voting" for simplicity. The methodology is important because different approaches can introduce varying degrees of bias, influencing the final reported percentages.
 
 Placeholder for a table showing the distribution of polling methodologies across different states.
@@ -127,8 +127,8 @@ electoral_seats <- data.frame(
             "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
             "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", 
             "District of Columbia"),
-  electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
-                      3, 10, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3)
+  electoral_votes = c(9, 3, 11, 6, 54, 10, 7, 3, 30, 16, 4, 4, 19, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
+                      4, 5, 6, 4, 14, 5, 28, 16, 3, 17, 7, 8, 19, 4, 9, 3, 11, 40, 6, 3, 13, 12, 4, 10, 3, 3)
 )
 
 # Split the data into two equal groups (first half and second half)
@@ -153,7 +153,7 @@ combined_states |>
 
 @tbl-state illustrates the number of electoral votes allocated to each U.S. state, based on data from the official government website [@citepollstate]. This information will be used to map the predicted results for each state later, allowing us to calculate the total number of electoral votes that Donald Trump is projected to receive.
 
-### Polling Score and Transparency
+### Polling score and transparency
 The `numeric_grade` variable is a rating assigned to each polling organization, indicating the reliability of the poll. Pollsters with higher numeric grades are considered more reliable and consistent in their methodology (e.g. higher than 2.5). Additionally, the `transparency_score` measures how openly a pollster shares their methodology and data, which further affects the trustworthiness of their results.
 
 ```{r}
@@ -186,35 +186,42 @@ p1 + p2
 ```
 @fig-poll-score presents two bar charts illustrating the distribution of Polling Scores (Numeric Grades) and Transparency Scores across the polling organizations in the analysis:
 
-- **Polling Scores**: Most organizations have numeric grades between 2.8 and 3.0, indicating that the majority of pollsters are considered highly reliable. Very few have grades below 2.7, which would suggest lower reliability.
+- **Polling scores**: Most organizations have numeric grades between 2.8 and 3.0, indicating that the majority of pollsters are considered highly reliable. Very few have grades below 2.7, which would suggest lower reliability.
 
-- **Transparency Scores**: Transparency scores show more variability, with many pollsters achieving scores above 9, reflecting a high level of openness in their methodology. Fewer organizations have transparency scores below 6, indicating that while some pollsters are less open, the majority strive for transparency in their practices.
+- **Transparency scores**: Transparency scores show more variability, with many pollsters achieving scores above 9, reflecting a high level of openness in their methodology. Fewer organizations have transparency scores below 6, indicating that while some pollsters are less open, the majority strive for transparency in their practices.
 
-### Sample Size
+### Sample size
 The `sample_size` variable represents the total number of respondents surveyed in each poll. A larger sample size generally leads to more reliable and precise estimates of voter sentiment, as it reduces the margin of error. In contrast, smaller sample sizes can result in greater variability and less confidence in the results.
 
-### Poll Duration
+### Poll duration
 The `duration` variable is a constructed variable that represents how long Donald Trump has been in the 2024 presidential campaign, measured as the number of days from his official campaign announcement on July 15, 2024 until the `end_date` of each poll. This variable helps quantify how much time has passed since Trump officially entered the race and allows us to examine how his support has evolved over the course of his campaign.
 
+
 # Model {#sec-model}
-Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for a candidate. For this analysis, we use a linear model (LM) to examine how factors such as poll score, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the lm function, with a Gaussian distribution to capture the variability in support rates.
+
+Our modeling approach aims to quantify the relationship between various polling metrics and the percentage support for Donald Trump. For this analysis, we use a linear model to examine how factors such as poll score, methodology, poll duration, sample size, transparency score, and state influence support percentages. The model is implemented using the `stan_lm` function, with a Gaussian distribution to capture the variability in support rates.
 
 In this analysis, we use predictors that reflect both the methodological quality and structural characteristics of each poll. Specifically, we include variables such as `numeric_grade`, which quantifies the poll’s quality, `methodology`, `duration` (the length of the election period), `sample_size`, `transparency_score`, and `state` (the regional factor).
 
-The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability in our findings.
+The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability in our findings. Background details and diagnostics are included in the appendix.
+
+## Alternative model
+
+Initially, we attempted to categorize the `state` variable into two levels: state-specific polls and national polls. However, after modeling, we found that this approach was less effective for predicting election outcomes on a state level. Since the election is determined by the state-by-state electoral college, it became clear that using a state-specific variable would more accurately capture the variation needed to predict outcomes by state. This refinement allowed the model to better align with the electoral structure, resulting in a more accurate reflection of support distribution across states.
 
 ## Model set-up
+
 The model predicts Trump's support percentage using the following predictor variables:
 
-- Poll Score (`numeric_grade`): Represents the quality rating of the poll.
+- Poll score (`numeric_grade`): Represents the quality rating of the poll.
 
 - Methodology (`methodology`): Different methods used to conduct the poll, such as live phone, mixed voting, or online ads.
 
-- Poll Duration (`duration`): The the length of the election period was conducted.
+- Poll duration (`duration`): The the length of the election period was conducted.
 
-- Sample Size (`sample_size`): The number of respondents in the poll.
+- Sample size (`sample_size`): The number of respondents in the poll.
 
-- Transparency Score (`transparency_score`): A measure of how transparent the polling data and methodology are.
+- Transparency score (`transparency_score`): A measure of how transparent the polling data and methodology are.
 
 - State (`state`): A categorical variable representing the U.S. state where the poll was conducted.
 
@@ -222,9 +229,9 @@ The model takes the form:
 
 \begin{align*}
     y_i \mid \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
-    \mu_i &= \beta_0 + \beta_1 \cdot \text{Poll Score}_i + \beta_2 \cdot \text{Methodology}_i \\
-          &\quad + \beta_3 \cdot \text{Poll Duration}_i + \beta_4 \cdot \text{Sample Size}_i \\
-          &\quad + \beta_5 \cdot \text{Rransparency Score}_i + \beta_6 \cdot \text{State}_i + \epsilon_i \\
+    \mu_i &= \beta_0 + \beta_1 \cdot \text{Poll score}_i + \beta_2 \cdot \text{Methodology}_i \\
+          &\quad + \beta_3 \cdot \text{Poll duration}_i + \beta_4 \cdot \text{Sample size}_i \\
+          &\quad + \beta_5 \cdot \text{Transparency score}_i + \beta_6 \cdot \text{State}_i + \epsilon_i \\
     \epsilon_i &\sim \text{Normal}(0, \sigma^2)
 \end{align*}
 
@@ -238,49 +245,53 @@ The model takes the form:
 The model is executed in \texttt{R} [@citeR] using the \texttt{rstanarm} package [@rstanarm]. Default priors from \texttt{rstanarm} [@rstanarm] are used, with the priors set to have a mean of zero and a moderate standard deviation to ensure a reasonable level of regularization.
 
 ### Model justification
-Existing research and political science theories suggest that factors such as poll quality, sample size, transparency, methodology, poll duration, and the state where the poll takes place can influence Trump's support percentage. Higher quality polls and larger sample sizes are believed to yield more reliable estimates, while transparency scores can affect levels of public trust, potentially altering support. Moreover, different polling methodologies (e.g., online surveys, telephone interviews) may affect how representative the sample is, while longer polling durations can reflect shifts in public sentiment over time. State-specific factors, such as local political events or population characteristics, can also contribute to the variation in support. The timing of the poll, particularly in relation to key political events, might further influence public opinion.
+
+Existing research and political science theories suggest that factors such as poll quality, sample size, transparency, methodology, poll duration, and the state where the poll takes place can influence Trump's support percentage. Higher quality polls and larger sample sizes are believed to yield more reliable estimates, while transparency scores can affect levels of public trust, potentially altering support. Moreover, different polling methodologies (e.g., online surveys, telephone interviews) may affect how representative the sample is, while longer polling duration can reflect shifts in public sentiment over time. State-specific factors, such as local political events or population characteristics, can also contribute to the variation in support. The timing of the poll, particularly in relation to key political events, might further influence public opinion.
 
 A linear regression model was chosen to predict Trump's support percentage because the dependent variable is continuous and tends to follow a normal distribution. Linear regression is a straightforward method to analyze how multiple factors contribute to an outcome, and it offers easy-to-interpret coefficients for each predictor. The model helps us determine the extent to which different aspects of polling influence the level of public support for Trump.
 
 Further justification for using this model comes from its alignment with the central limit theorem, which suggests that with sufficient sample size, the distribution of poll percentages should approximate normality. Additionally, the relationships between the predictors (e.g., poll quality, methodology type) and support align well with established theories in political behavior, giving a solid theoretical underpinning to our model. The simplicity of a linear regression approach also helps mitigate overfitting, ensuring our results are generalizable to a broader set of polling data.
 
+
 # Results {#sec-result}
 
 @sec-result examines the relationship between polling score, methodology, poll duration, transparency score, sample size, and state, with respect to Donald Trump's polling performance in the 2024 U.S. Presidential Election. Using a dataset that captures polling data across various states and polling organizations, we apply a linear regression model to identify key factors that influence Trump's support. Below, we present the results of our model and its implications.
 
-We predicted the outcome based on our test dataset. However, due to missing data for certain states in our original dataset, we were unable to make predictions for all states. This limitation arises because the states with NA values in the dataset are not represented in the model, preventing accurate forecasts for those regions.
+We predicted the election outcomes based on our test dataset. However, due to missing data for certain states in our original dataset, predictions could not be generated for all states. To address this gap, we reviewed historical trends from recent elections involving Joe Biden; if a state consistently leaned toward the same candidate, we assumed this trend would continue and used it to estimate outcomes for those missing states. This limitation arises because the states with NA values in the dataset are not represented in the model, preventing accurate forecasts for those regions. Further discussion on this issue is provided in @sec-discussion.
 
-## Model Results and Interpretation
-The linear regression model built by our training dataset, using 384 data points, estimated the factors influencing Trump's support levels. As @tbl-summary-model shows, the intercept, estimated at 43.39, represents the level of support when all other predictors are at baseline. The model achieved an R-squared value of 0.85, indicating that 85% of the variance in Trump's support percentage can be explained by the predictors included in the model. The adjusted R-squared value of 0.82 also shows that the model effectively captures the relationships between variables without overfitting. The Root Mean Square Error (RMSE) was 2.03, indicating the average difference between predicted and actual values. The relatively low RMSE value suggests that the model provides reasonably accurate predictions.
+## Model results and interpretation
 
-The results highlight that `numeric_grade` and `sample_size` are particularly important in predicting support levels, with larger and higher-quality polls offering more reliable estimates. The transparency score and state-level coefficients further provide understanding into regional differences and the role of trust in polling, helping us better understand the dynamics behind Trump's public support.The coefficients for `numeric_grade` and `sample_size` underline the importance of poll quality and sample size in predicting support levels. Larger, higher-quality polls offer more estimates. Additionally, transparency and state effects provide insight into regional differences and trust factors affecting polling results, giving a clearer understanding of the dynamics influencing Trump's public support.
+The linear regression model built by our training dataset, using 242 data points, estimated the factors influencing Trump's support levels. For brevity, @tbl-summary-model only shows the first ten rows of the model’s coefficients, with the full model summary available in the appendix. The intercept is estimated at 44.224, representing the baseline support level when all predictors are at their reference levels. The model achieved an $R^2$ value of 0.803, indicating that 80.3% of the variance in polling outcomes is explained by the predictors included in the model. The adjusted $R^2$ value of 0.753 confirms that the model captures the relationships between variables without significant overfitting.
 
 ```{r}
 #| label: tbl-summary-model
-#| tbl-cap: "Summary of the Linear Regression Model for Predicting Polling Outcomes"
+#| tbl-cap: "Summary of key coefficients from the linear regression model predicting polling outcomes"
 #| echo: false
 #| warning: false
 
-model2 <- readRDS(file = here::here("models/first_model.rds"))
+# Load the model
+model <- readRDS(file = here::here("models/first_model.rds"))
 
-modelsummary(
-  list(
-    "Linear Model" = model2
-  ),
-  statistic = NULL 
-)
+summary <- summary(model)
+
+summary_table <- head(summary, 10)[, 1:1]
+
+kable(col.names = c(" ", "coefficient"),
+  summary_table, digits = 3)
 ```
 
-## Predicted Electoral Outcomes
+Certain predictors have a more obvious impact than others. For example, `numeric_grade` (0.779) shows that a one-unit increase in grade corresponds to a 0.779 percentage point increase in predicted polling outcomes. The type of methodology also plays a important role: "Mixed Voting" (1.692) and "Online Ad" (0.960) methods are associated with positive effects, while "Online Panel" (-1.037) and "Probability Panel" (-1.035) methods have negative effects relative to the baseline. Additionally, the state-specific coefficient shows a substantial effect. This underlines the importance of geographic context in polling predictions, especially for politically distinct areas.
+
+Other variables, like `transparency_score` (-0.220) and `duration` (0.028), have smaller effects. The negative coefficient for `transparency_score` suggests a slight decrease in predicted support as transparency increases, potentially reflecting a sensitivity among the public to the transparency level in polling methods. Meanwhile, `sample_size` (0.002) shows a small positive effect, indicating that larger sample sizes modestly increase predicted support. A complete overview of all predictors is provided in the appendix.
+
+## Predicted electoral outcomes
+
 We employed a regression model to estimate the percentage of votes Trump is likely to receive in each state. Using these predicted results and the electoral vote allocations, we identified the winner for each state and calculated the total electoral votes for both Trump and Harris.
 
 @tbl-predictiontable presents a summary of the predictions, including Trump’s estimated percentage, the number of electoral votes in each state, and the projected winner. For instance:
 
 - In Arizona, Trump is expected to receive 48.94% of the vote, resulting in a win for Harris with 11 electoral votes.
-- In Missouri, Trump is projected to receive 51.64%, thereby winning all 10 electoral votes for that state.
-- In Ohio, with an estimated 51.98% of the vote, Trump secures Ohio’s 18 electoral votes.
-
-Electoral Vote Count: Trump Electoral Votes: 98 - Harris Electoral Votes: 239. This indicates that Harris is projected to win the 2024 U.S. Presidential Election with 239 electoral votes, while Trump is projected to gather 98. These results hinge on the outcomes in various battleground states, with several being extremely close.
+- In Texas, Trump is projected to receive 51.83%, thereby winning all 40 electoral votes for that state.
 
 ```{r}
 #| label: tbl-predictiontable
@@ -312,17 +323,12 @@ electoral_votes <- data.frame(
             "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
             "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", 
             "District of Columbia"),
-  electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
-                      3, 10, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3))
-
-# Convert methodology column to character type for recoding
-analysis_data_test$methodology <- as.character(analysis_data_test$methodology)
-
-# Recode the 'Email' level in the methodology column to 'Online Panel'
-analysis_data_test$methodology[analysis_data_test$methodology == "Email"] <- "Online Panel"
+  electoral_votes = c(9, 3, 11, 6, 54, 10, 7, 3, 30, 16, 4, 4, 19, 11, 6, 6, 8, 8, 4, 10, 11, 15, 10, 6, 10, 
+                      4, 5, 6, 4, 14, 5, 28, 16, 3, 17, 7, 8, 19, 4, 9, 3, 11, 40, 6, 3, 13, 12, 4, 10, 3, 3)
+)
 
 # Use the trained regression model to predict Trump's support percentage in each state
-analysis_data_test$predicted_percent_trump <- predict(model2, newdata = analysis_data_test)
+analysis_data_test$predicted_percent_trump <- predict(model, newdata = analysis_data_test)
 total_trump <- aggregate(predicted_percent_trump ~ state, data = analysis_data_test, FUN = mean)
 
 # Determine the winner in each state based on Trump's predicted percentage
@@ -342,62 +348,215 @@ harris_electoral_votes <- sum(state_predictions$harris_electoral_votes)
 # Create and display the results table
 kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes", "winner")], 
       col.names = c("State", "Trump Predicted %", "Electoral Votes", "Winner"), 
+      digits = 2)
+```
+
+Since we are missing data for some states in our dataset, we turned to historical trends from recent elections involving Joe Biden to fill these gaps. For each missing state, we assessed whether it consistently leaned toward a particular candidate in past elections. If so, we assumed this trend would persist and used it as a basis for estimating outcomes in the current election.
+
+@tbl-history summarizes the outcomes for the missing states based on this approach. It shows the predicted winner for each state based on historical trend. For instance, Alabama, Alaska, Arkansas, Idaho, Indiana, and Iowa are expected to go to Trump, contributing their respective electoral votes to his total. Conversely, states like Colorado, Connecticut, Delaware, Hawaii, and Illinois are projected to favor Harris, thus allocating their electoral votes to her.
+
+```{r}
+#| label: tbl-history
+#| tbl-cap: Estimated Electoral Outcomes for Select U.S. States Based on Historical Voting Trends
+#| echo: false
+#| warning: false
+#| message: false
+
+all_states = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+                        "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+                        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+                        "Missouri", "Montana", "Nebraska", "Nevada","New Hampshire", "New Jersey", "New Mexico", "New York",
+                        "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", 
+                        "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", 
+                        "West Virginia", "Wisconsin", "Wyoming", "District of Columbia")
+
+uncommon_states <- setdiff(all_states, common_states)
+
+# Map the electoral votes to the uncommon states
+uncommon_states_votes <- electoral_votes %>%
+  filter(state %in% uncommon_states)
+
+missing_states <- data.frame(uncommon_states_votes,
+                             winner = c("Trump", "Trump", "Trump", "Harris", "Harris",
+                                          "Harris", "Harris", "Trump", "Harris", "Trump", "Trump",
+                                          "Trump", "Trump", "Trump", "Trump", "Trump",
+                                          "Trump", "Harris", "Trump", "Trump", "Harris", "Trump", "Trump", 
+                                          "Trump", "Trump", "Harris", "Harris", "Trump", "Trump", "Harris"))
+
+# Create and display the results table
+kable(missing_states, 
+      col.names = c("State", "Electoral Votes", "Winner"), 
       digits = 2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   scroll_box(width = "100%", height = "400px")
 ```
 
-## Prediction map
+Now, we combine the results from our predicted data and the historically inferred estimates for missing states. This merged dataset provides a view of the expected electoral outcomes across all states. @tbl-final-prediction presents the final predictions, showing the estimated electoral votes and projected winner for each state based on both model predictions and historical trends.
 
 ```{r}
-#| label: fig-statemap
-#| fig-cap: Predicted Winner of 2024 US Presidential Election by State
+#| label: tbl-final-prediction
+#| tbl-cap: Final Predicted Electoral Outcomes by State, Combining Model Estimates and Historical Trends for Missing Data
 #| echo: false
 #| warning: false
 #| message: false
 
-# "red" for Trump and "blue" for Harris
-state_predictions$winner_color <- ifelse(state_predictions$winner == "Trump", "red", "blue")
+# Remove the predicted_percent_trump column from state_predictions to match missing_states
+state_predictions <- state_predictions %>%
+  select(state, electoral_votes, winner)
 
-# Create a map visualization showing the predicted winner by state
-plot_usmap(data = state_predictions, values = "winner_color", regions = "states") +
-  scale_fill_manual(values = c("red" = "red", "blue" = "blue"), name = "Predicted Winner", labels = c("Harris", "Trump")) +
-  labs(title = "Predicted Winner of the 2024 U.S. Presidential Election by State") +
-  theme(legend.position = "right")
+# Merge the two datasets
+final_predictions <- full_join(state_predictions, missing_states, by = c("state", "electoral_votes", "winner"))
 
+# Arrange the rows by state name
+final_predictions <- final_predictions %>%
+  arrange(state)
+
+# Display the final table
+kable(final_predictions, 
+      col.names = c("State", "Electoral Votes", "Winner"), 
+      digits = 2) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "400px")
 ```
-@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with green representing states where Trump is expected to win and blue for those where Harris is predicted to prevail.
 
-The map illustrates Trump gaining traction across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Meanwhile, Harris holds a solid lead in states along the West Coast and in the Northeast, such as California and New York, regions that have a history of Democratic support.
+## Final electoral outcomes
 
-Several battleground states, including Florida and Ohio, are projected to favor Trump, with a slight advantage that marks a contrast to Harris's stronger leads in places like California. The map also shows a number of central states in gray, reflecting either a lack of definitive prediction or insufficient data. Overall, the map reveals distinct regional patterns, with Trump expected to perform well in the heartland and Harris finding support along the coasts. The outcome may hinge on the final results in the competitive states like Pennsylvania, Arizona, and North Carolina.
+Based on our analysis, @tbl-final-outcome summarizes the total predicted electoral votes for Trump and Harris in the 2024 U.S. Presidential Election. In the United States, a candidate must secure at least 270 electoral votes to win the presidency. According to these predictions, Kamala Harris is expected to secure the majority with 341 electoral votes, while Donald Trump is projected to receive 197. This suggests a clear victory for Harris.
+
+```{r}
+#| label: tbl-final-outcome
+#| tbl-cap: "Predicted Final Electoral Votes for the 2024 U.S. Presidential Election: Trump vs. Harris"
+#| echo: false
+#| warning: false
+#| message: false
+
+# Calculate the electoral votes for each candidate
+final_predictions$trump_electoral_votes <- ifelse(final_predictions$winner == "Trump", final_predictions$electoral_votes, 0)
+final_predictions$harris_electoral_votes <- ifelse(final_predictions$winner == "Harris", final_predictions$electoral_votes, 0)
+
+# Summarize the total electoral votes for each candidate
+trump_electoral_votes <- sum(final_predictions$trump_electoral_votes)
+harris_electoral_votes <- sum(final_predictions$harris_electoral_votes)
+
+final_outcome <- data.frame(
+  Candidate = c("Trump", "Harris"),
+  `Final Votes` = c(trump_electoral_votes, harris_electoral_votes)
+)
+
+# Display the final table with added styling
+kable(final_outcome, col.names = c("Candidate", "Final Votes"), digits = 2) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  row_spec(1, background = "#FFCCCC") %>%    # Add light orange background for Trump row
+  row_spec(2, background = "#C1D7FF") %>%    # Add light blue background for Harris row
+  column_spec(2, bold = TRUE)
+```
+
+```{r}
+#| label: fig-statemap
+#| fig-cap: "The predicted winner for each U.S. state in the 2024 presidential election based on our model. States shaded in blue are projected to favor Harris, while those in red are projected to favor Trump."
+#| echo: false
+#| warning: false
+#| message: false
+# Add color information based on the winner
+final_predictions <- final_predictions %>%
+  mutate(winner_color = ifelse(winner == "Trump", "#FF6F61", "#6495ED"))
+
+# Plot the map using usmap and ggplot2
+plot_usmap(data = final_predictions, values = "winner_color", regions = "states") +
+  scale_fill_identity(
+    name = "Predicted Winner",
+    labels = c("Harris", "Trump"),
+    guide = "legend"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    legend.title = element_text(size = 10, face = "bold"),
+    legend.text = element_text(size = 18),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+```
+
+@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with red representing states where Trump is expected to win and blue for those favoring Harris.
+
+It shows Trump gaining support across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Harris, meanwhile, is projected to lead in states along the West Coast and in the Northeast, such as California and New York, regions with a history of Democratic support. This visual representation complements the previous electoral vote projection, where Harris is anticipated to surpass the 270-vote threshold needed to win the presidency.
 
 
 # Discussion {#sec-discussion}
 
-## Interpretation of Polling Data and Electoral Implications
+## Interpretation of polling data and electoral implications
 
-This paper examines the factors affecting Donald Trump’s polling performance in the 2024 U.S. Presidential Election. Our linear regression model shows that poll duration and state-specific factors are the strongest predictors of Trump’s support. Longer poll durations tend to produce more stable data by capturing changes in public sentiment over time rather than short-term reactions. The state variable underscores the importance of local dynamics, as individual states bring unique policy priorities and demographic trends to their voter bases. These regional distinctions are essential in the Electoral College system, where state-level support directly impacts the final electoral count.
+This paper examines the factors affecting Donald Trump’s polling performance in the 2024 U.S. Presidential Election. Our linear regression model shows that numeric grade, polling methodology, and state-specific factors are key predictors of Trump’s support. Higher numeric grades, representing perceived poll reliability, are positively associated with Trump’s polling numbers, suggesting that well-regarded polls may capture a more favorable sentiment. Polling methodology also plays a significant role, with different methods (e.g., "Mixed Voting" or "Online Panel") showing varied effects on the results, likely reflecting differences in respondent engagement or accessibility. State-specific factors underscore the importance of regional dynamics. The Electoral College system makes state-level support crucial, and unique local issues and demographics in each state contribute to Trump’s polling outcomes.
 
-Transparency and sample size play secondary roles in data reliability. Polls with high transparency scores provide clear information about methodology, making them more reliable for analysis. Larger sample sizes reduce margins of error, adding stability to projections, especially in closely contested states. While both transparency and sample size support reliable predictions, they have less influence on voter preferences than duration and state-specific factors.
+Transparency score and sample size also affect polling reliability. Polls with higher transparency and larger sample sizes provide more stable projections. While these factors improve data quality, they have less direct influence on voter preferences than state and methodology variables.
 
-In comparison, polling methodology (e.g., live phone, online) and numeric grade (a general reliability rating) have minimal impact on Trump’s support in our model. Although these factors contribute to overall data quality, they do not significantly shape voter sentiment. This finding suggests that regional context and polling consistency over time are more important in understanding Trump’s polling performance in this election than the specific techniques or reputations of polling organizations.
+In contrast, poll duration has minimal impact in our model, suggesting that short-term and long-term polls yield similar support levels in this context. This finding implies that voter sentiment is more influenced by geographic and methodological context than by the length of polling periods. Overall, this model underscores the importance of state-level factors and methodology over specific polling practices in understanding Trump’s support trajectory in this election.
 
-## Influence of State Policies on Voter Preferences
+## Influence of state policies on voter preferences
 
-Beyond the mechanics of polling, our analysis suggests that state-specific policies and regional cultural factors could influence voter preferences and ultimately shape electoral outcomes. For instance, certain policies, such as the legalization of recreational marijuana, reflect broader ideological values that may correlate with support for particular candidates. Although our model does not directly analyze the impact of marijuana policies, including these cultural aspects could offer a more comprehensive view of voter alignment.
+Beyond the mechanics of polling, our analysis suggests that state-specific policies and regional cultural factors could influence voter preferences and eventually shape electoral outcomes, although they are not directly measured in our model. For example, state policies on recreational marijuana legalization may reflect broader ideological values that align with particular candidates or parties. To explore this idea, we compared our predictions map with a visualization of states where recreational marijuana is legal.
 
-States with legal recreational marijuana, for example, might lean more progressive or libertarian, potentially aligning with candidates like Harris who advocate for policies seen as liberal or socially progressive. This policy environment might signal broader state values that align with a particular party's stance, beyond just the specific candidate. Conversely, states that prohibit recreational marijuana use may lean more conservative, suggesting they may have stronger support for Trump. Although this relationship is not absolute, understanding such cultural factors helps contextualize the state-level support each candidate may receive and could be valuable in identifying battleground states. Additionally, factors like local economic policies, educational investment, or healthcare reform could influence voter preferences, making these areas ripe for future analysis.
+@fig-statemap-factor shows states where recreational marijuana is legal. Compared with @fig-statemap, many states that have legalized marijuana, such as California, Washington, and New York, also appear in our prediction as likely to support Harris, suggesting a correlation between progressive state policies and support for more liberal candidates. This policy environment may align with Democratic platforms on social issues, which could explain stronger support for Harris in these regions.
 
-## Limitations of the Data and Model
+In contrast, states that prohibit recreational marijuana use—many of which are predicted to lean toward Trump—might favor more conservative social policies, possibly influencing their political alignment. This could reflect a cultural environment that aligns more closely with Republican stances, contributing to stronger support for Trump in these areas.
 
-One limitation of this study is the incomplete dataset, with some states missing from the polling data. This limits our ability to produce a fully accurate prediction, as certain areas are excluded from the model. Additionally, the focus on state-level data may overlook finer voting patterns within states, particularly in districts with unique political identities.
+While the connection between marijuana legalization and voter preferences is not absolute, the alignment of state policies with broader political values suggests that cultural factors may influence voter preferences. Additionally, policies related to economic investment, healthcare, or education could shape these patterns, offering further influences into state-level political dynamics.
 
-## Future Research Directions
+```{r}
+#| label: fig-statemap-factor
+#| fig-cap: "The legal status of recreational marijuana use in each U.S. state as of 2024. States shaded in green have legalized recreational marijuana, while those in gray have not."
+#| echo: false
+#| warning: false
+#| message: false
 
-Future studies could improve by incorporating demographic variables such as age, income, and party affiliation, which might offer a clearer understanding of voter preferences. Examining additional state-level policies, like healthcare or education, may also provide insights into factors shaping voter choices.
+legal_marijuana_states <- c(
+  "Colorado", "Washington", "Alaska", "Oregon", "District of Columbia", "California",
+  "Maine", "Massachusetts", "Nevada", "Michigan", "Vermont", "Guam", "Illinois", 
+  "Arizona", "Montana", "New Jersey", "New York", "Virginia", "New Mexico", 
+  "Connecticut", "Rhode Island", "Maryland", "Missouri", "Delaware", "Minnesota", "Ohio"
+)
 
-Another possible enhancement involves increasing the geographic specificity of the model to include congressional districts or smaller regions, which may lead to more precise forecasts, especially in competitive states. As polling data collection methods evolve, combining traditional regression with machine learning techniques could allow for models that adapt to ongoing changes in public opinion, resulting in more timely and adaptable forecasts.
+all_states = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+                        "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+                        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+                        "Missouri", "Montana", "Nebraska", "Nevada","New Hampshire", "New Jersey", "New Mexico", "New York",
+                        "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", 
+                        "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", 
+                        "West Virginia", "Wisconsin", "Wyoming", "District of Columbia")
+
+# Create a data frame for all states with legalization status
+state_data <- data.frame(
+  state = all_states,
+  legal_marijuana = ifelse(all_states %in% legal_marijuana_states, "Legal", "Not Legal")
+)
+
+plot_usmap(data = state_data, values = "legal_marijuana") +
+  scale_fill_manual(
+    values = c("Legal" = "green", "Not Legal" = "gray"),
+    name = "Marijuana Legal Status",
+    labels = c("Legal", "Not Legal"),
+    guide = "legend"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    legend.title = element_text(size = 10, face = "bold"),
+    legend.text = element_text(size = 8),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+```
+
+## Limitations of the data and model
+
+This paper has several limitations that affect the accuracy and breadth of its predictions. First, the dataset is incomplete, with some states lacking polling data. These omissions prevent a fully representative analysis, as the absence of data from certain regions leaves out their unique political dynamics. Furthermore, focusing on state-level data may obscure more localized trends, particularly in diverse districts with distinct political identities. For instance, urban and rural areas within the same state often show different voting patterns that a state-level analysis may overlook.
+
+Another limitation lies in the model’s emphasis on certain predictors while excluding others. By prioritizing variables like poll duration and sample size, we may miss factors that could better explain variations in support, such as demographic and economic data. Although the model performs well on a broad level, these limitations underscore the need for more nuanced data and a more inclusive approach to fully understand the range of influences on voter behavior.
+
+## Future research directions
+
+Future studies could address these limitations by including demographic variables, such as age, income, and party affiliation, to provide a clearer view of voter preferences. Additionally, incorporating a wider range of state-level policies, such as healthcare, education, and economic initiatives—could deepen the analysis of how local issues shape voter choices. Expanding the dataset in this way would allow a more detailed understanding of how social and economic factors interact with political preferences.
+
+Increasing the model’s geographic specificity to include smaller regions, such as congressional districts or precincts, could lead to more accurate forecasts, especially in closely contested states. This finer level of detail could capture unique district-level trends that a state-level model misses. Furthermore, as polling methods evolve, combining machine learning techniques with traditional regression could allow the model to adapt to shifts in public opinion, resulting in more responsive and timely predictions. This approach would provide a valuable foundation for tracking and forecasting voter preferences as political landscapes evolve.
 
 \newpage
 
@@ -405,20 +564,20 @@ Another possible enhancement involves increasing the geographic specificity of t
 
 # Appendix {-}
 
-# Pollster Methodology Overview and Evaluation
+# Pollster methodology overview and evaluation
 
 ## Overview of Siena/NYT
 Siena College Research Institute (SCRI) and The New York Times launched a collaborative political poll in July 2013. Siena/NYT  was known for its rigorous methodology and accuracy, which provided its first real-time midterm election poll in 2018 [@citeNYT]. In 2024, FiveThirtyEight named it the most accurate pollster in the United States. The polling methodology emphasizes live phone interviews and representative sampling and focuses on transparency and statistical accuracy to provide a deep understanding of voter sentiment.
 
-## Target Population, Frame, and Sample
+## Target population, frame, and sample
 * Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.
 * Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.
 * Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points.
 
-## Sample Recruitment
+## Sample recruitment
 The sample was recruited by telephone. Registered voters were selected from the voter files held by L2 and contacted via their listed telephone numbers including landlines and mobile phone numbers. More than 260,000 calls were made to more than 80,000 voters, with over 98% of respondents using mobile phones. Interviews were conducted by live telephone interviews in both English and Spanish.
 
-## Sampling Approach and Trade-offs
+## Sampling approach and trade-offs
 Siena/NYT used a stratified sampling method [@citeNYT]. Polls were stratified by demographic characteristics such as political party, race and region. This improves accuracy but adds cost and complexity. It also makes it challenging to reach certain populations such as young voters.
 
 **Advantages of stratified sampling:**
@@ -433,7 +592,7 @@ Siena/NYT used a stratified sampling method [@citeNYT]. Polls were stratified by
 * There are challenges in reaching specific demographic groups, such as younger voters who may be less likely to participate in the poll.
 * Reliance on weighting adjustments to correct for response discrepancies, which does not fully eliminate residual bias.
 
-## Non-response Handling
+## Non-response handling
 
 **Weighting adjustment:** The Times weighted the sample using the survey software package in R and adjusted for unequal probability of selection in each stratum. The sample was also split by political party and weighted according to parameters of registered voter characteristics from the voter file. This weighting step ensures that respondents from underrepresented demographic groups such as those without a college degree are given more weight so that the results reflect the voting population overall.
 
@@ -441,7 +600,7 @@ Siena/NYT used a stratified sampling method [@citeNYT]. Polls were stratified by
 
 **Multiple calls and language adaptation:** Interviewers made more than 260,000 calls to more than 80,000 voters, resulting in a sample of 2,516 respondents. Interviewers conducted the interviews in English and Spanish, and bilingual interviewers adapted the language of the interviews to respondent preferences, which helped to increase the participation of Spanish-speaking respondents. Re-contacts by interviewers reduced the non-response rate.
 
-## Questionnaire Evaluation
+## Questionnaire evaluation
 
 **Strengths:**
 
@@ -457,35 +616,35 @@ Siena/NYT used a stratified sampling method [@citeNYT]. Polls were stratified by
 ## Conclusion
 The Siena/NYT poll uses stratified sampling and live phone interviews to reach a representative sample of voters. While the use of composite weighting and bilingual interviews provides advantages such as transparency and reduced bias, challenges remain including high costs and the potential for bias due to non-response. Despite these drawbacks, Siena/NYT's commitment to transparency and rigorous methodology makes it a reliable source for understanding voter sentiment and opinion.
 
-# Idealized Methodology and Survey
+# Idealized methodology and survey
 
 ## Overview
 The objective of this survey is to predict voter sentiment in the upcoming U.S. presidential election, by using a budget of $100,000 to collect accurate and varied data on voting intentions, candidate favourability, and key issues from a representative sample of registered or likely voters across the United States. The methodology is designed to maximize accuracy, minimize bias and take into account a variety of demographic, geographic and political factors that influence voting behaviour.
 
-## Sampling Approach
+## Sampling approach
 The sampling approach is designed to increase coverage and ensure that a representative voting population is covered. This will be achieved by using a combination of stratified random sampling and quota sampling of key demographics.
 
-### Stratification Variables 
+### Stratification variables 
 * Age: 18-29, 30-44, 45-64, 65+
 * Gender: Male, Female, Non-binary
-* Race: White, Black /African American, Hispanic/Latino, Asian, Native, Other
+* Race: White, Black/African American, Hispanic/Latino, Asian, Native, Other
 * Education level: High School, Some College, Bachelor's Degree, Graduate Degree, Other
 * Geographic region: Northeast, Midwest, South, West
 * Political Party: Democratic, Republican, Independent, Other
 
-### Sample Size
+### Sample size
 The target sample size was 5,000 respondents, which are stratified by the Stratification Variables described above. This stratification ensures that all major voter groups are proportionately represented. 5,000 samples have a margin of error of about ±1% and a confidence level of 95%, which is appropriate for predicting elections.
 
-## Recruitment Strategy
+## Recruitment strategy
 The recruitment strategy was separated into two main approaches to ensure a diverse and representative sample:
 
-**Online Survey panels:**
+**Online survey panels:**
 
 * Work with established survey panels such as Lucid or YouGov.
 * These panels have access to large representative databases of voters.
 * Recruiting through panels ensures quality and reliability, as they have built-in validation and quality control processes.
 
-**Social Media Advertising:**
+**Social media advertising:**
 
 * Use social media platforms such as Facebook, Instagram and LinkedIn to reach potential respondents.
 * Target groups that are underrepresented in traditional panels, including young voters and minority groups.
@@ -496,33 +655,34 @@ The recruitment strategy was separated into two main approaches to ensure a dive
 ## Data validation and quality control
 To maintain the integrity of the data, we will take the following measures:
 
-* **Attention Checks:** At least two 'attention check' questions will be included in the survey to identify inattention or robots.
-* **Duplicate Detection:** Use email or IP-based verification to prevent duplicate responses. Ensure that each respondent provides only one response set to keep the dataset unique.
-* **Response Time Monitoring:** Track the time it takes respondents to complete surveys. Responses with apparently faster-than-average completion times are labelled as potentially low-quality.
-* **Data Consistency Check:** Analyses the consistency of responses, especially between related questions. Inconsistent answers will be labelled for review.
+* **Attention checks:** At least two 'attention check' questions will be included in the survey to identify inattention or robots.
+* **Duplicate detection:** Use email or IP-based verification to prevent duplicate responses. Ensure that each respondent provides only one response set to keep the dataset unique.
+* **Response time monitoring:** Track the time it takes respondents to complete surveys. Responses with apparently faster-than-average completion times are labelled as potentially low-quality.
+* **Data consistency check:** Analyses the consistency of responses, especially between related questions. Inconsistent answers will be labelled for review.
 * **Panel partner validation:** For respondents recruited through an online survey panel, rely on the panel provider's in-built validation systems. These systems use various quality checks, such as identity verification and response consistency, which ensure high-quality data from panel participants.
 
 
 ## Poll aggregation and forecasting
+
 ### Poll aggregation
 * 'Poll of polls' approach: Survey data will be combined with data from some reliable polling sources such as Lucid, YouGov and others. This approach aggregates the results of multiple reputable polls to improve the forecast reliability by reducing bias and individual polling errors.
 * Weighting adjustments: Polls are weighted according to sample quality, size, repeatability, and demographic match. Demographic mismatches are adjusted using raking to ensure that the aggregated data accurately represents the U.S. population.
 
-### Forecasting Method
+### Forecasting method
 * Bayesian modelling: Aggregate polling data is combined with historical electoral trends and demographic information using Bayesian statistical models. This approach allows for dynamic updating as new data becomes available, which improves accuracy.
 * Uncertainty Quantification: Includes confidence intervals to express uncertainty in forecasts for a more detailed interpretation. 
 
-## Budget Allocation
+## Budget allocation
 * Survey Panel Recruitment: $50,000
 * Social Media Advertising: $50,000
 * Incentives(lottery prizes): $15,000 
 * Data Cleaning and Validation: $5,000
 * Poll Aggregation and Modeling: $10,000
 
-## Survey Implementation
+## Survey implementation
 The survey will be available via Google Forms to ensure broad accessibility and easy data collection. The link to the survey will be distributed via email invitations to panellists and targeted social media adverts. To ensure maximum reach and diversity, multiple channels will be used, including Facebook, Instagram, and other social media platforms. The link to the survey is [here](https://forms.gle/y4Xh2oQ544DYcCXWA).
 
-**Distribution Plan:**
+**Distribution plan:**
 
 * **Panel invitations:** Members of established survey panels (e.g. Lucid, YouGov) will receive email invitations to participate in the survey.
 * **Social media activities:** Targeted adverts will be placed on social media platforms to reach under-represented groups, especially young voters and national minority groups.
@@ -531,16 +691,16 @@ The survey will be available via Google Forms to ensure broad accessibility and 
 * **Accessibility:** The survey will be mobile-friendly, which will allow respondents to complete the survey on any device.
 
 
-## Survey Structure
+## Survey structure
 
-**Survey Introduction:**
+**Survey introduction:**
 Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.
 
 If you have any questions or concerns, please feel free to contact our research team at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com) (Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
 
 As a thank you for your participation, you will be entered into a raffle to win a grand prize of a gift card. We are deeply grateful for your participation and appreciate the time and effort that you put in.
 
-**Survey Question:**
+**Survey question:**
 
 **Part 1: Screening for eligibility**
 
@@ -564,7 +724,7 @@ As a thank you for your participation, you will be entered into a raffle to win 
 8.Do you generally identify with a political party?\
 * Democratic / Republican / Independent / None
 
-**Part 3: Voting Intentions**
+**Part 3: Voting intentions**
 
 9.How likely are you to participate in the upcoming presidential election?\
 * Very Likely / Somewhat Likely / Not Sure / Unlikely / Very Unlikely\
@@ -573,7 +733,7 @@ As a thank you for your participation, you will be entered into a raffle to win 
 11.What are the top three issues that will influence your vote?\
 * Economy / Healthcare / Education / Gun Policy / Taxes / Foreign Policy / Social Security / Civil Rights / Technology / Privacy / Other[text]
 
-**Part 4: Information Sources and Engagement**
+**Part 4: Information sources and engagement**
 
 12.Which of the following sources do you rely on most for political news and information?\
 * Television News / Newspapers / Online News Websites / Social Media / Radio / Friends and Family / Other\
@@ -593,31 +753,31 @@ Thank you for your participation!
 
 Your responses are valuable to us in anticipating the upcoming election and understanding voters' priorities. If you have any questions or would like more information about our research, please feel free to contact us at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com)(Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
 
-# Data Manipulation and Cleaning {#sec-data-cleaning}
+# Data manipulation and cleaning {#sec-data-cleaning}
 
 In the data cleaning process, we prepared the raw election data for analysis by applying transformations, filtering, and restructuring using several R packages, including `dplyr` [@citedplyr], `janitor` [@citejanitor], `tidyverse` [@citetidyverse], `arrow` [@citearrow], and `rsample` [@citersample].
 
-1. **Standardizing Column Names**: Using the `clean_names()` function, we converted column names to a consistent lowercase format, making them easier to reference and manipulate.
+1. **Standardizing column names**: Using the `clean_names()` function, we converted column names to a consistent lowercase format, making them easier to reference and manipulate.
 
-2. **Filtering Polls by Quality and Candidate**: With the `dplyr` package from `tidyverse`, we filtered the dataset to include only higher-quality polls with a `numeric_grade` of 2.5 or above, ensuring that only credible polls were considered. We further filtered to focus on polls related specifically to Donald Trump (`candidate_name == "Donald Trump"`), aligning the dataset with our analysis objective.
+2. **Filtering polls by quality and candidate**: With the `dplyr` package from `tidyverse`, we filtered the dataset to include only higher-quality polls with a `numeric_grade` of 2.5 or above, ensuring that only credible polls were considered. We further filtered to focus on polls related specifically to Donald Trump (`candidate_name == "Donald Trump"`), aligning the dataset with our analysis objective.
 
-3. **Date Conversion and Filtering**: We converted the `end_date` column to a Date format using `mdy()` from `lubridate` (part of `tidyverse`), ensuring date consistency. We then filtered the data to include only polls conducted after July 15, 2024—the date of Trump’s campaign announcement—allowing us to focus on his active campaign period.
+3. **Date conversion and filtering**: We converted the `end_date` column to a Date format using `mdy()` from `lubridate` (part of `tidyverse`), ensuring date consistency. We then filtered the data to include only polls conducted after July 15, 2024—the date of Trump’s campaign announcement—allowing us to focus on his active campaign period.
 
-4. **Creating Duration and Support Columns**:
+4. **Creating duration and support columns**:
    - **Duration**: We created a `duration` variable using the `difftime()` function from base `R`, which calculates the number of days between each poll’s end date and Trump’s campaign start date. This allows us to observe how polling data shifts over time.
-   - **Number of Trump Supporters**: We calculated `num_trump`, the estimated number of respondents supporting Trump in each poll, by applying the support percentage (`pct`) to the sample size and rounding the result with `dplyr` functions.
+   - **Number of Trump supporters**: We calculated `num_trump`, the estimated number of respondents supporting Trump in each poll, by applying the support percentage (`pct`) to the sample size and rounding the result with `dplyr` functions.
 
-5. **Methodology Update**: We used `str_detect()` from `stringr` (in `tidyverse`) to identify polls that listed multiple polling methods (e.g., those containing “/”) and standardized them to "Mixed Voting" to clarify the `methodology` column.
+5. **Methodology update**: We used `str_detect()` from `stringr` (in `tidyverse`) to identify polls that listed multiple polling methods (e.g., those containing “/”) and standardized them to "Mixed Voting" to clarify the `methodology` column.
 
-6. **Selecting and Renaming Columns**: We used `dplyr` functions to select the relevant columns (`poll_id`, `numeric_grade`, `methodology`, `transparency_score`, `end_date`, `sample_size`, `pollster_name` (renamed from `display_name`), `state`, `pct`, `duration`, and `num_trump`), streamlining the dataset for analysis.
+6. **Selecting and renaming columns**: We used `dplyr` functions to select the relevant columns (`poll_id`, `numeric_grade`, `methodology`, `transparency_score`, `end_date`, `sample_size`, `pollster_name` (renamed from `display_name`), `state`, `pct`, `duration`, and `num_trump`), streamlining the dataset for analysis.
 
-7. **Removing Duplicates and Missing Values**: With `dplyr`, we removed duplicate rows using `distinct()` and dropped rows with missing values using `drop_na()`, ensuring that only complete and unique data entries were retained.
+7. **Removing duplicates and missing values**: With `dplyr`, we removed duplicate rows using `distinct()` and dropped rows with missing values using `drop_na()`, ensuring that only complete and unique data entries were retained.
 
-8. **Splitting the Data**: We utilized `rsample` to perform a stratified split on the cleaned dataset, using the `state` variable to ensure balanced representation across states. The data was divided into training (70%) and testing (30%) sets, preparing it for modeling.
+8. **Splitting the data**: We utilized `rsample` to perform a stratified split on the cleaned dataset, using the `state` variable to ensure balanced representation across states. The data was divided into training (70%) and testing (30%) sets, preparing it for modeling.
 
 Finally, we saved the cleaned dataset and the training/testing splits in CSV and Parquet formats using `arrow`, facilitating efficient storage and future accessibility.
 
-# Model details 
+# Model details {sec-model-details}
 ```{r}
 #| label: fig-qq-check
 #| fig-cap: Model Diagnosis
@@ -625,12 +785,6 @@ Finally, we saved the cleaned dataset and the training/testing splits in CSV and
 #| warning: false
 #| message: false
 
-# Generate diagnostic plots for model2
-par(mfrow = c(2, 2))
-plot(model2)
-
-# Generate pairwise scatter plots for all predictor variables
-pairs(analysis_data_train[, c("numeric_grade", "duration", "sample_size", "transparency_score")])
 ```
 
 \newpage
