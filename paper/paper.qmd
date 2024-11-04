@@ -99,6 +99,31 @@ Using package `ggplot2` [@citeggplot], @fig-trump-pct shows Donald Trump's polli
 
 The shaded region around the blue line represents the confidence interval, indicating the range within which the true polling percentage is likely to fall, accounting for sampling variation.
 
+```{r}
+#| label: tbl-trump-summary
+#| tbl-cap: "Summary Statistics of Trump's Support Percentage in 2024 Polling Data"
+#| echo: false
+#| warning: false
+
+cleaned_data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
+
+summary_table <- cleaned_data %>%
+  summarize(
+    Mean = mean(pct, na.rm = TRUE),
+    Median = median(pct, na.rm = TRUE),
+    Min = min(pct, na.rm = TRUE),
+    Max = max(pct, na.rm = TRUE),
+    Std_Dev = sd(pct, na.rm = TRUE),
+    Count = n()
+  )
+
+kable(summary_table,
+      col.names = c("Mean", "Median", "Min", "Max", "Standard Deviation", "Count"),
+      digits = 2)
+```
+
+@tbl-trump-summary presents the key summary statistics for Trump’s support percentage based on a dataset of 348 polling observations from the 2024 U.S. presidential election. The mean support level is 46.47%, indicating that, on average, 46.47% of respondents in the polls expressed support for Trump. The median value of 47% suggests that half of the polls reported support at or below 47%, while the minimum and maximum values show a wide range of support from 27% to 57.9%, reflecting variability across different polls and regions. The standard deviation of 4.73 indicates a moderate spread around the mean, suggesting some diversity in polling results but with a central clustering.
+
 ## Predictor variables
 
 ### Polling methodology
