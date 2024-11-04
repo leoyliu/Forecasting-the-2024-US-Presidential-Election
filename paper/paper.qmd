@@ -1,6 +1,6 @@
 ---
 title: "Predicting the 2024 US Presidential Election with a Model-Based Forecast"
-subtitle: "Using Generalized Linear Models to Predict Election Outcomes"
+subtitle: "Kamala Harris Predicted to Lead with 341 Electoral Votes Based on a Poll-Based Prediction"
 author: 
   - Yuanyi (Leo) Liu
   - Dezhen Chen
@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that aggregates data from multiple well-known pollsters. Our analysis projects that Donald Trump's probability of winning ranges from 30% to 52%, which depends on regional polling trends. However, Kamala Harris is projected to secure key states and obtain the majority of electoral votes, with a predicted count of 341 to Trump's 197 based on the testing dataset. These predictions are based on the testing dataset, which lacks data for some states, limiting our ability to produce results for all states. This paper underscores the effectiveness of aggregated polls in producing reliable election forecasts."
+abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that aggregates data from multiple well-known pollsters. By analyzing state-level polling trends, our model predicts that Kamala Harris is likely to secure key states, leading to an estimated electoral vote count of 341 for Harris and 197 for Donald Trump. This approach, which combines multiple polls, reduces bias and improves reliability, providing a more accurate picture of public sentiment leading up to the election."
 format: pdf
 number-sections: true
 toc: true
@@ -42,7 +42,7 @@ In this study, our estimand is Donald Trump's percentage of polling in each stat
 
 Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris is estimated to receive 341 electoral votes to Trump's 197, and the uncertainty around these estimates is represented by confidence intervals, which take into account polling changes and model assumptions. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes. Aggregate polling reduces uncertainty and provides a clearer picture of potential outcomes.
 
-The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then @sec-result presents the main findings, including detailed crime trends for each neighborhood and year. Finally, @sec-discussion provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
+The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then, @sec-result provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
 
 # Data {#sec-data}
@@ -54,7 +54,6 @@ We use the statistical programming language R [@citeR] to process and analyze po
 The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. To ensure the reliability of our analysis, we filter the data to include only polls with a numeric grade of 2.5 or higher, which represents high-quality, reputable pollsters. This filtering allows us to focus on polls that follow rigorous standards and have demonstrated transparency and accuracy.
 
 Additionally, we limit the dataset to polls conducted after July 15, 2024, when Donald Trump officially announced his campaign, ensuring that the data reflects the most current public sentiment. Other similar datasets from prior elections, such as data from previous general election cycles, could have been used for comparison. However, given that this analysis focuses on the upcoming 2024 election and the shift in public opinion, the most relevant data is specific to the current cycle.
-
 
 ## Measurement
 
@@ -81,7 +80,7 @@ cleaned_data <- cleaned_data %>%
   mutate(end_date = as.Date(end_date))  # Convert to Date format if not already
 
 ggplot(cleaned_data, aes(x = end_date, y = pct)) +
-  geom_point() +  # Add points for individual poll data
+  geom_point(alpha = 0.5) +  # Add points for individual poll data
   scale_x_date(date_breaks = "1 month", date_labels = "%b %Y") +  # Show month and year, with one label per month
   labs(
     x = "Date of Poll",
@@ -95,7 +94,7 @@ ggplot(cleaned_data, aes(x = end_date, y = pct)) +
   geom_smooth()
 ```
 
-@fig-trump-pct shows Donald Trump's polling percentages over time from July to October 2024. Each black dot represents an individual poll conducted on a specific date, indicating the percentage of voters who supported Trump in that poll. The blue line represents a trendline, smoothing out the individual poll results to show the general trajectory of Trump's support over time.
+Using package `ggplot2` [@citeggplot], @fig-trump-pct shows Donald Trump's polling percentages over time from July to October 2024. Each black dot represents an individual poll conducted on a specific date, indicating the percentage of voters who supported Trump in that poll. The blue line represents a trendline, smoothing out the individual poll results to show the general trajectory of Trump's support over time.
 
 Initially, Trump's polling percentage appears stable with small fluctuations around 45%. However, as the campaign progresses into October, there is a slight upward trend in Trump's polling percentage, suggesting that his support increased as the election neared.
 
@@ -105,8 +104,6 @@ The shaded region around the blue line represents the confidence interval, indic
 
 ### Polling methodology
 The `methodology` variable describes the method each pollster used to collect data. It includes approaches such as live phone interviews, online surveys, and mixed methods. For polls that used multiple collection methods (e.g., phone and online), we labeled them as "Mixed Voting" for simplicity. The methodology is important because different approaches can introduce varying degrees of bias, influencing the final reported percentages.
-
-Placeholder for a table showing the distribution of polling methodologies across different states.
 
 ### State
 The `state` variable identifies whether the poll is state-specific or national. In state-specific polls, the data reflects localized voter preferences, while national polls aggregate opinions across the entire country. For this analysis, we ignore national polls and focus entirely on state polls because electoral outcomes are determined on a state-by-state basis in the U.S. election system.
@@ -203,7 +200,7 @@ Our modeling approach aims to quantify the relationship between various polling 
 
 In this analysis, we use predictors that reflect both the methodological quality and structural characteristics of each poll. Specifically, we include variables such as `numeric_grade`, which quantifies the poll’s quality, `methodology`, `duration` (the length of the election period), `sample_size`, `transparency_score`, and `state` (the regional factor).
 
-The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability in our findings. Background details and diagnostics are included in the appendix.
+The model assumes that the distribution of support percentage, given these polling characteristics, follows a normal distribution. This Gaussian assumption facilitates parameter estimation, which is a standard approach in linear regression. To prevent overfitting and ensure interpretability, we assume moderate priors, maintaining balanced uncertainty across our predictors. This approach enables us to assess the impact of polling characteristics on candidate support while ensuring stability in our findings. Background details and diagnostics are included in [Appendix -@sec-model-details].
 
 ## Alternative model
 
@@ -261,7 +258,7 @@ We predicted the election outcomes based on our test dataset. However, due to mi
 
 ## Model results and interpretation
 
-The linear regression model built by our training dataset, using 242 data points, estimated the factors influencing Trump's support levels. For brevity, @tbl-summary-model only shows the first ten rows of the model’s coefficients, with the full model summary available in the appendix. The intercept is estimated at 44.224, representing the baseline support level when all predictors are at their reference levels. The model achieved an $R^2$ value of 0.803, indicating that 80.3% of the variance in polling outcomes is explained by the predictors included in the model. The adjusted $R^2$ value of 0.753 confirms that the model captures the relationships between variables without significant overfitting.
+The linear regression model built by our training dataset, using 242 data points, estimated the factors influencing Trump's support levels. For brevity, @tbl-summary-model only shows the first ten rows of the model’s coefficients, with the full model summary available in [Appendix -@sec-model-details]. The intercept is estimated at 44.224, representing the baseline support level when all predictors are at their reference levels. The model achieved an $R^2$ value of 0.803, indicating that 80.3% of the variance in polling outcomes is explained by the predictors included in the model. The adjusted $R^2$ value of 0.753 confirms that the model captures the relationships between variables without significant overfitting.
 
 ```{r}
 #| label: tbl-summary-model
@@ -282,7 +279,7 @@ kable(col.names = c(" ", "coefficient"),
 
 Certain predictors have a more obvious impact than others. For example, `numeric_grade` (0.779) shows that a one-unit increase in grade corresponds to a 0.779 percentage point increase in predicted polling outcomes. The type of methodology also plays a important role: "Mixed Voting" (1.692) and "Online Ad" (0.960) methods are associated with positive effects, while "Online Panel" (-1.037) and "Probability Panel" (-1.035) methods have negative effects relative to the baseline. Additionally, the state-specific coefficient shows a substantial effect. This underlines the importance of geographic context in polling predictions, especially for politically distinct areas.
 
-Other variables, like `transparency_score` (-0.220) and `duration` (0.028), have smaller effects. The negative coefficient for `transparency_score` suggests a slight decrease in predicted support as transparency increases, potentially reflecting a sensitivity among the public to the transparency level in polling methods. Meanwhile, `sample_size` (0.002) shows a small positive effect, indicating that larger sample sizes modestly increase predicted support. A complete overview of all predictors is provided in the appendix.
+Other variables, like `transparency_score` (-0.220) and `duration` (0.028), have smaller effects. The negative coefficient for `transparency_score` suggests a slight decrease in predicted support as transparency increases, potentially reflecting a sensitivity among the public to the transparency level in polling methods. Meanwhile, `sample_size` (0.002) shows a small positive effect, indicating that larger sample sizes modestly increase predicted support. A complete overview of all predictors is provided in [Appendix -@sec-model-details].
 
 ## Predicted electoral outcomes
 
@@ -386,37 +383,7 @@ missing_states <- data.frame(uncommon_states_votes,
 # Create and display the results table
 kable(missing_states, 
       col.names = c("State", "Electoral Votes", "Winner"), 
-      digits = 2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  scroll_box(width = "100%", height = "400px")
-```
-
-Now, we combine the results from our predicted data and the historically inferred estimates for missing states. This merged dataset provides a view of the expected electoral outcomes across all states. @tbl-final-prediction presents the final predictions, showing the estimated electoral votes and projected winner for each state based on both model predictions and historical trends.
-
-```{r}
-#| label: tbl-final-prediction
-#| tbl-cap: Final Predicted Electoral Outcomes by State, Combining Model Estimates and Historical Trends for Missing Data
-#| echo: false
-#| warning: false
-#| message: false
-
-# Remove the predicted_percent_trump column from state_predictions to match missing_states
-state_predictions <- state_predictions %>%
-  select(state, electoral_votes, winner)
-
-# Merge the two datasets
-final_predictions <- full_join(state_predictions, missing_states, by = c("state", "electoral_votes", "winner"))
-
-# Arrange the rows by state name
-final_predictions <- final_predictions %>%
-  arrange(state)
-
-# Display the final table
-kable(final_predictions, 
-      col.names = c("State", "Electoral Votes", "Winner"), 
-      digits = 2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  scroll_box(width = "100%", height = "400px")
+      digits = 2)
 ```
 
 ## Final electoral outcomes
@@ -429,6 +396,11 @@ Based on our analysis, @tbl-final-outcome summarizes the total predicted elector
 #| echo: false
 #| warning: false
 #| message: false
+
+state_predictions <- state_predictions %>%
+  select(state, electoral_votes, winner)
+
+final_predictions <- full_join(state_predictions, missing_states, by = c("state", "electoral_votes", "winner"))
 
 # Calculate the electoral votes for each candidate
 final_predictions$trump_electoral_votes <- ifelse(final_predictions$winner == "Trump", final_predictions$electoral_votes, 0)
@@ -445,7 +417,6 @@ final_outcome <- data.frame(
 
 # Display the final table with added styling
 kable(final_outcome, col.names = c("Candidate", "Final Votes"), digits = 2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   row_spec(1, background = "#FFCCCC") %>%    # Add light orange background for Trump row
   row_spec(2, background = "#C1D7FF") %>%    # Add light blue background for Harris row
   column_spec(2, bold = TRUE)
@@ -472,12 +443,12 @@ plot_usmap(data = final_predictions, values = "winner_color", regions = "states"
   theme(
     legend.position = "right",
     legend.title = element_text(size = 10, face = "bold"),
-    legend.text = element_text(size = 18),
+    legend.text = element_text(size = 8),
     plot.background = element_rect(fill = "white", color = NA)
   )
 ```
 
-@fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with red representing states where Trump is expected to win and blue for those favoring Harris.
+By using package `usmap` [@citeusmap], @fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with red representing states where Trump is expected to win and blue for those favoring Harris.
 
 It shows Trump gaining support across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Harris, meanwhile, is projected to lead in states along the West Coast and in the Northeast, such as California and New York, regions with a history of Democratic support. This visual representation complements the previous electoral vote projection, where Harris is anticipated to surpass the 270-vote threshold needed to win the presidency.
 
@@ -691,7 +662,6 @@ The survey will be available via Google Forms to ensure broad accessibility and 
 * **Survey Monitoring:** Response rates will be closely monitored throughout the data collection period and sampling methods will be adjusted if certain population quotas are not reached.
 * **Accessibility:** The survey will be mobile-friendly, which will allow respondents to complete the survey on any device.
 
-
 ## Survey structure
 
 **Survey introduction:**
@@ -782,15 +752,56 @@ In the data cleaning process, we prepared the raw election data for analysis by 
 
 Finally, we saved the cleaned dataset and the training/testing splits in CSV and Parquet formats using `arrow`, facilitating efficient storage and future accessibility.
 
-# Model details {sec-model-details}
+# Model details {#sec-model-details}
+
+## Model summary
+
+@tbl-summary presents the coefficients from our model analyzing factors that influence polling outcomes. The intercept value, 44.178, represents the baseline level of support when all other predictors are at their reference or baseline levels. Key variables include "numeric_grade," with a positive coefficient indicating that higher grades correlate with increased support. Different polling methodologies show varying effects; for example, "Mixed Voting" has a positive coefficient of 1.697, while "Online Panel" and "Probability Panel" methods have negative coefficients, suggesting that these methods might be associated with lower support levels in polling outcomes.
+
 ```{r}
-#| label: fig-qq-check
-#| fig-cap: Model Diagnosis
+#| label: tbl-summary
+#| tbl-cap: "Coefficients from a regression model examining factors influencing polling outcomes, including polling methodology, duration, transparency, and state-level indicators."
 #| echo: false
 #| warning: false
-#| message: false
 
+modelsummary(
+  list(
+    "coefficient" = model
+  )
+)
 ```
+
+## Posterior predictive check
+
+In @fig-ppcheck, we implement a posterior predictive check, which displays the overlap between the observed data (denoted by $y$) and the replicated data generated from the model (denoted by $y_{rep}$). In a well-fitting model, the distribution of these replicated data should resemble the distribution of the observed data. Here, the replicated lines closely follow the shape and central tendency of the observed data’s density, especially around the peak. This similarity indicates that the model is capturing the overall pattern of the data reasonably well, suggesting a good fit. Deviations between the replicated and observed lines would indicate areas where the model might not be accurately capturing the data structure.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-ppcheck
+#| fig-cap: "Comparison of Observed Data Density (dark line) and Model-Generated Replications (light lines) shows close alignment, suggesting the model captures the main distributional characteristics of the data."
+
+pp_check(model) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+```
+
+## Diagnostics
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+#| label: fig-rhat
+#| fig-cap: "All parameters have R-hat values at or below 1.05, indicating strong convergence of the MCMC chains and reliable parameter estimates."
+
+plot(model, "rhat")
+```
+
+@fig-rhat is a visualization of the Gelman-Rubin diagnostic, often denoted as R-hat, which assesses the convergence of a Bayesian model’s Markov Chain Monte Carlo (MCMC) samples. It shows the values of for various parameters in the model. An value close to 1 indicates good convergence, meaning the chains for each parameter have mixed well and are sampling from the same posterior distribution. In @fig-rhat, all parameters have an value at or below 1.05, suggesting that the model has achieved adequate convergence and the estimates are reliable.
 
 \newpage
 
