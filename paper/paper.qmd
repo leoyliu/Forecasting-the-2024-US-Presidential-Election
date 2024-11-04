@@ -164,16 +164,14 @@ cleaned_data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 # Create a bar chart for the distribution of numeric_grade
 p1 <- ggplot(cleaned_data, aes(x = numeric_grade)) +
   geom_bar(fill = "steelblue", color = "black") +
-  labs(title = "Distribution of Polling Scores",
-       x = "Numeric Grade",
+  labs(x = "Numeric Grade",
        y = "Count") +
   theme_minimal()
 
 # Create a bar chart for the distribution of transparency_score
 p2 <- ggplot(cleaned_data, aes(x = transparency_score)) +
   geom_bar(fill = "darkorange", color = "black") +
-  labs(title = "Distribution of Transparency Scores",
-       x = "Transparency Score",
+  labs(x = "Transparency Score",
        y = "Count") +
   theme_minimal()
 
