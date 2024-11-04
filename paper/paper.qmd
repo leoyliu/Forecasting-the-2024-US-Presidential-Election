@@ -665,7 +665,18 @@ The survey will be available via Google Forms to ensure broad accessibility and 
 ## Survey structure
 
 **Survey introduction:**
-Welcome! We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. It will take approximately 10 minutes to complete the survey. All responses are confidential and will be used for research purposes only.
+
+Welcome! 
+
+We are surveying to better understand voter preferences and priorities for the upcoming U.S. presidential election. Your participation is important and your answers will help us accurately predict the outcome of the election. 
+
+Please note:
+
+* All responses are confidential and will be used for research purposes only.
+* This survey will take approximately 10 minutes to complete.
+* Your participation is entirely voluntary, and you may withdraw at any time.
+* All questions marked with an asterisk () are required.*
+* There are no right or wrong answers, we appreciate your honest opinions.
 
 If you have any questions or concerns, please feel free to contact our research team at [winniekeai23@gmail.com](mailto:winniekeai23@gmail.com) (Ziyuan Shen, Yuanyi (Leo) Liu, Dezhen Chen).
 
