@@ -542,7 +542,7 @@ Siena College Research Institute (SCRI) and The New York Times launched a collab
 
 ## Target population, frame, and sample
 * Target Population: Registered voters or likely voters in the United States, especially voters in major battleground states during an election in 2024.
-* Sample Frame: U.S. registered voters based on a national voter file maintained by L2, with a cell phone number that matches the voter file.
+* Sample Frame: U.S. registered voters from a national voter file maintained by L2, a nonpartisan provider of detailed voter data, including demographics and voting history. The sample includes voters with matching cell phone numbers.
 * Sample Size: Sample sizes vary across different polls. The poll in late October 2024 surveyed over 2,500 voters, and 2,097 of them completed the full survey. The margin of error for likely voters is about ±2.2 percentage points.
 
 ## Sample recruitment
