@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of 2024 US election, to explore what plausible values might appear in the dataset.
+# Purpose: Simulates a dataset of 2024 US election to explore what values might appear in the dataset.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
@@ -14,154 +14,56 @@ set.seed(853)
 
 
 #### Simulate data ####
-#determine the number of observations
+# Define the number of observations
 num_obs <- 1000
 
-#pollster names
-pollster <- c(
-  "The New York Times/Siena College", 
-  "ABC News/The Washington Post", 
-  "Marquette University Law School", "YouGov",
-  "Monmouth University Polling Institute", 
-  "Marist College", "Suffolk University","Data Orbital", 
-  "University of Massachusetts Lowell Center for Public Opinion", 
-  "Emerson College", 
-  "Muhlenberg College Institute of Public Opinion", 
-  "Selzer & Co.", 
-  "University of North Florida Public Opinion Research Lab", 
-  "CNN","SurveyUSA", "Beacon Research/Shaw & Co. Research", 
-  "Quinnipiac University", "MassINC Polling Group", "Ipsos", 
-  "Christopher Newport University Wason Center for Civic Leadership", 
-  "Siena College","AtlasIntel", "Echelon Insights", 
-  "The Washington Post/George Mason University Schar School of Policy and Government", 
-  "East Carolina University Center for Survey Research", 
-  "Data for Progress", 
-  "Hart Research Associates/Public Opinion Strategies",
-  "University of New Hampshire Survey Center", 
-  "Stockton University William J. Hughes Center for Public Policy", 
-  "Remington Research Group", 
-  "Mason-Dixon Polling & Strategy",
-  "Roanoke College Institute for Policy and Opinion Research", 
-  "Fairleigh Dickinson University", 
-  "University of Arkansas Department of Political Science", 
-  "Lake Research Partners/The Tarrance Group",
-  "Public Policy Institute of California", 
-  "Michigan State University Institute for Public Policy and Social Research",
-  "Elon University", 
-  "Southern Illinois University Paul Simon Public Policy Institute", 
-  "Pew Research Center",
-  "University of Illinois Springfield Survey Research Office", 
-  "Western New England University Polling Institute", 
-  "High Point University Survey Research Center", "Gallup", 
-  "Abt Associates", "The Winston Group", "KFF", 
-  "Winthrop University Center for Public Opinion & Policy Research", 
-  "The Washington Post/University of Maryland Center for Democracy and Civic Engagement", 
-  "University of California Berkeley Institute of Governmental Studies"
+pollster_names <- c(
+  "AtlasIntel", "YouGov", "Emerson College", "Quinnipiac University", "SurveyUSA",
+  "East Carolina University Center for Survey Research", "The New York Times/Siena College",
+  "University of Massachusetts Lowell Center for Public Opinion/YouGov", "Marist College",
+  "The Washington Post", "Suffolk University", "Mason-Dixon Polling & Strategy",
+  "Christopher Newport University Wason Center for Civic Leadership", "YouGov/Center for Working Class Politics",
+  "University of California Berkeley Institute of Governmental Studies", "Winthrop University Center for Public Opinion & Policy Research",
+  "High Point University Survey Research Center", "Marquette University Law School", "CNN/SSRS",
+  "Beacon Research/Shaw & Company Research", "The Washington Post/University of Maryland Center for Democracy and Civic Engagement",
+  "Muhlenberg College Institute of Public Opinion", "MassINC Polling Group", "University of New Hampshire Survey Center",
+  "Siena College", "Elon University", "Selzer & Co.", "Data Orbital", "Public Policy Institute of California",
+  "The Washington Post/George Mason University Schar School of Policy and Government",
+  "SurveyUSA/High Point University Survey Research Center", "Remington Research Group",
+  "Roanoke College Institute for Policy and Opinion Research", "YouGov Blue",
+  "University of North Florida Public Opinion Research Lab"
 )
 
-#methodology
-methodology <- c(
-  "App Panel", "Live Phone", "Online Ad", "Email", "Probability Panel", 
-  "Text", "Text-to-Web", "Mixed", "Online Panel", "IVR" 
-)
+methodologies <- c("Online Ad", "Online Panel", "Mixed Voting", "Live Phone")
+grades <- c(2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0)
+transparency_scores <- 4:10
+states = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+               "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+               "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+               "Missouri", "Montana", "Nebraska", "Nevada","New Hampshire", "New Jersey", "New Mexico", "New York",
+               "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", 
+               "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", 
+               "West Virginia", "Wisconsin", "Wyoming", "District of Columbia", "National")
+sample_sizes <- sample(300:3500, num_obs, replace = TRUE)
+pct_values <- runif(num_obs, 35, 55) # Range of percentages for candidate support
+durations <- sample(85:200, num_obs, replace = TRUE) # Duration in days
+num_trump <- round(pct_values * sample_sizes / 100)
 
-#grade of pollster
-grade <- c(
-  `The New York Times/Siena College` = 3.0, 
-  `ABC News/The Washington Post` = 3.0, 
-  `Marquette University Law School` = 3.0, 
-  `YouGov` = 3.0, 
-  `Monmouth University Polling Institute` = 2.9, 
-  `Marist College` = 2.9, 
-  `Suffolk University` = 2.9, 
-  `Data Orbital` = 2.9, 
-  `University of Massachusetts Lowell Center for Public Opinion` = 2.9, 
-  `Emerson College` = 2.9, 
-  `Muhlenberg College Institute of Public Opinion` = 2.8, 
-  `Selzer & Co.` = 2.8, 
-  `University of North Florida Public Opinion Research Lab` = 2.8, 
-  `CNN` = 2.8, 
-  `SurveyUSA` = 2.8, 
-  `Beacon Research/Shaw & Co. Research` = 2.8, 
-  `Quinnipiac University` = 2.8, 
-  `MassINC Polling Group` = 2.8, 
-  `Ipsos` = 2.8, 
-  `Christopher Newport University Wason Center for Civic Leadership` = 2.8,
-  `Siena College` = 2.7, 
-  `AtlasIntel` = 2.7, 
-  `Echelon Insights` = 2.7, 
-  `The Washington Post/George Mason University Schar School of Policy and Government` = 2.7, 
-  `East Carolina University Center for Survey Research` = 2.6, 
-  `Data for Progress` = 2.6, 
-  `Hart Research Associates/Public Opinion Strategies` = 2.6, 
-  `University of New Hampshire Survey Center` = 2.6, 
-  `Stockton University William J. Hughes Center for Public Policy` = 2.6, 
-  `Remington Research Group` = 2.6, 
-  `Mason-Dixon Polling & Strategy` = 2.6, 
-  `Roanoke College Institute for Policy and Opinion Research` = 2.6, 
-  `Fairleigh Dickinson University` = 2.6, 
-  `University of Arkansas Department of Political Science` = 2.5, 
-  `Lake Research Partners/The Tarrance Group` = 2.5, 
-  `Public Policy Institute of California` = 2.5, 
-  `Michigan State University Institute for Public Policy and Social Research` = 2.5, 
-  `Elon University` = 2.5, 
-  `Southern Illinois University Paul Simon Public Policy Institute` = 2.5, 
-  `Pew Research Center` = 2.5, 
-  `University of Illinois Springfield Survey Research Office` = 2.5, 
-  `Western New England University Polling Institute` = 2.5, 
-  `High Point University Survey Research Center` = 2.5, 
-  `Gallup` = 2.5, 
-  `Abt Associates` = 2.5, 
-  `The Winston Group` = 2.5, 
-  `KFF` = 2.5, 
-  `Winthrop University Center for Public Opinion & Policy Research` = 2.5, 
-  `The Washington Post/University of Maryland Center for Democracy and Civic Engagement` = 2.5, 
-  `University of California Berkeley Institute of Governmental Studies` = 2.5
-)
-
-
-#us states names
-us_states <- c(
-  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
-  "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
-  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
-  "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
-  "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", 
-  "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
-  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", 
-  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
-  "Washington", "West Virginia", "Wisconsin", "Wyoming", "National"
-)
-
-#start date and end date
-date_range <- seq.Date(from = as.Date("2021-01-20"), to = as.Date("2024-09-20"), by = "day")
-
-#population_group
-population_group <- c(
-  "likely voters", "registered voters", "adults"
-)
-
-# Create a dataset by randomly assigning pollster, methodology, start date, end date, sample size, population_group and percentage
+# Generate the dataset
 simulated_data <- tibble(
-  pollster = sample(pollster, size = num_obs, replace = TRUE),
-  methodology = sample(methodology, size = num_obs, replace = TRUE), 
-  numerical_grade = grade[pollster],
-  start_date = sample(date_range, size = num_obs, replace = TRUE)  # Randomly sample start dates
-) %>%
-  # Ensure end_date is greater than or equal to start_date
-  mutate(
-    end_date = start_date + sample(0:180, size = num_obs , replace = TRUE),  # Random end date within 180 days of start date
-    sample_size = sample(100:20000, size = num_obs, replace = TRUE) ,
-    state = sample(
-      us_states, 
-      size = num_obs, 
-      replace = TRUE
-    ),
-    candidate_name = "Donald Trump",
-    percent = sample(45:55, size = num_obs, replace = TRUE) ,
-    population_group = sample(population_group, size = num_obs, replace = TRUE, 
-                              prob = c(0.45, 0.45, 0.1)), 
-  )
+  poll_id = sample(88000:89000, num_obs, replace = TRUE),
+  numeric_grade = sample(grades, num_obs, replace = TRUE),
+  methodology = sample(methodologies, num_obs, replace = TRUE),
+  transparency_score = sample(transparency_scores, num_obs, replace = TRUE),
+  end_date = sample(seq.Date(from = as.Date("2024-07-15"), to = as.Date("2024-10-31"), by = "day"), num_obs, replace = TRUE),
+  sample_size = sample_sizes,
+  pollster_name = sample(pollster_names, num_obs, replace = TRUE),
+  state = sample(states, num_obs, replace = TRUE),
+  pct = round(pct_values, 1),
+  duration = durations,
+  num_trump = num_trump
+)
 
-# Save data
+
+#### Save data ####
 write_csv(simulated_data, "data/00-simulated_data/simulated_data.csv")

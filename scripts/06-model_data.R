@@ -1,18 +1,18 @@
 #### Preamble ####
-# Purpose: Models US presidential election polls by using LM, and compare two regression models
+# Purpose: Models US presidential election polls by using stan_glm.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: None
-# Any other information needed? None
+# Pre-requisites: 
+#   - The `tidyverse`, `rstanarm`, `arrow`, `car` packages must be installed and loaded
+#   - 03-clean_data.R must have been run
+# Any other information needed? Make sure you are in the `Forecasting-the-2024-US-Presidential-Election` rproj
 
 
 #### Workspace setup ####
 library(tidyverse)
 library(rstanarm)
-library(rsample)
-library(dplyr)
 library(car)
 library(arrow)
 
@@ -36,5 +36,5 @@ model <-
 #### Save model ####
 saveRDS(
   model,
-  file = "models/first_model.rds"
+  file = "models/linear_model.rds"
 )

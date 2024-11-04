@@ -1,11 +1,11 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from FiveThirtyEight
+# Purpose: Downloads and saves the data from FiveThirtyEight.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: None
-# Any other information needed? None
+# Any other information needed? Make sure you are in the `Forecasting-the-2024-US-Presidential-Election` rproj
 
 
 #### Workspace setup ####

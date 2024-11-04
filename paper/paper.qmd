@@ -258,7 +258,7 @@ We predicted the election outcomes based on our test dataset. However, due to mi
 
 ## Model results and interpretation
 
-The linear regression model built by our training dataset, using 242 data points, estimated the factors influencing Trump's support levels. For brevity, @tbl-summary-model only shows the first ten rows of the model’s coefficients, with the full model summary available in [Appendix -@sec-model-details]. The intercept is estimated at 44.224, representing the baseline support level when all predictors are at their reference levels. The model achieved an $R^2$ value of 0.803, indicating that 80.3% of the variance in polling outcomes is explained by the predictors included in the model. The adjusted $R^2$ value of 0.753 confirms that the model captures the relationships between variables without significant overfitting.
+The linear regression model built by our training dataset, using 242 data points, estimated the factors influencing Trump's support levels. For brevity, @tbl-summary-model only shows the first ten rows of the model’s coefficients, with the full model summary available in [Appendix -@sec-model-details]. The intercept is estimated at 44.224, representing the baseline support level when all predictors are at their reference levels. The model achieved an $R^2$ value of 0.803, indicating that 80.3% of the variance in polling outcomes is explained by the predictors included in the model. The adjusted $R^2$ value of 0.753 confirms that the model captures the relationships between variables without overfitting.
 
 ```{r}
 #| label: tbl-summary-model
@@ -267,7 +267,7 @@ The linear regression model built by our training dataset, using 242 data points
 #| warning: false
 
 # Load the model
-model <- readRDS(file = here::here("models/first_model.rds"))
+model <- readRDS(file = here::here("models/linear_model.rds"))
 
 summary <- summary(model)
 
@@ -348,7 +348,7 @@ kable(state_predictions[, c("state", "predicted_percent_trump", "electoral_votes
       digits = 2)
 ```
 
-Since we are missing data for some states in our dataset, we turned to historical trends from recent elections involving Joe Biden to fill these gaps. For each missing state, we assessed whether it consistently leaned toward a particular candidate in past elections. If so, we assumed this trend would persist and used it as a basis for estimating outcomes in the current election.
+Since we are missing data for some states in our dataset, we turned to historical trends from recent elections involving Joe Biden to fill these blanks. For each missing state, we assessed whether it consistently leaned toward a particular candidate in past elections. If so, we assumed this trend would persist and used it as a basis for estimating outcomes in the current election.
 
 @tbl-history summarizes the outcomes for the missing states based on this approach. It shows the predicted winner for each state based on historical trend. For instance, Alabama, Alaska, Arkansas, Idaho, Indiana, and Iowa are expected to go to Trump, contributing their respective electoral votes to his total. Conversely, states like Colorado, Connecticut, Delaware, Hawaii, and Illinois are projected to favor Harris, thus allocating their electoral votes to her.
 
@@ -457,7 +457,7 @@ It shows Trump gaining support across central and southern states, including Tex
 
 ## Interpretation of polling data and electoral implications
 
-This paper examines the factors affecting Donald Trump’s polling performance in the 2024 U.S. Presidential Election. Our linear regression model shows that numeric grade, polling methodology, and state-specific factors are key predictors of Trump’s support. Higher numeric grades, representing perceived poll reliability, are positively associated with Trump’s polling numbers, suggesting that well-regarded polls may capture a more favorable sentiment. Polling methodology also plays a significant role, with different methods (e.g., "Mixed Voting" or "Online Panel") showing varied effects on the results, likely reflecting differences in respondent engagement or accessibility. State-specific factors underscore the importance of regional dynamics. The Electoral College system makes state-level support crucial, and unique local issues and demographics in each state contribute to Trump’s polling outcomes.
+This paper examines the factors affecting Donald Trump’s polling performance in the 2024 U.S. Presidential Election. Our linear regression model shows that numeric grade, polling methodology, and state-specific factors are key predictors of Trump’s support. Higher numeric grades, representing perceived poll reliability, are positively associated with Trump’s polling numbers, suggesting that well-regarded polls may capture a more favorable sentiment. Polling methodology also plays an important role, with different methods (e.g., "Mixed Voting" or "Online Panel") showing varied effects on the results, likely reflecting differences in respondent engagement or accessibility. State-specific factors underscore the importance of regional dynamics. The Electoral College system makes state-level support essential, and unique local issues and demographics in each state contribute to Trump’s polling outcomes.
 
 Transparency score and sample size also affect polling reliability. Polls with higher transparency and larger sample sizes provide more stable projections. While these factors improve data quality, they have less direct influence on voter preferences than state and methodology variables.
 
@@ -465,7 +465,7 @@ In contrast, poll duration has minimal impact in our model, suggesting that shor
 
 ## Influence of state policies on voter preferences
 
-Beyond the mechanics of polling, our analysis suggests that state-specific policies and regional cultural factors could influence voter preferences and eventually shape electoral outcomes, although they are not directly measured in our model. For example, state policies on recreational marijuana legalization may reflect broader ideological values that align with particular candidates or parties. To explore this idea, we compared our predictions map with a visualization of states where recreational marijuana is legal.
+Beyond the mechanics of polling, our analysis suggests that state-specific policies and regional cultural factors could influence voter preferences and eventually shape electoral outcomes, although they are not directly measured in our model. For example, state policies on recreational marijuana legalization may reflect broader ideological values that align with particular candidates or parties. To examine this further, we compared our predictions map with a visualization of states where recreational marijuana is legal.
 
 @fig-statemap-factor shows states where recreational marijuana is legal. Compared with @fig-statemap, many states that have legalized marijuana, such as California, Washington, and New York, also appear in our prediction as likely to support Harris, suggesting a correlation between progressive state policies and support for more liberal candidates. This policy environment may align with Democratic platforms on social issues, which could explain stronger support for Harris in these regions.
 
@@ -521,7 +521,7 @@ plot_usmap(data = state_data, values = "legal_marijuana") +
 
 This paper has several limitations that affect the accuracy and breadth of its predictions. First, the dataset is incomplete, with some states lacking polling data. These omissions prevent a fully representative analysis, as the absence of data from certain regions leaves out their unique political dynamics. Furthermore, focusing on state-level data may obscure more localized trends, particularly in diverse districts with distinct political identities. For instance, urban and rural areas within the same state often show different voting patterns that a state-level analysis may overlook.
 
-Another limitation lies in the model’s emphasis on certain predictors while excluding others. By prioritizing variables like poll duration and sample size, we may miss factors that could better explain variations in support, such as demographic and economic data. Although the model performs well on a broad level, these limitations underscore the need for more nuanced data and a more inclusive approach to fully understand the range of influences on voter behavior.
+Another limitation lies in the model’s emphasis on certain predictors while excluding others. By prioritizing variables like poll duration and sample size, we may miss factors that could better explain variations in support, such as demographic and economic data. Although the model performs well on a broad level, these limitations underscore the need for a more inclusive approach to fully understand the range of influences on voter behavior.
 
 ## Future research directions
 

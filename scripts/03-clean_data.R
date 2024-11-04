@@ -1,11 +1,13 @@
 #### Preamble ####
-# Purpose: Cleans the raw election data
+# Purpose: Cleans the raw election data.
 # Author: Yuanyi (Leo) Liu, Dezhen Chen, Ziyuan Shen
 # Date: 30 October 2024
 # Contact: leoy.liu@mail.utoronto.ca, dezhen.chen@mail.utoronto.ca, ziyuan.shen@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: None
-# Any other information needed? None
+# Pre-requisites: 
+#   - The `tidyverse`, `arrow`, `rsample` packages must be installed and loaded
+#   - 02-download_data.R must have been run
+# Any other information needed? Make sure you are in the `Forecasting-the-2024-US-Presidential-Election` rproj
 
 
 #### Workspace setup ####

@@ -18,7 +18,7 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-The ChatGPT-4 model contributed to the creation of data validation tests and the polishing of wording. The entire chat history is available in `other/llm_usage/usage.txt`.
+The ChatGPT-4 model assisted with data validation, test creation, data cleaning, simulation generation, plot generation, and the polishing of wording. The entire chat history is available in `other/llm_usage/usage.txt`.
 
 ------------------------------------------------------------------------
 
