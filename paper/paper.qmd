@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [Forecasting the 2024 US Presidential Election](https://github.com/leoyliu/Forecasting-the-2024-US-Presidential-Election)."
 date: today
 date-format: long
-abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that aggregates data from multiple well-known pollsters. By analyzing state-level polling trends, our model predicts that Kamala Harris is likely to secure key states, leading to an estimated electoral vote count of 341 for Harris and 197 for Donald Trump. This approach, which combines multiple polls, reduces bias and improves reliability, providing a more accurate picture of public sentiment leading up to the election."
+abstract: "In this paper, we develop a linear model to predict the outcome of the 2024 U.S. presidential election using a \"poll-of-polls\" approach that aggregates data from multiple pollsters. By analyzing state-level polling trends, our model predicts that Kamala Harris is likely to secure key states, leading to an estimated electoral vote count of 341 for Harris and 197 for Donald Trump. This approach, which combines multiple polls, reduces bias and improves reliability, providing a more accurate picture of public sentiment leading up to the election."
 format: pdf
 number-sections: true
 toc: true
@@ -40,7 +40,7 @@ The results of presidential elections influence national and international polic
 
 In this study, our estimand is Donald Trump's percentage of polling in each state ahead of the 2024 U.S. presidential election. The object of the estimation is Trump's percentage of polling data in each state based on aggregated information from various sources. By using a linear regression model, we aim to capture changes in public opinion over time and provide a clearer understanding of voter preferences and the likely election outcome.
 
-Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris is estimated to receive 341 electoral votes to Trump's 197, and the uncertainty around these estimates is represented by confidence intervals, which take into account polling changes and model assumptions. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes. Aggregate polling reduces uncertainty and provides a clearer picture of potential outcomes.
+Our findings suggest that while Trump has a competitive chance, Harris is projected to win key states and receive a majority of electoral votes. Harris is estimated to receive 341 electoral votes to Trump's 197, and the uncertainty around these estimates is represented by confidence intervals, which take into account polling changes and model assumptions. This is important because accurate election forecasts help reduce uncertainty, which allows political stakeholders to allocate resources efficiently and gives the public a better understanding of likely outcomes.
 
 The structure of the paper is organized as follows: following @sec-intro, @sec-data presents the data collection and cleaning process, along with an overview of the variables used in the analysis. @sec-model introduces the forecasting models, explaining why the selected models are suitable for predicting election outcomes based on aggregated polling data. Then, @sec-result provides the results, highlighting key trends and predictions. Eventually, @sec-discussion concludes with a discussion of the findings, evaluating the reliability of the forecasts and identifying potential limitations of the models.
 
@@ -49,7 +49,7 @@ The structure of the paper is organized as follows: following @sec-intro, @sec-d
 
 ## Overview
 
-We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 U.S. Presidential election. The dataset used for this analysis was obtained from the FiveThirtyEight 2024 U.S. Presidential Election Polls [@citedata]. It consists of polling data for the 2024 general election, covering various polling organizations and methodologies. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we forecast election outcomes using the "poll of polls" method, which aggregates results from multiple polls to reduce bias and provide a more accurate representation of voter sentiment. For key operations, please refer to [Appendix -@sec-data-cleaning]. 
+We use the statistical programming language R [@citeR] to process and analyze polling data for the 2024 U.S. Presidential election. The dataset used for this analysis was obtained from the FiveThirtyEight 2024 U.S. Presidential Election Polls [@citedata] as of October 30, 2024. It consists of polling data for the 2024 general election, covering various polling organizations and methodologies. Following methodologies discussed by "Telling Stories with Data" [@tellingstories], we forecast election outcomes using the "poll of polls" method, which aggregates results from multiple polls to reduce bias and provide a more accurate representation of voter sentiment. For key operations, please refer to [Appendix -@sec-data-cleaning]. 
 
 The dataset includes 15,891 rows and 52 columns, covering various pollster attributes such as pollster name, state, methodology, and polling results. To ensure the reliability of our analysis, we filter the data to include only polls with a numeric grade of 2.5 or higher, which represents high-quality, reputable pollsters. This filtering allows us to focus on polls that follow rigorous standards and have demonstrated transparency and accuracy.
 
@@ -80,23 +80,22 @@ cleaned_data <- cleaned_data %>%
   mutate(end_date = as.Date(end_date))  # Convert to Date format if not already
 
 ggplot(cleaned_data, aes(x = end_date, y = pct)) +
-  geom_point(alpha = 0.5) +  # Add points for individual poll data
-  scale_x_date(date_breaks = "1 month", date_labels = "%b %Y") +  # Show month and year, with one label per month
+  geom_point(alpha = 0.5, color = "black", size = 1.5) + 
+  geom_smooth(color = "#FF6F61", fill = "#FF6F61", method = "loess", se = TRUE, linetype = "solid", size = 1.2) + 
+  scale_x_date(date_breaks = "1 month", date_labels = "%b %Y", expand = c(0.01, 0.01)) + 
   labs(
     x = "Date of Poll",
     y = "Polling Percentage (%)",
   ) +
-  theme_minimal() +  # Use a clean minimal theme
+  theme_minimal(base_size = 10) + 
   theme(
-    plot.title = element_text(hjust = 0.5, size = 14),  # Center and adjust title size
-    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for readability
-  ) +
-  geom_smooth()
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for readability
+    axis.text = element_text(color = "gray20"),  # Darker axis text for contrast
+    panel.grid.minor = element_blank()  # Remove minor grid for a cleaner look
+)
 ```
 
-Using package `ggplot2` [@citeggplot], @fig-trump-pct shows Donald Trump's polling percentages over time from July to October 2024. Each black dot represents an individual poll conducted on a specific date, indicating the percentage of voters who supported Trump in that poll. The blue line represents a trendline, smoothing out the individual poll results to show the general trajectory of Trump's support over time.
-
-Initially, Trump's polling percentage appears stable with small fluctuations around 45%. However, as the campaign progresses into October, there is a slight upward trend in Trump's polling percentage, suggesting that his support increased as the election neared.
+Using package `ggplot2` [@citeggplot], @fig-trump-pct shows Donald Trump's polling percentages over time from July to October 2024. Each black dot represents an individual poll conducted on a specific date, indicating the percentage of voters who supported Trump in that poll. Initially, Trump's polling percentage appears stable with small fluctuations around 45%. However, as the campaign progresses into October, there is a slight upward trend in Trump's polling percentage, suggesting that his support increased as the election neared.
 
 The shaded region around the blue line represents the confidence interval, indicating the range within which the true polling percentage is likely to fall, accounting for sampling variation.
 
@@ -165,14 +164,14 @@ cleaned_data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 p1 <- ggplot(cleaned_data, aes(x = numeric_grade)) +
   geom_bar(fill = "steelblue", color = "black") +
   labs(x = "Numeric Grade",
-       y = "Count") +
+       y = "Frequency") +
   theme_minimal()
 
 # Create a bar chart for the distribution of transparency_score
 p2 <- ggplot(cleaned_data, aes(x = transparency_score)) +
   geom_bar(fill = "darkorange", color = "black") +
   labs(x = "Transparency Score",
-       y = "Count") +
+       y = "Frequency") +
   theme_minimal()
 
 # Display the two charts side by side using patchwork
@@ -446,9 +445,7 @@ plot_usmap(data = final_predictions, values = "winner_color", regions = "states"
   )
 ```
 
-By using package `usmap` [@citeusmap], @fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election, with red representing states where Trump is expected to win and blue for those favoring Harris.
-
-It shows Trump gaining support across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Harris, meanwhile, is projected to lead in states along the West Coast and in the Northeast, such as California and New York, regions with a history of Democratic support. This visual representation complements the previous electoral vote projection, where Harris is anticipated to surpass the 270-vote threshold needed to win the presidency.
+By using package `usmap` [@citeusmap], @fig-statemap displays the predicted outcome for each state in the 2024 U.S. Presidential Election. It shows Trump gaining support across central and southern states, including Texas and Missouri, which have traditionally leaned Republican. Harris, meanwhile, is projected to lead in states along the West Coast and in the Northeast, such as California and New York, regions with a history of Democratic support. This visual representation complements the previous electoral vote projection, where Harris is anticipated to surpass the 270-vote threshold needed to win the presidency.
 
 
 # Discussion {#sec-discussion}

@@ -1,5 +1,4 @@
-# Predicting the 2024 US Presidential Election with a Model-Based Forecast
-
+# Predicting the 2024 US Presidential Election
 ## Overview
 
 This repository contains the code, data, and analysis used to predict the winner of the 2024 US Presidential Election using polling data. The analysis is performed using R, and the data comes from a publicly available collection of high-quality polls. The goal of the project is to build a linear or generalized linear model to forecast the election outcome, with a specific focus on polls that feature Donald Trump as a candidate.
@@ -9,7 +8,7 @@ This repository contains the code, data, and analysis used to predict the winner
 The repo is structured as:
 
 -   `data/00-simulated_data` contains the simulated dataset.
--   `data/01-raw_data` contains the raw data as obtained from [FiveThirtyEight 2024 U.S. Presidential Election Polls](https://projects.fivethirtyeight.com/polls/president-general/2024/national/).
+-   `data/01-raw_data` contains the raw data as obtained from [FiveThirtyEight 2024 U.S. Presidential Election Polls](https://projects.fivethirtyeight.com/polls/president-general/2024/national/) as of October 30, 2024.
 -   `data/02-analysis_data` contains the cleaned dataset that was constructed.
 -   `model` contains fitted models. 
 -   `other` contains details about LLM chat interactions, and sketches.
